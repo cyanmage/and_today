@@ -1,0 +1,49 @@
+{% load staticfiles%}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype  de fenêtres coulissants  </title>
+	<link rel="stylesheet" type="'text/css'" href="{{ STATIC_URL }}defilement_infini/css/styles.css">
+	<link rel="stylesheet" type="'text/css'" href="{{ STATIC_URL }}stickit/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css"/>		
+</head>
+
+
+<body ng-app="mon_appli" ng-controller="controleur_defileur" style="overflow: hidden">
+
+	<header>
+		<div class= "header" >
+			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui !
+	
+		</div>
+	</header>
+
+
+	<div defileur>	
+		{% include 'defilement_infini/panneau_principal.html' 	with numero_panneau="0" nom_panneau="left" 		nom_champ="champ_gauche"%}
+		{% include 'defilement_infini/panneau_principal.html' 	with numero_panneau="1" nom_panneau="center" 	nom_champ="champ_centre"%}
+		{% include 'defilement_infini/panneau_principal.html' 	with numero_panneau="2" nom_panneau="right" 	nom_champ="champ_droite"%}
+		<img src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="leftArrow"  id="leftArrow"  direction-gauche>		
+		<img src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="rightArrow" id="rightArrow" direction-droite>
+	</div>
+
+<!--***Présentation cachée**-->
+<div id="motif-sticker" class="sticker">        <div class="indications" id="posX"></div>
+        <div class="indications" id="posY"></div></div>	
+
+<!--************************-->	
+</body>
+
+
+<!---->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular/configurateur.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
+
+</html>

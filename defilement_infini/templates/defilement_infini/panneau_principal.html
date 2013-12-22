@@ -1,0 +1,49 @@
+	<div class = "{{nom_panneau}}Panel panneau container-appli-stickers" id="panel_{{numero_panneau}}" ng-controller="controleur_stickit">
+		<span class = "sous-titre">	
+			<div class="champDate" id="date_{{numero_panneau}}"> 
+				<date-du-jour>
+					{*dates_a_afficher[gestionDesPanneaux.{{nom_champ}}][0]  | date:"dd/MM/yyyy"*}
+				</date-du-jour>
+			</div>
+		</span>
+
+		<section>
+			<div class="bandeau-des-actions">
+				<div class="row">
+					<div class="span1">
+					  	<img create-sticker src="{{STATIC_URL}}stickit/images/page_tourne_2.jpg" class="creation_sticker" />
+					</div>
+					<div class="span1">
+						<img modigy-sticker src="{{STATIC_URL}}stickit/images/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}[mode]"/>
+					</div>
+					<div class="offset4 span1">
+						<div class="btn-group">
+							<button class="btn sauverLesStickers">
+								Sauver
+							</button>
+						</div>						
+					</div>	
+					<div class="span1">
+						<div class="btn-group" ng-click="attacheDetacheStickers()">
+							<button class="btn sauverLesStickers">
+								{* libelleBtnAttachDetach *}
+							</button>
+						</div>						
+					</div>	
+				</div>
+				<!---->
+			</div>
+		</section>
+
+		<div class="spacer"></div>
+		<section>
+			<div container-stickers class= "container-stickers">
+
+			</div>
+		</section>
+
+
+
+
+
+	</div>
