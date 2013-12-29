@@ -1,0 +1,19 @@
+[emplacement='gauche']{
+	left : -100%;
+}
+
+[emplacement='centre'] {
+	left: 0%;
+}
+
+[emplacement='droite']{
+	left: 100%; /*BUG A CORRIGER : dépasse légèrement 100%, sinon une bande blanche apparaît*/
+}
+
+.transitionDefileur{	
+    transition 				: 	left 	0.5s 	linear;
+}
+
+.noTransition{
+	transition 		: 	none;
+}

@@ -119,7 +119,7 @@ module_stickit.directive('groupeStickers', ['servicesStickit', function(lesServi
 		template : "<div style='visibility : hidden' id='**" + lesServicesStickit.renvoitIdentifiantGroupeEnCours() +  "**' ></div>",
 		//replace : true,
 		link : function(scope, element, attributes){
-			console.log(lesServicesStickit.renvoitIdentifiantGroupeEnCours());
+			//console.log(lesServicesStickit.renvoitIdentifiantGroupeEnCours());
 		}
 	}
 
@@ -138,9 +138,11 @@ module_stickit.directive('groupeStickers', ['servicesStickit', function(lesServi
 ///////////////////////////////////////////////////////////////////////////////////*/
 /////////////////////////////////////////////////////////////////////////////////////
 
-module_stickit.controller("controleur_stickit", ['$q', '$scope', function($q, $scope){
+module_stickit.controller("controleurStickit", ['$q', '$scope', function($q, $scope){
 
 	$scope.mode = "creation";
+
+	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
 
 	$scope.changeMode = function() {
 		if ($scope.mode == "creation"){
@@ -255,7 +257,7 @@ module_stickit.factory('servicesStickit', ['$q', function($q){
 	/*On sauvegarde l'état du sticker en local, en lui passant une liste de propriétés sous forme de dictionnaire*/
 	les_services_stickit.memoriseSticker = function(valeursAMemoriser, referenceSticker){
 		//console.log(valeursAMemoriser);
-		clusterOfGroupStickers[identifiantGroupe_enCours][referenceSticker] = valeursAMemoriser;
+		//clusterOfGroupStickers[identifiantGroupe_enCours][referenceSticker] = valeursAMemoriser;
 	}
 
 	les_services_stickit.renvoitIdentifiantGroupeEnCours = function(){

@@ -1,6 +1,6 @@
-var mon_appli = angular.module('mon_appli', ['defileur', 'stickit']);
+var appli = angular.module('appli', ['defileur', 'stickit', 'chargeurPage']);
 
-mon_appli.config(['$interpolateProvider', function($interpolateProvider) {
+appli.config(['$interpolateProvider', function($interpolateProvider) {
  		$interpolateProvider.startSymbol('{*');
  		$interpolateProvider.endSymbol('*}');    
      }

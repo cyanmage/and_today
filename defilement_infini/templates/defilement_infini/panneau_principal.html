@@ -1,4 +1,4 @@
-	<div class = "{{nom_panneau}}Panel panneau container-appli-stickers" id="panel_{{numero_panneau}}" ng-controller="controleur_stickit">
+
 		<span class = "sous-titre">	
 			<div class="champDate" id="date_{{numero_panneau}}"> 
 				<date-du-jour>
@@ -7,6 +7,8 @@
 			</div>
 		</span>
 
+
+	<div ng-controller='controleurStickit'> 	
 		<section>
 			<div class="bandeau-des-actions">
 				<div class="row">
@@ -14,7 +16,7 @@
 					  	<img create-sticker src="{{STATIC_URL}}stickit/images/page_tourne_2.jpg" class="creation_sticker" />
 					</div>
 					<div class="span1">
-						<img modigy-sticker src="{{STATIC_URL}}stickit/images/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}[mode]"/>
+						<img modigy-sticker src="{{STATIC_URL}}stickit/images/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}['creation']"/>
 					</div>
 					<div class="offset4 span1">
 						<div class="btn-group">
@@ -41,9 +43,5 @@
 
 			</div>
 		</section>
-
-
-
-
-
 	</div>
+
