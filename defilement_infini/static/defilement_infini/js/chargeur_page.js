@@ -16,7 +16,7 @@ module_chargeurPage.factory('chargeurPage', ['', function(){
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-/******************LES SERVICES                    ****************************/
+/******************               LES SERVICES           **********************/
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
@@ -30,17 +30,17 @@ module_chargeurPage.factory('serviceDates', ['$q', function($q){
 
 	var nbJoursDecalage = 1;
 
-	var calculeDates = function(position, debutSemaine){
-		var finSemaine = new Date(debutSemaine);
-		finSemaine.setDate(debutSemaine.getDate() + 6) ;
-		tableau_des_dates[position] = [debutSemaine, finSemaine];
+	var calculeDates = function(position, debut){
+		var fin = new Date(debut);
+		fin.setDate(debut.getDate() + 6) ;
+		tableau_des_dates[position] = [debut, fin];
 	}
 
 	/*Retourne une date formatée sous la forme yyyymmjj, qui servira d'ID*/
-	les_services_dates.retourneIdDate = function(date, offset){
+	les_services_dates.retourneIdDate = function(offset){
 		if(typeof(offset)==='undefined') offset = 0;
 		var date = tableau_des_dates[1 + offset][0];
-		return "" + date.getFullYear() + (date.getMonth() + 1) + date.getDate();
+		return date.toISOString().slice(0,10);
  	}
 
 	les_services_dates.initialiseBufferDates = function(){
@@ -56,22 +56,23 @@ module_chargeurPage.factory('serviceDates', ['$q', function($q){
 		calculeDates(2, new Date(dateApres.setDate(diff + nbJoursDecalage)));
 	}
 
+
  	les_services_dates.metAJourBufferDates = function(decalage){
-		if (decalage == "shiftRight"){
+		if (decalage == "gauche"){
 			angular.copy(tableau_des_dates[1],tableau_des_dates[0]) ;
 			angular.copy(tableau_des_dates[2],tableau_des_dates[1]) ;			
 			var d = new Date(tableau_des_dates[2][0]);
 			calculeDates(2, new Date(d.setDate(d.getDate() + nbJoursDecalage)));	
 		}
 		else 
-		if (decalage == "shiftLeft"){
+		if (decalage == "droite"){
 			angular.copy(tableau_des_dates[1],tableau_des_dates[2]) ;
 			angular.copy(tableau_des_dates[0],tableau_des_dates[1]) ;				
 			var d = new Date(tableau_des_dates[0][0]);
 			calculeDates(0, new Date(d.setDate(d.getDate() - nbJoursDecalage)));	
 
-		}
-	
-}
+		
+	}}/**/
+
 	return les_services_dates;
 }]);

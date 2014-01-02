@@ -60,19 +60,19 @@ date-du-jour{
 	position			: absolute;	
 }
 
-.leftPanel{
+.panneau_0{
 	/*background-color	: #DEDCFC;*/
 
 	left				: -100%;
 
 }
 
-.rightPanel{
+.panneau_2{
 	/*background-color	: #FFE8DD;	*/
 	left 				: 100%;
 }
 
-.centerPanel{
+.panneau_1{
 	/*background-color	: #EFFCF4;*/
 	left				: 0%;
 }

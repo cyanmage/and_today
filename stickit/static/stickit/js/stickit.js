@@ -2,6 +2,65 @@ var module_stickit = angular.module('stickit', []);
 var contexte = ".centerPanel" || window;
 
 
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+///////////////////////////////////////////////////////////////////////////////////*/
+/*                                                                                 */
+/*                                                                                 */
+/*                    Controleur associé au conteneur de stickit                   */
+/*                                                                                 */
+/*                                                                                 */
+///////////////////////////////////////////////////////////////////////////////////*/
+/////////////////////////////////////////////////////////////////////////////////////
+
+module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds',/**/ function($q, $scope, serviceIds/**/){
+
+	$scope.mode = "creation";
+	//$scope.id = serviceIds.
+
+	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
+
+	$scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
+		console.log("en tant qu'appli stickit, je dois me mettre a jour avec l'id recu : " + data.id + ", n° scope : " + $scope.$id);
+		$scope.id = data.id;
+		});	
+
+
+	$scope.changeMode = function() {
+		if ($scope.mode == "creation"){
+			$(".stickerCree") && $(".stickerCree").draggable('disable');
+			$scope.mode = "modification";
+			/*if ($(".stickerCree"))
+				$(".stickerCree").draggable('disable');*/
+		}
+		else if ($scope.mode == "modification"){
+			$(".stickerCree") && $(".stickerCree").draggable('enable');			
+			$scope.mode = "creation";
+			/*if ($(".stickerCree"))			
+				$(".stickerCree").draggable('enable');*/
+		}
+		/*$scope.modeCreation = ! $scope.modeCreation;
+		$(".")*/
+	}
+
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module_stickit.directive('createSticker', [function(){
 
 	return {			
@@ -28,11 +87,19 @@ module_stickit.directive('createSticker', [function(){
 
 
 
-module_stickit.directive('containerStickers', ['$compile', 'servicesStickit', function($compile, lesServicesStickit){
+module_stickit.directive('containerStickers', ['$compile', 'servicesStickit', 
+	function($compile, lesServicesStickit){
 
 	return {
-		restrict : 'A', 
+		restrict : 'AE', 
+		scope : {
+			ida : "="
+		},/**/
+		//replace : true, 
+		transclude : true,
+		template : "<div ng-transclude></div>",
 		link : function(scope, element, attributes){
+			//scope.toto = "toto";
 
 			element.droppable({
 				drop : function(event, ui){
@@ -71,7 +138,7 @@ module_stickit.directive('sticker', ['servicesStickit', function(lesServicesStic
 
 	return {
 		restrict : 'A', 
-		//tranclude : true,
+		//transclude : true,
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
 				element.attr('id', 'stickerInstance_' + idSticker);
@@ -127,41 +194,6 @@ module_stickit.directive('groupeStickers', ['servicesStickit', function(lesServi
 }]);
 
 
-
-/*/////////////////////////////////////////////////////////////////////////////////*/
-///////////////////////////////////////////////////////////////////////////////////*/
-/*                                                                                 */
-/*                                                                                 */
-/*                    Controleur associé au conteneur de stickit                   */
-/*                                                                                 */
-/*                                                                                 */
-///////////////////////////////////////////////////////////////////////////////////*/
-/////////////////////////////////////////////////////////////////////////////////////
-
-module_stickit.controller("controleurStickit", ['$q', '$scope', function($q, $scope){
-
-	$scope.mode = "creation";
-
-	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
-
-	$scope.changeMode = function() {
-		if ($scope.mode == "creation"){
-			$(".stickerCree") && $(".stickerCree").draggable('disable');
-			$scope.mode = "modification";
-			/*if ($(".stickerCree"))
-				$(".stickerCree").draggable('disable');*/
-		}
-		else if ($scope.mode == "modification"){
-			$(".stickerCree") && $(".stickerCree").draggable('enable');			
-			$scope.mode = "creation";
-			/*if ($(".stickerCree"))			
-				$(".stickerCree").draggable('enable');*/
-		}
-		/*$scope.modeCreation = ! $scope.modeCreation;
-		$(".")*/
-	}
-
-}]);
 
 
 

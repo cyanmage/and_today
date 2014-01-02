@@ -7,11 +7,11 @@
 }
 
 [emplacement='droite']{
-	left: 100%; /*BUG A CORRIGER : dépasse légèrement 100%, sinon une bande blanche apparaît*/
+	left: 100%; 
 }
 
 .transitionDefileur{	
-    transition 				: 	left 	0.5s 	linear;
+    transition 				: 	left 	1.5s 	linear;
 }
 
 .noTransition{

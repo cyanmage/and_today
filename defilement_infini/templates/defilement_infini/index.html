@@ -11,8 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">	
 </head>
 
-
-<body ng-app="appli" style="overflow: hidden" ng-controller="controleurDefileur" >
+ 
+<body ng-app="appli" ng-controller="controleurDefileur" >
 
 	<header>
 		<div class= "header" >
@@ -24,24 +24,37 @@
 
 	<defileur class = "defileur">	
 		<div>	
+			
+			<div ng-controller="controleurPanneau">	
+				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0">
+			
+					{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_gauche" %}		
 
-			<panneau-defileur  emplacement = "gauche" class = "leftPanel panneau transitionDefileur container-appli-stickers" id = "panel0">
-				{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_gauche" %}			
-			</panneau-defileur/>
+				</panneau-defileur/>
+			</div>	
 
-			<panneau-defileur  emplacement = "centre" class = "centerPanel panneau transitionDefileur container-appli-stickers" id = "panel1">
-				{% include 'defilement_infini/panneau_principal.html' with nom_champ="champ_centre" %}
-			</panneau-defileur/>
+			<div ng-controller="controleurPanneau">	
+				<panneau-defileur  emplacement = "centre" class = "panneau_1 panneau transitionDefileur" 	id = "panel1">
 
-			<panneau-defileur  emplacement = "droite" class = "rightPanel panneau transitionDefileur container-appli-stickers" id = "panel2">
-				{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_droite" %}
-			</panneau-defileur/>					
+						{% include 'defilement_infini/panneau_principal.html' with nom_champ="champ_centre" %}
+		
+				</panneau-defileur/>
+			</div>
 
-			<img  	direction-gauche  src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="arrow leftArrow"  id="leftArrow"  direction-gauche>		
-			<img  	direction-droite  src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="arrow rightArrow" id="rightArrow" direction-droite>
+			<div ng-controller="controleurPanneau">			
+				<panneau-defileur  emplacement = "droite" class = "panneau_2 panneau transitionDefileur" 	id = "panel2">
+				
+						{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_droite" %}
+					
+				</panneau-defileur/>					
+			</div>	
+
+
 		</div>
 	</defileur>
 
+	<img  direction-gauche src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="arrow leftArrow"  id="leftArrow" >	
+	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="arrow rightArrow" id="rightArrow">
 
 <!--***Présentation cachée**-->
 	<div id="motif-sticker" class="sticker">
