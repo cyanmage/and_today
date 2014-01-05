@@ -36,7 +36,7 @@ module_chargeurPage.factory('serviceDates', ['$q', function($q){
 		tableau_des_dates[position] = [debut, fin];
 	}
 
-	/*Retourne une date formatée sous la forme yyyymmjj, qui servira d'ID*/
+	/*Retourne une date formatée sous la forme "yyyy-mm-jj", qui servira d'ID*/
 	les_services_dates.retourneIdDate = function(offset){
 		if(typeof(offset)==='undefined') offset = 0;
 		var date = tableau_des_dates[1 + offset][0];

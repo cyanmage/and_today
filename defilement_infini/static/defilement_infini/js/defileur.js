@@ -47,7 +47,7 @@ module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
 	$scope.controleur = "controleur panneau ";
 
 	$scope.$on('PANNEAU.DEMANDE_ID', function(event, data){
-		console.log("emplacement : " + data.emplacement  + ",  offset : " + data.offset + ", date associee : " + serviceIds.getId(data.offset));
+		//console.log("emplacement : " + data.emplacement  + ",  offset : " + data.offset + ", date associee : " + serviceIds.getId(data.offset));
 		$scope.$broadcast('APPLICATIONS.ENVOI_ID', {'id' : serviceIds.getId(data.offset)});
 	});
 
@@ -57,7 +57,7 @@ module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/
 
-//													  DIRECTIVES
+//													  DIRECTIVES													 //
 
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/
@@ -86,7 +86,7 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 	return {
 		restrict : 'AE',
 		transclude : true,
-		template : '<div class = "panneau" mode="modeDefilement"><div ng-transclude></div><div>Mode defilemnt : {{modeDefilement}}</div></div>', 
+		template : '<div class = "panneau" mode="modeDefilement"><div ng-transclude></div></div>', 
 		replace : true, 
 		scope : {
 			mode : " = "
@@ -98,16 +98,8 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			/*****************/
 			//console.log(element.attr("emplacement") );
 			var emplacement = element.attr("emplacement");
-			if(element.attr("emplacement") == "centre"){
-				scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, offset : 0});
-			}
-			else if (element.attr("emplacement") == "droite"){
-				scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, offset : 1});				
-			}
-			else if (element.attr("emplacement") == "gauche"){
-				scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, offset : -1});				
-			}
-
+			var offset = (emplacement == "droite" ? 1 : (emplacement == 'gauche' ? -1 : 0)); 
+			scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, 'offset' : offset});
 
 			/**********************************/
 			/*   Evènements sur la directive  */
@@ -129,19 +121,18 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			scope.$watch("mode", function(newValue, oldValue, scope){
 				//console.log("changement de mode ! ");
 
-
+				var emplacement = element.attr("emplacement");
 				if (scope.mode == "gauche"){
-					if (element.attr("emplacement") == "gauche"){
+					if (emplacement == "gauche"){
 						scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : "gauche", offset : 1});
 					}					
 					panneaux.permuteGauche(element);
 				}
 				else if (scope.mode == "droite"){
-					if (element.attr("emplacement") == "droite"){
+					if (emplacement == "droite"){
 						scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : "droite", offset : -1});						
 					}					
 					panneaux.permuteDroite(element);
-
 				}
 			});
 
@@ -233,7 +224,7 @@ module_defileur.factory('serviceIds', ['serviceDates', function(serviceDates){
 	gestion_des_panneaux_ids.decaleIds = function(direction){
 		serviceDates.metAJourBufferDates(direction);
 		synchronise_ids_avec_dates();
-		console.log(tabIds);
+		//console.log(tabIds);
 
 	}
 
