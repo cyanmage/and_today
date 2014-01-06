@@ -17,25 +17,55 @@ module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds', 's
 	$scope.mode = "creation";
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
 
-	//$scope.id = data.id;
-
 	$scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
+
 		$scope.id = data.id;
-		console.log($scope.id);
 	});
+
 
 	$scope.changeMode = function() {
 		if ($scope.mode == "creation"){
 			$(".stickerCree") && $(".stickerCree").draggable('disable');
 			$scope.mode = "modification";
+			/*if ($(".stickerCree"))
+				$(".stickerCree").draggable('disable');*/
 		}
 		else if ($scope.mode == "modification"){
 			$(".stickerCree") && $(".stickerCree").draggable('enable');			
 			$scope.mode = "creation";
+			/*if ($(".stickerCree"))			
+				$(".stickerCree").draggable('enable');*/
 		}
 
 	}
 
+	var rattache = true;
+	var cache = {};
+	/*$scope.attacheDetacheStickers = function(){
+		//console.log('je clique,  ' +  rattache);
+		//console.log( $("[emplacement='centre']").find(".container-stickers"));
+		if (rattache){
+			servicesCacheStickit.stockeDonnees($scope.id, $("[emplacement='centre']").find("groupe-stickers").detach());
+		}
+		else{
+			//console.log(servicesCacheStickit.lectureCache());
+			var donnees = servicesCacheStickit.recupereDonnees($scope.id);			
+			$("[emplacement='centre']").find(".container-stickers").append(donnees);
+		}
+		console.log(servicesCacheStickit.lectureCache());		
+		rattache = !rattache; 
+	}*/
+
+
+				/*if (newValue in cache){
+					cache[oldValue] = element.detach("groupe-stickers");
+				}
+				else{
+					var grStickers = angular.element("<groupe-stickers ></groupe-stickers>");
+					element.prepend(grStickers);			
+					$compile(grStickers)(scope);		
+					cache[newValue] = grStickers;			
+				}*/
 
 }]);
 
@@ -60,6 +90,8 @@ module_stickit.directive('createSticker', [function(){
 		link : function(scope, element, attributes){
 				element.draggable({
 					cursor : 'move', 
+					//revert : "valid", 
+					//containment : element.parents(".appli-stickers").find(".container-stickers"),	
 					helper : function(){
 						copie = $("div#motif-sticker").clone(false).removeAttr("id").addClass("creationSticker");
 						copie.css({'background-color' : '#00FF00'});
@@ -80,17 +112,7 @@ module_stickit.directive('createSticker', [function(){
 module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit',
 	function($compile, servicesCacheStickit){
 
-
-	var creeGroupeStickers = function(element, scope, id){
-		/*var grStickers = angular.element("<groupe-stickers id='{* id *}'>//{*id*}++</groupe-stickers>");
-		console.log(grStickers);
-		//element.prepend(grStickers);			
-		$compile(grStickers)(scope);
-		return grStickers;*/
-		var elementrajoute = $compile("<div id='" + id + "'>" + id + "</div>")(scope);
-		//element.append(elementrajoute);
-		return elementrajoute;
-	}
+	//var cache = {};
 
 	return {
 		restrict : 'AE', 
@@ -98,66 +120,82 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			id : "="
 		},
 		replace : true,
-		template : "<div id='id'><u>{* id *}</u></div>",
+		template : "<div id='id'>{* id *}</div>",
 		link : function(scope, element, attributes){
-
 			/*************************/
 			/*    Initialisations    */
 			/*************************/
-
-
 			element.droppable({
+				//containment : element.parents(".appli-stickers").find(".container-stickers"),	
 				containment : $("[emplacement='centre']").find(".container-stickers"),
 				drop : function(event, ui){
 
 					if (ui.helper.hasClass("creationSticker")){
-
 						var sticker = ui.helper.clone(false).attr("sticker", '').removeClass("creationSticker");
 						sticker.addClass("stickerCree");
 						$compile(sticker)(scope);
   						element.find("groupe-stickers").append(sticker);	
 
+						//var documentFragment = $(document.createDocumentFragment());
+						//var chaine = '<div id="motif-sticker" class="sticker"></div>';
+        				//documentFragment.append(chaine);	
+						//$compile(documentFragment)(scope);	  						
 					}	
 				}		
 			});
 
+			scope.servicesCacheStickit = servicesCacheStickit;
 
-
-		
-			scope.$watch('id', function(newValue, oldValue, scope){
-				//console.log(element.find("groupe-stickers"));	
-				//console.log( element.find("groupe-stickers").html());
-				//console.log( $(element.find(".container-stickers")).html());					
-
-				//element.append(creeGroupeStickers(element, scope));
-
-
-				
+			/*scope.$watch('servicesCacheStickit.miseAJour', function(newValue, oldValue, scope){
+				console.log("DEMANDE DE MISE A JOUR DETECTEE " + newValue + ", " +  oldValue);
+			}, true); */
 
 
 
 
-				if (newValue in servicesCacheStickit.lectureCache()){
-					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
-				}
-				else{
-					elementARattacher = creeGroupeStickers(element, scope, newValue);
-					//servicesCacheStickit.stockeDonnees(newValue, $compile("<div id='" + newValue + "'>" + newValue + "</div>")(scope));					
-				}
-				element.append(elementARattacher);	
-				
-				if (oldValue !==  newValue){
-					elementDetache = element.find("#" + oldValue).detach();
-					servicesCacheStickit.stockeDonnees(oldValue, elementDetache);					
-					console.log("A DETACHER : " + oldValue);
-				}
-
-				console.log('ancienne valeur : ' + oldValue +  ", nouvelle valeur : " + newValue);
-				console.log(servicesCacheStickit.lectureCache());
+			scope.$on("STICKIT.ATTACHE_GROUPE_STICKERS", function(event, data){
+				element.prepend(servicesCacheStickit.recupereDonnees(data.id));
+				console.log("RECEPTION*** recuperation de l'ID n°" + data.id + " depuis le cache et rattachement au CONTAINER");				
 			});
 
+			scope.$on("STICKIT.CREE_GROUPE_STICKERS", function(event, data){
+				console.log("RECEPTION*** creation d'un groupe_stickers et stockage de l'ID n°" + data.id + " dans le cache depuis le CONTAINER");				
+				var grStickers = angular.element("<groupe-stickers id = '" + data.id + "'></groupe-stickers>");
+				element.prepend(grStickers);			
+				$compile(grStickers)(scope);/**/		
+				servicesCacheStickit.stockeDonnees(data.id,  data.id);
+			});
+
+			/*scope.$watch('ida', function(newValue, oldValue, scope){
+				//console.log("CONTAINER: newValue : " + newValue + ", oldValue : " + oldValue);
+
+				if (!servicesCacheStickit.contientCle(newValue)){
+					var grStickers = angular.element("<groupe-stickers ></groupe-stickers>");
+					element.prepend(grStickers);			
+					$compile(grStickers)(scope);		
+					servicesCacheStickit.stockeDonnees(newValue,  grStickers);
+
+					//console.log("DEPUIS LE CONTAINER, ID AJOUTE : " + newValue + "(ancien id : " + oldValue + ")");
+					//console.log(servicesCacheStickit.lectureCache());					
+					//cache[newValue] = grStickers;			
+				}
+				else{
+					//if (newValue !== oldValue){
+						servicesCacheStickit.stockeDonnees(oldValue,  $("groupe-stickers").detach());						
+						element.append(servicesCacheStickit.recupereDonnees(newValue));
+
+						console.log("DEPUIS LE CONTAINER, ID MISE A JOUR : " + newValue + "(ancien id : " + oldValue + ")");					
+						//console.log(servicesCacheStickit.lectureCache());	
+					//}				
+				}
+			});*/
 
 
+			/*element.html(grSickers);			
+			$compile(element.contents())(scope);*/
+
+			/*servicesCacheStickit.stockeDonnees($scope.id, $("[emplacement='centre']").find("groupe-stickers").detach());
+			$("[emplacement='centre']").find(".container-stickers").append(donnees);*/
 		}
 	}
 
@@ -175,14 +213,34 @@ module_stickit.directive('groupeStickers', ['servicesCacheStickit',
 
 	return{
 		restrict : 'E',
-
+		//template : "<div ></div>",
+		//replace : true,
 		link : function(scope, element, attributes){
 
 			/*************************/
 			/*      Evènements       */
 			/*************************/
 
+			scope.$on("STICKIT.DETACHE_GROUPE_STICKERS", function(event, data){
+				console.log("RECEPTION*** sauvegarde de l'ID n°" + data.id + " dans le cache et detachement AUTONOME du groupe-stickers !");					
+				servicesCacheStickit.stockeDonnees(data.id,  element.detach());	
+			});
 
+			/*scope.$watch('id', function(newValue, oldValue, scope){
+					console.log("GROUPE : newValue : " + newValue + ", oldValue : " + oldValue + ", scope " + scope.$id);
+				if (newValue !== oldValue){
+
+					if (servicesCacheStickit.contientCle(newValue)){
+						servicesCacheStickit.stockeDonnees(oldValue,  element.detach());						
+						//cache[oldValue] = element.detach();
+						console.log("ON DETACHE le numero " + oldValue +  " DEPUIS LE GROUPE");
+						console.log(servicesCacheStickit.lectureCache());
+					}
+					else 
+						console.log("ON NE FAIT RIEN DANS LE GROUPE");	
+				}
+
+			});*/
 
 		}
 	}
@@ -203,17 +261,23 @@ module_stickit.directive('sticker', ['servicesStickit', function(lesServicesStic
 				element
 				.draggable({
 					cursor : 'move', 
+					//containment : element.parents(".appli-stickers").find(".container-stickers"),//$(".centerPanel").find(".container-stickers"),
+					//containment : $("#panel1").find(".container-stickers"),	
 					containment : $("[emplacement='centre']").find(".container-stickers"),	
 					zIndex: 100, 
 					stop : function(ui, event){
 						var offset = $(this).offset();	
+             			//$(this).text('x: ' + offset.left + "\n" + 'y: ' + offset.top);						
 						lesServicesStickit.memoriseSticker({top : offset.top, left : offset.left}, idSticker); 
+						//console.log( element.parents("#panel1").find(".container-stickers"));
 					},
 					drag : function(ui, event){
+						//var offset = $(this).offset();	
+             			//$(this).text('x: ' + offset.left + "\n" + 'y: ' + offset.top);
 					}	
 
 
-				})
+				})/**/
 				.resizable({
 					//containment : $(".container-stickers", contexte),//element.parents(".appli-stickers").find(".container-stickers")					
 				})
@@ -226,7 +290,7 @@ module_stickit.directive('sticker', ['servicesStickit', function(lesServicesStic
 				else
 					element.focus();
 			});						
-	
+  				//element.css({top : 0, left : 0});				
 		}
 	}
 
@@ -291,6 +355,7 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', functio
 
 		var elementPresent = false;	
 		for (var item in clusterOfGroupStickers){
+			//console.log("ITEM VARIABLE : " + item +  " ----------" + "DATE A RECHERCHER : " + identifiantGroupe);
 			/**/if (item == identifiantGroupe){
 				elementPresent = true;
 				break;
@@ -299,14 +364,32 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', functio
 		
 		identifiantGroupe_enCours = identifiantGroupe;
 
+		//console.log("élément présent : " + elementPresent);
 		if (!elementPresent){
 			clusterOfGroupStickers[identifiantGroupe] = {};
+			//console.log("création d'un groupe de stickers " + Object.keys(clusterOfGroupStickers).length);
+			//console.log(clusterOfGroupStickers);
 
 		}
+		/*else{
+			//clusterOfGroupStickers[identifiantGroupe] = {};
+			//console.log("modification éventuelle d'un groupe de stickers " + Object.keys(clusterOfGroupStickers).length);
+			//console.log(clusterOfGroupStickers);			
+		}*/
+
+		//!clusterOfGroupStickers.identifiantGroupe && (clusterOfGroupStickers.identifiantGroupe = {});
 	}
+
+
+	les_services_stickit.renvoitGroupeStickers = function(identifiantGroupe){
+		return clusterOfGroupStickers;
+	}
+
 
 	/*On sauvegarde l'état du sticker en local, en lui passant une liste de propriétés sous forme de dictionnaire*/
 	les_services_stickit.memoriseSticker = function(valeursAMemoriser, referenceSticker){
+		//console.log(valeursAMemoriser);
+		//clusterOfGroupStickers[identifiantGroupe_enCours][referenceSticker] = valeursAMemoriser;
 	}
 
 	les_services_stickit.renvoitIdentifiantGroupeEnCours = function(){
@@ -332,7 +415,6 @@ module_stickit.factory('servicesCacheStickit', [ '$q', function(){
 
 	les_services_cache.stockeDonnees = function(idRecuperation, donnees){
 		cache[idRecuperation] = donnees;
-		console.log("SAUVEGARDE id " + idRecuperation);
 	}
 
 	les_services_cache.lectureCache = function(){
@@ -342,8 +424,6 @@ module_stickit.factory('servicesCacheStickit', [ '$q', function(){
 	les_services_cache.contientCle = function(cle){
 		return (cle in cache);
 	}
-
-
 
 	return les_services_cache;
 }]);

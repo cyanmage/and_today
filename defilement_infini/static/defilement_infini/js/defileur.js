@@ -101,6 +101,10 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			var offset = (emplacement == "droite" ? 1 : (emplacement == 'gauche' ? -1 : 0)); 
 			scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, 'offset' : offset});
 
+			/*attributes.$observe("emplacement", function(value){
+				console.log("changement d'attribut " + value);
+			});*/
+
 			/**********************************/
 			/*   Evènements sur la directive  */
 			/**********************************/
