@@ -11,7 +11,7 @@
 }
 
 .transitionDefileur{	
-    transition 				: 	left 	1.5s 	linear;
+    transition 				: 	left 	0.5s 	linear;
 }
 
 .noTransition{

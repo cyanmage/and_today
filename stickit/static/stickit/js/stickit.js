@@ -59,9 +59,12 @@ module_stickit.directive('createSticker', [function(){
 		restrict : 'A',
 		link : function(scope, element, attributes){
 				element.draggable({
-					cursor : 'move', 
+					cursor : 'move',
 					helper : function(){
-						copie = $("div#motif-sticker").clone(false).removeAttr("id").addClass("creationSticker");
+						copie = $("div#motif-sticker").clone()
+								.removeAttr("id")
+								.addClass("creationSticker")
+								.css("z-index", 1000);
 						copie.css({'background-color' : '#00FF00'});
 						return copie;
 					}
@@ -80,25 +83,14 @@ module_stickit.directive('createSticker', [function(){
 module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit',
 	function($compile, servicesCacheStickit){
 
-
-	var creeGroupeStickers = function(element, scope, id){
-		/*var grStickers = angular.element("<groupe-stickers id='{* id *}'>//{*id*}++</groupe-stickers>");
-		console.log(grStickers);
-		//element.prepend(grStickers);			
-		$compile(grStickers)(scope);
-		return grStickers;*/
-		var elementrajoute = $compile("<div id='" + id + "'>" + id + "</div>")(scope);
-		//element.append(elementrajoute);
-		return elementrajoute;
-	}
-
 	return {
 		restrict : 'AE', 
 		scope : {
 			id : "="
 		},
 		replace : true,
-		template : "<div id='id'><u>{* id *}</u></div>",
+		transclude : true,
+		template : "<div id='id' ng-transclude><u>{* id *}</u></div>",
 		link : function(scope, element, attributes){
 
 			/*************************/
@@ -108,52 +100,46 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 			element.droppable({
 				containment : $("[emplacement='centre']").find(".container-stickers"),
+				tolerance : 'fit',
 				drop : function(event, ui){
 
 					if (ui.helper.hasClass("creationSticker")){
 
-						var sticker = ui.helper.clone(false).attr("sticker", '').removeClass("creationSticker");
-						sticker.addClass("stickerCree");
+						var sticker = ui.helper.clone()
+									.attr("sticker", '')
+									.removeClass("creationSticker")
+									.css("z-index", "");
+						sticker.addClass("stickerCree collideEnable");
 						$compile(sticker)(scope);
   						element.find("groupe-stickers").append(sticker);	
 
-					}	
-				}		
+					}//,
+				},		
+
+				accept : function(element){
+						return (typeof $(".creationSticker").collision(".collideEnable").html() === "undefined");
+				}
+
 			});
 
 
 
 		
 			scope.$watch('id', function(newValue, oldValue, scope){
-				//console.log(element.find("groupe-stickers"));	
-				//console.log( element.find("groupe-stickers").html());
-				//console.log( $(element.find(".container-stickers")).html());					
-
-				//element.append(creeGroupeStickers(element, scope));
-
-
-				
-
-
-
 
 				if (newValue in servicesCacheStickit.lectureCache()){
 					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
 				}
 				else{
-					elementARattacher = creeGroupeStickers(element, scope, newValue);
-					//servicesCacheStickit.stockeDonnees(newValue, $compile("<div id='" + newValue + "'>" + newValue + "</div>")(scope));					
+					elementARattacher = $compile("<groupe-stickers style='{position : relative}' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>")(scope);
 				}
 				element.append(elementARattacher);	
 				
 				if (oldValue !==  newValue){
-					elementDetache = element.find("#" + oldValue).detach();
+					elementDetache = element.find("#gr-stick-" + oldValue).detach();
 					servicesCacheStickit.stockeDonnees(oldValue, elementDetache);					
-					console.log("A DETACHER : " + oldValue);
 				}
 
-				console.log('ancienne valeur : ' + oldValue +  ", nouvelle valeur : " + newValue);
-				console.log(servicesCacheStickit.lectureCache());
 			});
 
 
@@ -191,41 +177,47 @@ module_stickit.directive('groupeStickers', ['servicesCacheStickit',
 }]);
 
 
-module_stickit.directive('sticker', ['servicesStickit', function(lesServicesStickit){
+module_stickit.directive('sticker', ['servicesStickit', '$compile', 
+	function(lesServicesStickit, $compile){
 
 	return {
 		restrict : 'A', 
-		//transclude : true,
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
 				element.attr('id', 'stickerInstance_' + idSticker);
-
 				element
+				.append("<span> _" + idSticker + "</span>")
+				.resizable({
+					//handles: "n, e, s, w",
+					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
+					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },						
+					collision : true,
+					obstacle : ".obstacles, .collideEnable",					
+					containment : $("[emplacement='centre']").find(".container-stickers"),
+					minHeight : 80,
+					minWidth : 200,
+					maxHeight : 160,
+					maxWidth: 250,					
+				})
 				.draggable({
 					cursor : 'move', 
 					containment : $("[emplacement='centre']").find(".container-stickers"),	
 					zIndex: 100, 
-					stop : function(ui, event){
-						var offset = $(this).offset();	
-						lesServicesStickit.memoriseSticker({top : offset.top, left : offset.left}, idSticker); 
-					},
-					drag : function(ui, event){
+					preventCollision : true,
+   					obstacle: ".obstacles, .collideEnable",					
+					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
+					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },					
+					drag 	: function(event, ui){
 					}	
+				});
 
-
-				})
-				.resizable({
-					//containment : $(".container-stickers", contexte),//element.parents(".appli-stickers").find(".container-stickers")					
-				})
-				;	
-				element.html(idSticker);
 				
-			element.on("mouseover", function(ui, event){
-				if (scope.mode == 'creation')
-					element.css('cursor', 'move');	
-				else
-					element.focus();
-			});						
+				element.on("mouseover", function(ui, event){
+					if (scope.mode == 'creation')
+						element.css('cursor', 'move');	
+					else
+						element.focus();
+				});						
 	
 		}
 	}

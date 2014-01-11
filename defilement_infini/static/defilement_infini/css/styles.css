@@ -115,3 +115,19 @@ date-du-jour{
 	width: 25%	;
 	height: 8%;
 }
+
+.collideEnable{
+	border-width: 3px;
+	border-color: #0A2E41;
+	border-style : dotted;
+}
+
+.test-resizable{
+	width : 150px;
+	height : 150px;
+	left : 300px;
+	top : 300px;
+	background-color : #C6D5FD;
+	position : relative;
+
+}
