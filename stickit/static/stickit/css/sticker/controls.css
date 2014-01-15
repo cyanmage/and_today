@@ -1,0 +1,57 @@
+.controle_sticker{
+	position : absolute;/**/
+	height : 35px;
+	width : 120px; 
+	/*overflow : hidden;*/
+	bottom : 2px;
+	left : 0px;
+	/*background-color: #FBF8E3;	*/
+}
+
+.imageControleSticker{
+	display: block;
+	/*opacity:0.2;*/
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	/*-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+ 	background-color:red;	
+	background-color: #FFFFFF;*/
+
+}
+
+.imageControleSticker.deployable{
+	visibility: hidden;	
+}
+
+.imageControleSticker.deploye{
+	
+}
+
+.imageControleSticker.deployeur{
+	border-style: solid;
+	border-width: 1px;
+	transition : opacity 0.3s ease-in-out;
+}
+
+.imageControleSticker.deployeur:hover{
+	cursor: pointer;
+	opacity :0.5;
+}
+
+.colonne{
+	float: left;
+	margin-left : 5px;
+	background-color: #DDDCFA;
+}
+
+.deployable {
+	/*visibility: hidden;*/
+	transition : opacity 0.3s ease-in-out;	
+}
+
+.deployable:hover {
+	/*visibility: hidden;*/
+	opacity : 0.2;
+}

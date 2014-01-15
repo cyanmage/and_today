@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     # url(r'^$', 'core.views.home'),
     url(r'^defilement_infini/', include('defilement_infini.urls')),
-
+    url(r'^stickit/', include('stickit.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

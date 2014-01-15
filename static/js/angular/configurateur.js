@@ -1,6 +1,8 @@
 var appli = angular.module('appli', ['defileur', 'stickit', 'chargeurPage'/**/]);
 
-appli.config(['$interpolateProvider', function($interpolateProvider) {
+appli.config(['$httpProvider', '$interpolateProvider', function($httpProvider, $interpolateProvider) {
+    	$httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    	$httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken'; 
  		$interpolateProvider.startSymbol('{*');
  		$interpolateProvider.endSymbol('*}'); 
 

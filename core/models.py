@@ -20,14 +20,14 @@ class Post(models.Model):
 	def __str__(self):
 		return "Date : " +  self.date.strftime('%d %b %Y') + "    , domaine : " + self.domaine.intitule_domaine + "   , contenu tronqué : " + self.contenu[:9]
 
-	contenu 			= models.CharField(max_length=300)
-	date 				= models.DateField()
+	contenu 			= models.CharField(max_length=300, default="")
+	date 				= models.DateField(default = datetime.now)
 	journee_generique	= models.BooleanField(default=False)
 	recopie_tel_quel 	= models.BooleanField(default=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
-
+	style 				= models.TextField(default = "")				
 
 class PostUser(Post):
 	heure 				= models.TimeField(null=True, default=datetime.now())

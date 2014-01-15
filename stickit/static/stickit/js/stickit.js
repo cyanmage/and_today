@@ -11,11 +11,17 @@ var module_stickit = angular.module('stickit', []);
 ///////////////////////////////////////////////////////////////////////////////////*/
 /////////////////////////////////////////////////////////////////////////////////////
 
-module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds', 'servicesCacheStickit',/**/ 
-	function($q, $scope, serviceIds, servicesCacheStickit /**/){
+module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds', 'servicesStickit', 'servicesCacheStickit',/**/ 
+	function($q, $scope, serviceIds, servicesStickit, servicesCacheStickit /**/){
 
 	$scope.mode = "creation";
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
+
+	$scope.sauverlesStickers = function(){
+
+		console.log("NOUS ALLONS LES SAUVER ! ");
+		servicesStickit.sauverGroupeStickers($scope.id);
+	}
 
 	//$scope.id = data.id;
 
@@ -65,7 +71,7 @@ module_stickit.directive('createSticker', [function(){
 								.removeAttr("id")
 								.addClass("creationSticker")
 								.css("z-index", 1000);
-						copie.css({'background-color' : '#00FF00'});
+						//copie.css({'background-color' : '#00FF00'});
 						return copie;
 					}
 				});	
@@ -96,7 +102,9 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			/*************************/
 			/*    Initialisations    */
 			/*************************/
-
+			scope._scope = "groupe_stickers";
+			/*scope.bold = "xena la guerriere";
+			console.log(scope.$id);*/
 
 			element.droppable({
 				containment : $("[emplacement='centre']").find(".container-stickers"),
@@ -182,11 +190,26 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 
 	return {
 		restrict : 'A', 
+		scope : {
+
+		},
+
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
-				element.attr('id', 'stickerInstance_' + idSticker);
 				element
-				.append("<span> _" + idSticker + "</span>")
+				.attr('id', 'stickerInstance_' + idSticker)
+				.find(".titreSticker").html(idSticker).end()
+				.draggable({
+					cursor : 'move', 
+					containment : $("[emplacement='centre']").find(".container-stickers"),	
+					zIndex: 100, 
+					preventCollision : true,
+   					obstacle: ".obstacles, .collideEnable",					
+					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
+					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },					
+					drag 	: function(event, ui){
+					}	
+				})
 				.resizable({
 					//handles: "n, e, s, w",
 					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
@@ -199,34 +222,79 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 					maxHeight : 160,
 					maxWidth: 250,					
 				})
-				.draggable({
-					cursor : 'move', 
-					containment : $("[emplacement='centre']").find(".container-stickers"),	
-					zIndex: 100, 
-					preventCollision : true,
-   					obstacle: ".obstacles, .collideEnable",					
-					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
-					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },					
-					drag 	: function(event, ui){
-					}	
+
+
+				/*var	contenant = $(this).find(".contenantSticker");
+
+				element
+				.on("mouseenter", function(event, ui){
+					contenant.append($("#controle_sticker"));
+				})
+				.on("mouseleave", function(){
+					$("#controle_sticker").detach();
+				});*/
+
+				element.find(".contenuSticker")
+				.on("mousedown", function (e) {
+				    e.stopPropagation();
+				    return;
+				})
+				.on("mouseenter", function(ui, event){
+					$(this).focus();
+				})
+				.on("mouseleave", function(ui, event){
+					$(this).blur();
 				});
 
-				
-				element.on("mouseover", function(ui, event){
-					if (scope.mode == 'creation')
-						element.css('cursor', 'move');	
-					else
-						element.focus();
-				});						
-	
+				lesServicesStickit.associeActionsAuxBoutons(element, scope);
+
 		}
 	}
 
 }]);
 
 
+module_stickit.directive('controle-sticker', ['servicesStickit', '$compile',
+	function(servicesStickit, $compile){
+		//console.log("test");
+		return {
+			restrict : "AE",
+			link : function(scope, element, attributes){
+				//console.log("Je créé une directive controle sticker");
+				element.find()
+				on("click", function(event, ui){
+					//console.log("wizaaaa");
+				})
+			}
+
+		}
 
 
+}]);
+
+
+module_stickit.directive('colonneControle', [ 'servicesStickit', '$compile',
+	function(servicesStickit, $compile){
+	console.log("colonne !!! ")		
+	return {
+		restrict : 'AE', 
+		link : function(scope, element, attributes){
+			//console.log(element.find("deployeur"));
+			//console.log(element.find("deployable"));	
+			var deployeur = 	element.find(".deployeur");
+			var deployable = 	element.find(".deployable .imageControleSticker");	
+			deployable.hide();
+
+			deployeur
+			.on("click", function(){
+				//console.log(deployable);
+				deployable.slideToggle(400);
+			})
+
+		}		
+	}
+
+}]);
 
 
 /******************************************************************************/
@@ -239,7 +307,8 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 /******************************************************************************/
 
 
-module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', function($q, servicesCacheStickit){
+module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http', 
+	function($q, servicesCacheStickit, $http){
 
 	var les_services_stickit = {};
 	var counterStickers = 0;
@@ -247,43 +316,80 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', functio
 
 
 
-	var sticker = function(){
-		var datetime;
-		var numeroSticker;	
-		var texte, top, width, left, height, bgColor, fontFamily, fontWeight, fontStyle, textDecoration;  
+
+
+	les_services_stickit.sauverGroupeStickers  = function(id){
+		/*var sticker = {
+			style : "",
+			texte : ""
+		};*/
+
+
+		var url = "/stickit/groupe-stickers/" + id + "/";
+		var elementsJSON = $.map($("#gr-stick-" + id).children(), function(elementDOMSticker, cle){
+			var donnees = {};
+			contenuSticker = $(elementDOMSticker).find(".contenuSticker");
+			donnees.style = contenuSticker.attr("style");
+			donnees.contenu = contenuSticker.html();
+			//console.log(JSON.stringify(donnees));
+			return donnees;
+		});
+		var data = {'id' : id, 'donnees' : elementsJSON};
+		//data[id] = ;
+		//data[id] = );
+		//console.log(elementsJSON);
+		console.log(data);		
+		//console.log(JSON.stringify(data));
+		$http.post(url, data)
+		.success(function(data, status){
+			console.log(JSON.stringify(data));
+		})
+		.error(function(error, status){
+			$("html").html(error);
+			//console.log(error);
+		});/**/
+		//console.log("Je suis le service qui doit les sauver , url : ", url, "!!!!!!!!!!!!!!!");
 	}
+
 
 	les_services_stickit.obtientNumeroValide = function(){
 		return identifiantGroupe_enCours + "_" + ++counterStickers;
 	}
 
-	les_services_stickit.recupereNumeroSticker = function(){
+
+
+	/*var sticker = function(){
+		var datetime;
+		var numeroSticker;	
+		var texte, top, width, left, height, bgColor, fontFamily, fontWeight, fontStyle, textDecoration;  
+	}*/
+	/*les_services_stickit.recupereNumeroSticker = function(){
 		return counterStickers;
-	}
+	}*/
 
 
 
-	/*Dans cette appli, l'identifiant est le jour, et il y a plusieurs sticker pour une journée*/
-	var groupStickers = {};
+	/*Dans cette appli, l'identifiant est le jour, et il y a un groupe de stickers pour une journée
+	var groupStickers = {};*/
 
-	/*Dans cette appli, il y a plusieurs journées, qu'on stocke dans le tableau clusterOfGroupStickers*/
-	var clusterOfGroupStickers = new Array();
+	/*Dans cette appli, il y a plusieurs journées, qu'on stocke dans le tableau clusterOfGroupStickers
+	var clusterOfGroupStickers = new Array();*/
 
 
 	/*Dans cette appli, la fonction addSticker ajoute un sticker à une journée, 
-	l'identifiant groupe est la journée concernée*/
+	l'identifiant groupe est la journée concernée
 	les_services_stickit.addSticker = function(identifiantGroupe, numeroSticker){
 
-	}
+	}*/
 
 	/*Dans cette appli, la fonction addOrGetGroupStickers ajoute un groupe de stickers, 
 	s'il n'existe pas, puis le retourne. 
-	L'identifiant groupe est la journée concernée*/
+	L'identifiant groupe est la journée concernée
 	les_services_stickit.chargeLesStickers = function(identifiantGroupe){
 
 		var elementPresent = false;	
 		for (var item in clusterOfGroupStickers){
-			/**/if (item == identifiantGroupe){
+			if (item == identifiantGroupe){
 				elementPresent = true;
 				break;
 			}
@@ -295,18 +401,58 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', functio
 			clusterOfGroupStickers[identifiantGroupe] = {};
 
 		}
-	}
+	}*/
 
 	/*On sauvegarde l'état du sticker en local, en lui passant une liste de propriétés sous forme de dictionnaire*/
-	les_services_stickit.memoriseSticker = function(valeursAMemoriser, referenceSticker){
-	}
-
+	/*les_services_stickit.memoriseSticker = function(valeursAMemoriser, referenceSticker){
+	}*/
+	/*
 	les_services_stickit.renvoitIdentifiantGroupeEnCours = function(){
 		return identifiantGroupe_enCours;
+	}*/
+
+	les_services_stickit.associeActionsAuxBoutons = function(element, scope){
+
+		scope.bold = false;
+		scope.italic = false;
+		scope.fontsize = 12;
+		scope.stroke = false;
+		scope.underline = false;
+		scope.colortext = "#000000";
+		scope.backgroundcolor = "#ffffff";
+		scope.fontfamily = "Times New Roman";
+
+		var texte_contenu = element.find(".contenuSticker");
+		var bouton_bold = element.find(".b_bold");
+		var bouton_italic = element.find(".b_italic");
+
+		bouton_bold 
+		.on("click", function(event, ui){
+			scope.bold = !scope.bold;
+			var style = scope.bold ? "bold" : "normal";
+			texte_contenu.css({'font-weight' : style});
+			//texte_contenu.html({'font-weight' : style});
+		});
+
+		bouton_italic
+		.on("click", function(event, ui){
+			scope.italic = !scope.italic;
+			var style = scope.italic ? "italic" : "normal";			
+			texte_contenu.css({'font-style' : style});
+			//texte_contenu.html({'font-style' : style});		
+		});
+
 	}
+
+
 
 	return les_services_stickit;
 }]);
+
+
+
+
+
 
 
 module_stickit.factory('servicesCacheStickit', [ '$q', function(){
@@ -314,17 +460,30 @@ module_stickit.factory('servicesCacheStickit', [ '$q', function(){
 	var les_services_cache = {};
 	var cache = {};
 
+	function ObjetStocke(){
+		this.donnees = "";
+		this.modifsNonSauvees = false;
+	}
+
 
 	les_services_cache.miseAJour = "";
 
 
 	les_services_cache.recupereDonnees = function(idRecuperation) {
-		return cache[idRecuperation];
+		//console.log("DESTOCKAGE : ", idRecuperation);		
+		//console.log(cache);
+		return cache[idRecuperation].donnees;
+		//return cache[idRecuperation];
 	}
 
 	les_services_cache.stockeDonnees = function(idRecuperation, donnees){
-		cache[idRecuperation] = donnees;
-		console.log("SAUVEGARDE id " + idRecuperation);
+		console.log("STOCKAGE : ", idRecuperation);
+		var obj = new ObjetStocke();
+		obj.donnees = donnees;		
+		cache[idRecuperation] = obj;
+		//console.log(cache);	
+		//cache[idRecuperation] = donnees;*/		
+		//console.log("SAUVEGARDE id " + idRecuperation);
 	}
 
 	les_services_cache.lectureCache = function(){

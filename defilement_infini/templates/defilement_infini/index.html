@@ -1,4 +1,5 @@
 {% load staticfiles%}
+{% csrf_token %}
 
 <!DOCTYPE html>
 <html>
@@ -7,9 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css"/>	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">	
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	
 </head>
 
  
@@ -17,7 +20,7 @@
 
 	<header>
 		<div class= "header" >
-			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui ! Direction : {* direction *}----
+			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui ! Direction : **--{* bold *}--
 	
 		</div>
 	</header>
@@ -57,17 +60,10 @@
 	<img  direction-gauche src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="arrow leftArrow"  id="leftArrow" >	
 	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="arrow rightArrow" id="rightArrow">
 
-<!--***Présentation cachée**-->
-	<div id="motif-sticker" class="sticker">
-		<div class="indications" id="posX"></div>
-    	<div class="indications" id="posY"></div>
-    </div>	
-
-<!--************************-->	
-</body>
+{% include 'stickit/sticker_controles.html' %}
 
 
-<!---->
+<!--Bibliothèques générales -->
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>	
 	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.min.js"></script>
@@ -77,10 +73,12 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>	
 
 
-
+<!--Bootstrap via angular -->
 	<script type="text/javascript" src="{{ STATIC_URL }}js/angular/configurateur.js"></script>	
+<!--Module defileur, nécessite jquery-->
 	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js"></script>	
+<!--Module stickit, nécessite jquery, jqueryui, jquery-collision, jquery-collision-resizable, jquidcollision-->
 	<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
 
 </html>

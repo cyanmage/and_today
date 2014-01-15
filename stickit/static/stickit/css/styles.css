@@ -43,19 +43,6 @@
 }*/
 
 
-.sticker{
-	width : 200px;
-	height : 80px;
-	background-color: #FFFFFF;
-	border-color : #000000;	
-	border-style: inset;	 		
-	border-width: 1px;
-	left : -500px;
-	top : -500px;
-	position : relative;
-	/*display: none;*/
-	/*visibility: hidden;*/
-}
 
 .container-stickers{
 	width: 70%;
@@ -68,14 +55,15 @@
 	/*position: relative;*/
 }
 
-.sticker-place{
-	border-width: 5px;
-	border-style: outset;
-	background-color: #F3E47C;
-}
+
 
 .sauverLesStickers{
 	position: absolute;
 	margin-left: 100px;
 
 }
+
+
+
+
+

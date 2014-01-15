@@ -1,0 +1,68 @@
+.sticker{
+	width : 250px;
+	height : 110px;
+	/**/background-color: #FFFFFF;
+	border-color : #000000;	
+	border-style: inset;	 		
+	border-width: 1px;
+	left : -500px;
+	top : -500px;
+	position : relative;
+	/*display: none;*/
+	/*visibility: hidden;*/
+}
+
+.sticker-place{
+	border-width: 5px;
+	border-style: outset;
+	/*background-color: #F3E47C;*/
+}
+.titreSticker{
+	position : absolute;
+	margin : 1px;
+	top : -1.5em;
+	left : -1px;
+	width : 2em;
+	height : 1.5em;
+	background-color: #FFFFFF;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	border-width: 1px 1px 0px 1px;
+	border-color: #000000;
+	border-style: solid;
+}
+.contenuSticker{
+	/*height : 85%;
+	width : 90%;
+	padding : 2px;
+	margin : 5% ;
+	margin-left : 2%;
+	margin-top: 1%;*/
+	margin-bottom: 40px;
+	top : 5px;
+	left : 5px;
+	right: 5px;
+	bottom: 5%;
+	position : absolute;
+	z-index: 1250;
+}
+
+
+.contenantSticker{
+	height : 100%;
+	width : 100%;	
+}
+
+#motif-sticker{
+	visibility: hidden;
+}
+
+[contenteditable="true"]{
+ /*padding: 10px; */
+ outline: 3px dashed #CCC; 
+ } 
+
+ [contenteditable="true"]:hover{ 
+ 	background: rgba(255, 255, 153, 1); 
+ 	outline: 3px dashed #0090D2; 
+ }
