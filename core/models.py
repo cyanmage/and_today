@@ -18,7 +18,7 @@ class Post(models.Model):
 		abstract = True
 
 	def __str__(self):
-		return "Date : " +  self.date.strftime('%d %b %Y') + "    , domaine : " + self.domaine.intitule_domaine + "   , contenu tronqué : " + self.contenu[:9]
+		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
 	contenu 			= models.CharField(max_length=300, default="")
 	date 				= models.DateField(default = datetime.now)
@@ -27,12 +27,16 @@ class Post(models.Model):
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
-	style 				= models.TextField(default = "")				
+	style 				= models.TextField(default = "", null = True)		
+
 
 class PostUser(Post):
 	heure 				= models.TimeField(null=True, default=datetime.now())
-	user  				= models.ForeignKey(User, default = User.objects.get(username="no-user").id)
+	#user  				= models.ForeignKey(User, default = User.objects.get(username="no-user").id)
 	#permissions	
+
+	def __str__(self):
+		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
 	class Meta : 
 		verbose_name 		= _('Post utilisateur')
@@ -41,8 +45,11 @@ class PostUser(Post):
 
 
 class PostGenerique(Post):
-	pays  				= models.ForeignKey('Pays', null=True)
-	domaine 			= models.ForeignKey('Domaine', null=True) 
+	pays  				= models.ForeignKey('Pays', null=True, default='NOT')
+	domaine 			= models.ForeignKey('Domaine', null=True, default = 'GEN') 
+
+	def __str__(self):
+		return "Date : " +  self.date.strftime('%d %b %Y') + "    , domaine : " + self.domaine.intitule_domaine + "   , contenu tronqué : " + self.contenu[:9]
 
 	class Meta: 
 		verbose_name 		= _('Post générique') 

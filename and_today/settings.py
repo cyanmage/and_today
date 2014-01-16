@@ -65,7 +65,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'and_today_db',
-        'USER': 'admin_and_today',
+        'USER': 'and_today_connect',
         'PASSWORD': 'andtoday',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
@@ -94,6 +94,6 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 STATICFILES_DIRS = (
-    'I:/sites_web/django/and_today/static',
+    'E:/sites_web/django/and_today/static',
     #os.path.join(PROJECT_PATH, '/static/')
     )

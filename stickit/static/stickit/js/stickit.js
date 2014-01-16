@@ -103,8 +103,6 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			/*    Initialisations    */
 			/*************************/
 			scope._scope = "groupe_stickers";
-			/*scope.bold = "xena la guerriere";
-			console.log(scope.$id);*/
 
 			element.droppable({
 				containment : $("[emplacement='centre']").find(".container-stickers"),
@@ -197,7 +195,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
 				element
-				.attr('id', 'stickerInstance_' + idSticker)
+				.attr('id_client', 'stickerInstance_' + idSticker)
 				.find(".titreSticker").html(idSticker).end()
 				.draggable({
 					cursor : 'move', 
@@ -211,7 +209,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 					}	
 				})
 				.resizable({
-					//handles: "n, e, s, w",
+					handles: "e, s",
 					stop 	: function(event, ui){	$(this).addClass	("collideEnable"); },
 					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },						
 					collision : true,
@@ -331,15 +329,14 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 			contenuSticker = $(elementDOMSticker).find(".contenuSticker");
 			donnees.style = contenuSticker.attr("style");
 			donnees.contenu = contenuSticker.html();
+			donnees.id_client = $(elementDOMSticker).attr("id_client");
+			donnees.id_serveur = $(elementDOMSticker).attr("id_serveur");			
 			//console.log(JSON.stringify(donnees));
 			return donnees;
 		});
-		var data = {'id' : id, 'donnees' : elementsJSON};
-		//data[id] = ;
-		//data[id] = );
-		//console.log(elementsJSON);
+
+		var data = {'id_groupe' : id, 'donnees' : elementsJSON};
 		console.log(data);		
-		//console.log(JSON.stringify(data));
 		$http.post(url, data)
 		.success(function(data, status){
 			console.log(JSON.stringify(data));
