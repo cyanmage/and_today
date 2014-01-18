@@ -1,0 +1,7 @@
+<groupe-stickers id='gr-stick-'>		
+		{% for sticker in stickers %}
+			<div class='sticker stickerCree collideEnable' sticker id_serveur='{{sticker.date|date:"Y-m-d"}}'>
+				{% include 'stickit/sticker_controles.html' %}
+			</div>
+		{% endfor %}
+</groupe-stick

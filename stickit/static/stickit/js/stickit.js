@@ -74,6 +74,10 @@ module_stickit.directive('createSticker', [function(){
 						//copie.css({'background-color' : '#00FF00'});
 						return copie;
 					}
+					, stop : function(event, ui){
+						//console.log("DRAGGABLE : 1) position ", ui.position, ", 2) offset : ", ui.offset);
+						//console.log(ui.helper.attr("style"));
+					}/**//*, ", type : ", ui.helper*/
 				});	
 	
 
@@ -102,7 +106,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			/*************************/
 			/*    Initialisations    */
 			/*************************/
-			scope._scope = "groupe_stickers";
+			//scope._scope = "groupe_stickers";
 
 			element.droppable({
 				containment : $("[emplacement='centre']").find(".container-stickers"),
@@ -110,34 +114,69 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 				drop : function(event, ui){
 
 					if (ui.helper.hasClass("creationSticker")){
+					
+						var 	offsetHelper = ui.helper.offset(), 	
+								offsetContainer = element.offset();
+						var 	x = offsetHelper.left - offsetContainer.left, 
+								y = offsetHelper.top - offsetContainer.top;						
 
+						/*var 	coordonnees = {
+												left  	: offsetHelper.left,// - offsetContainer.left , 
+												top		: offsetHelper.top// - offsetContainer.top
+											};  
+						console.log(coordonnees);*/	
+						
 						var sticker = ui.helper.clone()
 									.attr("sticker", '')
 									.removeClass("creationSticker")
 									.css("z-index", "");
 						sticker.addClass("stickerCree collideEnable");
 						$compile(sticker)(scope);
-  						element.find("groupe-stickers").append(sticker);	
-
-					}//,
+  						//element.find("groupe-stickers").append(sticker);
+  						//element.find("groupe-stickers").append(sticker.offset(ui.helper.offset()));
+  						console.log(sticker.offset());
+  						element.find("groupe-stickers").append(sticker); 						
+  						sticker.offset(ui.helper.offset());
+  						console.log(sticker.offset());
+  						//sticker.appendTo(element.find("groupe-stickers")).offset(ui.helper.offset());
+					}
 				},		
 
 				accept : function(element){
 						return (typeof $(".creationSticker").collision(".collideEnable").html() === "undefined");
-				}
+				},
 
 			});
 
 
 
-		
 			scope.$watch('id', function(newValue, oldValue, scope){
 
 				if (newValue in servicesCacheStickit.lectureCache()){
 					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
 				}
 				else{
-					elementARattacher = $compile("<groupe-stickers style='{position : relative}' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>")(scope);
+					elementARattacher = $compile("<groupe-stickers style='visibility  : hidden' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>")(scope);
+				}
+
+				
+				if (oldValue !==  newValue){
+					elementDetache = element.find("#gr-stick-" + oldValue).detach();
+					servicesCacheStickit.stockeDonnees(oldValue, elementDetache);
+					element.append(elementARattacher);	
+				}
+
+			});
+
+
+		
+			/*scope.$watch('id', function(newValue, oldValue, scope){
+
+				if (newValue in servicesCacheStickit.lectureCache()){
+					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
+				}
+				else{
+					elementARattacher = $compile("<groupe-stickers style='visibility  : hidden' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>")(scope);
 				}
 				element.append(elementARattacher);	
 				
@@ -146,7 +185,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 					servicesCacheStickit.stockeDonnees(oldValue, elementDetache);					
 				}
 
-			});
+			});*/
 
 
 
@@ -194,8 +233,11 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
-				element
-				.attr('id_client', 'stickerInstance_' + idSticker)
+
+				if (!element.attr('id_serveur'))	
+					element.attr('id_client', 'stickerInstance_' + idSticker);
+
+				element				
 				.find(".titreSticker").html(idSticker).end()
 				.draggable({
 					cursor : 'move', 
@@ -317,36 +359,45 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 	les_services_stickit.sauverGroupeStickers  = function(id){
-		/*var sticker = {
-			style : "",
-			texte : ""
-		};*/
-
 
 		var url = "/stickit/groupe-stickers/" + id + "/";
-		var elementsJSON = $.map($("#gr-stick-" + id).children(), function(elementDOMSticker, cle){
-			var donnees = {};
-			contenuSticker = $(elementDOMSticker).find(".contenuSticker");
-			donnees.style = contenuSticker.attr("style");
-			donnees.contenu = contenuSticker.html();
-			donnees.id_client = $(elementDOMSticker).attr("id_client");
-			donnees.id_serveur = $(elementDOMSticker).attr("id_serveur");			
-			//console.log(JSON.stringify(donnees));
-			return donnees;
-		});
+		var stickersASauver  = $("#gr-stick-" + id).children();
 
-		var data = {'id_groupe' : id, 'donnees' : elementsJSON};
-		console.log(data);		
-		$http.post(url, data)
+		var elementsJSON = $.map(stickersASauver, function(elementDOMSticker, cle){
+			contenuSticker = $(elementDOMSticker).find(".contenuSticker")
+			return  donnees = {
+				'style' 	: contenuSticker.attr("style"),
+				contenu 	: contenuSticker.html(),
+				id_client 	: $(elementDOMSticker).attr("id_client"),
+				id_serveur 	: $(elementDOMSticker).attr("id_serveur")
+			}
+		});
+//id_client="stickerInstance__2"
+
+		var donneesEnvoyees = {'id_groupe' : id, 'donnees' : elementsJSON};
+		console.log(donneesEnvoyees);	
+
+		$http.post(url, donneesEnvoyees)
 		.success(function(data, status){
-			console.log(JSON.stringify(data));
+			var associations = data.associations
+			for (id_client in associations){
+				//console.log($("[id_client='" + id_client + "']"));
+				$("[id_client='" + id_client + "']")
+				.attr("id_client", "")
+				.attr("id_serveur", associations[id_client]); 
+				console.log("id_client : ", id_client, "   ;   id_serveur : ", associations[id_client]);				
+			}
+			console.log(data.msg);
+			//console.log(stickersASauver);
 		})
 		.error(function(error, status){
 			$("html").html(error);
 			//console.log(error);
-		});/**/
-		//console.log("Je suis le service qui doit les sauver , url : ", url, "!!!!!!!!!!!!!!!");
+		});
+
 	}
+
+
 
 
 	les_services_stickit.obtientNumeroValide = function(){

@@ -5,9 +5,9 @@
 	border-color : #000000;	
 	border-style: inset;	 		
 	border-width: 1px;
-	left : -500px;
+	/*left : -500px;
 	top : -500px;
-	position : relative;
+	position : absolute;*/
 	/*display: none;*/
 	/*visibility: hidden;*/
 }
@@ -55,6 +55,9 @@
 
 #motif-sticker{
 	visibility: hidden;
+	position : relative;
+	left : -500px;
+	top : -500px;	/**/
 }
 
 [contenteditable="true"]{

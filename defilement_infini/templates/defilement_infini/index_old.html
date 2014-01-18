@@ -20,7 +20,7 @@
 
 	<header>
 		<div class= "header" >
-			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui ! {{STATIC_URL}}
+			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui !111111 {{STATIC_URL}}
 	
 		</div>
 	</header>
@@ -32,7 +32,7 @@
 			<div ng-controller="controleurPanneau">	
 				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0">
 			
-					{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_gauche" %}		
+					{% include 'defilement_infini/panneau_principal.html' with	nom_cham="champ_gauch" date ="toto"%}		
 
 				</panneau-defileur/>
 			</div>	
@@ -40,7 +40,7 @@
 			<div ng-controller="controleurPanneau">	
 				<panneau-defileur  emplacement = "centre" class = "panneau_1 panneau transitionDefileur" 	id = "panel1">
 
-						{% include 'defilement_infini/panneau_principal.html' with nom_champ="champ_centre" %}
+						{% include 'defilement_infini/panneau_principal.html' with nom_cham="champ_centr" date="toto"%}
 		
 				</panneau-defileur/>
 			</div>
@@ -48,7 +48,7 @@
 			<div ng-controller="controleurPanneau">			
 				<panneau-defileur  emplacement = "droite" class = "panneau_2 panneau transitionDefileur" 	id = "panel2">
 				
-						{% include 'defilement_infini/panneau_principal.html' with	nom_champ="champ_droite" %}
+						{% include 'defilement_infini/panneau_principal.html' with nom_cham="champ_droit" date="toto"%}
 					
 				</panneau-defileur/>					
 			</div>	

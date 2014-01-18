@@ -27,15 +27,20 @@ class GroupeStickerView(View):
             id_serveur =  sticker.get('id_serveur')
             style = sticker.get('style')
 
-            #print('id_client : ', id_client, 'id_serveur : ', id_serveur)
-            post = None
-            if (id_serveur != None and id_client == None):
+            print('id_client : ', id_client, 'id_serveur : ', id_serveur)
+
+            if (id_serveur and not(id_client)):
                 print("id_serveur mais pas id_client")
                 post = PostGenerique(contenu = contenu, style = style, pk = id_serveur)
-            elif (id_serveur == None and id_client != None):
+                post.save()
+            elif (not(id_serveur) and id_client):
                 print("id_client mais pas id_serveur")
                 post = PostGenerique(contenu = contenu, style = style)
-            yield post
+                post.save()
+                id_serveur = post.id
+                #print(id_serveur)
+
+            yield id_client, id_serveur
 
     def post(self, request, date):
         data  = json.loads(request.body.decode('utf-8'))
@@ -44,11 +49,19 @@ class GroupeStickerView(View):
         #style = data.get('donnees').get('style')
         generateur = self.saveSticker(posts)
 
+        ids_associes = []
+        reponse = {}
+        reponse['msg'] = "Sauvegarde des stickers " + "\n"
         for element in generateur:
-            if (element):
-                element.save()
-            print(element)
+            if element[0]:
+                ids_associes.append(element)
+                reponse['msg'] += "creation id_client : " + element[0] + " - id_serveur : " + str(element[1]) + '\n'
+            else:
+                reponse['msg'] += " uniquement id_serveur : " + element[1] + '\n'
+            #print(element)
+        #print({'msg' : "message retour", 'association' : dict(ids_associes)})
 
+        reponse['associations'] = dict(ids_associes)
         #[print(self.saveSticker(sticker)) for sticker in stickers]
         #post.save()
-        return HttpResponse(json.dumps(posts))
+        return HttpResponse(json.dumps(reponse))

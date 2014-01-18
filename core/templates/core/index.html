@@ -1,0 +1,87 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype  de fenêtres coulissants  </title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css"/>	
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">	
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	
+</head>
+
+ 
+<body ng-app="appli" style="overflow: hidden" ng-controller="controleurDefileur" >
+
+	<header>
+		<div class= "header" >
+			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui ! {{STATIC_URL}}
+	
+		</div>
+	</header>
+
+
+	<defileur class = "defileur">	
+		<div>	
+			
+			<div ng-controller="controleurPanneau">	
+				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0">
+			
+					{% include 'core/panneau_principal.html' with	nom_champ="champ_gauche" stickers=stickers_yesterday%}		
+
+				</panneau-defileur/>
+			</div>	
+
+			<div ng-controller="controleurPanneau">	
+				<panneau-defileur  emplacement = "centre" class = "panneau_1 panneau transitionDefileur" 	id = "panel1">
+
+						{% include 'core/panneau_principal.html' with nom_champ="champ_centre" stickers=stickers_today%}
+		
+				</panneau-defileur/>
+			</div>
+
+			<div ng-controller="controleurPanneau">			
+				<panneau-defileur  emplacement = "droite" class = "panneau_2 panneau transitionDefileur" 	id = "panel2">
+				
+						{% include 'core/panneau_principal.html' with	nom_champ="champ_droite" stickers=stickers_tomorrow%}
+					
+				</panneau-defileur/>					
+			</div>	
+
+
+		</div>
+	</defileur>
+
+	<img  direction-gauche src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="arrow leftArrow"  id="leftArrow" >	
+	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="arrow rightArrow" id="rightArrow">
+
+<div id="motif-sticker" class="sticker">
+	{% include 'stickit/sticker_controles.html' %}
+</div>	
+
+
+
+<!--Bibliothèques générales -->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision-resizable.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-draggable-collision.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>	
+
+
+<!--Bootstrap via angular -->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular/configurateur.js"></script>	
+<!--Module defileur, nécessite jquery-->
+	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js"></script>	
+<!--Module stickit, nécessite jquery, jqueryui, jquery-collision, jquery-collision-resizable, jquidcollision-->
+	<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
+
+</html>

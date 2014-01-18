@@ -27,7 +27,9 @@ class Post(models.Model):
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
-	style 				= models.TextField(default = "", null = True)		
+	style 				= models.TextField(default = "", null = True)
+	#left  				= models.IntegerField(default = 0)	
+	#top 				= models.IntegerField(default = 0)	
 
 
 class PostUser(Post):
@@ -45,11 +47,14 @@ class PostUser(Post):
 
 
 class PostGenerique(Post):
-	pays  				= models.ForeignKey('Pays', null=True, default='NOT')
-	domaine 			= models.ForeignKey('Domaine', null=True, default = 'GEN') 
+	pays  				= models.ForeignKey('Pays', null=True, default=0)
+	domaine 			= models.ForeignKey('Domaine', null=True, default = 0) 
 
 	def __str__(self):
-		return "Date : " +  self.date.strftime('%d %b %Y') + "    , domaine : " + self.domaine.intitule_domaine + "   , contenu tronqué : " + self.contenu[:9]
+		#return "999999999999999"
+		return "Date : " +  self.date.strftime('%d %b %Y') \
+		+ "    , domaine : " + self.domaine.intitule_domaine \
+		+ "   , contenu tronqué : " + self.contenu[:9]
 
 	class Meta: 
 		verbose_name 		= _('Post générique') 

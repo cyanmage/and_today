@@ -18,8 +18,8 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 	$scope.direction = "" ;	
 
 	$scope.serviceIds = serviceIds;
-	$scope.ids = { precedent : serviceIds.getId(-1), enCours :  serviceIds.getId(0), suivant : serviceIds.getId(1)};
-	console.log($scope.ids);
+	//$scope.ids = { precedent : serviceIds.getId(-1), enCours :  serviceIds.getId(0), suivant : serviceIds.getId(1)};
+	//console.log($scope.ids);
 
 	//console.log ('precedent : ' + $scope.idPrecedent + " , en cours  :  " + $scope.idEnCours + ", suivant : " + $scope.idSuivant );
 
