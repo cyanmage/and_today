@@ -18,30 +18,12 @@ module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds', 's
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
 
 	$scope.sauverlesStickers = function(){
-
-		console.log("NOUS ALLONS LES SAUVER ! ");
-		servicesStickit.sauverGroupeStickers($scope.id);
+		servicesStickit.sauverStickersDunGroupe($scope.id);
 	}
-
-	//$scope.id = data.id;
 
 	$scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
 		$scope.id = data.id;
-		console.log($scope.id);
 	});
-
-	$scope.changeMode = function() {
-		if ($scope.mode == "creation"){
-			$(".stickerCree") && $(".stickerCree").draggable('disable');
-			$scope.mode = "modification";
-		}
-		else if ($scope.mode == "modification"){
-			$(".stickerCree") && $(".stickerCree").draggable('enable');			
-			$scope.mode = "creation";
-		}
-
-	}
-
 
 }]);
 
@@ -50,7 +32,15 @@ module_stickit.controller("controleurStickit", ['$q', '$scope', 'serviceIds', 's
 
 
 
+/*#############################             ###############################          ################################*/
+/*#############################             ###############################          ################################*/
+/*#############################             ###############################          ################################*/
 
+//													  DIRECTIVES													 //
+
+/*#############################             ###############################          ################################*/
+/*#############################             ###############################          ################################*/
+/*#############################             ###############################          ################################*/
 
 
 
@@ -90,8 +80,8 @@ module_stickit.directive('createSticker', [function(){
 
 
 
-module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit',
-	function($compile, servicesCacheStickit){
+module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit', 'servicesStickit', '$q', '$timeout',
+	function($compile, servicesCacheStickit, servicesStickit, $q, $timeout){
 
 	return {
 		restrict : 'AE', 
@@ -99,6 +89,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			id : "="
 		},
 		replace : true,
+		priority : 10,
 		transclude : true,
 		template : "<div id='id' ng-transclude><u>{* id *}</u></div>",
 		link : function(scope, element, attributes){
@@ -108,63 +99,120 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			/*************************/
 			//scope._scope = "groupe_stickers";
 
-			element.droppable({
-				containment : $("[emplacement='centre']").find(".container-stickers"),
-				tolerance : 'fit',
-				drop : function(event, ui){
-
-					if (ui.helper.hasClass("creationSticker")){
-					
-						var 	offsetHelper = ui.helper.offset(), 	
-								offsetContainer = element.offset();
-						var 	x = offsetHelper.left - offsetContainer.left, 
-								y = offsetHelper.top - offsetContainer.top;						
-
-						/*var 	coordonnees = {
-												left  	: offsetHelper.left,// - offsetContainer.left , 
-												top		: offsetHelper.top// - offsetContainer.top
-											};  
-						console.log(coordonnees);*/	
-						
-						var sticker = ui.helper.clone()
-									.attr("sticker", '')
-									.removeClass("creationSticker")
-									.css("z-index", "");
-						sticker.addClass("stickerCree collideEnable");
-						$compile(sticker)(scope);
-  						//element.find("groupe-stickers").append(sticker);
-  						//element.find("groupe-stickers").append(sticker.offset(ui.helper.offset()));
-  						console.log(sticker.offset());
-  						element.find("groupe-stickers").append(sticker); 						
-  						sticker.offset(ui.helper.offset());
-  						console.log(sticker.offset());
-  						//sticker.appendTo(element.find("groupe-stickers")).offset(ui.helper.offset());
-					}
-				},		
-
-				accept : function(element){
-						return (typeof $(".creationSticker").collision(".collideEnable").html() === "undefined");
-				},
-
-			});
+				element.droppable({
+					containment : $("[emplacement='centre']").find(".container-stickers"),
+					tolerance : 'fit',
+					drop : function(event, ui){
+	
+						if (ui.helper.hasClass("creationSticker")){
+							var sticker = ui.helper.clone()
+										.attr("sticker", '')
+										.removeClass("creationSticker")
+										.css("z-index", "");
+							sticker.addClass("stickerCree collideEnable");
+							$compile(sticker)(scope);
+	
+  							element.find("groupe-stickers").append(sticker); 						
+  							sticker.offset(ui.helper.offset());
+						}
+					},		
+					accept : function(element){
+							return (typeof $(".creationSticker").collision(".collideEnable").html() === "undefined");
+					},
+	
+				});
 
 
+			/*function attacheDetache(oldValue, elementARattacher){
+				elementDetache = element.find("#gr-stick-" + oldValue).detach();
+				servicesCacheStickit.stockeDonnees(oldValue, elementDetache);
+				element.append(elementARattacher);					
+			}*/
 
 			scope.$watch('id', function(newValue, oldValue, scope){
 
+				var elementARattacher = "";
+				var deferred = $q.defer();
+
 				if (newValue in servicesCacheStickit.lectureCache()){
+					//on a récupéré les stickers d'une page depuis le cache client juste au départ du défilement
+					console.log("*****RECUP STICKERS DEPUIS LE CACHE CLIENT");
 					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
+					deferred.resolve(elementARattacher);
 				}
 				else{
-					elementARattacher = $compile("<groupe-stickers style='visibility  : hidden' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>")(scope);
+					if (oldValue !== newValue){
+						//console.log("===================================", newValue);							
+						servicesStickit.recupereStickers(newValue)
+							.then(function(data){
+								//on a récupéré les stickers d'une page depuis le serveur juste au départ du défilement
+								deferred.resolve(data);
+								console.log("-----RECUP STICKERS DEPUIS LE SERVEUR");	
+								//console.log(promise);															
+							}, function(error){
+								// Par défaut, on créé un groupe stickers, on passe donc en resolve la promise, pas en reject
+								data = "<groupe-stickers style='visibility  : hidden' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>";
+								deferred.resolve(data);
+								console.log("+++++REMPLISSAGE PAR DEFAUT");									
+								//A AMELIORER POUR PRENDRE EN COMPTE LE CAS OU IL Y A UN REEL PROBLEME 
+							});
+					}
+					else {
+						//console.log("####################################", newValue);						
+						deferred.reject();  //la page est chargée pour la première fois, le serveur a déjà chargé les stickers
+						console.log("~~~~~~ON CHARGE DEPUIS LA PREMIERE FOIS", newValue);						
+					}
 				}
 
-				
-				if (oldValue !==  newValue){
-					elementDetache = element.find("#gr-stick-" + oldValue).detach();
-					servicesCacheStickit.stockeDonnees(oldValue, elementDetache);
-					element.append(elementARattacher);	
+				deferred.promise
+				.then(function(_elementARattacher){
+					/*if (_elementARattacher){
+						_elementARattacher = $compile(_elementARattacher)(scope);					
+						if (oldValue !==  newValue){*/
+							console.log("XXXXXXXXXXXXXX DETACH  : ", oldValue, " ATTACH : ", newValue, " XXXXXXXXXXXXXX");
+							_elementDetache = element.find("#gr-stick-" + oldValue).detach();
+							servicesCacheStickit.stockeDonnees(oldValue, _elementDetache);
+
+							_elementARattacher = $compile(_elementARattacher)(scope);
+							console.log(_elementARattacher);
+							element.append(_elementARattacher);	
+							
+					/*	}						
+					}*/
+				});
+
+
+/*				//console.log("mise a jour panneau " + newValue);
+				var promise = $q.when('start'), elementARattacher = "";				
+				if (newValue in servicesCacheStickit.lectureCache()){
+					promise = servicesCacheStickit.recupereDonnees(newValue);
 				}
+				else{
+					if (oldValue !== newValue){
+						promise = servicesStickit.recupereStickers(newValue);
+						//elementARattacher = $compile(elementARattacher)(scope);
+						//console.log(elementARattacher);	
+					}
+				}
+
+				promise
+				.then(function(data){
+					elementARattacher = data;
+				}, function(error){
+					elementARattacher = "<groupe-stickers style='visibility  : hidden' id='gr-stick-" + newValue + "'>" + newValue + "</groupe-stickers>";
+				})
+				.done(function(){
+					elementARattacher = $compile(elementARattacher)(scope);					
+					if (oldValue !==  newValue){
+						elementDetache = element.find("#gr-stick-" + oldValue).detach();
+						servicesCacheStickit.stockeDonnees(oldValue, elementDetache);
+						element.append(elementARattacher);	
+					}					
+				});*/
+					
+
+				
+
 
 			});
 
@@ -222,8 +270,8 @@ module_stickit.directive('groupeStickers', ['servicesCacheStickit',
 }]);
 
 
-module_stickit.directive('sticker', ['servicesStickit', '$compile', 
-	function(lesServicesStickit, $compile){
+module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
+	function(lesServicesStickit, $compile, $timeout){
 
 	return {
 		restrict : 'A', 
@@ -234,14 +282,16 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 		link : function(scope, element, attributes){
 				var idSticker = lesServicesStickit.obtientNumeroValide();
 
+			$timeout(function(){
 				if (!element.attr('id_serveur'))	
 					element.attr('id_client', 'stickerInstance_' + idSticker);
-
+				//console.log("YOUPIIIIII " + element.attr('id_serveur'));
+				//console.log(element.parents(".container-stickers"));
 				element				
 				.find(".titreSticker").html(idSticker).end()
 				.draggable({
 					cursor : 'move', 
-					containment : $("[emplacement='centre']").find(".container-stickers"),	
+					containment : element.parents(".container-stickers"),	
 					zIndex: 100, 
 					preventCollision : true,
    					obstacle: ".obstacles, .collideEnable",					
@@ -256,13 +306,13 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',
 					start 	: function(event, ui){	$(this).removeClass	("collideEnable"); },						
 					collision : true,
 					obstacle : ".obstacles, .collideEnable",					
-					containment : $("[emplacement='centre']").find(".container-stickers"),
+					containment : element.parents(".container-stickers"),
 					minHeight : 80,
 					minWidth : 200,
 					maxHeight : 160,
 					maxWidth: 250,					
 				})
-
+			});
 
 				/*var	contenant = $(this).find(".contenantSticker");
 
@@ -315,7 +365,7 @@ module_stickit.directive('controle-sticker', ['servicesStickit', '$compile',
 
 module_stickit.directive('colonneControle', [ 'servicesStickit', '$compile',
 	function(servicesStickit, $compile){
-	console.log("colonne !!! ")		
+	//console.log("colonne !!! ")		
 	return {
 		restrict : 'AE', 
 		link : function(scope, element, attributes){
@@ -356,20 +406,48 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 
+	les_services_stickit.recupereStickers = function(id){
+		var deferred = $q.defer();
+		//console.log("demande HTTP de recuperation stickers ; envoi imminent, vous etes sur le tarmac : " + id);
+		var url = "/stickit/groupe-stickers/" + id + "/";
 
+		$http.get(url)
+		.success(function(data, status){
+			//console.log("DONNEES RECUPEREES POUR CETTE DATE : ");
+			//console.log(data);
+			deferred.resolve(data);
+		})
+		.error(function(error, status){
+			$("html").html(error);
+			deferred.reject();
+		});
 
-	les_services_stickit.sauverGroupeStickers  = function(id){
+		//console.log("DONNEES RECUPEREES POUR CETTE DATE : ");
+
+		return deferred.promise;
+
+	}
+
+	les_services_stickit.sauverStickersDunGroupe  = function(id){
 
 		var url = "/stickit/groupe-stickers/" + id + "/";
 		var stickersASauver  = $("#gr-stick-" + id).children();
 
 		var elementsJSON = $.map(stickersASauver, function(elementDOMSticker, cle){
-			contenuSticker = $(elementDOMSticker).find(".contenuSticker")
+			elementSticker = $(elementDOMSticker);
+			contenuSticker = elementSticker.find(".contenuSticker");
+			//contenantSticker = $(elementDOMSticker).find(".contenantSticker");
+			//console.log($(elementDOMSticker).position());
 			return  donnees = {
-				'style' 	: contenuSticker.attr("style"),
-				contenu 	: contenuSticker.html(),
-				id_client 	: $(elementDOMSticker).attr("id_client"),
-				id_serveur 	: $(elementDOMSticker).attr("id_serveur")
+				'style' 		: contenuSticker.attr("style"),
+				'contenu' 		: contenuSticker.html(),
+				'top' 			: elementSticker.position().top,
+				'left' 			: elementSticker.position().left,
+				'width'			: elementSticker.width(),	
+				'height'		: elementSticker.height(),				
+
+				'id_client' 	: $(elementDOMSticker).attr("id_client"),
+				'id_serveur' 	: $(elementDOMSticker).attr("id_serveur")
 			}
 		});
 //id_client="stickerInstance__2"
@@ -406,58 +484,6 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 
-	/*var sticker = function(){
-		var datetime;
-		var numeroSticker;	
-		var texte, top, width, left, height, bgColor, fontFamily, fontWeight, fontStyle, textDecoration;  
-	}*/
-	/*les_services_stickit.recupereNumeroSticker = function(){
-		return counterStickers;
-	}*/
-
-
-
-	/*Dans cette appli, l'identifiant est le jour, et il y a un groupe de stickers pour une journée
-	var groupStickers = {};*/
-
-	/*Dans cette appli, il y a plusieurs journées, qu'on stocke dans le tableau clusterOfGroupStickers
-	var clusterOfGroupStickers = new Array();*/
-
-
-	/*Dans cette appli, la fonction addSticker ajoute un sticker à une journée, 
-	l'identifiant groupe est la journée concernée
-	les_services_stickit.addSticker = function(identifiantGroupe, numeroSticker){
-
-	}*/
-
-	/*Dans cette appli, la fonction addOrGetGroupStickers ajoute un groupe de stickers, 
-	s'il n'existe pas, puis le retourne. 
-	L'identifiant groupe est la journée concernée
-	les_services_stickit.chargeLesStickers = function(identifiantGroupe){
-
-		var elementPresent = false;	
-		for (var item in clusterOfGroupStickers){
-			if (item == identifiantGroupe){
-				elementPresent = true;
-				break;
-			}
-		}
-		
-		identifiantGroupe_enCours = identifiantGroupe;
-
-		if (!elementPresent){
-			clusterOfGroupStickers[identifiantGroupe] = {};
-
-		}
-	}*/
-
-	/*On sauvegarde l'état du sticker en local, en lui passant une liste de propriétés sous forme de dictionnaire*/
-	/*les_services_stickit.memoriseSticker = function(valeursAMemoriser, referenceSticker){
-	}*/
-	/*
-	les_services_stickit.renvoitIdentifiantGroupeEnCours = function(){
-		return identifiantGroupe_enCours;
-	}*/
 
 	les_services_stickit.associeActionsAuxBoutons = function(element, scope){
 
@@ -502,8 +528,8 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 
-
-module_stickit.factory('servicesCacheStickit', [ '$q', function(){
+module_stickit.factory('servicesCacheStickit', [ '$q', 
+	function($q){
 
 	var les_services_cache = {};
 	var cache = {};
@@ -518,18 +544,21 @@ module_stickit.factory('servicesCacheStickit', [ '$q', function(){
 
 
 	les_services_cache.recupereDonnees = function(idRecuperation) {
-		//console.log("DESTOCKAGE : ", idRecuperation);		
-		//console.log(cache);
-		return cache[idRecuperation].donnees;
-		//return cache[idRecuperation];
+		/*console.log("DESTOCKAGE : ", idRecuperation);		
+		console.log(cache);
+		var deferred = $q.defer();
+		deferred.resolve(cache[idRecuperation].donnees);
+		return deferred.promise;*/
+		return cache[idRecuperation];
+		//return cache[idRecuperation].donnees;
 	}
 
 	les_services_cache.stockeDonnees = function(idRecuperation, donnees){
-		console.log("STOCKAGE : ", idRecuperation);
-		var obj = new ObjetStocke();
-		obj.donnees = donnees;		
-		cache[idRecuperation] = obj;
-		//console.log(cache);	
+		//console.log("STOCKAGE : ", idRecuperation);
+		//var obj = new ObjetStocke();
+		//obj.donnees = donnees;		
+		cache[idRecuperation] = donnees;
+		console.log(cache);	
 		//cache[idRecuperation] = donnees;*/		
 		//console.log("SAUVEGARDE id " + idRecuperation);
 	}

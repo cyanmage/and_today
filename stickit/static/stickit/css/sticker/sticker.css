@@ -55,7 +55,7 @@
 
 #motif-sticker{
 	visibility: hidden;
-	position : relative;
+	position : absolute;
 	left : -500px;
 	top : -500px;	/**/
 }

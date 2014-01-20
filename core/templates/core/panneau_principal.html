@@ -1,10 +1,8 @@
 
 		<span class = "sous-titre">	
 			<div class="champDate" id="date_{{numero_panneau}}"> 
-				<date-du-jour>
-					//{{stickers|length}}--
+					Nombre de stickers pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>
                                    
-				</date-du-jour>
 			</div>
 		</span>
 
@@ -17,9 +15,11 @@
 					  	<img create-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_2.jpg" class="creation_sticker" />
 					</div>
 					<div class="span1">
+
 						<!--<img modigy-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}['creation']"/>-->
 					</div>
-					<div class="offset2 span1">
+					<div class="offset2 span2">	
+										<date-du-jour class='dateDuJour' date= "id">{{id_date}}</date-du-jour>
 						<!--<div class="stickit_controles_sticker" ng-include="'heading-template'"></div>	
 
 

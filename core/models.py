@@ -28,8 +28,10 @@ class Post(models.Model):
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
 	style 				= models.TextField(default = "", null = True)
-	#left  				= models.IntegerField(default = 0)	
-	#top 				= models.IntegerField(default = 0)	
+	left  				= models.IntegerField(default = 0)	
+	top 				= models.IntegerField(default = 0)	
+	width  				= models.IntegerField(default = 200)
+	height  			= models.IntegerField(default = 150)	
 
 
 class PostUser(Post):

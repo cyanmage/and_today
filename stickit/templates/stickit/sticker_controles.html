@@ -1,11 +1,7 @@
 <!--*** motif de sticker qui va être appliqué **-->
 <div class="contenantSticker">
-
-	<div class="contenuSticker" contentEditable='true' style='{{sticker.style}}'>
-		{{sticker.contenu}}
-	</div>
-
-	<div class="titreSticker">{{sticker.date|date:"Y-m-d"}}</div>
+	<div class="contenuSticker" contentEditable='true' style='{{sticker.style}}'>{{sticker.contenu}}</div>
+	<div class="titreSticker"></div>
 
 	<controleSticker id="controle_sticker" class="controle_sticker">
 	 	<div class="controle_sticker">
@@ -15,7 +11,7 @@
 		 			<img  class= "imageControleSticker b_bold" src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" />
 		 			<img  class= "imageControleSticker b_italic" src="{{STATIC_URL}}stickit/images/controles_sticker/		fonteItalic.jpg" />	
 		 		</div>
-		 		</div>	
+		 	</div>
 		 	<div class="colonne" colonne-controle>
 				<img  class= "imageControleSticker deployeur" src="{{STATIC_URL}}stickit/images/controles_sticker/fontecolor2_t.jpg" />
 			</div>	 	

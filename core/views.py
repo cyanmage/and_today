@@ -17,7 +17,7 @@ def home(request):
     one_day =  datetime.timedelta(days=1)
     tomorrow = today + one_day
     yesterday = today - one_day
-    print(yesterday.strftime("%d/%m/%Y"), today, tomorrow, sep="\n")
+    print(yesterday, today, tomorrow, sep="\n")
     stickers_today = PostGenerique.objects.filter(date = today)
     stickers_yesterday = PostGenerique.objects.filter(date = yesterday)
     stickers_tomorrow = PostGenerique.objects.filter(date = tomorrow)
@@ -25,6 +25,9 @@ def home(request):
     #context = request
     return render(request, "core/index.html", {'stickers_yesterday' : stickers_yesterday,
                                       'stickers_today' : stickers_today,
-                                      'stickers_tomorrow' : stickers_tomorrow
+                                      'stickers_tomorrow' : stickers_tomorrow,
+                                      'yesterday' : yesterday.isoformat(),
+                                      'today' : today.isoformat(),
+                                      'tomorrow' : tomorrow.isoformat()
                                       })
     #return render(request, "core/index.html" )
