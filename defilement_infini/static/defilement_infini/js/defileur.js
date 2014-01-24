@@ -41,17 +41,6 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 }]);
 
 
-module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
-	function($scope, $q, serviceIds){
-
-	$scope.controleur = "controleur panneau ";
-
-	$scope.$on('PANNEAU.DEMANDE_ID', function(event, data){
-		//console.log("emplacement : " + data.emplacement  + ",  offset : " + data.offset + ", date associee : " + serviceIds.getId(data.offset));
-		$scope.$broadcast('APPLICATIONS.ENVOI_ID', {'id' : serviceIds.getId(data.offset)});
-	});
-
-}]);
 
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/

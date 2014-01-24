@@ -1,0 +1,24 @@
+<!--*** motif de sticker qui va être appliqué **-->
+
+	<div class="contenantSticker">
+		<div class="contenuSticker" contentEditable='true' style='{{sticker.style}}'  ng-class="{stickerModified : stickerModified}">{{	sticker.contenu}}</div>
+		<div class="titreSticker"  ng-class="{stickerModified : stickerModified}"></div>
+	
+
+		<img src="{{STATIC_URL}}stickit/images/controles_sticker/deleteSticker.png" class="boutonSupprimerSticker"/ ng-click="supprimerSticker(idSticker)">
+
+		<controleSticker id="controle_sticker" class="controle_sticker">
+		 	<div class="controle_sticker">
+		 		<div class="colonne" colonne-controle>
+		 			<img  class= "imageControleSticker deployeur" src="{{STATIC_URL}}stickit/images/controles_sticker/fontepolice_t.jpg" />
+			 		<div class="deployable">
+			 			<img  class= "imageControleSticker b_bold" src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" />
+			 			<img  class= "imageControleSticker b_italic" src="{{STATIC_URL}}stickit/images/controles_sticker/		fonteItalic	.jpg" />	
+			 		</div>
+			 	</div>
+			 	<div class="colonne" colonne-controle>
+					<img  class= "imageControleSticker deployeur" src="{{STATIC_URL}}stickit/images/controles_sticker/fontecolor2_t.jpg" />
+				</div>	 	
+			</div>
+		</controleSticker>	
+	</div>

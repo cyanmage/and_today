@@ -1,7 +1,10 @@
-<groupe-stickers id='gr-stick-{{id_date}}' longueur="{{stickers|length}}">		
+<groupe-stickers id='gr-stick-{{id_date}}' nombrestickers="{{stickers|length}}">		
 		{% for sticker in stickers %}
-			<div class='sticker stickerCree collideEnable' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_serveur='{{sticker.id}}'>
-				{% include 'stickit/sticker_controles.html' %}
-			</div>
+			<div ng-controller='controleur-sticker'>
+				<div class='sticker stickerCree collideEnable' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_serveur='{{sticker.id}}'>
+				{% include 'stickit/motif_sticker.html' %}
+				</div>
+			</div>				
 		{% endfor %}
+
 </groupe-stickers>

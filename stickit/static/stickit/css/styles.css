@@ -47,7 +47,7 @@
 .container-stickers{
 	width: 70%;
 	height: 550px;
-	margin : auto;
+	left : 200px;
 	background-color: #F0F5C0;
 	margin-top: 20px;
 	border-style: outset;

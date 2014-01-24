@@ -21,7 +21,7 @@ class Post(models.Model):
 		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
 	contenu 			= models.CharField(max_length=300, default="")
-	date 				= models.DateField(default = datetime.now)
+	date 				= models.DateField(null = False)
 	journee_generique	= models.BooleanField(default=False)
 	recopie_tel_quel 	= models.BooleanField(default=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 

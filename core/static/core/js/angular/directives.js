@@ -1,4 +1,3 @@
-console.log("me voila");
 var module_core = angular.module('core', []);
 
 module_core.directive('dateDuJour', ['$timeout', function($timeout){
@@ -7,14 +6,17 @@ module_core.directive('dateDuJour', ['$timeout', function($timeout){
 		scope : {
 			date : "="
 		},
-		template : "<div></div>",
-		replace : true,
+		template : "<span ng-transclude></span>",
+		//replace : true,
 		restrict : 'AE',
+		transclude : true,
 		link : function(scope, element, attributes){
 			//console.log("dans la directive date du jour ");
 			scope.$watch('date', function(newValue, oldValue){
-				//console.log("a change !! ", oldValue, "--->", newValue);
-				element.html(newValue);
+					//console.log("a change !! ", oldValue, "--->", newValue);
+				if (newValue !== oldValue){
+					element.html(newValue);					
+				}
 			});
 		}
 	}

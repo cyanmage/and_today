@@ -1,13 +1,13 @@
 
 		<span class = "sous-titre">	
 			<div class="champDate" id="date_{{numero_panneau}}"> 
-					Nombre de stickers pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>
+					Nombre de stickers reçus par le serveur pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>
                                    
 			</div>
 		</span>
 
 
-	<div ng-controller='controleurStickit' class="appli-stickers"> 	
+	<div ng-controller='controleurModuleStickit' class="appli-stickers"> 	
 		<section>
 			<div class="bandeau-des-actions">
 				<div class="row">
@@ -19,7 +19,7 @@
 						<!--<img modigy-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}['creation']"/>-->
 					</div>
 					<div class="offset2 span2">	
-										<date-du-jour class='dateDuJour' date= "id">{{id_date}}</date-du-jour>
+										<date-du-jour class='dateDuJour'>{{id_date}}</date-du-jour>
 						<!--<div class="stickit_controles_sticker" ng-include="'heading-template'"></div>	
 
 
@@ -44,10 +44,10 @@
 		</section>
 
 		<div class="spacer"></div>
-		<section>
-			<div container-stickers class="container-stickers">
-				{% include "stickit/generation_stickers.html" %}
+		<div style="position: relative;">
+			<div container-stickers class="container-stickers">	{% include "stickit/generation_stickers.html" %}			
 			</div>
-		</section>
+
+		</div>
 	</div>
 

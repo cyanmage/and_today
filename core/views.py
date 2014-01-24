@@ -6,11 +6,6 @@ from core.models import PostGenerique
 
 
 
-
-
-
-
-
 def home(request):
     #import pdb; pdb.set_trace()
     today = datetime.date.today()

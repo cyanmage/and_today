@@ -20,7 +20,7 @@
 
 	<header>
 		<div class= "header" >
-			Tu veux laisser une trace de ta propre Histoire ? Ecris-là aujourd'hui ! {{STATIC_URL}}
+			Tu veux laisser une trace de ta propre histoire ? Ecris-là aujourd'hui ! 
 	
 		</div>
 	</header>
@@ -61,14 +61,15 @@
 	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.jpg" class="arrow rightArrow" id="rightArrow">
 
 <div id="motif-sticker" class="sticker">
-	{% include 'stickit/sticker_controles.html' %}
+		{% include 'stickit/motif_sticker.html' %}
 </div>	
 
-
-
 <!--Bibliothèques générales -->
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>-->
+<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>-->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.js"></script>	
+		
 	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision-resizable.js"></script>	
@@ -83,5 +84,5 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js"></script>	
 <!--Module stickit, nécessite jquery, jqueryui, jquery-collision, jquery-collision-resizable, jquidcollision-->
 	<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
-	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/directives.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/core.js"></script>
 </html>

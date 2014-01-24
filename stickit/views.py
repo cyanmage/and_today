@@ -17,7 +17,7 @@ import iso8601
 class GroupeStickerView(View):
 
     @staticmethod
-    def saveSticker(stickers):
+    def saveSticker(stickers, date):
         #print(sticker.get('id_client'))
         for sticker in stickers:
 
@@ -36,12 +36,16 @@ class GroupeStickerView(View):
             if (id_serveur and not(id_client)):
                 print("id_serveur mais pas id_client")
                 #print(PostGenerique.objects.get(id = id_serveur))
-                post = PostGenerique(contenu = contenu, style = style, left = left, top = top, width = width, height = height,  id = id_serveur)
+                post = PostGenerique(contenu = contenu, style = style, \
+                                     left = left, top = top, width = width, height = height,\
+                                     id = id_serveur, date = date)
                 post.save()
                 #print(PostGenerique.objects.get(id = id_serveur))
             elif (not(id_serveur) and id_client):
                 print("id_client mais pas id_serveur")
-                post = PostGenerique(contenu = contenu, style = style, left = left, top = top, width = width, height = height)
+                post = PostGenerique(contenu = contenu, style = style, \
+                                     left = left, top = top, width = width, height = height,\
+                                     date = date)
                 post.save()
                 id_serveur = post.id
                 #print(id_serveur)
@@ -50,12 +54,13 @@ class GroupeStickerView(View):
 
     def post(self, request, date):
 
+        print("SAUVEGARDE")
         data  = json.loads(request.body.decode('utf-8'))
-        date = data.get('id_groupe')
+
         posts = data.get('donnees')
         #style = data.get('donnees').get('style')
-        generateur = self.saveSticker(posts)
-
+        generateur = self.saveSticker(posts, date)
+        print(date)
         print(data)
 
         ids_associes = []
