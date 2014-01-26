@@ -45,7 +45,7 @@ module_core.directive('dateDuJour', ['$timeout', function($timeout){
 		scope : {
 			date : "="
 		},
-		template : "<span ng-transclude date= 'id'></span>",
+		template : "<span ng-transclude ></span>",
 		//replace : true,
 		restrict : 'AE',
 		transclude : true,
@@ -56,7 +56,7 @@ module_core.directive('dateDuJour', ['$timeout', function($timeout){
 				if (newValue !== oldValue){
 					element.html(newValue);					
 				}
-			});
+			});/**/
 		}
 	}
 

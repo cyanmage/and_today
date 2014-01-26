@@ -1,6 +1,6 @@
 .sticker{
-	width : 250px;
-	height : 110px;
+	width : 300px;
+	height : 150px;
 	/**/background-color: #FFFFFF;
 	border-color : #000000;	
 	border-style: inset;	 		
@@ -10,6 +10,21 @@
 	position : absolute;*/
 	/*display: none;*/
 	/*visibility: hidden;*/
+	opacity : 1;
+}
+
+.stickerVisible{
+	/*transition : opacity 1s ease-out;*/
+	-webkit-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	   -moz-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	     -o-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	        transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeInOutQuad */	
+}
+
+
+
+.stickerSupprime{
+	opacity : 0;
 }
 
 .sticker-place{
@@ -22,7 +37,7 @@
 	margin : 1px;
 	top : -1.5em;
 	left : -1px;
-	width : 2em;
+	width : 3em;
 	height : 1.5em;
 	background-color: #FFFFFF;
 	border-top-left-radius: 0.2em;
@@ -45,7 +60,9 @@
 	bottom: 5%;
 	position : absolute;
 	background-color: #FFFFFF;	
-	z-index: 1250;
+	z-index: 100;
+	white-space : pre-line;	
+	visibility: visible	;
 }
 
 
@@ -86,4 +103,9 @@
 
  .boutonSupprimerSticker:hover{
  	cursor : pointer;
- };
+ }
+
+ .imageControleSticker{
+ 	/*width : 25px;
+ 	height:25px;*/
+ }

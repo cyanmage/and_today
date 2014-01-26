@@ -1,7 +1,7 @@
 <!--*** motif de sticker qui va être appliqué **-->
 
 	<div class="contenantSticker">
-		<div class="contenuSticker" contentEditable='true' style='{{sticker.style}}'  ng-class="{stickerModified : stickerModified}">{{	sticker.contenu}}</div>
+		<div class="contenuSticker" contentEditable='true' style='{{sticker.style}}'  ng-class="{stickerModified : stickerModified}">{{	sticker.contenu | safe}}</div>
 		<div class="titreSticker"  ng-class="{stickerModified : stickerModified}"></div>
 	
 
