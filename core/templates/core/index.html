@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}warningMessages/css/warning_messages.css">		
 </head>
 
  
@@ -29,24 +30,24 @@
 	<defileur class = "defileur">	
 		<div>	
 			
-			<div ng-controller="controleurPanneau">	
-				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0">
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'gauche'">	
+				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0"  ng-init="actif = false">
 			
 					{% include 'core/panneau_principal.html' with	nom_champ="champ_gauche" stickers=stickers_yesterday id_date=yesterday %}		
 
 				</panneau-defileur/>
 			</div>	
 
-			<div ng-controller="controleurPanneau">	
-				<panneau-defileur  emplacement = "centre" class = "panneau_1 panneau transitionDefileur" 	id = "panel1">
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'centre'">	
+				<panneau-defileur  emplacement = "centre" class = "panneau_1 panneau transitionDefileur" 	id = "panel1"   ng-init="actif = true">
 
 						{% include 'core/panneau_principal.html' with nom_champ="champ_centre" stickers=stickers_today id_date=today%}
 		
 				</panneau-defileur/>
 			</div>
 
-			<div ng-controller="controleurPanneau">			
-				<panneau-defileur  emplacement = "droite" class = "panneau_2 panneau transitionDefileur" 	id = "panel2">
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'droite'">			
+				<panneau-defileur  emplacement = "droite" class = "panneau_2 panneau transitionDefileur" 	id = "panel2"   ng-init="actif = false" >
 				
 						{% include 'core/panneau_principal.html' with	nom_champ="champ_droite" stickers=stickers_tomorrow id_date=tomorrow%}
 					
@@ -70,12 +71,13 @@
 <!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>-->
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.js"></script>	
 		
-	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>	
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision-resizable.js"></script>	
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-draggable-collision.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>	
-
+	<script type="text/javascript" src="{{ STATIC_URL }}js/dropzone.js"></script>	
 
 <!--Bootstrap via angular -->
 	<script type="text/javascript" src="{{ STATIC_URL }}js/angular/configurateur.js"></script>	
@@ -85,4 +87,6 @@
 <!--Module stickit, nécessite jquery, jqueryui, jquery-collision, jquery-collision-resizable, jquidcollision-->
 	<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
 	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/core.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}warningMessages/js/afficheurMessages.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}busEvent/js/busEvent.js"></script>	
 </html>

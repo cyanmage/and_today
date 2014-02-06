@@ -1,31 +1,44 @@
 
-		<span class = "sous-titre">	
-			<div class="champDate" id="date_{{numero_panneau}}"> 
-					Nombre de stickers reçus par le serveur pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>
-                                   
-			</div>
-		</span>
+	<span class = "sous-titre">	
+		<div class="champDate" id="date_{{numero_panneau}}"> 
+				<!--Nombre de stickers reçus par le serveur pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>-->
+                                
+		</div>
+	</span>
 
 
-	<div ng-controller='controleurModuleStickit' class="appli-stickers"> 	
+	<div ng-controller='controleurModuleStickit' class="appli-stickit"> 	
 		<section>
 			<div class="bandeau-des-actions">
 				<div class="row">
-					<div class="span3" ng-show=" ! modeDesign">
+					<div class="span3" ng-show=" ! options.modeDesign">
 						<button class="btn btn-success" ng-click="toggleModeDesign()">
 							Mode Affichage
 						</button>
 					</div>
-					<div class="span3" ng-show="modeDesign" ng-cloak>
-						<div ng-show="modeDesign" ng-cloak>
+					<div class="span3" ng-show="options.modeDesign" ng-cloak>
+						<div ng-show="options.modeDesign" ng-cloak>
 							<button class="btn btn-danger" ng-click="toggleModeDesign()">
 								Mode  Design
 							</button>
 	
 					  		<img create-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_2.jpg" class="creation_sticker"	 />
 					  	</div>
+
 					</div>
-					<div class="offset4 span2">	
+					
+					<div class="span6">
+						<panneau-warning-messages ng-controller = "controleurModuleAfficheurWarning" class="contenant-warning-message" >
+							<div class='warning-message' ng-show='show_message'>
+							<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
+							<span><b>panneau : </b>{* panneau *}</span>/////
+							<span><b>actif : </b>{* actif *}</span>		
+							<span><b>message : </b>{* warning_message *}</span>	-->				
+							</div>
+						</panneau-warning-messages>	
+					</div>	
+					<!-- style='visibility : hidden' -->				
+					<div class="span2">	
 						<date-du-jour class='dateDuJour'  date='id'>
 							{{id_date}}
 						</date-du-jour>
@@ -44,10 +57,13 @@
 		</section>
 
 		<div class="spacer"></div>
-		<div style="position: relative;">
-			<div container-stickers class="container-stickers" >{% include "stickit/generation_stickers.html" %}			
-			</div>
+		<div class="corpsPage">
 
+		<div id="dropfile" contenteditable='true'>Drop an image from your computer</div>
+			<div container-stickers class="container-stickers" ng-class="{'hidden' : ! options.modeDesign}" ng-cloak>{% include "stickit/generation_stickers.html" %}	
+
+			</div>
+			{% include "stickit/controles_sticker.html"%}
 		</div>
 	</div>
 

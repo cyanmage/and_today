@@ -20,7 +20,7 @@ class Post(models.Model):
 	def __str__(self):
 		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
-	contenu 			= models.CharField(max_length=300, default="")
+	contenu 			= models.TextField(default="")
 	date 				= models.DateField(null = False)
 	journee_generique	= models.BooleanField(default=False)
 	recopie_tel_quel 	= models.BooleanField(default=False)

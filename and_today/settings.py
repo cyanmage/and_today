@@ -38,9 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'defilement_infini',
+    'dnd_upload',
     'stickit',
     'core',
     'and_today',
+    'warningMessages',
+    'busEvent',
     'south',    
 )
 
@@ -97,3 +100,7 @@ STATICFILES_DIRS = (
     'E:/sites_web/django/and_today/static',
     #os.path.join(PROJECT_PATH, '/static/')
     )
+
+MEDIA_ROOT = 'E:/sites_web/django/and_today/media'
+#MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'media')
+MEDIA_URL = '/media/'

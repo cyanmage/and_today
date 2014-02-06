@@ -1,0 +1,25 @@
+		<controle-sticker id="controle_sticker" ng-show="options.modeDesign" ng-cloak class="controle_sticker">
+
+
+			 	<div class="ensembleHorizontalControlesSticker">
+			 			<img  class= "imageControleSticker b_bold" src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" ng-click = "bold = ! bold"/>
+			 			<img  class= "imageControleSticker b_italic" src="{{STATIC_URL}}stickit/images/controles_sticker/		fonteItalic	.jpg" ng-click = "italic = ! italic" />	
+			 			<div class="controle_fontweight">
+			 				<div class="number_fontweight">{*fontsize*}</div>
+			 				<div class="bs_fontweight ">
+			 					<img  class= "b_fontweight b_fontweight_plus" src="{{STATIC_URL}}stickit/images/controles_sticker/font_weight_plus.png" ng-click = "incremente_fontweight()" />
+			 					<img  class= "b_fontweight b_fontweight_moins" src="{{STATIC_URL}}stickit/images/controles_sticker/font_weight_moins.png" ng-click = "decremente_fontweight()"/>
+			 				</div>
+			 			</div>
+				</div>	
+
+			 	<div class="ensembleHorizontalControlesSticker" >
+					<img  class= "imageControleSticker deployeur" src="{{STATIC_URL}}stickit/images/controles_sticker/fontecolor2_t.jpg" />
+				</div>	 	
+			 	<div class="ensembleHorizontalControlesSticker" >
+			 	 	<select class='b_fontfamily' ng-model="fontfamily" ng-options="fontfamily.name for fontfamily in fontfamilies">
+			 	 	</select>
+			 	 	<br>
+
+				</div>
+		</controle-sticker>	

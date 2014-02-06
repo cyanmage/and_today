@@ -13,19 +13,6 @@ var module_core = angular.module('core', []);
 ///////////////////////////////////////////////////////////////////////////////////*/
 /////////////////////////////////////////////////////////////////////////////////////
 
-module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
-	function($scope, $q, serviceIds){
-
-	$scope.controleur = "controleur panneau ";
-	$scope.id = "";
-
-	$scope.$on('PANNEAU.DEMANDE_ID', function(event, data){
-		$scope.id = serviceIds.getId(data.offset);
-		//console.log("emplacement : " + data.emplacement  + ",  offset : " + data.offset + ", date associee : " + serviceIds.getId(data.offset));
-		$scope.$broadcast('APPLICATIONS.ENVOI_ID', {'id' : $scope.id});
-	});
-
-}]);
 
 
 
@@ -44,11 +31,12 @@ module_core.directive('dateDuJour', ['$timeout', function($timeout){
 	return {
 		scope : {
 			date : "="
-		},
-		template : "<span ng-transclude ></span>",
+		},/**/
+
+		//template : "<span ng-transclude ></span>",
 		//replace : true,
 		restrict : 'AE',
-		transclude : true,
+		//transclude : true,
 		link : function(scope, element, attributes){
 			//console.log("dans la directive date du jour ");
 			scope.$watch('date', function(newValue, oldValue){

@@ -1,13 +1,16 @@
 [emplacement='gauche']{
 	left : -100%;
+	overflow-x : hidden;
 }
 
 [emplacement='centre'] {
 	left: 0%;
+	display : block;
 }
 
 [emplacement='droite']{
 	left: 100%; 
+	overflow-x : hidden;	
 }
 
 .transitionDefileur{	

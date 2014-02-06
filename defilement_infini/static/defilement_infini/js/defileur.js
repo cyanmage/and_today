@@ -1,5 +1,30 @@
 var module_defileur = angular.module('defileur', []);
 
+
+module_defileur.config(['$provide', function($provide){
+
+    $provide.decorator('$rootScope', ['$delegate', function($delegate){
+
+        Object.defineProperty($delegate.constructor.prototype, '$onRootScope', {
+            value: function(name, listener, scope){
+                var unsubscribe = $delegate.$on(name, function(event, data){
+                	//console.log(scope.actif);
+                	if (scope.actif){
+                		listener.call(this, event, data);                		
+                		//console.log("DEDANS !! ", scope.$id);                 	
+                	}
+                });
+                this.$on('$destroy', unsubscribe);
+
+                //console.log(this);
+            },
+            enumerable: false
+        });
+
+        return $delegate;
+    }]);
+
+}]);
 /*/////////////////////////////////////////////////////////////////////////////////*/
 ///////////////////////////////////////////////////////////////////////////////////*/
 /*                                                                                 */
@@ -18,10 +43,7 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 	$scope.direction = "" ;	
 
 	$scope.serviceIds = serviceIds;
-	//$scope.ids = { precedent : serviceIds.getId(-1), enCours :  serviceIds.getId(0), suivant : serviceIds.getId(1)};
-	//console.log($scope.ids);
 
-	//console.log ('precedent : ' + $scope.idPrecedent + " , en cours  :  " + $scope.idEnCours + ", suivant : " + $scope.idSuivant );
 
 	$scope.$watch("direction", function(newValue, oldValue, scope){
 		if (newValue !== oldValue){
@@ -38,8 +60,54 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 				$scope.$apply($scope.direction = "");	
 	});
 
+
 }]);
 
+
+
+
+module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
+	function($scope, $q, serviceIds){
+
+	$scope.controleur = "controleur panneau ";
+	$scope.id = "";
+	$scope.actif = "";
+
+	/*$scope.$watch("panneau", function(newValue, oldValue){
+		console.log(newValue, oldValue);	
+	})*/
+
+
+	/*$scope.$watch("emplacement", function(newValue, oldValue){
+		console.log(newValue, oldValue);	
+	})*/
+
+	$scope.$on('PANNEAU.DEMANDE_ID', function(event, data){
+		//console.log('PANNEAU.DEMANDE_ID');
+		$scope.id = serviceIds.getId(data.offset);
+		$scope.emplacement = data.nouvel_emplacement;		
+		//console.log("MISE A JOUR ID, ", data.emplacement, ", ", $scope.id);
+		//console.log("nouvel emplacement : ", data);			
+		//console.log("emplacement : " + data.emplacement  + ",  offset : " + data.offset + ", date associee : " + serviceIds.getId(data.offset));
+		$scope.$broadcast('APPLICATIONS.ENVOI_ID', {'id' : $scope.id});
+	});
+
+
+	$scope.$on('PANNEAU.ACTIF', function(event, data){
+			//console.log('PANNEAU.ACTIF');
+			//console.log("nouvel emplacement : ", data);			
+			//console.log("signal de fin de transition recu");
+			//console.log(data);
+			//console.log("AVANT", $scope.id, $scope.actif);
+			//console.log("ACTIF-INACTIF, ", $scope.id,", ",   data.actif);				
+			//if(!$scope.$$phase) 
+			$scope.actif = data.actif;
+			$scope.emplacement = data.nouvel_emplacement;
+				//$scope.$apply($scope.actif = data.actif);	
+		
+	});
+
+}]);
 
 
 /*#############################             ###############################          ################################*/
@@ -88,7 +156,7 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			//console.log(element.attr("emplacement") );
 			var emplacement = element.attr("emplacement");
 			var offset = (emplacement == "droite" ? 1 : (emplacement == 'gauche' ? -1 : 0)); 
-			scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : emplacement, 'offset' : offset});
+			scope.$emit('PANNEAU.DEMANDE_ID', {'nouvel_emplacement' : emplacement, 'offset' : offset});
 
 			/*attributes.$observe("emplacement", function(value){
 				console.log("changement d'attribut " + value);
@@ -117,13 +185,25 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 				var emplacement = element.attr("emplacement");
 				if (scope.mode == "gauche"){
 					if (emplacement == "gauche"){
-						scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : "gauche", offset : 1});
-					}					
+						scope.$emit('PANNEAU.DEMANDE_ID', {'nouvel_emplacement' : "droite", offset : 1, 'actif' : false});
+					}
+					else if(emplacement == "droite"){
+						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' : 'centre', 'actif' : true});								
+					}
+					else if(emplacement == "centre"){
+						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' : 'gauche', 'actif' : false});								
+					}										
 					panneaux.permuteGauche(element);
 				}
 				else if (scope.mode == "droite"){
 					if (emplacement == "droite"){
-						scope.$emit('PANNEAU.DEMANDE_ID', {'emplacement' : "droite", offset : -1});						
+						scope.$emit('PANNEAU.DEMANDE_ID', {'nouvel_emplacement' : 'gauche', offset : -1, 'actif' : false});						
+					}
+					else if(emplacement == "gauche"){
+						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' : 'centre', 'actif' : true});								
+					}
+					else if(emplacement == "centre"){
+						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' :  'droite', 'actif' : false});								
 					}					
 					panneaux.permuteDroite(element);
 				}
@@ -240,6 +320,7 @@ module_defileur.factory('gestionDesPanneaux',['$q', function($q){
 			element.attr("emplacement", "gauche");
 		else if (emplacement == "droite")
 			element.attr("emplacement", "centre");
+		//console.log("PERMUTATION TERMINEE");
 	}		
 
 	gestion_des_panneaux.permuteDroite = function(element){

@@ -45,14 +45,19 @@
 
 
 .container-stickers{
-	width: 70%;
-	height: 550px;
-	left : 200px;
-	background-color: #F0F5C0;
+	background-color: #EEE0E2;
+	border-style: dotted;
+	border-width: 3px;
+	border-color: rgb(58, 156, 241);
 	margin-top: 20px;
 	border-style: outset;
-	border-width: 5px;
-	position: relative;/**/
+	width: 1200px;
+	height: 550px;
+	margin-left: 200px;
+	float : left;	
+	position: relative;
+
+	/*left : 200px;*/
 }
 
 
@@ -60,8 +65,9 @@
 .sauverLesStickers{
 	position: absolute;
 	margin-left: 100px;
-
 }
+
+
 
 
 

@@ -5,35 +5,122 @@ var module_stickit = angular.module('stickit', []);
 ///////////////////////////////////////////////////////////////////////////////////*/
 /*                                                                                 */
 /*                                                                                 */
-/*                    Controleur associé au conteneur de stickit                   */
+/*                                 Controleurs                                     */
 /*                                                                                 */
 /*                                                                                 */
 ///////////////////////////////////////////////////////////////////////////////////*/
 /////////////////////////////////////////////////////////////////////////////////////
 
-module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceIds', 'servicesStickit', 'servicesUpdateStickit','servicesCacheStickit',/**/ 
-	function($q, $scope, serviceIds, servicesStickit, servicesUpdateStickit, servicesCacheStickit /**/){
+module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceIds', 'servicesStickit', 'servicesUpdateStickit','servicesCacheStickit', 'servicesInitialisationStickit',/**/ 
+	function($q, $scope, serviceIds, servicesStickit, servicesUpdateStickit, servicesCacheStickit, servicesInitialisationStickit /**/){
 
-	$scope.modeDesign = false;
+	/*Options par défaut d'une page : modeDesign(false)*/
+	$scope.options = servicesInitialisationStickit.recupereOptionsParDefaut();	
+	//console.log($scope.options);
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
-	$scope.listeStickersModifies = {};
 	$scope.nombreStickers = 0;
 
 	//console.log("SCOPE DU CONTROLE STICKIT : ", $scope.$id);
 
 	$scope.toggleModeDesign = function(){
-		$scope.modeDesign = ! $scope.modeDesign;
+		$scope.options.modeDesign = ! $scope.options.modeDesign;
 	}
+
 
 	$scope.sauverlesStickers = function(){
 		//console.log("GROUPE SAUVE : ", $scope.id);
-		servicesUpdateStickit.sauverStickersDunGroupe($scope.id);
+		servicesUpdateStickit
+		.sauverStickersDunGroupe($scope.id)
+		.then(function(data){
+			//console.log(data);
+				//console.log("retour dans scope, sauvegarde effectuee");
+				$scope.$emit("WARNING_DISPLAY", {
+												'message' : "SAUVEGARDE EFFECTUEE POUR LE " + $scope.id,
+												'id_groupe' : $scope.id
+												}
+							);
+				$scope.$broadcast("STICKIT.STICKERS_SAUVES", data);
+			}, function(error){
+				console.log("retour dans scope, echec de la sauvegarde");
+				$scope.$emit("WARNING_DISPLAY",  {
+												'message' : "ECHEC DE LA SAUVEGARDE POUR LE " + $scope.id,
+												'id_groupe' : $scope.id				
+												}
+							);				
+				//console.log(error);
+			});
 	}
+
 
 	$scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
 		//console.log('nouvel id : ' + data.id);
-		$scope.id = data.id;
+
+		var ancien_id = $scope.id;
+		$scope.id = nouvel_id = data.id;
+		//console.log(ancien_id, nouvel_id);
+
+		if(ancien_id !== nouvel_id){
+			servicesCacheStickit.stockeOptions(ancien_id, $scope.options);	
+						//console.log("\nVALEURS SAUVEGARDEES DANS LE CACHE ", ancien_id);
+						//console.log($scope.options);
+			/*$scope.options = servicesCacheStickit.contient(nouvel_id) ? 
+												servicesCacheStickit.recupereOptions(nouvel_id) : 
+												servicesInitialisationStickit.recupereOptionsParDefaut();*/
+					if ($scope.options = servicesCacheStickit.contient(nouvel_id) ){
+						$scope.options = servicesCacheStickit.recupereOptions(nouvel_id);
+						//console.log("VALEURS RECUPEREES DU CACHE ", nouvel_id);
+						//console.log($scope.options);						
+					}
+					else{
+						$scope.options = servicesInitialisationStickit.recupereOptionsParDefaut();	
+						//console.log("VALEURS PAR DEFAUT ", nouvel_id);
+						//console.log($scope.options);						
+					}
+
+												
+		}
 	});
+
+
+
+	$scope.bold = false;
+	$scope.italic = false;
+	$scope.fontsize = 12;
+	$scope.max_fontsize = 30;	
+	$scope.min_fontsize = 0;		
+	$scope.stroke = false;
+	$scope.underline = false;
+	$scope.colortext = "#000000";
+	$scope.backgroundcolor = "#ffffff";
+	$scope.fontfamily = "Times New Roman";
+
+
+	$scope.fontfamilies = [
+	    {name:'Arial'				,		style:'Arial'			  },
+	    {name:"Times New Roman"		,		style:"Times New Roman"   },
+	    {name:"Cursive"				,		style:"Cursive"			  },
+	    {name:"Fantasy"				,		style:"Fantasy"			  },
+	    {name:"Monospace"			,	 	style:"Monospace"		  },
+	    {name:"Comfortaa"			,	 	style:"Comfortaa"		  }	    
+	  ];
+	  $scope.fontfamily = $scope.fontfamilies[2]; 
+
+	$scope.incremente_fontweight = function(){
+		//console.log($scope.fontsize)
+		if ($scope.fontsize + 1 <= $scope.max_fontsize){
+			$scope.fontsize++;
+			//console.log($scope.fontsize);
+		}
+	}
+	$scope.decremente_fontweight = function(){
+		//console.log($scope.fontsize)		
+		if ($scope.fontsize - 1 >= $scope.min_fontsize){
+			$scope.fontsize--;
+			console.log($scope.fontsize);			
+		}
+	}
+
+
 
 }]);
 
@@ -51,19 +138,12 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 
 		$scope.supprimerSticker = function(id){
 			$scope.destruction = true;
-			//console.log("je vais etre supprime " + id);
+			//console.log("je vais etre supprime , ", id);
 		}
 
 		$scope.stickerModified = false; 
 
-		$scope.bold = false;
-		$scope.italic = false;
-		$scope.fontsize = 12;
-		$scope.stroke = false;
-		$scope.underline = false;
-		$scope.colortext = "#000000";
-		$scope.backgroundcolor = "#ffffff";
-		$scope.fontfamily = "Times New Roman";
+
 
 	}]);/**/
 
@@ -106,8 +186,6 @@ module_stickit.directive('createSticker', [function(){
 						//console.log(ui.helper.attr("style"));
 					}
 				});	
-	
-
 
 		}
 	}
@@ -177,7 +255,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 				if (servicesCacheStickit.contient(newValue)){
 					//on a récupéré les stickers d'une page depuis le cache client juste au départ du défilement
 					//console.log("*****RECUP STICKERS DEPUIS LE CACHE CLIENT");
-					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
+					var elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
 					deferred.resolve(elementARattacher);
 				}
 				else{
@@ -228,8 +306,6 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 
 
-
-
 module_stickit.directive('groupeStickers', ['servicesCacheStickit', 
 	function(servicesCacheStickit){
 
@@ -240,8 +316,8 @@ module_stickit.directive('groupeStickers', ['servicesCacheStickit',
 
 	}
 
-
 }]);
+
 
 
 module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout', 'servicesUpdateStickit',
@@ -250,10 +326,12 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 	return {
 		restrict : 'A', 
 		link : function(scope, element, attributes){
+			var id_sticker;
+
 
 			$timeout(function(){
 
-				var id_sticker = element.attr('id_sticker');
+				id_sticker = element.attr('id_sticker');
 				if (id_sticker){
 					scope.sauveSurServeur = true;
 				}	
@@ -303,6 +381,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 					    /*maxHeight : 300,
 					    maxWidth : 300	*/				
 				})
+				  //.dropzone({"url" : "/stickit/sticker/" + id_sticker + "/"});
 			});
 
 				/*var	contenant = $(this).find(".contenantSticker");
@@ -323,23 +402,118 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 			.on("mouseenter", function(ui, event){
 				$(this).focus();
 			})
+			/*element.get()
+			.on("dragover", function(event){
+        		event.preventDefault();
+        		event.stopPropagation();
+			})
+			.on("dragenter", function(event){
+        		event.preventDefault();
+        		event.stopPropagation();
+			})
+			.on("drop", function(event){
+       				if(event.originalEvent.dataTransfer){
+       				     if(event.originalEvent.dataTransfer.files.length) {
+       				         event.preventDefault();
+       				         event.stopPropagation();
+       				     }   
+       				 }
+			});*/
 			/*.on("mouseleave", function(ui, event){
 				$(this).blur();
 			});*/
 
-			lesServicesStickit.associeActionsAuxBoutons(element, scope);
+			//lesServicesStickit.associeActionsAuxBoutons(element, scope);
 
+			/*$(document).on('dragstart', function(event){
+				console.log(event.originalEvent);
+			         event.originalEvent
+			              .dataTransfer
+			              .setData('text/plain', 'modified_content_from_iframe');
+			       });*//**/
+
+			element.on("drop", function(event){
+				//event.preventDefault();
+    			console.log(event.originalEvent.dataTransfer.files);
+				/*console.log(event.originalEvent.dataTransfer.files.length);
+				console.log(event.originalEvent.dataTransfer.items);*/
+            	//return false;				
+			});
+
+			/*element.on('dragenter', '.sticker', function() {
+			            $(this).css('border', '3px dashed red');
+			            return false;
+			});
+
+			element.on('dragover', '.sticker', function(e){
+						e.originalEvent.dataTransfer.dropEffect = "copy";				
+			            e.preventDefault();
+			            e.stopPropagation();
+			            return false;
+			});
+			 
+			element.on('dragleave', '.sticker', function(e) {
+			            e.preventDefault();
+			            e.stopPropagation();
+			            return false;
+            			$(this).css('border', '3px dashed #BBBBBB');			            
+			});
+
+			element.on("drop", function(event){
+				console.log(event.originalEvent.dataTransfer.files.length);
+				console.log(event.originalEvent.dataTransfer.items);
+            	//return false;				
+			});*/
 			scope.$watch('stickerModified', function(newValue, oldValue){
 				if (newValue){
-					console.log("changement, sticker averti !! " + scope.id);
+					//console.log("changement, sticker averti !! " + scope.id);
 					servicesUpdateStickit.indiqueAuRegistreModifSticker(scope.id, scope.idSticker);
 				}
 			});
 
 
+			scope.$on("STICKIT.STICKERS_SAUVES", function(event, data){
+				//console.log(data);
+				scope.stickerModified = false;					
+				if (data && data[scope.idSticker]){
+					var nouvel_id = data[scope.idSticker];	
+					scope.idSticker = nouvel_id;
+
+					element 
+				  		.attr("id_sticker", nouvel_id)				
+				  		.find(".titreSticker").html(nouvel_id);
+				
+					//console.log("Je suis sauve, je suis rassure ", nouvel_id);
+			  
+				}
+			});
+
+
+
 			scope.$watch('destruction', function(newValue, oldValue){
+				//console.log(newValue, oldValue);
+
 				if(newValue)
-					servicesUpdateStickit.supprimerSticker(element, scope.idSticker);
+					servicesUpdateStickit
+					.supprimerSticker(element, scope.idSticker)
+					.then(function(){
+									//console.log("retour dans scope, sauvegarde effectuee");
+									scope.$emit("WARNING_DISPLAY", {
+																	'message' : "SUPPRESSION EFFECTUEE POUR LE " + scope.idSticker,
+																	'id_groupe' : scope.idSticker
+																	}
+												);
+								}, function(error){
+									console.log("retour dans scope, echec de la sauvegarde");
+									scope.$emit("WARNING_DISPLAY",  {
+																	'message' : "ECHEC DE LA SUPPRESSION POUR LE " + scope.idSticker,
+																	'id_groupe' : scope.idSticker				
+																	}
+												);				
+									//console.log(error);
+								});
+					
+
 			});
 
 		}
@@ -348,17 +522,20 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 }]);
 
 
-module_stickit.directive('controle-sticker', ['servicesStickit', '$compile',
+module_stickit.directive('controleSticker', ['servicesStickit', '$compile',
 	function(servicesStickit, $compile){
 		//console.log("test");
 		return {
+
 			restrict : "AE",
 			link : function(scope, element, attributes){
 				//console.log("Je créé une directive controle sticker");
-				element.find()
-				on("click", function(event, ui){
+				element
+				.on("click", function(event, ui){
 					//console.log("wizaaaa");
 				})
+				servicesStickit.associeActionsAuxBoutons(element, scope);
+
 			}
 
 		}
@@ -394,7 +571,7 @@ module_stickit.directive('colonneControle', [ 'servicesStickit', '$compile',
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-/******************LES SERVICES                    ***************************/
+/*******                       LES SERVICES                    ****************/
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
@@ -411,10 +588,10 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 
-	les_services_stickit.recupereStickers = function(id){
+	les_services_stickit.recupereStickers = function(id_groupe){
 		var deferred = $q.defer();
 		//console.log("demande HTTP de recuperation stickers ; envoi imminent, vous etes sur le tarmac : " + id);
-		var url = "/stickit/groupe-stickers/" + id + "/";
+		var url = "/stickit/groupe-stickers/" + id_groupe + "/";
 
 		$http.get(url)
 		.success(function(data, status){
@@ -427,15 +604,11 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 			deferred.reject();
 		});
 
-		//console.log("DONNEES RECUPEREES POUR CETTE DATE : ");
+		//console.log("DONNEES RECUPEREES POUR CETTE DATE : ", id_groupe);
 
 		return deferred.promise;
 
 	}
-
-
-
-
 
 
 	les_services_stickit.obtientNumeroValide = function(){
@@ -448,26 +621,37 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 	les_services_stickit.associeActionsAuxBoutons = function(element, scope){
 
-		var texte_contenu = element.find(".contenuSticker");
-		var bouton_bold = element.find(".b_bold");
-		var bouton_italic = element.find(".b_italic");
+		var texte_contenu = element.parents(".appli-stickit").find(".contenuSticker");
 
-		bouton_bold 
-		.on("click", function(event, ui){
-			scope.bold = !scope.bold;
-			var style = scope.bold ? "bold" : "normal";
-			texte_contenu.css({'font-weight' : style});
-			scope.stickerModified = true;
-			//texte_contenu.html({'font-weight' : style});
+		scope.$watch('bold', function(newValue, oldValue){
+
+			if (newValue !==  oldValue){
+				texte_contenu.css({'font-weight' : (scope.bold ? "bold" : "normal")});
+				scope.stickerModified = true;				
+			}
 		});
 
-		bouton_italic
-		.on("click", function(event, ui){
-			scope.italic = !scope.italic;
-			var style = scope.italic ? "italic" : "normal";			
-			texte_contenu.css({'font-style' : style});
-			scope.stickerModified = true;			
-			//texte_contenu.html({'font-style' : style});		
+		scope.$watch('italic', function(newValue, oldValue){
+			if (newValue !==  oldValue){
+				texte_contenu.css({'font-style' : (scope.italic ? "italic" : "normal")});
+				scope.stickerModified = true;				
+			}
+		});
+
+
+		scope.$watch('fontfamily.style', function(newValue, oldValue){
+			if (newValue !==  oldValue){
+				texte_contenu.css('font-family', newValue);
+				scope.stickerModified = true;				
+			}
+		});
+
+		scope.$watch('fontsize', function(newValue, oldValue){
+			//console.log(newValue);
+			if (newValue !==  oldValue){
+				texte_contenu.css('font-size', newValue);
+				scope.stickerModified = true;				
+			}
 		});
 
 	}
@@ -479,8 +663,8 @@ module_stickit.factory('servicesStickit', ['$q', 'servicesCacheStickit', '$http'
 
 
 
-module_stickit.factory('servicesUpdateStickit', ['$q', '$http','servicesCacheStickit', 
-	function($q, $http, servicesCacheStickit ){
+module_stickit.factory('servicesUpdateStickit', ['$q', '$http', 
+	function($q, $http){
 
 	var les_services_stickit_update = {};
 	var registreStickers = {};	
@@ -517,12 +701,14 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http','servicesCacheSti
 les_services_stickit_update.supprimerSticker = function(element, idSticker){
 		//console.log("SUPPRESSION EN PREPARATION SUR LE CLIENT");
 
-		if(idSticker.substring(0, 2) == "__"){
+		var deferred = $q.defer();
 
+		if(idSticker.substring(0, 2) == "__"){
 			element
 			  .addClass("stickerSupprime")
 			  .on("transitionend", function(){
 			  		element.remove();
+			   	  	deferred.resolve();			  		
 			  });	
 		}
 		else{	
@@ -536,18 +722,22 @@ les_services_stickit_update.supprimerSticker = function(element, idSticker){
 			   	  .addClass("stickerSupprime")			
 			   	  .on("transitionend", function(){
 			   	  		element.remove();
+			   	  		deferred.resolve();
 			   	  });				
 			   })
 			   .error(function(error, status){
 			   	$("html").html(error);
+			   	deferred.reject();
 			   });/**/
 			   //element.remove();
 		}
 
+	return deferred.promise;
 	}
 
 
 	les_services_stickit_update.sauverStickersDunGroupe  = function(idGroupeStickers){
+		var deferred = $q.defer();
 		//console.log(idGroupeStickers);
 		//console.log(registreStickers[id].listeStickersModifies.filter(function(element){return element = id}));
 
@@ -555,7 +745,7 @@ les_services_stickit_update.supprimerSticker = function(element, idSticker){
 		var stickersASauver  = $("#gr-stick-" + idGroupeStickers).find("[sticker]");
 
 		var listeStickersModifies = registreStickers[idGroupeStickers].listeStickersModifies;
-		console.log(listeStickersModifies);
+		//console.log(listeStickersModifies);
 
 		var elementsJSON = $.map(stickersASauver, function(elementDOMSticker, cle){
 			var	elementSticker = $(elementDOMSticker);
@@ -585,25 +775,20 @@ les_services_stickit_update.supprimerSticker = function(element, idSticker){
 
 
 		var donneesEnvoyees = {'id_groupe' : idGroupeStickers, 'donnees' : elementsJSON};
-		console.log(donneesEnvoyees);	
+		//console.log(donneesEnvoyees);	
 
-		$http.post(url, donneesEnvoyees)
+		$http
+		.post(url, donneesEnvoyees)
 		.success(function(data, status){
-			console.log(data.associations);
-			stickersASauver.each(function(index, elementDOMSticker){
-				//var elementTitre = $(elementDOMSticker).find(".titreSticker");
-				var	elementSticker = $(elementDOMSticker);				
-				var id_sticker = elementSticker.attr("id_sticker");				
-				elementSticker .find(".titreSticker").html(data.associations[id_sticker]);
-			});			
+			deferred.resolve(data.associations);
 		})
 		.error(function(error, status){
-			$("html").html(error);
-			//console.log(error);
+			$("html").html(error);/**/
+			deferred.reject(error);
 		});
 
+		return deferred.promise;
 	}
-
 
 	return les_services_stickit_update;
 }]);
@@ -619,14 +804,28 @@ module_stickit.factory('servicesCacheStickit', [ '$q',
 
 	les_services_cache.miseAJour = "";
 
+	les_services_cache.stockeOptions = function(idRecuperation, options){
+		if ( ! les_services_cache.contient(idRecuperation)){
+			cache[idRecuperation] = {};
+		}
+		cache[idRecuperation].options =	options;		
+	}
+
+	les_services_cache.recupereOptions = function(idRecuperation) {
+		return cache[idRecuperation].options;
+	}
+	
 
 	les_services_cache.recupereDonnees = function(idRecuperation) {
-		return cache[idRecuperation];
-
+		return cache[idRecuperation].donnees;
 	}
 
 	les_services_cache.stockeDonnees = function(idRecuperation, donnees){
-		cache[idRecuperation] = donnees;
+		if ( ! les_services_cache.contient(idRecuperation)){
+			cache[idRecuperation] = {};
+		}
+
+		cache[idRecuperation].donnees =	donnees;
 	}
 
 	les_services_cache.lectureCache = function(){
@@ -641,3 +840,19 @@ module_stickit.factory('servicesCacheStickit', [ '$q',
 
 	return les_services_cache;
 }]);
+
+
+module_stickit.factory('servicesInitialisationStickit', function(){
+
+	var les_services_stickit_initialisation = {};
+
+	les_services_stickit_initialisation.recupereOptionsParDefaut = function(){
+		var options_par_defaut = {
+			'modeDesign' : false
+		}
+		return options_par_defaut;
+	}
+
+	return les_services_stickit_initialisation;
+
+});

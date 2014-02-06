@@ -1,0 +1,84 @@
+.dropfile{
+	position : absolute;
+	left : 200px;
+	top : 400px;
+	width : 500px;
+	height: 400px;
+	box-shadow: 5px 5px 5px #D7D8D1;
+	border-color: #272822;
+	border-width: 2px;
+	border-radius: 5px;
+	background-color: #ECEDE9;
+}
+
+.image{
+	margin-left : 50px;
+	margin-top: 50px;
+	display: block;
+}
+
+.socle-images{
+	position : absolute;
+	left : 950px;
+	top : 150px;
+	width : 150px;
+	height: 450px;
+	background-color: #FDDBB9;
+	border-width: 2px;
+	border-style: dotted;
+
+}
+
+.div-draggable{
+	position: absolute;
+	width: 120px;
+	height: 90px;
+	top: 80px;
+	left: 1200px;
+	background-color : #E72744;
+	border-style: inset;
+	border-width: 1px;
+	border-color: #E72744;
+	box-shadow: 2px 5px 10px #7C4EF8;
+	font-family: cursive;
+	font-style: italic;
+}
+
+.div-with-link{
+	position: absolute;
+	top : 450px;
+	left : 1150px;
+	background-color: #F0F0F9;
+	width: 300px;
+	height: 80px;
+	border-width: 1px;
+	border-color: #052E45;
+	border-radius: 10px;
+	border-style: inset;
+}
+
+#drop_zone{
+	position: absolute;
+	width: 135px;
+	height: 135px;
+	border-color: #30B133;
+	border-style: dotted;
+	border-width: 1px;
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #C52E4B;
+	top : 50px;
+	left : 650px;
+
+}
+
+#list2{
+	background-color: #CEFCFF
+}
+
+/*.wrapper_button{
+	position: absolute;
+	width: 150px;
+	height: 100px;
+	left : ;
+
+}*/
