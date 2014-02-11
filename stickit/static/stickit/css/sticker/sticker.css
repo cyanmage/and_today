@@ -63,6 +63,7 @@
 	z-index: 100;
 	white-space : pre-line;	
 	visibility: visible	;
+	overflow: hidden;
 }
 
 
@@ -77,16 +78,28 @@
 	left : -500px;
 	top : -500px;	/**/
 }
-
-[contenteditable="true"]{
+/*, .contenuSticker:not([contenteditable="false"]), .contenuSticker[ng-cloak], .contenuSticker.ng-cloak*/
+.contenuSticker[contenteditable="true"], .contenuSticker[contenteditable=""]
+{
  /*padding: 10px; */
- outline: 3px dashed #CCC; 
+ outline: 3px dashed #CCC;
+ max-height: 100%;
+ overflow: auto; 
  } 
 
- [contenteditable="true"]:hover{ 
+.contenuSticker[contenteditable="true"]:hover, .contenuSticker[contenteditable=""]:hover
+{ 
  	background: rgba(255, 255, 153, 1); 
  	outline: 3px dashed #0090D2; 
  }
+
+
+
+ /*.contenuSticker[ng\:cloak] {
+    visibility: hidden !important;
+}*/
+
+
 
  .stickerModified{
  	background-color: #F9A399;
@@ -109,3 +122,4 @@
  	/*width : 25px;
  	height:25px;*/
  }
+

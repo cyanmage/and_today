@@ -51,7 +51,7 @@
 	border-color: rgb(58, 156, 241);
 	margin-top: 20px;
 	border-style: outset;
-	width: 1200px;
+	width: 1150px;
 	height: 550px;
 	margin-left: 200px;
 	float : left;	
@@ -67,6 +67,24 @@
 	margin-left: 100px;
 }
 
+
+.stickit_modeDesign_hidden{
+	visibility : hidden;
+}
+
+/*.stickit_modeDesign_notdisplayed{
+	display: none;
+}*/
+
+.stickit_modeDesign_notdisplayed{
+	display: none;
+}
+
+/*
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+*/
 
 
 

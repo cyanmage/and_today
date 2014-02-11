@@ -1,13 +1,14 @@
 .controle_sticker{
-	position : relative;
+	/*position : absolute;*/
+	z-index: 100;
 	background-color: #FED067;
 	border-style: outset;
 	border-width: 1px;
-	display: inline-block;
+	display: inline-block;/**/
 	width: 150px;
 	height : 300px;
-	top : 100px;
-	left : 20px;
+	top : 200px;
+	left : 0px;
 	padding: 5px;
 	border-radius:  5px;
 }
@@ -99,25 +100,41 @@
     -webkit-transform : rotateX(90deg);
 }
 
-
-.b_fontfamily{
-	width: 100%;
+.b_bold, .b_italic, .b_underline{	box-shadow: 2px 1px 2px #a21;	opacity: 1; 	background-color: #3917D9; }
+.b_bold_appuye, .b_italic_appuye, .b_underline_appuye{
+	margin : 1px 0px 0px 2px;
+	box-shadow: 0px 0px 0px;
+	opacity: 0.5;
+	border-style: solid;
+	border-width: 1px;
+}
+.b_bold:hover, .b_italic:hover, .b_underline:hover{
+	margin : 1px 0px 0px 2px;
+	box-shadow: 0px 0px 0px;
+	opacity: 0.5;
+	cursor : pointer;
 }
 
-.controle_fontweight{
+.b_bold{	left : 15px;	/*transition : margin-left 300ms linear, margin-top 300ms linear;*/}
+.b_italic{	left : 50px;	/*transition : margin-left 300ms linear, margin-top 300ms linear;*/}
+.b_underline{	left : 85px;	}
+
+
+.controle_fontsize{
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;	
 	display: inline-block;
 	background-color: #FFFFFF;
-	height : 100%;
-	margin-left: 10px;
+	height : 35px;
+	/*margin-left: 10px;*/
+	left : 90px;
 }
 
-.b_fontweight{
+.b_fontsize{
 	display : block;
 }
 
-.bs_fontweight{
+.bs_fontsize{
 	display : inline-block;
 	position: relative;
 	margin-left: 5px;
@@ -126,22 +143,36 @@
 	/*left : 5px;*/
 	/*margin-top: 5px;*/
 }
-.number_fontweight{
+.number_fontsize{
 	display: inline-block;
 	padding-left: 5px;/**/
 	font : 2em;
 }
 
- .b_fontweight_plus{
+ .b_fontsize_plus{
  	top :-2px;
  	position: relative;
  	cursor: pointer;
  }
- .b_fontweight_moins{
+
+ .b_fontsize_moins{
  	top : 5px;
  	position: relative;
  	cursor: pointer;
  }
+
+
+.b_fontname{
+	width: 100%;
+}
+
+.controlSticker{
+	/**/position : absolute;
+}
+
+.controleSticker[ng\:cloak], .controleSticker[ng-cloak], .controleSticker.ng-cloak {
+  display: none !important;
+}
 
 /* FEUILLE DE STYLE POUR QUAND LE CONTROLE SERA INDIVIDUALISE
 .controle_sticker{

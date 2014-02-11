@@ -98,7 +98,9 @@ var csrftoken = getCookie('csrftoken');
     for(var i=0 ; i<files.length ; i++){
           var img = new Image();
           img.src = window.URL.createObjectURL(files[i]);
-          document.getElementById('list2').insertBefore(img, null); 
+          ///document.getElementById('list2').insertBefore(img, null); 
+          document.getElementById('drop_zone').insertBefore(img, null); 
+          
           //new fileUpload(img.src, files[i], img);
           img.classList.add("obj");
           img.file = files[i];          

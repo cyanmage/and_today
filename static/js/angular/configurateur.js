@@ -18,54 +18,8 @@ appli.run(['serviceIds', function(serviceIds){
 
 }]);
 
-$( document ).ready(function() {
-	$('#dropfile').on('click', function(){
-		console.log("CA VA TOGGLER LE BOLD ! ")
-		document.execCommand('bold', false, null);
-	});
-});
-
-/*
-//$( document ).ready(function(){
-	$(document).on('dragenter', '#dropfile', function() {
-	            $(this).css('border', '3px dashed red');
-	            return false;
-	});
-	 
-	$(document).on('dragover', '#dropfile', function(e){
-		//console.log(e);
-				e.originalEvent.dataTransfer.dropEffect = "copy";
-	            e.preventDefault();
-	            e.stopPropagation();
-	            //console.log(e);
-	            $(this).css('border', '3px dashed red');
-	            return false;
-	});
-	 
-	$(document).on('dragleave', '#dropfile', function(e) {
-	            e.preventDefault();
-	            e.stopPropagation();
-	            $(this).css('border', '3px dashed #BBBBBB');
-	            return false;
-	});
-	
-	$(document).on('drop', '#dropfile', function(e) {
-		console.log(e.originalEvent.dataTransfer);
-	            if(e.originalEvent.dataTransfer){
-	                       if(e.originalEvent.dataTransfer.files.length) {
-	                                   // Stop the propagation of the event
-	                                   e.preventDefault();
-	                                   e.stopPropagation();
-	                                   $(this).css('border', '3px dashed green');
-	                                   // Main function to upload
-	                                   //upload(e.originalEvent.dataTransfer.files);
-	                       }  
-	            }
-	            else {
-	                       $(this).css('border', '3px dashed #BBBBBB');
-	            }
-	           
-	});
-
-//})*/
-	
+document.onkeydown = function (e) {
+        if(e.which == 9){
+                return false;
+        }
+}

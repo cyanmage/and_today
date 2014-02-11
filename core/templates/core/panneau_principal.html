@@ -1,7 +1,7 @@
-
+<div class="limitesEcran">
 	<span class = "sous-titre">	
 		<div class="champDate" id="date_{{numero_panneau}}"> 
-				<!--Nombre de stickers reçus par le serveur pour le <u>{{id_date}}</u> : <b><i>{{stickers|length}}</i></b>-->
+
                                 
 		</div>
 	</span>
@@ -30,6 +30,7 @@
 					<div class="span6">
 						<panneau-warning-messages ng-controller = "controleurModuleAfficheurWarning" class="contenant-warning-message" >
 							<div class='warning-message' ng-show='show_message'>
+
 							<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
 							<span><b>panneau : </b>{* panneau *}</span>/////
 							<span><b>actif : </b>{* actif *}</span>		
@@ -59,11 +60,13 @@
 		<div class="spacer"></div>
 		<div class="corpsPage">
 
-		<div id="dropfile" contenteditable='true'>Drop an image from your computer</div>
-			<div container-stickers class="container-stickers" ng-class="{'hidden' : ! options.modeDesign}" ng-cloak>{% include "stickit/generation_stickers.html" %}	
+		<!--<div id="dropfile" contenteditable='true'>Drop an image from your computer</div>-->
+
+			<div container-stickers class="container-stickers stickit_modeDesign_hidden" ng-class="{stickit_modeDesign_hidden : ! options.modeDesign}">{% include "stickit/generation_stickers.html" %}	
 
 			</div>
 			{% include "stickit/controles_sticker.html"%}
 		</div>
 	</div>
 
+</div>
