@@ -1,0 +1,44 @@
+{% load staticfiles %}
+{% load static %}
+{% csrf_token %}
+
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}controleSticker/css/controleLayers.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}controleSticker/css/controleLayers-jquery.css">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="appli">
+TEST CONTROLE LAYERS
+
+<div class="wrapper" ng-controller="controleurOnglets">
+	<controle>
+	<layerbackground></layerbackground>
+	<onglet1 ng-click="selectLayer(1)" ></onglet1>	<layer1 class="layer" ng-class="{hidden : testLayer(1)}">Le premier onglet</layer1>
+	<onglet2 ng-click="selectLayer(2)" ></onglet2>	<layer2 class="layer" ng-class="{hidden : testLayer(2)}">Chocapic, des céréales au chocolat qui remplissent le ventre</layer2>
+	<onglet3 ng-click="selectLayer(3)" ></onglet3>	<layer3 class="layer" ng-class="{hidden : testLayer(3)}">Quelle superficie du pré la chèvre Biquette peut-elle manger ?</layer3>
+	<onglet4 ng-click="selectLayer(4)" ></onglet4>	<layer4 class="layer" ng-class="{hidden : testLayer(4)}">Zola, Verlaine, Stendhal, Pompée, Hugo</layer4>
+	</controle>
+</div>
+
+
+<div class="wrapper-j">
+	<controle-j ng-controller="controleurOnglets">
+	<layerbackground-j></layerbackground-j>
+	<onglet1-j ng-click="selectLayer(1)" ng-mouseenter="survolOnglet(1)"  ng-mouseleave="finSurvolOnglet()" id="onglet1"></onglet1-j>	<layer1-j id="layer1" class="layer-j" >Packerd Bell, ATM, Microsoft, Lucent-Alcatel, CISCO Technologies, Optronics, Microsoft, Apple, Google</layer1-j>
+	<onglet2-j ng-click="selectLayer(2)" ng-mouseenter="survolOnglet(2)"  ng-mouseleave="finSurvolOnglet()" id="onglet2"></onglet2-j>	<layer2-j id="layer2" class="layer-j" >Bananes, oranges, pommes, poires, kiwis, grenades, friase, cerises, groseilles, kakis, ananas, noix de coco, raisins, abricots, pêches, prunes</layer2-j>
+	<onglet3-j ng-click="selectLayer(3)" ng-mouseenter="survolOnglet(3)"  ng-mouseleave="finSurvolOnglet()" id="onglet3"></onglet3-j>	<layer3-j id="layer3" class="layer-j" >Speedy l'escargot peut parcourir une grande distance, même s'il doit sans cesse monter, descendre, remonter, redescendre</layer3-j>
+	<onglet4-j ng-click="selectLayer(4)" ng-mouseenter="survolOnglet(4)"  ng-mouseleave="finSurvolOnglet()" id="onglet4"></onglet4-j>	<layer4-j id="layer4" class="layer-j"  >Les mémoires d'Hadrien, le Prince, le livre du rire et de l'oubli, le chercheur d'or</layer4-j>
+	</controle-j>
+</div>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+
+<script type="text/javascript" src="{{STATIC_URL}}controleSticker/js/controleLayers.js"></script>
+
+</html>

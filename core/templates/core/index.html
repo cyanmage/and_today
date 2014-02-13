@@ -17,7 +17,7 @@
 </head>
 
  
-<body ng-app="appli" style="overflow: hidden" ng-controller="controleurDefileur" >
+<body ng-app="appli" style="overflow : hidden" ng-controller="controleurDefileur" >
 
 	<header>
 		<div class= "header" >
@@ -28,7 +28,7 @@
 
 
 	<defileur class = "defileur">	
-		<div>	
+
 			
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'gauche'">	
 				<panneau-defileur  emplacement = "gauche" class = "panneau_0 panneau transitionDefileur" id = "panel0"  ng-init="actif = false">
@@ -55,7 +55,7 @@
 			</div>	
 
 
-		</div>
+
 	</defileur>
 
 	<img  direction-gauche src="{{ STATIC_URL }}defilement_infini/images/left_arrow.jpg"  class="arrow leftArrow"  id="leftArrow" >	

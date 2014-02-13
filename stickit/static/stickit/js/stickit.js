@@ -75,6 +75,11 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 		}
 	});
 
+
+	$scope.etatControle = function(optionControle){
+		return $scope.controles.curseur[optionControle];
+	}/**/
+
 	$scope.handlerControles =  function(optionControle){
 
 		if (optionControle == "bold"){
@@ -100,10 +105,6 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 		}
 
 	}
-
-	$scope.etatControle = function(optionControle){
-		return $scope.controles.curseur[optionControle];
-	}/**/
 
 
 	$scope.incremente_fontsize = function(){
@@ -169,7 +170,8 @@ module_stickit.directive('createSticker', [function(){
 		link : function(scope, element, attributes){
 				element.draggable({
 					cursor : 'move',
-					containment : $("[emplacement='centre']").find(".limitesEcran"),
+					//containment : $("[emplacement='centre']").find(".limitesEcran"),
+					containment : $(".defileur"),
 					helper : function(){
 						copie = $("div#motif-sticker").clone()
 								.removeAttr("id")

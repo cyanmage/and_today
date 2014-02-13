@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'defilement_infini',
     'dnd_upload',
     'stickit',
+    'controleSticker',
     'core',
     'and_today',
     'warningMessages',

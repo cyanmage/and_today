@@ -13,13 +13,12 @@
 	overflow-x : hidden;	
 }
 
-[emplacement='droitefactice']{
-	left: -200%; 
-	overflow-x : hidden;	
-}
-
 .transitionDefileur{	
-    transition 				: 	left 	0.5s 	linear;
+    transition 				: 	left 	1.1s 	linear;
+    -webkit-transition: left 	1.1s 	linear;
+    -moz-transition: left 	1.1s 	linear;
+    -o-transition: left 	1.1s 	linear;/**/
+
 }
 
 .noTransition{

@@ -26,11 +26,20 @@ module_stickit.directive('contenuSticker', ['servicesControlesStickit', 'service
 					}
 			
 				})
+				.on('dragenter', function(event){
+					console.log("evenement deplacable entrant ");
+					if (scope.options.modeDesign){
+						$(this).focus();						
+					}					
+				})
 				.on('drop', function(event){
 
 					var files = event.originalEvent.dataTransfer.files; 
-	
+					
 					if (files.length){
+						//element.focus;
+						var position = window.getSelection().getRangeAt(0).startOffset;
+						console.log( "focus : ", window.getSelection().getRangeAt(0), ", caret : ", position);
 						event.preventDefault();
 						event.stopPropagation();
 						var range = window.getSelection().getRangeAt(0); 
@@ -60,8 +69,8 @@ module_stickit.directive('controleSticker', ['servicesStickit', '$compile',
 				element
 				.draggable({
 					cursor : 'move',
-					containment : $("[emplacement='centre']").find(".limitesEcran")
-				})
+					containment : $("defileur")
+				})/**/
 				.on("click", function(event, ui){
 					//console.log("wizaaaa");
 				})
