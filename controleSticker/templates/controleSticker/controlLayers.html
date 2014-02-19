@@ -1,10 +1,10 @@
-{% load staticfiles %}
 {% load static %}
 {% csrf_token %}
 
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}controleSticker/css/controleLayers.css">
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}controleSticker/css/controleLayers-jquery.css">
-
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}controleSticker/css/controleCouleurs.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/chromoselector.css">
 
 <!DOCTYPE html>
 <html>
@@ -17,10 +17,38 @@ TEST CONTROLE LAYERS
 <div class="wrapper" ng-controller="controleurOnglets">
 	<controle>
 	<layerbackground></layerbackground>
-	<onglet1 ng-click="selectLayer(1)" ></onglet1>	<layer1 class="layer" ng-class="{hidden : testLayer(1)}">Le premier onglet</layer1>
-	<onglet2 ng-click="selectLayer(2)" ></onglet2>	<layer2 class="layer" ng-class="{hidden : testLayer(2)}">Chocapic, des céréales au chocolat qui remplissent le ventre</layer2>
-	<onglet3 ng-click="selectLayer(3)" ></onglet3>	<layer3 class="layer" ng-class="{hidden : testLayer(3)}">Quelle superficie du pré la chèvre Biquette peut-elle manger ?</layer3>
-	<onglet4 ng-click="selectLayer(4)" ></onglet4>	<layer4 class="layer" ng-class="{hidden : testLayer(4)}">Zola, Verlaine, Stendhal, Pompée, Hugo</layer4>
+
+	<onglet1 ng-click="selectLayer(1)" ></onglet1>	
+	<layer1 class="layer" ng-class="{hidden : testLayer(1)}">
+		Le premier onglet 
+		<input type="text" style="width : 90%; top : 50px" label="Entrez une valeur">
+	</layer1>
+
+	<onglet2 ng-click="selectLayer(2)" ></onglet2>	
+	<layer2 class="layer" ng-class="{hidden : testLayer(2)}">
+		Chocapic, des céréales au chocolat qui remplissent le ventre 
+		<textarea cols="5" style="width : 80%"></textarea>
+	</layer2>
+	
+	<onglet3 ng-click="selectLayer(3)" ></onglet3>	
+	<layer3 class="layer" ng-class="{hidden : testLayer(3)}"><BR><BR> <BR><BR>
+		Choisissez un véhicule pour transporter Biquette ?<BR><BR>
+				<input type="checkbox" name="vehicle" value="Bike">			Bike
+				<input type="checkbox" name="vehicle" value="Car">			Car
+				<input type="checkbox" name="vehicle" value="Autobus">		Autobus
+	</layer3>
+	
+	<onglet4 ng-click="selectLayer(4)" ></onglet4>	
+	<layer4 class="layer" ng-class="{hidden : testLayer(4)}">
+		Liste d'auteurs à étudier<BR><BR> 
+		<form>
+					<input type="radio" name="auteur" 		value="Zola"		>	Zola				<BR>
+					<input type="radio" name="auteur" 	 	value="verlaine"	>	verlaine			<BR>
+					<input type="radio" name="auteur" 	 	value="Stendhal"	>	Stendhal			<BR>		
+					<input type="radio" name="auteur" 		value="Pompée"		>	Pompée				<BR>
+					<input type="radio" name="auteur" 		value="Hugo"		>	Hugo				<BR>			
+		</form>
+	</layer4>
 	</controle>
 </div>
 
@@ -35,10 +63,35 @@ TEST CONTROLE LAYERS
 	</controle-j>
 </div>
 
+
+<div class="testcouleur" id="contenantTestCouleur" ng-controller="controleurCouleurs">
+
+	<div class="b_deployeur" ng-click="toggleDeployment()" chromo-selector-deploy style='color : {*couleurSelectionnee*};'>
+		Déployé ? {*controleurDeploye*}	
+	</div>
+	<!--<div enveloppe>	</div>-->
+	<div id="myContainer"></div>		
+
+
+
+	<input type="text" id="testcouleur" size="20" class="eraser" value="{*couleurSelectionnee*}"  chromo-selector></input>
+
+
+	<div class="couleurIndiquee" style='color : {*couleurSelectionnee*};'>
+		{*couleurSelectionnee*}
+	</div>
+
+
+
+</div><!---->
+
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/chromoselector.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}controleSticker/js/jquery-ui-1.10.4.custom.min.js"></script>
 
+<script type="text/javascript" src="{{STATIC_URL}}controleSticker/js/configurateur.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}controleSticker/js/controleLayers.js"></script>
-
+<script type="text/javascript" src="{{STATIC_URL}}controleSticker/js/controleCouleurs.js"></script>
 </html>

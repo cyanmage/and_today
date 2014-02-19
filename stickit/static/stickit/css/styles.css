@@ -1,25 +1,25 @@
 .creation_sticker{
-	width  : 25px;
-	height : 30px;
-	margin-top: 5px;
+	width  : 25px;		height : 30px;
+	margin : 5px 0px 0px 0px;
 	/*transition: all	1s;*/
 	/*top draggable : true;*/
 }
 
-.creation_sticker:hover{
+.creation_sticker:hover
+{
 	cursor : move;	
     transform: scale(2); 	
 }
 
-.modification_sticker_relache, .modification_sticker_appuye{
-	width  : 25px;
-	height : 30px;
+.modification_sticker_relache, .modification_sticker_appuye
+{
+	width  : 25px;		height : 30px;
 	/*margin-left: 150px;*/
 }
 
-.modification_sticker_relache:hover, .modification_sticker_appuye:hover{
-	padding-left: 2px;
-	padding-top: 5px;
+.modification_sticker_relache:hover, .modification_sticker_appuye:hover
+{
+	padding : 5px 0px 0px 2px;
 	box-shadow: 4px 4px 2px #880000;	
 	cursor: pointer;
 }
@@ -44,50 +44,56 @@
 
 
 
-.container-stickers{
-	background-color: #EEE0E2;
-	border-style: dotted;
-	border-width: 3px;
-	border-color: rgb(58, 156, 241);
-	margin-top: 20px;
+.container-stickers
+	{
+	/*background-color: #EEE0E2;*/
+	border: : 3px dotted	rgb(58, 156, 241);
+	margin: 20px 0px 0px 50px;
 	border-style: outset;
-	width: 90%;
-	height: 550px;
-	margin-left: 50px;
-	float : left;	
-	position: relative;
-
-	/*left : 200px;*/
+	width: 90%;		height: 550px;	
+	position: relative;		float : left;	/*left : 200px;*/
 }
 
 
 
-.sauverLesStickers{
-	position: absolute;
-	margin-left: 100px;
+.sauverLesStickers{	position: absolute;		margin-left: 100px;}
+
+
+.stickit_modeDesign_hidden{	visibility : hidden; }
+.stickit_modeDesign_notdisplayed{	display: none;	}
+/*[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
+
+#motif-background-cadre
+{	
+	position : absolute; left : -500px; top : -500px;
+	display : none;	
+	width : 35px; 	height : 50px;
 }
+#motif-background-cadre:hover{	cursor : move;	}
 
 
-.stickit_modeDesign_hidden{
-	visibility : hidden;
+.backgroundCadreContenant{
+	position : absolute;	width : 300px;		height : 200px;
+	min-width: 150px;	min-height: 100px;	
+	background-color: #E6E7E2;
 }
+.backgroundCadreContenant .backgroundCadreImage{  width : 100%;	height : 100%;	visibility: visible;}
+.backgroundCadreContenant .backgroundCadreImage:hover{	cursor : move;}
 
-/*.stickit_modeDesign_notdisplayed{
-	display: none;
-}*/
-
-.stickit_modeDesign_notdisplayed{
-	display: none;
+.controleTransparency{
+	position : absolute;	width : 50px;	height : 90px;
+	right : 0px;	top : 0px;
+	background-color: #FCF5EB;	
+	border : 1px solid black;
 }
+.controleTransparency .ui-cs-chromoselector{	display: block !important; 	}
+.controleTransparency .ui-cs-container{	display: none;/**/	}
 
-/*
-[ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
+.recipendiaireFichier{	
+	position : absolute;	top : 0px; 	left :0px;	
+	width : 50px;	height: 50px	; 	background-color: #FCF9BA;
+	padding : 10px;	
+	border-bottom : 3px dotted black;		border-right : 3px dotted black;
 }
-*/
-
-
-
-
-
+.recipendiaireFichier:hover{	cursor : pointer;	}	
 

@@ -1,0 +1,11 @@
+/*************************************************************/
+/*Tests chromoselector*/
+.testcouleur{
+	position: absolute;
+	top : 30;
+	left: 30;
+	width: 250;
+	height: 250;
+	/*background-color: #FAFCA0;*/
+	border: 1px dashed #272822;
+}

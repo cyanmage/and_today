@@ -1,0 +1,60 @@
+/*************************************************************/
+/*Tests chromoselector*/
+.testcouleur{
+	position: absolute;
+	top : 30;
+	left: 30;
+	width: 250;
+	height: 300;
+	/*background-color: #FAFCA0;*/
+	border: 1px dashed #272822;
+}
+
+.couleurIndiquee{
+	position: absolute;
+	top : 0px;
+	right : 0px;
+	width: 90%;
+	height: 25px;
+	background-color: #FFFFFF;
+}
+
+.b_deployeur{
+	width : 120px;
+	height: 30px;
+	/*margin : 50px;*/
+	left : 50px;	top : 50px;
+	padding: 5px;
+	background-color: #F7F3B0;
+	border: 2px solid black;
+	border-radius : 5px ;
+	cursor : pointer;
+	position: relative;
+}
+
+.eraser{
+	/*width: 0;
+	height : 0;
+	overflow: hidden;
+	top : 90px;*/
+	display : none;
+}
+
+#myContainer{
+	position : relative;
+	/*position : absolute;
+	left : 55px;	top : 95px ;	width : 120px;		height: 120px;	*/
+	width : 130px;
+	left : 50px;
+	top : 50px;
+	background-color: #F2FFF4;
+	border : 3px dotted red;
+	border-radius: 10px;
+	/*box-shadow: 10px 10px 10px #FEB1A7;*/
+}
+
+[enveloppe]{
+	position : absolute;
+	left : 50px;	top : 95px ;	width : 150px;		height: 50px;
+	overflow : hidden;	
+}

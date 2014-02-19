@@ -1,6 +1,3 @@
-var appli = angular.module("appli", []);
-
-
 appli.controller('controleurOnglets', ['$scope', 
 	function($scope){
 
@@ -92,3 +89,15 @@ appli.directive('controleJ', ['$q', '$timeout', function($q, $timeout){
 	}
 
 }]);/**/
+
+
+
+
+
+
+
+
+
+
+
+

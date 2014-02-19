@@ -18,7 +18,8 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	$scope.options = servicesInitialisationStickit.recupereOptionsParDefaut();	
 	//console.log($scope.options);
 	//$scope.options.controles = servicesControlesStickit.options;
-	$scope.controles  = servicesControlesStickit;
+
+	$scope.controles  =  {'stickit' : servicesControlesStickit};
 
 	/*$scope.$watch('controles', function(newValue, oldValue){
 		//console.log(newValue);
@@ -76,55 +77,10 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	});
 
 
-	$scope.etatControle = function(optionControle){
-		return $scope.controles.curseur[optionControle];
-	}/**/
-
-	$scope.handlerControles =  function(optionControle){
-
-		if (optionControle == "bold"){
-			document.execCommand('bold', false, null);
-			servicesControlesStickit.curseur.bold = ! servicesControlesStickit.curseur.bold ;
-		}
-
-		if (optionControle == "italic"){
-			document.execCommand('italic', false, null);
-			servicesControlesStickit.curseur.italic = ! servicesControlesStickit.curseur.italic ;
-		}
-
-		if (optionControle == "underline"){
-			document.execCommand('underline', false, null);
-			servicesControlesStickit.curseur.underline = ! servicesControlesStickit.curseur.underline ;
-		}
-			//console.log($scope.controles.curseur.fontname);
-		if (optionControle == "fontname"){
-			console.log($scope.controles.curseur.fontname);
-			document.execCommand('fontname', false, $scope.controles.curseur.fontname.name);
-			//servicesControlesStickit.curseur.underline = ! servicesControlesStickit.curseur.underline ;
-			//
-		}
-
-	}
-
-
-	$scope.incremente_fontsize = function(){
-		//console.log("incrementation");
-		if ($scope.controles.curseur.fontsize + 1 <= $scope.controles.parametrages.max_fontsize){
-			$scope.controles.curseur.fontsize++;
-			document.execCommand('fontsize', false, $scope.controles.curseur.fontsize);			
-		}
-	}
-
-	$scope.decremente_fontsize = function(){
-		if ($scope.controles.curseur.fontsize - 1 >= $scope.controles.parametrages.min_fontsize){
-			$scope.controles.curseur.fontsize--;
-			document.execCommand('fontsize', false, $scope.controles.curseur.fontsize);					
-		}
-	}
-
-
 
 }]);
+
+
 
 
 module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStickit',
@@ -145,6 +101,13 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 }]);
 
 
+module_stickit.controller("controleur-backgroundCadre", ['$scope', 
+	function($scope){
+
+		$scope.opacity = 1;
+
+}]);
+
 
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/
@@ -155,11 +118,6 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/
 /*#############################             ###############################          ################################*/
-
-
-
-
-
 
 
 
@@ -194,6 +152,36 @@ module_stickit.directive('createSticker', [function(){
 
 
 
+
+module_stickit.directive('createBackgroundImage', [function(){
+
+	return {			
+		restrict : 'A',
+		link : function(scope, element, attributes){
+				element.draggable({
+					cursor : 'move',
+					containment : $(".defileur"),
+					helper : function(){
+						//copie = $("div#motif-sticker").clone()
+						copie = $("div#motif-background-cadre img").clone()
+								.removeAttr("id")
+								.addClass("creation_backgroundCadre")
+								.css("z-index", 200);
+						return copie;
+					}
+					, stop : function(event, ui){
+
+					}
+				});	
+
+		}
+	}
+
+
+}]);
+
+
+
 module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit', 'servicesStickit', '$q', '$timeout',
 	function($compile, servicesCacheStickit, servicesStickit, $q, $timeout){
 
@@ -212,19 +200,19 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			//scope._scope = "groupe_stickers";
 
 				element.droppable({
-					containment : $("[emplacement='centre']").find(".container-stickers"),
+					//containment : $("[emplacement='centre']").find(".container-stickers"),
 					tolerance : 'fit',
 					drop : function(event, ui){
 	
 						if (ui.helper.hasClass("creationSticker")){
-  							groupeStickers = element.find("groupe-stickers");
-  							console.log(scope.options.modeDesign);
+  							var groupeStickers = element.find("groupe-stickers");
+  							//console.log(scope.options.modeDesign);
 							var sticker = ui.helper.clone()
 										.attr("sticker", '')
 										.removeClass("creationSticker")
-										.addClass("stickerCree collideEnable")
+										.addClass("collideEnable")
 										.css("z-index", "");
-							console.log(sticker.find(".contenuSticker"));
+							//console.log(sticker.find(".contenuSticker"));
 							sticker.find(".contenuSticker").attr("contenteditable", "{*options.modeDesign*}")										
 
   							var ensemble = $("<div ng-controller='controleur-sticker'></div>").append(sticker);
@@ -237,6 +225,35 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
   							groupeStickers.attr("nombrestickers", ++nombreStickers); 
   							
 						}
+
+						else if (ui.helper.hasClass("creation_backgroundCadre")){
+  							var groupeBackgroundCadres = element.find("groupe-background-cadres");	
+
+  							/*var backgroundCadre = ui.helper.clone()
+  							      					.removeClass('ui-draggable-dragging creation_backgroundCadre')
+      												.css({'position' : 'absolute', 'z-index' : '', 'left' : '0px', 'top' : '0px'});*/
+  							
+  							var ensembleContenant = $("#motif-background-cadre").clone()
+  													.attr("id", "")
+  													//.css({'left' : '0px', 'top' : '0px'})
+  													.attr("ng-controller", 'controleur-backgroundCadre')
+  													.attr("background-cadre", '')
+  													//.attr("contenteditable", '');
+													//.addClass("backgroundCadreContenant")
+  											//.append(backgroundCadre);
+  							ensembleContenant.find("input").attr("transparency-background-cadre", ''); 
+  							//console.log(ensembleContenant.find("input"));
+  							 
+  							var backgroundCadreContenant = $compile(ensembleContenant)(scope);
+
+							backgroundCadreContenant
+									.appendTo(groupeBackgroundCadres)
+									.offset(ui.helper.offset());
+
+
+
+						}
+					
 					},		
 					accept : function(element){
 							return (typeof $(".creationSticker").collision(".collideEnable").html() === "undefined");
@@ -301,6 +318,104 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 
 
+module_stickit.directive("backgroundCadre", ['$timeout', '$compile',
+ 	function($timeout, $compile){
+
+
+	return {
+		restrict : 'AE', 
+		link : function(scope, element, attributes){
+
+			var backgroundImage;
+			
+			$timeout(function(){
+				backgroundImage = element.find(".backgroundCadreImage");
+				console.log(backgroundImage);
+
+				element
+				.draggable({
+					   containment : element.parents(".container-stickers"),	
+					   start : function(event, ui){
+							//console.log(element.parents(".container-stickers"));					   	
+					   },
+					   cursor : 'move'
+				})
+				.resizable({
+					containment : element.parents(".container-stickers"),
+					handlers : "e, s, se"				
+				});
+
+				//element.css("opacity", "0.1");
+			});
+
+			scope.$watch("opacity", function(newValue, oldValue){
+				console.log("opacite : ", newValue, ", scope : ", scope.$id);
+				backgroundImage.css("opacity", newValue);
+			})
+//{*opacity*}
+				//$compile(element)(scope);
+		}
+	}
+
+
+}]);
+
+
+
+
+module_stickit.directive('transparencyBackgroundCadre', ['$q', 
+	function($q){
+	
+	return {
+		restrict : 'AE', 
+		link : function(scope, element, attributes){
+			var conteneur = element.parent(".backgroundCadreContenant").find(".controleTransparency");
+
+			/*conteneur.on("dragstart", function(event, ui){
+				event.stopPropagation();
+				console.log("clique");
+				event.preventDefault();
+			})*/
+
+			//console.log(conteneur);
+
+			function rgba2alpha(rgba){
+					rgba = rgba.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+.\d+)\)$/);
+					if (rgba)
+						return  parseFloat(rgba[4]);
+				}
+
+			var updatePreview = function() {
+			     	var color = $(this).chromoselector('getColor').getRgbaString();
+					//console.log(color);			/**/
+					//scope.opacity = 1 - scope.opacity; 
+					scope.opacity = rgba2alpha(color);
+					scope.$apply();
+					//console.log("couleur : ", rgba2alpha(color), ", scope : ", scope.$id);
+					//scope.opacity = color;
+			};
+
+			element.chromoselector({ // Initialise the picker
+		        //create: createPreview,
+		        update: updatePreview,
+		        preview: false,
+		        resizable : false,
+		        roundcorners: false,
+		        panelAlpha: true,
+		        panelChannelWidth: 10,
+		        /*speed : 250, */
+		        autoshow : false,
+		        target : conteneur,
+		        //target : $("#testbcgk", elemHorizParent),
+		        width : 100,
+		        ringwidth : 14
+		    });
+			//element.chromoselector("show");
+
+		}		
+	}
+
+}]);
 
 
 module_stickit.directive('groupeStickers', ['servicesCacheStickit', 
@@ -352,7 +467,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 											$(this).addClass	("collideEnable"); 
 										},
 					    start 	: function(event, ui){	
-						$(this).removeClass	("collideEnable"); 
+											$(this).removeClass	("collideEnable"); 
 					    },					
 					    drag 	: function(event, ui){
 					    }	
@@ -360,13 +475,13 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 				  .resizable({
 					//handles: "e, s, n, w, nw, ne, sw, se",
 					    stop 	: function(event, ui){	
-					    						$(this).addClass	("collideEnable"); 
-					    						//servicesUpdateStickit.avertirModificationSticker(element);
-					    						//element.find(":not(.contenuSticker)").hide();
+					    					$(this).addClass	("collideEnable"); 
+					    					//servicesUpdateStickit.avertirModificationSticker(element);
+					    					//element.find(":not(.contenuSticker)").hide();
 					    					},
 					    start 	: function(event, ui){	
-					    	$(this).removeClass	("collideEnable"); 
-					    	//console.log(element.parent("[espace-stickers]").find(".container-stickers"));						
+					    					$(this).removeClass	("collideEnable"); 
+					    					//console.log(element.parent("[espace-stickers]").find(".container-stickers"));						
 					    },						
 					    collision : true,
 					    obstacle : ".obstacles, .collideEnable",					
@@ -423,7 +538,6 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 
 
 
-
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
@@ -473,23 +587,21 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 
 			if (newValue !==  oldValue){
 				//texte_contenu.css({'font-weight' : (scope.bold ? "bold" : "normal")});
-				console.log(document.queryCommandState("bold", false, null));
-				//document.execCommand("bold");
-				document.queryCommandState("bold", false, null);
+				//console.log(document.queryCommandState("bold", false, null));
+				//document.queryCommandState("bold", false, null);
 				scope.stickerModified = true;				
 			}
 		});
 
 		scope.$watch('controles.italic', function(newValue, oldValue){
 			if (newValue !==  oldValue){
-				document.execCommand("italic");				
 				//texte_contenu.css({'font-style' : (scope.italic ? "italic" : "normal")});
 				scope.stickerModified = true;				
 			}
 		});
 
 
-		scope.$watch('controles.fontfamily.style', function(newValue, oldValue){
+		scope.$watch('controles.fontname', function(newValue, oldValue){
 			if (newValue !==  oldValue){
 				//texte_contenu.css('font-family', newValue);
 				scope.stickerModified = true;				
@@ -497,6 +609,14 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 		});
 
 		scope.$watch('controles.fontsize', function(newValue, oldValue){
+			//console.log(newValue);
+			if (newValue !==  oldValue){
+				//texte_contenu.css('font-size', newValue);
+				scope.stickerModified = true;				
+			}
+		});
+
+		scope.$watch('controles.fontcolor', function(newValue, oldValue){
 			//console.log(newValue);
 			if (newValue !==  oldValue){
 				//texte_contenu.css('font-size', newValue);

@@ -63,7 +63,8 @@
 	z-index: 100;
 	white-space : pre-line;	
 	visibility: visible	;
-	overflow: hidden;
+	overflow-x: hidden;
+	word-wrap:break-word;
 }
 
 
@@ -84,7 +85,7 @@
  /*padding: 10px; */
  outline: 3px dashed #CCC;
  max-height: 100%;
- overflow: auto; 
+ /*overflow: auto; */
  } 
 
 .contenuSticker[contenteditable="true"]:hover, .contenuSticker[contenteditable=""]:hover
@@ -118,8 +119,5 @@
  	cursor : pointer;
  }
 
- .imageControleSticker{
- 	/*width : 25px;
- 	height:25px;*/
- }
+
 

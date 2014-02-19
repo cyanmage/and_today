@@ -7,6 +7,26 @@ from django.contrib.auth.models import User
 # Create your models here
 
 
+class Cadre(models.Model):
+	"""docstring for Cadre"""
+	"""Champs : couleur_de_fond, images_de_fond(uniquement sous forme HTML) """
+	class Meta:
+		verbose_name = _('Cadre')
+		verbose_name_plural = _('Cadres')
+
+	images_de_fond		= models.TextField(default="")
+	couleur_de_fond		= models.TextField(default="#FFFFFF")
+	date 				= models.DateField(null=False)
+	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
+	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
+
+	def __unicode__(self):
+		pass
+    
+    
+		
+
+
 
 class Post(models.Model):
 	"""docstring for Post"""
@@ -21,17 +41,17 @@ class Post(models.Model):
 		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
 	contenu 			= models.TextField(default="")
-	date 				= models.DateField(null = False)
+	date 				= models.DateField(null=False)
 	journee_generique	= models.BooleanField(default=False)
 	recopie_tel_quel 	= models.BooleanField(default=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
-	style 				= models.TextField(default = "", null = True)
-	left  				= models.IntegerField(default = 0)	
-	top 				= models.IntegerField(default = 0)	
-	width  				= models.IntegerField(default = 200)
-	height  			= models.IntegerField(default = 150)	
+	style 				= models.TextField(default="", null=True)
+	left  				= models.IntegerField(default=0)	
+	top 				= models.IntegerField(default=0)	
+	width  				= models.IntegerField(default=200)
+	height  			= models.IntegerField(default=150)	
 
 
 class PostUser(Post):

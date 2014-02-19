@@ -1,32 +1,126 @@
-		<controle-sticker id="controle_sticker" ng-class="{controle_sticker : options.modeDesign, stickit_modeDesign_hidden : !options.modeDesign}" ng-show='options.modeDesign' class="controleSticker" ng-cloak
-		 >
+<controle-sticker id="controle_sticker" ng-class="{controle_sticker : options.modeDesign, stickit_modeDesign_hidden : !options.modeDesign}" ng-show='options.modeDesign' class="controleSticker" ng-cloak  ng-controller="controleur_Controles">
 
+	<div class="barre-actions-controles">
+		<img src="{{STATIC_URL}}stickit/images/controles_sticker/cursor_move.png" class="btn-move">	
+	</div>
+
+	<div class="contenant-principal-controles">
+
+		<layerbackground></layerbackground>
+
+
+
+		<onglet1 ng-click="selectLayer(1)" ></onglet1>	
+
+		<layer1 class="layer" ng-class="{hidden : testLayer(1)}">
+
+			<div class="ensembleHorizontalControlesSticker">
+					<img create-sticker src="{{STATIC_URL}}stickit/images/controles_sticker/page_tourne.jpg" class="creation_sticker"	 />
+			</div>
+
+
+			<div class="ensembleHorizontalControlesSticker">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image.png" class="creation_sticker"	create-background-image draggable='true' />			
+			</div>
+
+			<div class="ensembleHorizontalControlesSticker">
+				<div class="b_deployeur" chromo-selector-deploy style='background-color : 	{*controles.stickit.backgroundcolor*};' name-control='backgroundcolor_deploye'>
+				</div>
+	
+				<div class="conteneur"></div>		
+	
+				<input type="text" size="20" class="eraser"  chromo-selector name-property="backgroundcolor" transparency="true">
+			</div>	
+
+		</layer1>
+
+
+
+
+		<onglet2 ng-click="selectLayer(2)" ></onglet2>
+			<layer2 class="layer" ng-class="{hidden : testLayer(2)}">
 			 	<div class="ensembleHorizontalControlesSticker">
 			 			<img  class= "controlSticker imageControleSticker b_bold" ng-class='{b_bold_appuye : etatControle("bold")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" ng-click = "handlerControles('bold')"/>
 			 			<img  class= "controlSticker imageControleSticker b_italic" ng-class='{b_italic_appuye : etatControle("italic")}'  src="{{STATIC_URL}}stickit/images/controles_sticker/fonteItalic.jpg" ng-click = "handlerControles('italic')" />	
 			 			<img  class= "controlSticker imageControleSticker b_underline" ng-class='{b_underline_appuye : etatControle("underline")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteUnderline.jpg" ng-click = "handlerControles('underline')"/>
-				</div>	
 
-
-
-			 	<div class="ensembleHorizontalControlesSticker">
 			 			<div class="controlSticker controle_fontsize">
-			 				<div class="number_fontsize">{*controles.curseur.fontsize*}</div>
+			 				<div class="number_fontsize">{*controles.stickit.fontsize*}</div>
 			 				<div class="bs_fontsize ">
 			 					<img  class= "b_fontsize b_fontsize_plus" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_plus.png" ng-click = "incremente_fontsize()" />
 			 					<img  class= "b_fontsize b_fontsize_moins" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_moins.png" ng-click = "decremente_fontsize()"/>
 			 				</div>
 			 			</div>
+
 				</div>	
 
 
-			 	<div class="ensembleHorizontalControlesSticker" >
-					<img  class= "imageControleSticker deployeur" src="{{STATIC_URL}}stickit/images/controles_sticker/fontecolor2_t.jpg" />
-				</div>	 	
-			 	<div class="ensembleHorizontalControlesSticker" >
-			 	 	<select class='b_fontname' ng-model="controles.curseur.fontname" ng-options="fontname for fontname in controles.parametrages.fontnames" ng-change="handlerControles('fontname')">
+			 	<div class="ensembleHorizontalControlesSticker">
+			 	 	<select class='b_fontname' ng-model="controles.stickit.fontname" ng-options="fontname for fontname in controles.stickit.parametrages.fontnames" ng-change="handlerControles('fontname')">
 			 	 	</select>
-			 	 	<br>
+				</div>
+
+			 	<div class="ensembleHorizontalControlesSticker">
+
 
 				</div>
-		</controle-sticker>	
+
+ 	
+
+
+			<div class="ensembleHorizontalControlesSticker">
+			 		
+			 		<div class="b_deployeur"  chromo-selector-deploy style='color : {*controles.stickit.fontcolor*};' name-control='fontcolor_deploye'>
+						Couleur 	
+					</div>
+					
+					<div class="conteneur"></div>		
+
+
+
+					<input type="text" size="20" class="eraser" name-property="fontcolor" chromo-selector  transparency="false">
+
+
+			</div>	
+
+
+		</layer2>
+
+
+
+
+
+		<onglet3 ng-click="selectLayer(3)" ></onglet3>	
+		<layer3 class="layer" ng-class="{hidden : testLayer(3)}">
+			<div class="ensembleHorizontalControlesSticker">
+					<span><i><b><u>Background color Sticker</u></b></i></span>
+			</div>
+			<div class="ensembleHorizontalControlesSticker">
+					<span><i><b><u>Background paper Sticker</u></b></i></span>
+			</div>
+
+
+
+		</layer3>
+		
+		
+
+		
+		
+		<onglet4 ng-click="selectLayer(4)" ></onglet4>	
+		<layer4 class="layer" ng-class="{hidden : testLayer(4)}">
+			Zola, Verlaine, Stendhal, Pompée, Hugo
+			<input type="text" id="testtext" style="width:90%">
+
+
+		</layer4><!---->
+
+
+
+
+	</div>	
+
+
+
+
+</controle-sticker>	

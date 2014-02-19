@@ -64,10 +64,11 @@
 
 		<!--<div id="dropfile" contenteditable='true'>Drop an image from your computer</div>-->
 
-			<div container-stickers class="container-stickers stickit_modeDesign_hidden" ng-class="{stickit_modeDesign_hidden : ! options.modeDesign}">{% include "stickit/generation_stickers.html" %}	
-
+			<div container-stickers class="container-stickers stickit_modeDesign_hidden" ng-class="{stickit_modeDesign_hidden : ! options.modeDesign}" style='background-color : {*controles.stickit.backgroundcolor*};' >{% include "stickit/generation_stickers.html" %}	
 			</div>
+
 			{% include "stickit/controles_sticker.html"%}
+
 		</div>
 	</div>
 

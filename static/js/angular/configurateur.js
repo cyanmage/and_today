@@ -1,4 +1,4 @@
-var appli = angular.module('appli', ['core', 'defileur', 'stickit', 'chargeurPage', 'ngAnimate', 'warningMessages', 'busEvent'/**/]);
+var appli = angular.module('appli', ['core', 'defileur', 'stickit', 'chargeurPage', 'ngAnimate', 'warningMessages'/**/]);
 
 appli.config(['$httpProvider', '$interpolateProvider', function($httpProvider, $interpolateProvider) {
 
@@ -23,3 +23,11 @@ document.onkeydown = function (e) {
                 return false;
         }
 }
+
+
+$( document ).ready(function() {
+		$("#motif-background-cadre")
+		.draggable({
+			cursor : 'move'
+		})
+});

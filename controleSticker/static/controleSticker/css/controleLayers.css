@@ -8,7 +8,7 @@ body{
 	position : absolute;
 	display : inline-block;/**/
     /*padding-bottom: 75%;*/
-    width : 30%;			left : 250px;			top : 320px;
+    width : 30%;			left : 250px;			top : 350px;
     /*background-color: #FFEAF1*/
     min-width: 250px;
 }
@@ -41,19 +41,22 @@ layerbackground, layer1, layer2, layer3, layer4
 layerbackground{height : 100%;}
 layer1, layer2, layer3, layer4{height : 100%;}
 /*layer2, layer3, layer4{opacity : 0}*/
-layer1{	background-color: #F5F1D3 ; 	top : 0%; font-size: 15; 	font-style : italic;	text-align: center;}
-layer2{	background-color: #F4FAD1 ; 	top : 0%; font-size: 10; 	font-family: 'Arial';	vertical-align: 75%;}
-layer3{	background-color: #E8CFFC ; 	top : 0%; font-size: 18; 	font-family: 'Helvetica'; text-align: right;	vertical-align: middle}
-layer4{	background-color: #CFD9FC ; 	top : 0%; font-size: 12; 	font-weight: bold;	vertical-align: bottom;}
+layer1{	background-color: #F5F1D3 ; 	/*z-index :10 ;	*/  top : 0%; font-size: 15; 	font-style : italic;	text-align: center;}
+layer2{	background-color: #F4FAD1 ; 	/*z-index :0 ;	*/  top : 0%; font-size: 10; 	font-family: 'Arial';	vertical-align: 75%;}
+layer3{	background-color: #E8CFFC ; 	/*z-index :0 ;	*/  top : 0%; font-size: 18; 	font-family: 'Helvetica'; text-align: right;	vertical-align: middle}
+layer4{	background-color: #CFD9FC ; 	/*z-index :0 ;	*/  top : 0%; font-size: 12; 	font-weight: bold;	vertical-align: bottom;}
 
 onglet1 + layer1.hidden, onglet2 + layer2.hidden, onglet3 + layer3.hidden,  onglet4 + layer4.hidden{
-	opacity : 0;
+	opacity : 0; z-index : 1;
+}
+.layer:not(.hidden){
+	z-index: 10;
 }
 /*onglet1 + layer1, onglet2 + layer2, onglet3 + layer3,  onglet4 + layer4{
 	opacity : 0;	
 }*/
 onglet1:hover + layer1, onglet2:hover + layer2, onglet3:hover + layer3,  onglet4:hover + layer4
-{ 	opacity : 0.85; 	transition : opacity 750ms ease-in-out;}/**/
+{ 	opacity : 0.95; 	transition : opacity 750ms ease-in-out;	/*z-index :10 ;*/}
 /*display : inline-block;*/
 
 /*onglet1:hover ~ .layer:not(.hidden), onglet2:hover ~ .layer:not(.hidden), onglet3:hover ~ .layer:not(.hidden), onglet4:hover ~ .layer:not(.hidden)*/
@@ -62,8 +65,9 @@ onglet1:hover ~ layer2, onglet1:hover ~ layer3, onglet1:hover ~ layer4, onglet2:
 { 	opacity : 0; 	transition : opacity 750ms ease-in-out;/**/	}
 
 onglet1:hover ~ layer2:not(.hidden), onglet1:hover ~ layer3:not(.hidden), onglet1:hover ~ layer4:not(.hidden), 
-onglet2:hover ~ layer3:not(.hidden), onglet2:hover ~ layer4:not(.hidden), onglet3:hover ~ layer4:not(.hidden)
-{ 	opacity : 0.15; 	transition : opacity 750ms ease-in-out;/**/	}
+onglet2:hover ~ layer3:not(.hidden), onglet2:hover ~ layer4:not(.hidden), 
+onglet3:hover ~ layer4:not(.hidden)
+{ 	opacity : 0.1; 	transition : opacity 750ms ease-in-out;/**/	}
 
 /*onglet1:hover ~ .layer:not(.hidden), onglet2:hover ~ .layer:not(.hidden), onglet3:hover ~ .layer:not(.hidden), onglet4:hover ~ .layer:not(.hidden)
 onglet1:hover .layer, onglet2:hover .layer, onglet3:hover .layer, onglet4:hover .layer*/
@@ -71,3 +75,15 @@ onglet1:hover .layer, onglet2:hover .layer, onglet3:hover .layer, onglet4:hover 
 
 onglet1:hover, onglet2:hover, onglet3:hover, onglet4:hover 
 {cursor: pointer; } 
+
+
+
+
+
+
+
+
+
+
+
+
