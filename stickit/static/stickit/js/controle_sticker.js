@@ -144,7 +144,7 @@ module_stickit.directive('contenuSticker', ['servicesControlesStickit', 'service
 			
 				})
 				.on('dragenter', function(event){
-					console.log("evenement deplacable entrant ");
+					//.log("evenement deplacable entrant ");
 					if (scope.options.modeDesign){
 						$(this).focus();						
 					}					
@@ -157,11 +157,24 @@ module_stickit.directive('contenuSticker', ['servicesControlesStickit', 'service
 						//element.focus;
 						var position = window.getSelection().getRangeAt(0).startOffset;
 						//console.log( "focus : ", window.getSelection().getRangeAt(0), ", caret : ", position);
-						//event.preventDefault();
-						//event.stopPropagation();
-						var range = window.getSelection().getRangeAt(0); 
+						event.preventDefault();
+						event.stopPropagation();
+						var html, node, id_blob, range = window.getSelection().getRangeAt(0); 
+
 						for (var i=0 ; i <files.length ; i++) {
-							servicesUpdateStickit.uploadFiles(files[i], range, scope);
+								id_blob = window.URL.createObjectURL(files[i]); 
+								html = "<img src ='" + id_blob + "' id='" + id_blob + "' />"
+								node = range.createContextualFragment(html);
+							   	range.insertNode(node);
+
+							    servicesUpdateStickit
+							    .uploadFiles(files[i], id_blob)
+							    .then(function(association){
+							   		var image = $("[id='" + id_blob + "' ]");
+   		               				image.attr("src", association[image.attr("src")]).removeAttr("id");	
+   		               				window.URL.revokeObjectURL(id_blob);
+							    });
+
     					}	
 					}
 				})
@@ -251,7 +264,7 @@ module_stickit.directive('chromoSelector', ['servicesControlesStickit',
 			     if (firstTime)
 			     	firstTime = false;		// HACK A LA CON POUR FIREFOX LE MONGOL	  
 			     else {
-			     	console.log("mise a jour, ");
+			     	//console.log("mise a jour, ");
 			     	var color = $(this).chromoselector('getColor').getRgbaString();
 			     	scope.handlerControles(attributes.nameProperty, color);   			     	
 			     }		
@@ -360,7 +373,7 @@ module_stickit.factory('servicesControlesStickit', function(){
 		optionsCurseur.underline 	= les_services_stickit_controles.underline 	= document.queryCommandState("underline", false, null);
 		
 		var strFontcolor =  document.queryCommandValue("forecolor", false, null);
-		console.log(strFontcolor);			
+		//console.log(strFontcolor);			
 		//strFontcolor = rgb2hex(strFontcolor);
 		les_services_stickit_controles.fontcolor = optionsCurseur.fontcolor = strFontcolor;		
 

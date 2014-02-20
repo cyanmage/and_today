@@ -26,8 +26,22 @@ document.onkeydown = function (e) {
 
 
 $( document ).ready(function() {
-		$("#motif-background-cadre")
+		/*$("#motif-background-cadre")
 		.draggable({
 			cursor : 'move'
-		})
+		})*/
+
+
+	$(document.body).on("dragover", function(e) {
+	            e.preventDefault();
+	            return false;
+	       });
+
+	$(document.body).on("drop", function(e){
+	     e.preventDefault();
+	     return false;
+	 });
+
+
+
 });

@@ -14,19 +14,6 @@
 	visibility: hidden;
 }*/
 
-.dateDuJour
-{
-	position: relative;
-	bottom : -8px;
-	margin-left: 15%;
-	/*margin-top: 2%;
-	display: inline-block;*/
-	text-align: center;
-	font-style: italic;
-	font-weight: bold;
-	text-decoration: underline;
-	font-size: 18px;
-}
 
 .sous-titre{	padding-left: 10%;}
 

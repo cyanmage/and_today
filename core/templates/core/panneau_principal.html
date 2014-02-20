@@ -7,7 +7,14 @@
 	</span>-->
 
 
-	<div ng-controller='controleurModuleStickit' class="appli-stickit"> 	
+	<div ng-controller='controleurModuleStickit' class="appli-stickit"> 
+		
+		<section>
+						<date-du-jour class='dateDuJour'  date='id'>
+							{{id_date}}
+						</date-du-jour>
+		</section>
+		
 		<section>
 			<div class="bandeau-des-actions">
 				<div class="row">
@@ -40,13 +47,11 @@
 					</div>	
 					<!-- style='visibility : hidden' -->				
 					<div class="span3">	
-						<date-du-jour class='dateDuJour'  date='id'>
-							{{id_date}}
-						</date-du-jour>
+
 					</div>
 					<div class="span1">
 						<div class="btn-group">
-							<button class="btn sauverLesStickers" ng-click="sauverlesStickers()">
+							<button class="btn sauverLesStickers" ng-click="sauvegarder()">
 								Sauver
 							</button>
 						</div>						

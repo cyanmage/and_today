@@ -6,6 +6,20 @@ from django.contrib.auth.models import User
 
 # Create your models here
 
+class BackGround(models.Model):
+	"""docstring for BackGround"""
+	"""Champs : couleur et opacité du cadre global """	
+
+	class Meta:
+		verbose_name = _('BackGround')
+		verbose_name_plural = _('BackGrounds')
+
+	opacite		 			= models.DecimalField(max_digits=3, decimal_places=2)	
+	couleur_de_fond			= models.TextField()
+
+	def __str__(self):
+		pass
+    
 
 class Cadre(models.Model):
 	"""docstring for Cadre"""
@@ -19,12 +33,15 @@ class Cadre(models.Model):
 	date 				= models.DateField(null=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
+	left  				= models.IntegerField(default=0)	
+	top 				= models.IntegerField(default=0)	
+	width  				= models.IntegerField(default=200)
+	height  			= models.IntegerField(default=150)
+	opacite 			= models.DecimalField(max_digits=3, decimal_places=2)		
 
-	def __unicode__(self):
+	def __str__(self):
 		pass
-    
-    
-		
+ 
 
 
 

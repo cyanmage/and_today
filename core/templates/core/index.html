@@ -7,7 +7,8 @@
 	<title>Prototype  de fenêtres coulissants  </title>
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css"/>	
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/defilement.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/core_styles.css">	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">	
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
@@ -68,11 +69,12 @@
 
 <div id="motif-background-cadre" class="backgroundCadreContenant">
 	<img class="backgroundCadreImage" src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image_helper.png"/>
-	<input type="text" size="20" class="eraser">
+	<input type="text" size="20" class="eraser transparencyField">
 	<div class="controleTransparency"></div>
-	<div class="recipendiaireFichier">
+	<div recipiendaire-fichier class="recipiendaireFichier">
 		<img src="{{STATIC_URL}}stickit/images/controles_stickit/uploadBackground.png" />
 	</div>
+	<input type='file' class="selectFiles"/>
 </div>	  		
 
 	<!--<div ></div>

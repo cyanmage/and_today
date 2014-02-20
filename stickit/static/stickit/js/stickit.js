@@ -33,9 +33,9 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	}
 
 
-	$scope.sauverlesStickers = function(){
+	$scope.sauvegarder = function(){
 		servicesUpdateStickit
-		.sauverStickersDunGroupe($scope.id)
+		.sauvegarder($scope.id)
 		.then(function(data){
 				var message = "SAUVEGARDE EFFECTUEE POUR LE " + $scope.id;
 				$scope.$emit("WARNING_DISPLAY",  {	'message' : message, 'id_groupe' : $scope.id });
@@ -163,17 +163,16 @@ module_stickit.directive('createBackgroundImage', [function(){
 					containment : $(".defileur"),
 					helper : function(){
 						//copie = $("div#motif-sticker").clone()
-						copie = $("div#motif-background-cadre img").clone()
+						copie = $("div#motif-background-cadre .backgroundCadreImage").clone()
 								.removeAttr("id")
 								.addClass("creation_backgroundCadre")
 								.css("z-index", 200);
 						return copie;
-					}
-					, stop : function(event, ui){
+					}, 
+					/*stop : function(event, ui){
 
-					}
-				});	
-
+					}*/
+				});
 		}
 	}
 
@@ -241,7 +240,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
   													//.attr("contenteditable", '');
 													//.addClass("backgroundCadreContenant")
   											//.append(backgroundCadre);
-  							ensembleContenant.find("input").attr("transparency-background-cadre", ''); 
+  							ensembleContenant.find(".transparencyField").attr("transparency-background-cadre", ''); 
   							//console.log(ensembleContenant.find("input"));
   							 
   							var backgroundCadreContenant = $compile(ensembleContenant)(scope);
@@ -330,7 +329,7 @@ module_stickit.directive("backgroundCadre", ['$timeout', '$compile',
 			
 			$timeout(function(){
 				backgroundImage = element.find(".backgroundCadreImage");
-				console.log(backgroundImage);
+				//console.log(backgroundImage);
 
 				element
 				.draggable({
@@ -349,7 +348,7 @@ module_stickit.directive("backgroundCadre", ['$timeout', '$compile',
 			});
 
 			scope.$watch("opacity", function(newValue, oldValue){
-				console.log("opacite : ", newValue, ", scope : ", scope.$id);
+				//console.log("opacite : ", newValue, ", scope : ", scope.$id);
 				backgroundImage.css("opacity", newValue);
 			})
 //{*opacity*}
@@ -417,6 +416,76 @@ module_stickit.directive('transparencyBackgroundCadre', ['$q',
 
 }]);
 
+module_stickit.directive('recipiendaireFichier', ['servicesUpdateStickit',
+	function(servicesUpdateStickit){
+
+		return {
+			restrict : 'AE',
+			link : function (scope, element, attributes){
+				var parent = element.parents(".backgroundCadreContenant");
+				var backgroundImage = parent.find(".backgroundCadreImage");
+				var selecteurFichiers = parent.find(".selectFiles");
+
+				selecteurFichiers
+				.on("change", function(event){
+					//console.log("SELECTEUR");
+					var file = event.target.files[0];
+					var id_blob = window.URL.createObjectURL(file); 
+
+					servicesUpdateStickit
+					.uploadFiles(file, id_blob)
+					.then(function(association){
+						backgroundImage.attr('src', association[id_blob]);
+						window.URL.revokeObjectURL(id_blob);
+					});	
+
+				});
+
+				element
+				.on("click", function(event){
+					event.preventDefault();
+					event.stopPropagation();
+					//console.log(element.find(".selectFiles"));
+					selecteurFichiers.click();
+				})
+				.on('dragenter', function(event){
+					//element.addClass("fichierEntre");					
+					//console.log("un fichier entre ");
+					/*if (scope.options.modeDesign){
+						$(this).focus();						
+					}			*/		
+				})				
+				.on('dragleave', function(event){
+					//element.removeClass("fichierEntre");
+					//console.log("un fichier sort ");
+				})
+				.on('drop', function(event){
+
+					var files = event.originalEvent.dataTransfer.files;
+					console.log("DnD FICHIER"); 
+					//console.log("un fichier est tombe , ", files.length);
+					if (files.length){
+						event.preventDefault();
+						event.stopPropagation();
+
+						for (var i=0 ; i <files.length ; i++) {
+							var id_blob = window.URL.createObjectURL(files[i]); 
+
+							servicesUpdateStickit
+							.uploadFiles(files[i], id_blob)
+							.then(function(association){
+								backgroundImage.attr('src', association[id_blob]);
+								window.URL.revokeObjectURL(id_blob);								
+							});	
+	    				}	
+					}
+				});	
+
+			}
+		}
+
+
+}]);
 
 module_stickit.directive('groupeStickers', ['servicesCacheStickit', 
 	function(servicesCacheStickit){
@@ -706,22 +775,18 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 	}
 
 
-	les_services_stickit_update.sauverStickersDunGroupe  = function(idGroupeStickers){
-		var deferred = $q.defer();
-		//console.log(idGroupeStickers);
+	les_services_stickit_update.sauvegarder  = function(idGroupe){
+
+		//console.log(idGroupe);
 		//console.log(registreStickers[id].listeStickersModifies.filter(function(element){return element = id}));
-
-		var url = "/stickit/groupe-stickers/" + idGroupeStickers+ "/";
-		var stickersASauver  = $("#gr-stick-" + idGroupeStickers).find("[sticker]");
-
-		var listeStickersModifies = registreStickers[idGroupeStickers].listeStickersModifies;
+		//var listeStickersModifies = registreStickers[idGroupe].listeStickersModifies;
 		//console.log(listeStickersModifies);
 
+
+		var stickersASauver  = $("#gr-stick-" + idGroupe).find("[sticker]");
 		var elementsJSON = $.map(stickersASauver, function(elementDOMSticker, cle){
 			var	elementSticker = $(elementDOMSticker);
 			var id_sticker = elementSticker.attr("id_sticker");
-
-
 			//if (listeStickersModifies.indexOf(id_sticker) !== -1){
 			if(true){
 				//console.log(id_sticker);
@@ -738,11 +803,36 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 					'id_sticker' 	: id_sticker
 				}					
 			}
-
 		});
 
 
-		var donneesEnvoyees = {'id_groupe' : idGroupeStickers, 'donnees' : elementsJSON};
+		var cadreASauver  = $("#gr-cadre-" + idGroupe).find("[sticker]");
+		var elementsJSONCadre = $.map(cadreASauver, function(elementDOMCadre, cle){
+			var	elementcadre = $(elementDOMCadre);
+			var id_cadre = elementSticker.attr("id_cadre");
+			//if (listeStickersModifies.indexOf(id_sticker) !== -1){
+			if(true){
+				//console.log(id_sticker);
+				contenuSticker = elementSticker.find(".backgroundCadreContenant");
+
+				return  donnees = {
+					'opacity' 		: contenuSticker.attr("style"),
+					'filename' 		: contenuSticker.html(),
+					'top' 			: elementCadre.position().top,
+					'left' 			: elementCadre.position().left,
+					'width'			: elementCadre.width(),	
+					'height'		: elementCadre.height(),				
+	
+					'id_cadre' 		: id_cadre
+				}					
+			}
+		});
+
+
+
+		var url = "/stickit/groupe-stickers/" + idGroupe+ "/";
+		var deferred = $q.defer();
+		var donneesEnvoyees = {'id_groupe' : idGroupe, 'donnees' : elementsJSON};
 		//console.log(donneesEnvoyees);	
 
 		$http
@@ -757,6 +847,8 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 
 		return deferred.promise;
 	}
+
+
 
 	function getCookie(name) {
 	    var cookieValue = null;
@@ -775,39 +867,37 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 	}
 
 
-	les_services_stickit_update.uploadFiles  = function(file, range){
+	les_services_stickit_update.uploadFiles  = function(file, id_blob){
 
-		var html, node, id_blob;
     	var formData = new FormData();		
-
-    	//console.log(file);
-    	id_blob = window.URL.createObjectURL(file); 
-    	html = "<img src ='" + id_blob + "' id='" + id_blob + "' />"
-    	node = range.createContextualFragment(html);
-        range.insertNode(node);
+		var deferred = $q.defer();
 
         formData.append(id_blob, file);    
    		var xhr = new XMLHttpRequest();
    		var url = "/stockeImage/";    
 		var csrftoken = getCookie('csrftoken');
-			console.log(csrftoken);
+
    		 xhr.open("POST", url);
    		 xhr.setRequestHeader("X-CSRFToken", csrftoken);
    		 xhr.overrideMimeType('image/*; charset=x-user-defined-binary');    
    		 xhr.onreadystatechange = function() {
    		     if (xhr.readyState == 4) {
    		           if(xhr.status == 200){
-   		               console.log(xhr.responseText);
-   		               var associations = JSON.parse(xhr.responseText);
-   		               var image = $("[id='" + id_blob + "' ]");
-   		               image.attr("src", associations[image.attr("src")]).removeAttr("id");
+
+   		               var associations = JSON.parse(xhr.responseText); 
+   		               //console.log(associations);
+   		               deferred.resolve(associations);
+   		               //console.log(xhr.responseText);
+
    		           }
    		          else{
-   		               $("html").html(xhr.responseText);               
+   		               $("html").html(xhr.responseText);    
+   		               deferred.reject(false);           
    		           }
    		     }
    		 }
-   		 xhr.send(formData);  		
+   		 xhr.send(formData);  
+   		 return deferred.promise;		
 	}
 
 

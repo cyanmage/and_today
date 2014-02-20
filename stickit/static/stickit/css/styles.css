@@ -63,6 +63,14 @@
 .stickit_modeDesign_notdisplayed{	display: none;	}
 /*[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
 
+
+
+
+
+
+/***********************************************************/
+/*   styles pour la gestion des background cadres          */
+/***********************************************************/
 #motif-background-cadre
 {	
 	position : absolute; left : -500px; top : -500px;
@@ -80,20 +88,24 @@
 .backgroundCadreContenant .backgroundCadreImage{  width : 100%;	height : 100%;	visibility: visible;}
 .backgroundCadreContenant .backgroundCadreImage:hover{	cursor : move;}
 
-.controleTransparency{
-	position : absolute;	width : 50px;	height : 90px;
+.backgroundCadreContenant .controleTransparency{
+	position : absolute;	width : 30px;	height : 95px;
 	right : 0px;	top : 0px;
 	background-color: #FCF5EB;	
 	border : 1px solid black;
 }
-.controleTransparency .ui-cs-chromoselector{	display: block !important; 	}
-.controleTransparency .ui-cs-container{	display: none;/**/	}
+.backgroundCadreContenant .controleTransparency .ui-cs-chromoselector{	display: block !important; 	}
+.backgroundCadreContenant .controleTransparency .ui-cs-container{	display: none;/**/	}
 
-.recipendiaireFichier{	
+.backgroundCadreContenant .recipiendaireFichier{	
 	position : absolute;	top : 0px; 	left :0px;	
-	width : 50px;	height: 50px	; 	background-color: #FCF9BA;
+	/*width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
+	height: 15%	; 	min-height : 25px ; 	max-height : 75px;*/
+	width : 7vw;		height : 7vw;		max-width : 5vw;		max-height : 5vw;
+	background-color: #FCF9BA;
 	padding : 10px;	
 	border-bottom : 3px dotted black;		border-right : 3px dotted black;
 }
-.recipendiaireFichier:hover{	cursor : pointer;	}	
-
+.backgroundCadreContenant .recipiendaireFichier:hover{	cursor : pointer;	}	
+.backgroundCadreContenant .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	
+.backgroundCadreContenant .selectFiles {	display: none 	;}	
