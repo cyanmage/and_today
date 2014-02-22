@@ -1,15 +1,19 @@
-.creation_sticker{
+
+.bandeau-des-actions .creation_sticker{
 	width  : 25px;		height : 30px;
 	margin : 5px 0px 0px 0px;
-	/*transition: all	1s;*/
-	/*top draggable : true;*/
 }
+.bandeau-des-actions .creation_sticker:hover{	cursor : move;	}
 
-.creation_sticker:hover
-{
-	cursor : move;	
-    transform: scale(2); 	
+
+.bandeau-des-actions .creation_background_image{		width  : 50px;		height : 30px; }
+.bandeau-des-actions .creation_background_image:hover{	cursor : move;		}
+
+.bandeau-des-actions .yeux{
+	width : 25px ;	height : 30px;
+	margin-left: 10px;
 }
+.bandeau-des-actions .yeux:hover{	cursor : pointer;}
 
 .modification_sticker_relache, .modification_sticker_appuye
 {
@@ -47,8 +51,9 @@
 .container-stickers
 	{
 	/*background-color: #EEE0E2;*/
+	visibility: hidden;
 	border: : 3px dotted	rgb(58, 156, 241);
-	margin: 20px 0px 0px 50px;
+	margin: 20px 0px 0px 75px;
 	border-style: outset;
 	width: 90%;		height: 550px;	
 	position: relative;		float : left;	/*left : 200px;*/
@@ -59,11 +64,12 @@
 .sauverLesStickers{	position: absolute;		margin-left: 100px;}
 
 
-.stickit_modeDesign_hidden{	visibility : hidden; }
-.stickit_modeDesign_notdisplayed{	display: none;	}
-/*[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
+/*.stickit_modeDesign_hidden, .stickerHidden, .stickit_modeModifCadres, .stickit_modeModifBackground, */
+/*.stickit_modeDesign_notdisplayed{	display: none;	}
+[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
+.visible{	visibility: visible !important; ;	}
 
-
+.hidden{	visibility : hidden !important; }
 
 
 
@@ -73,22 +79,25 @@
 /***********************************************************/
 #motif-background-cadre
 {	
-	position : absolute; left : -500px; top : -500px;
+	position : absolute; left : -500px; top : 500px;
 	display : none;	
-	width : 35px; 	height : 50px;
 }
-#motif-background-cadre:hover{	cursor : move;	}
-
+/*#motif-background-cadre:hover{	cursor : move;	}*/
+.helperBackgroundCadre{
+	width : 300px;
+	height : 200px;
+}
 
 .backgroundCadreContenant{
 	position : absolute;	width : 300px;		height : 200px;
 	min-width: 150px;	min-height: 100px;	
 	background-color: #E6E7E2;
 }
-.backgroundCadreContenant .backgroundCadreImage{  width : 100%;	height : 100%;	visibility: visible;}
+.backgroundCadreContenant .backgroundCadreImage{  width : 100%;	height : 100%;}
 .backgroundCadreContenant .backgroundCadreImage:hover{	cursor : move;}
 
 .backgroundCadreContenant .controleTransparency{
+	display: none;
 	position : absolute;	width : 30px;	height : 95px;
 	right : 0px;	top : 0px;
 	background-color: #FCF5EB;	
@@ -98,14 +107,22 @@
 .backgroundCadreContenant .controleTransparency .ui-cs-container{	display: none;/**/	}
 
 .backgroundCadreContenant .recipiendaireFichier{	
+	display : none;
 	position : absolute;	top : 0px; 	left :0px;	
 	/*width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
 	height: 15%	; 	min-height : 25px ; 	max-height : 75px;*/
-	width : 7vw;		height : 7vw;		max-width : 5vw;		max-height : 5vw;
+	width : 50px;		height : 50px;		/*max-width : 5vw;		max-height : 5vw;*/
 	background-color: #FCF9BA;
 	padding : 10px;	
 	border-bottom : 3px dotted black;		border-right : 3px dotted black;
 }
-.backgroundCadreContenant .recipiendaireFichier:hover{	cursor : pointer;	}	
-.backgroundCadreContenant .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	
+.backgroundCadreContenant .recipiendaireFichierSurvol{  display : block;  opacity: 0.5; }/**/
+.backgroundCadreContenant .recipiendaireFichier:hover{	cursor : pointer; }	
+/*.backgroundCadreContenant .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	*/
 .backgroundCadreContenant .selectFiles {	display: none 	;}	
+
+.backgroundCadreContenant.ui-state-disabled{
+	opacity: 1;
+    filter: none;
+    background-image: inherit;
+}

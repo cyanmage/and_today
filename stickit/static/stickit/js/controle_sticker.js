@@ -13,7 +13,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 	function($scope, servicesControlesStickit) {
 	//console.log("coucou !!");
 
-	$scope.ongletSelectionne = 1;
+	$scope.ongletSelectionne = 2;
 	$scope.fontcolor_deploye = true;
 	$scope.backgroundcolor_deploye = true;	
 

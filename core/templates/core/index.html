@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/backgroundCadre/backgroundCadre.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}warningMessages/css/warning_messages.css">		
 </head>
 
@@ -67,8 +66,9 @@
 		{% include 'stickit/motif_sticker.html' %}
 </div>	
 
+<!--<div id="motif-background-cadre" class="backgroundCadreContenant" ng-class="{visible : ! options.modeDesign || (options.modeDesign && options.modeModifCadres), hidden : options.modeDesign && ! options.modeModifCadres}"  bgCadreVisible="{*bgCadreVisible*}" modeDesign="{*options.modeDesign *}" modeModifCadres="{*options.modeModifCadres*}">-->
 <div id="motif-background-cadre" class="backgroundCadreContenant">
-	<img class="backgroundCadreImage" src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image_helper.png"/>
+	<img class="backgroundCadreImage"  src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image_helper.png"/>
 	<input type="text" size="20" class="eraser transparencyField">
 	<div class="controleTransparency"></div>
 	<div recipiendaire-fichier class="recipiendaireFichier">

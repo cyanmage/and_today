@@ -2,25 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58c6478e-ec17-45e9-9e24-583c01650aa6" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\07f65ac76b227767eef1cc2196f07104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\1b9103e9f693d22f24003fe471d3bd7e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\265a7a3f01c8575b1c777acaf7664ae8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\3611e09810194cbb567fbe2c711ba609.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\55a053eefb94156551527b6be95597cb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\6f1a190a65c7a1b9359248092f80c7fe.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\97d881fac712d05713b0a31ec0f06222.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\a4e9c784f48d19d109f6d96f74350302.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\b1c425ee0304f5761a2d2974ef0a7a0c.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\d112fa23ae58f38277eb855fb3c8bbc1.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\d853ce9c20fcb7f9fb50242d5433c252.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\f46a632067459661bcc2f7fe84b46099.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\f9d87fcaeca602f6863c74ade6113bf8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\sites_web\django\and_today\media\faf9d21a081805a9d18faa6ca2fc7a6c.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/angular/configurateur.js" afterPath="$PROJECT_DIR$/static/js/angular/configurateur.js" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\PED15001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\SRO0079.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\cof0322.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\cof1369.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\corps-yeux-00001.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\corps-yeux-00002.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\corps-yeux-00003 (1).gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\corps-yeux-00003.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\eye-blink.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\gwil60236 (1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\gwil60236.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (5).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (6).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (7).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images (8).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\images.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11117771.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11228484.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11633967.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11943362 (1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11943362.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k11954693.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12028077.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12164216.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12207577.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12219923.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12233539.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k12361011.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k13057364.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k13999042.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k14606934.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k14674304.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k15265281.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k15265368.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k15798901.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k6629426.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k6768481.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k7148877.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k7207375.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k8655395.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9011496.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9011549.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9023928.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9393590.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9514089.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\k9630913.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\kna0017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\ny00amai.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\oeil_062.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\oeil_097.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\oeil_105.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\téléchargement (1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\téléchargement.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\u10104814.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\x19292269.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\yeux-04.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\yeux-58.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\sites_web\django\and_today\graphisme\récupérés\OEUIL\yeux-66.gif" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/js/controle_sticker.js" afterPath="$PROJECT_DIR$/stickit/static/stickit/js/controle_sticker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/controles_sticker.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/controles_sticker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/controls.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/controls.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/static/core/css/core_styles.css" afterPath="$PROJECT_DIR$/core/static/core/css/core_styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defilement_infini/static/defilement_infini/css/defilement.css" afterPath="$PROJECT_DIR$/defilement_infini/static/defilement_infini/css/defilement.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/generation_stickers.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/generation_stickers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/core/index.html" afterPath="$PROJECT_DIR$/core/templates/core/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/models.py" afterPath="$PROJECT_DIR$/core/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/motif_sticker.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/motif_sticker.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/core/panneau_principal.html" afterPath="$PROJECT_DIR$/core/templates/core/panneau_principal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/sticker.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/sticker.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/js/stickit.js" afterPath="$PROJECT_DIR$/stickit/static/stickit/js/stickit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/styles.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
