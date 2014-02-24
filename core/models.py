@@ -28,7 +28,7 @@ class Cadre(models.Model):
 		verbose_name = _('Cadre')
 		verbose_name_plural = _('Cadres')
 
-	images_de_fond		= models.TextField(default="")
+	image_de_fond		= models.TextField(default="")
 	couleur_de_fond		= models.TextField(default="#FFFFFF")
 	date 				= models.DateField(null=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
@@ -37,7 +37,7 @@ class Cadre(models.Model):
 	top 				= models.IntegerField(default=0)	
 	width  				= models.IntegerField(default=200)
 	height  			= models.IntegerField(default=150)
-	opacite 			= models.DecimalField(max_digits=3, decimal_places=2)		
+	opacite 			= models.DecimalField(max_digits=3, decimal_places=2, default=1)		
 
 	def __str__(self):
 		pass
@@ -60,7 +60,6 @@ class Post(models.Model):
 	contenu 			= models.TextField(default="")
 	date 				= models.DateField(null=False)
 	journee_generique	= models.BooleanField(default=False)
-	recopie_tel_quel 	= models.BooleanField(default=False)
 	date_creation  		= models.DateTimeField(auto_now_add=True, default=datetime.now) 
 	inactif  			= models.BooleanField(default=False)
 	date_modification  	= models.DateTimeField(auto_now=True, default=datetime.now)
@@ -69,6 +68,7 @@ class Post(models.Model):
 	top 				= models.IntegerField(default=0)	
 	width  				= models.IntegerField(default=200)
 	height  			= models.IntegerField(default=150)	
+	recopie_tel_quel 	= models.BooleanField(default=False)
 
 
 class PostUser(Post):
@@ -89,8 +89,8 @@ class PostGenerique(Post):
 	pays  				= models.ForeignKey('Pays', null=True, default=0)
 	domaine 			= models.ForeignKey('Domaine', null=True, default = 0) 
 
+
 	def __str__(self):
-		#return "999999999999999"
 		return "Date : " +  self.date.strftime('%d %b %Y') \
 		+ "    , domaine : " + self.domaine.intitule_domaine \
 		+ "   , contenu tronqué : " + self.contenu[:9]
