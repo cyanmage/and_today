@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block contenu %}
+	Nombre de jours : {{nbJours}}
+{% endblock %}
+
+
+{% block header %}
+	{%include 'core/general/header.html' %}
+{% endblock%}
+
+
+
+{% block conteneur-principal %}
+		<section class="conteneur-principal">
+		{%include 'semainier.html'%}
+		</section>
+{% endblock%}
+
+
+
+
+{% comment %}
+{% block conteneur-principal %}
+		<section class="conteneur-principal">
+		{%include 'emploidutemps.html'%}
+		</section>
+{% endblock%}
+
+
+{% block suite %}
+		<section class="suite" style="visibility:hidden;display:none;">
+		{%include 'semainier.html'%}
+		</section>
+{% endblock%}
+{% endcomment %}
+		

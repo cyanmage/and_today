@@ -1,0 +1,225 @@
+from django.db import models
+
+
+# Create your models here.
+
+
+class Eleve(models.Model):
+	"""docstring for Eleve""" 
+
+	nom_eleve 					= models.CharField(max_length = 40)
+	prenom_eleve 				= models.TextField()
+	regime 						= models.ForeignKey('Regime_parametrages', related_name='regime_eleve')	
+	latin 						= models.BooleanField()
+	grec 						= models.BooleanField()
+	allemand 					= models.BooleanField()
+	anglais						= models.BooleanField()
+	classe_de_eleve 			= models.ForeignKey('Classe', related_name='classe_eleve')
+	parents_de_eleve 			= models.ForeignKey('Parents', related_name='parents_eleves')
+
+	class Meta:
+		verbose_name 			= 'Nom de l\'élève'
+		verbose_name_plural 	= 'Nom des élèves'
+
+		
+class Parents(models.Model):
+	"""docstring for Parents"""
+
+	nom_pere 					= models.TextField()
+	nom_mere 					= models.TextField()
+	numero_portable_pere 		= models.TextField()	
+	numero_portable_mere 		= models.TextField()
+	numero_domicile_pere 		= models.TextField()	
+	numero_domicile_mere 		= models.TextField()
+
+
+class Professeur(models.Model):
+	"""docstring for Professeur"""
+
+	nom_professeur 				= models.TextField()
+
+	colles 						= models.ManyToManyField('Eleve', through = 'Colle', related_name='colles_du_professeur')
+	punitions 					= models.ManyToManyField('Eleve', through = 'Punition', related_name='punitions_du_professeur')
+	rendez_vous_parents 		= models.ManyToManyField('Eleve', through = 'RendezVousParents', related_name='RDV_du_professeur')
+
+
+		
+class Classe(models.Model):
+	"""docstring for Classe"""
+
+	nom_classe 					= models.TextField()
+
+
+
+class Punition(models.Model):
+	"""docstring for punition"""
+	"""Punitions données : association manyToMany eleve-professeur avec champs extra"""
+
+	contenu_punition 			= models.TextField()
+	nombre_de_fois 				= models.IntegerField()
+	signature_des_parents 		= models.BooleanField()
+	numero_semaine_donnee 		= models.IntegerField()
+	jour_semaine_donnee 		= models.ForeignKey('Journee_parametrages', related_name='jour_semaine_donnee')
+	heure_donnee 				= models.ForeignKey('Heure_parametrages', related_name = 'heure_donnee')
+	numero_semaine_a_faire 		= models.IntegerField()
+	jour_semaine_a_faire 		= models.ForeignKey('Journee_parametrages', related_name='jour_semaine_a_faire')
+	heure_a_faire 				= models.ForeignKey('Heure_parametrages', related_name = 'heure_a_faire')
+	eleve 						= models.ForeignKey('Eleve', related_name='punition_eleve')
+	professeur 					= models.ForeignKey('Professeur', related_name='professeur_punit')
+
+
+		
+
+class RendezVousParents(models.Model):
+	"""docstring for RendezVous"""
+	"""Rendez-vous avec les parents d'élèves : association manyToMany eleve(parents)-professeur avec champs extra"""
+
+	heure_debut 				= models.TimeField()
+	heure_fin 					= models.TimeField()
+	numero_semaine 				= models.IntegerField()	
+	jour_semaine 				= models.ForeignKey('Journee_parametrages')
+	eleve 						= models.ForeignKey('Eleve', related_name='colle_eleve')
+	professeur 					= models.ForeignKey('Professeur', related_name='professeur_colle')
+
+
+
+
+class Colle(models.Model):
+	"""docstring for Colle"""
+	"""Colles données : association manyToMany eleve-professeur avec champs extra"""
+
+	numero_semaine 				= models.IntegerField()	
+	jour_semaine 				= models.ForeignKey('Journee_parametrages')
+	heure_journee 				= models.ForeignKey('Heure_parametrages')
+	travail_donne 				= models.TextField()	
+	eleve 						= models.ForeignKey('Eleve', related_name='eleve_RDV')
+	professeur 					= models.ForeignKey('Professeur', related_name='professeur_fixe_RDV')	
+
+
+
+
+
+class Journee_parametrages(models.Model):
+	"""docstring for Journee"""
+
+	nom_journee 				= models.TextField()
+	diminutif_nom_journee 		= models.CharField(max_length = 3)
+
+
+
+		
+class Heure_parametrages(models.Model):
+	"""docstring for Heure"""
+
+	intitule_heure_journee 		= models.TimeField()	
+	heure_debut 				= models.TimeField()
+	heure_fin 					= models.TimeField()
+
+
+
+
+class EmploiDuTemps(models.Model):
+	"""docstring for EmploiDuTemps"""	
+
+	semaine_debutante 			= models.IntegerField()
+	semaine_terminante 			= models.IntegerField()
+	journee_du_lundi 			= models.CharField(max_length = 8)
+	journee_du_mardi 			= models.CharField(max_length = 8)	
+	journee_du_mercredi 		= models.CharField(max_length = 8)
+	journee_du_jeudi 			= models.CharField(max_length = 8)	
+	journee_du_vendredi 		= models.CharField(max_length = 8)
+	journee_du_samedi 			= models.CharField(max_length = 8)	
+	journee_du_dimanche 		= models.CharField(max_length = 8)
+
+
+	class Meta:
+		verbose_name 			= 'Emploi du temps professeur'
+		verbose_name_plural 	= 'Emplois du temps du professeur'
+		abstract				= True
+
+	def __unicode__(self):
+		pass
+	
+
+class EmploiDuTempsProfesseur(EmploiDuTemps):
+	"""docstring for EmploiDuTempsProfesseur"""
+
+
+		
+class EmploiDuTempsClasse(EmploiDuTemps):
+	"""docstring for EmploiDuTempsClasse"""
+	
+					
+
+class EmploiDuTempsEleve(EmploiDuTemps):
+	"""docstring for EmploiDuTempsEleve"""
+	
+
+		
+
+class ModificationsEmploisDuTemps(models.Model):
+	"""docstring for ModificationsEmploisDuTemps"""
+	""""Liste des modifications ponctuelles d'un emploi du temps"""
+	"""Champ 'type modifications' : 'DEPL' (déplacement), 'SUPP' (suppression), 'CREA'(création) -> voir la table de paramétrage TypeModificationEmploiDuTemps"""
+	"""Contrainte d'intégrité ----	A RAJOUTER 
+	::: si DEPL, heure_ajoutee et heure_supprimee 	obligatoirement indiquées
+	::: si SUPP, heure_supprimee 					obligatoirement indiquée
+	::: si CREA, heure_ajoutee 						obligatoirement indiquée
+							  ----"""	
+
+	#type_modification 				= models.ForeignKey('TypeModificationEmploiDuTemps_parametrages')
+	#numero_semaine_heure_ajoutee  	= models.IntegerField()
+	#jour_semaine_heure_ajoutee		= models.ForeignKey('Journee_parametrages', related_name='%(app_label)s_%(class)s_ajoutee_related')
+	#heure_ajoutee 					= models.TimeField()
+	#numero_semaine_heure_supprimee	= models.IntegerField()
+	#jour_semaine_heure_supprimee	= models.ForeignKey('Journee_parametrages', related_name='%(app_label)s_%(class)s_supprimee_related')
+	#heure_supprimee 				= models.TimeField()
+	#salle_pour_heure_ajoutee		= models.ForeignKey('Salle')
+	#motif 							= models.TextField()
+
+
+	class Meta:
+		abstract 					= True
+
+
+class ModificationsEmploiDuTempsProfesseur(ModificationsEmploisDuTemps):
+	"""docstring for ModificationsEmploisDuTempsProfesseur"""
+
+	aval_du_proviseur 				= models.BooleanField()
+	heures_rattrapees 				= models.BooleanField()
+	vie_scolaire_avertie 			= models.BooleanField()
+	modifications_emploi_du_temps 	= models.ForeignKey('EmploiDuTempsProfesseur')
+
+
+class ModificationsEmploiDuTempsEleve(ModificationsEmploisDuTemps):
+	"""docstring for ModificationsEmploisDuTempsEleve"""
+	
+	modifications_emploi_du_temps 	= models.ForeignKey('EmploiDuTempsClasse')	
+
+class ModificationsEmploiDuTempsClasse(ModificationsEmploisDuTemps):
+	"""docstring for ModificationsEmploisDuTempsClasse"""
+
+	modifications_emploi_du_temps 	= models.ForeignKey('EmploiDuTempsEleve')					
+
+
+class TypeModificationEmploiDuTemps_parametrages(models.Model):
+	"""docstring for TypeModificationEmploiDuTemps"""
+	""" valeurs possibles : DEPL' (déplacement), 'SUPP' (suppression), 'CREA'(création) """
+
+
+	type_modification 				= models.CharField(max_length = 4)
+	intitule_modification 			= models.TextField()
+
+class Regime_parametrages(models.Model):
+	"""docstring for Regime_parametrages"""
+	"""Régime de l'élève : 'DP'(demi-pensionnaire), 'EXT'(externe), 'INT'(interne)"""
+
+	abbreviation 					= models.CharField(max_length = 3)
+	intitule 						= models.TextField()
+
+class Salle(models.Model):
+	"""docstring for Salle"""
+
+	nom_de_la_salle 				= models.CharField(max_length=6)
+
+		

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<title>Tableau de suivi des évènements</title>
+	<!--I:\sites_web\django\tableau de bord\core\static\core\css-->
+	<link rel="stylesheet" type="text/css" href="/static/core/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/core/css/general.css">
+	<link rel="stylesheet" type="text/css" href="/static/emploidutemps/css/styles_calendrier.css">	
+
+	<script type="text/javascript" src="/static/core/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="/static/core/js/angular.min.js"></script>	
+	<script type="text/javascript" src="/static/core/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/core/js/angularjs/controleurs.js"></script>	
+	<script type="text/javascript" src="/static/core/js/angularjs/directives.js"></script>
+	<script type="text/javascript" src="/static/core/js/angularjs/services.js"></script>
+
+</head>
+<body ng-app="my_app" class="caches">
+
+	<div class="container">
+
+		<header class="page-header caches" >
+			Application de gestion des heures de colle, des punitions et des rendez-vous avec les parents .
+			<BR/>
+			<nav>
+				<div class="bandeau-des-liens row top_buffer down_buffer" ng-controller="panneauControleur">
+							<button type="button" class="btn btn-danger" ng-click="menuVisible = !menuVisible" id="btnChoix">
+								{% verbatim %}{{choix_menu}}{% endverbatim %}
+							</button>					    
+					    	<ul ng-show="menuVisible" class="menuDeroulant">
+					    	    <li ng-click="choix_item=0"><a href="#">Colles</a></li>
+					    	    <li ng-click="choix_item=1"><a href="#">Punitions</a></li>
+					    	    <div class="separateur"></div>
+					    	    <li ng-click="choix_item=2"><a href="#">RDV parents</a></li>
+					    	    <div class="separateur"></div>
+					    	    <li ng-click="choix_item=3"><a href="#">Modifications</a></li>					    	    					    	    
+					    	</ul>
+
+					<!--Test heure avec menu flottant		
+					<div class="heure test_heure dropdown" id="_heure_" position_journee="0" position_heure="0">08:30 - 09:30
+						<div class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="salle">A22	 </span>
+							<span class="matiere" id="span_">MAT</span>
+						</div>
+					    	<ul class="dropdown-menu menu_classe">
+					    	    <li ng-click="choix_item=0"><a href="#">Colles</a></li>
+					    	    <li ng-click="choix_item=1"><a href="#">Punitions</a></li>
+					    	    <div class="divider"></div>
+					    	    <li ng-click="choix_item=2"><a href="#">RDV parents</a></li>
+					    	</ul>						
+					</div>-->
+
+					<div class="dropdown">
+  <button class="btn dropdown-toggle sr-only"type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action -</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+				</div>
+				<div class="span12"></div>
+
+
+
+				
+
+			</nav>	
+		</header>
+
+
+	</div>
+
+</body>
+
+
+</html>

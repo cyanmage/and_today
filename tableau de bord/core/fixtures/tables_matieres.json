@@ -1,0 +1,15 @@
+[
+	{"model":"core.Matiere","pk":0 ,"fields":{"nom_matiere":"---", "diminutif_matiere":"---"}},	
+	{"model":"core.Matiere","pk":1 ,"fields":{"nom_matiere":"Français", "diminutif_matiere":"FRA"}},
+	{"model":"core.Matiere","pk":2 ,"fields":{"nom_matiere":"Mathématiques", "diminutif_matiere":"MAT"}},
+	{"model":"core.Matiere","pk":3 ,"fields":{"nom_matiere":"Anglais", "diminutif_matiere":"ANG"}},
+	{"model":"core.Matiere","pk":4 ,"fields":{"nom_matiere":"Allemand", "diminutif_matiere":"ALL"}},
+	{"model":"core.Matiere","pk":5 ,"fields":{"nom_matiere":"Latin", "diminutif_matiere":"LAT"}},
+	{"model":"core.Matiere","pk":6 ,"fields":{"nom_matiere":"Grec", "diminutif_matiere":"GRE"}},
+	{"model":"core.Matiere","pk":7 ,"fields":{"nom_matiere":"Russe", "diminutif_matiere":"RUS"}},
+	{"model":"core.Matiere","pk":8 ,"fields":{"nom_matiere":"Technologie", "diminutif_matiere":"TEC"}},
+	{"model":"core.Matiere","pk":9 ,"fields":{"nom_matiere":"Sciences de la vie et de la terre", "diminutif_matiere":"SVT"}},
+	{"model":"core.Matiere","pk":10 ,"fields":{"nom_matiere":"Physique-chimie", "diminutif_matiere":"P-C"}},
+	{"model":"core.Matiere","pk":11 ,"fields":{"nom_matiere":"Sport", "diminutif_matiere":"SPO"}},
+	{"model":"core.Matiere","pk":12 ,"fields":{"nom_matiere":"Histoire-géographie", "diminutif_matiere":"H-G"}}
+]

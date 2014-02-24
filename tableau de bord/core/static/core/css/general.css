@@ -1,0 +1,91 @@
+section.conteneur-principal{
+	position:relative;
+}
+
+.bandeau-des-liens {
+	margin-bottom: 10px;
+	height:80px;
+	padding-top: 10px;
+	margin-left: 50px;
+}
+
+.top_buffer { 	margin-top: 2px; }
+.down_buffer { 	margin-bottom: 5px; }
+
+
+.bouton-valider{
+	margin-left: 5%;
+	position: relative;
+	margin-top: 2%;
+	margin-left:90%;	
+}
+
+.emploidutemps{
+	width: 70%;
+	height : 80%;	
+	background-color: #CFD5FF;
+	margin-left : 15%;	
+	margin-top: 2%;
+	padding-bottom: 1%;
+	/*padding-top: 15px;
+	padding-bottom: 5px;
+	padding-left: 5%;*/
+	display:inline-block;/**/
+	border-radius: 5px;
+}
+
+.intitule_heure_test{
+	text-align: center;
+}
+
+.salle_test{
+	/*float:left;
+	margin-left: 15px;*/
+}
+
+.matiere_test{
+	/*float: right;*/
+	/*margin-right: 50px;*/
+}
+
+.menu_classe{
+	/*float:left;*/
+}
+
+.menu_matiere{
+	/*float:right;*/
+}
+
+
+.salle{
+	/*float:left;*/
+	margin-left: 3%;
+	max-width: 30px;
+	/*word-wrap: break-word;
+	/max-width: 2em;*/
+}
+.matiere{
+	display: inline-block;
+	margin-right: 1px;
+	margin-left: 5px;
+	/*float:right;*/
+}
+
+ul.dropdown-menu.salle, ul.dropdown-menu.matiere  li{
+	width:50px;
+}
+
+.top_buffer{
+	margin-top: 25px;
+}/**/
+
+.titre_appli{
+	font-family: "Trebuchet MS", sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0A0F94;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+	margin-bottom: 10px;
+}

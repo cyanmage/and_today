@@ -1,0 +1,7 @@
+[
+	{"model":"core.Classe","pk":0 ,"fields":{"nom_classe":"cinquieme 2", "abbreviation_classe":"-----"}},
+	{"model":"core.Classe","pk":1 ,"fields":{"nom_classe":"cinquieme 2", "abbreviation_classe":"5eme2"}},
+	{"model":"core.Classe","pk":2 ,"fields":{"nom_classe":"cinquieme 3", "abbreviation_classe":"5eme3"}},
+	{"model":"core.Classe","pk":3 ,"fields":{"nom_classe":"troisieme 3", "abbreviation_classe":"3eme1"}},
+	{"model":"core.Classe","pk":4 ,"fields":{"nom_classe":"sixieme   4", "abbreviation_classe":"6eme4"}}
+]

@@ -1,0 +1,1430 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.2.4
+-- Dumped by pg_dump version 9.2.4
+-- Started on 2013-12-12 02:10:14
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 195 (class 3079 OID 11727)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2108 (class 0 OID 0)
+-- Dependencies: 195
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 173 (class 1259 OID 35436)
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_group (
+    id integer NOT NULL,
+    name character varying(80) NOT NULL
+);
+
+
+ALTER TABLE public.auth_group OWNER TO admin_and_today;
+
+--
+-- TOC entry 172 (class 1259 OID 35434)
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_group_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2109 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_group_id_seq OWNED BY auth_group.id;
+
+
+--
+-- TOC entry 171 (class 1259 OID 35421)
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_group_permissions (
+    id integer NOT NULL,
+    group_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_group_permissions OWNER TO admin_and_today;
+
+--
+-- TOC entry 170 (class 1259 OID 35419)
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_group_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2110 (class 0 OID 0)
+-- Dependencies: 170
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_group_permissions_id_seq OWNED BY auth_group_permissions.id;
+
+
+--
+-- TOC entry 169 (class 1259 OID 35411)
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_permission (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    content_type_id integer NOT NULL,
+    codename character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.auth_permission OWNER TO admin_and_today;
+
+--
+-- TOC entry 168 (class 1259 OID 35409)
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_permission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_permission_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2111 (class 0 OID 0)
+-- Dependencies: 168
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
+
+
+--
+-- TOC entry 179 (class 1259 OID 35481)
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_user (
+    id integer NOT NULL,
+    password character varying(128) NOT NULL,
+    last_login timestamp with time zone NOT NULL,
+    is_superuser boolean NOT NULL,
+    username character varying(30) NOT NULL,
+    first_name character varying(30) NOT NULL,
+    last_name character varying(30) NOT NULL,
+    email character varying(75) NOT NULL,
+    is_staff boolean NOT NULL,
+    is_active boolean NOT NULL,
+    date_joined timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.auth_user OWNER TO admin_and_today;
+
+--
+-- TOC entry 175 (class 1259 OID 35451)
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_user_groups (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    group_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_groups OWNER TO admin_and_today;
+
+--
+-- TOC entry 174 (class 1259 OID 35449)
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_user_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2112 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
+
+
+--
+-- TOC entry 178 (class 1259 OID 35479)
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2113 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
+
+
+--
+-- TOC entry 177 (class 1259 OID 35466)
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE auth_user_user_permissions (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_user_permissions OWNER TO admin_and_today;
+
+--
+-- TOC entry 176 (class 1259 OID 35464)
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE auth_user_user_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2114 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE auth_user_user_permissions_id_seq OWNED BY auth_user_user_permissions.id;
+
+
+--
+-- TOC entry 188 (class 1259 OID 35569)
+-- Name: core_domaine; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE core_domaine (
+    id integer NOT NULL,
+    intitule_domaine character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.core_domaine OWNER TO admin_and_today;
+
+--
+-- TOC entry 187 (class 1259 OID 35567)
+-- Name: core_domaine_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE core_domaine_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.core_domaine_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2115 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: core_domaine_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE core_domaine_id_seq OWNED BY core_domaine.id;
+
+
+--
+-- TOC entry 192 (class 1259 OID 36064)
+-- Name: core_pays; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE core_pays (
+    id integer NOT NULL,
+    code_pays character varying(4) NOT NULL,
+    nom_pays character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.core_pays OWNER TO admin_and_today;
+
+--
+-- TOC entry 191 (class 1259 OID 36062)
+-- Name: core_pays_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE core_pays_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.core_pays_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2116 (class 0 OID 0)
+-- Dependencies: 191
+-- Name: core_pays_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE core_pays_id_seq OWNED BY core_pays.id;
+
+
+--
+-- TOC entry 186 (class 1259 OID 35561)
+-- Name: core_post; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE core_post (
+    id integer NOT NULL,
+    contenu character varying(300) NOT NULL,
+    date date NOT NULL,
+    domaine_id integer NOT NULL,
+    journee_generique boolean NOT NULL,
+    recopie_tel_quel boolean NOT NULL,
+    date_creation date NOT NULL
+);
+
+
+ALTER TABLE public.core_post OWNER TO admin_and_today;
+
+--
+-- TOC entry 185 (class 1259 OID 35559)
+-- Name: core_post_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE core_post_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.core_post_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2117 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: core_post_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE core_post_id_seq OWNED BY core_post.id;
+
+
+--
+-- TOC entry 190 (class 1259 OID 35589)
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE django_admin_log (
+    id integer NOT NULL,
+    action_time timestamp with time zone NOT NULL,
+    user_id integer NOT NULL,
+    content_type_id integer,
+    object_id text,
+    object_repr character varying(200) NOT NULL,
+    action_flag smallint NOT NULL,
+    change_message text NOT NULL,
+    CONSTRAINT django_admin_log_action_flag_check CHECK ((action_flag >= 0))
+);
+
+
+ALTER TABLE public.django_admin_log OWNER TO admin_and_today;
+
+--
+-- TOC entry 189 (class 1259 OID 35587)
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE django_admin_log_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_admin_log_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2118 (class 0 OID 0)
+-- Dependencies: 189
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
+
+
+--
+-- TOC entry 181 (class 1259 OID 35501)
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE django_content_type (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    app_label character varying(100) NOT NULL,
+    model character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.django_content_type OWNER TO admin_and_today;
+
+--
+-- TOC entry 180 (class 1259 OID 35499)
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE django_content_type_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_content_type_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2119 (class 0 OID 0)
+-- Dependencies: 180
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
+
+
+--
+-- TOC entry 182 (class 1259 OID 35514)
+-- Name: django_session; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE django_session (
+    session_key character varying(40) NOT NULL,
+    session_data text NOT NULL,
+    expire_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_session OWNER TO admin_and_today;
+
+--
+-- TOC entry 184 (class 1259 OID 35524)
+-- Name: django_site; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE django_site (
+    id integer NOT NULL,
+    domain character varying(100) NOT NULL,
+    name character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.django_site OWNER TO admin_and_today;
+
+--
+-- TOC entry 183 (class 1259 OID 35522)
+-- Name: django_site_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE django_site_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_site_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2120 (class 0 OID 0)
+-- Dependencies: 183
+-- Name: django_site_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
+
+
+--
+-- TOC entry 194 (class 1259 OID 36266)
+-- Name: south_migrationhistory; Type: TABLE; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE TABLE south_migrationhistory (
+    id integer NOT NULL,
+    app_name character varying(255) NOT NULL,
+    migration character varying(255) NOT NULL,
+    applied timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.south_migrationhistory OWNER TO admin_and_today;
+
+--
+-- TOC entry 193 (class 1259 OID 36264)
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE; Schema: public; Owner: admin_and_today
+--
+
+CREATE SEQUENCE south_migrationhistory_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.south_migrationhistory_id_seq OWNER TO admin_and_today;
+
+--
+-- TOC entry 2121 (class 0 OID 0)
+-- Dependencies: 193
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin_and_today
+--
+
+ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
+
+
+--
+-- TOC entry 1997 (class 2604 OID 35439)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_group ALTER COLUMN id SET DEFAULT nextval('auth_group_id_seq'::regclass);
+
+
+--
+-- TOC entry 1996 (class 2604 OID 35424)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- TOC entry 1995 (class 2604 OID 35414)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_permission ALTER COLUMN id SET DEFAULT nextval('auth_permission_id_seq'::regclass);
+
+
+--
+-- TOC entry 2000 (class 2604 OID 35484)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user ALTER COLUMN id SET DEFAULT nextval('auth_user_id_seq'::regclass);
+
+
+--
+-- TOC entry 1998 (class 2604 OID 35454)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_groups ALTER COLUMN id SET DEFAULT nextval('auth_user_groups_id_seq'::regclass);
+
+
+--
+-- TOC entry 1999 (class 2604 OID 35469)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('auth_user_user_permissions_id_seq'::regclass);
+
+
+--
+-- TOC entry 2004 (class 2604 OID 35572)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY core_domaine ALTER COLUMN id SET DEFAULT nextval('core_domaine_id_seq'::regclass);
+
+
+--
+-- TOC entry 2007 (class 2604 OID 36067)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY core_pays ALTER COLUMN id SET DEFAULT nextval('core_pays_id_seq'::regclass);
+
+
+--
+-- TOC entry 2003 (class 2604 OID 35564)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY core_post ALTER COLUMN id SET DEFAULT nextval('core_post_id_seq'::regclass);
+
+
+--
+-- TOC entry 2005 (class 2604 OID 35592)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY django_admin_log ALTER COLUMN id SET DEFAULT nextval('django_admin_log_id_seq'::regclass);
+
+
+--
+-- TOC entry 2001 (class 2604 OID 35504)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY django_content_type ALTER COLUMN id SET DEFAULT nextval('django_content_type_id_seq'::regclass);
+
+
+--
+-- TOC entry 2002 (class 2604 OID 35527)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
+
+
+--
+-- TOC entry 2008 (class 2604 OID 36269)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY south_migrationhistory ALTER COLUMN id SET DEFAULT nextval('south_migrationhistory_id_seq'::regclass);
+
+
+--
+-- TOC entry 2079 (class 0 OID 35436)
+-- Dependencies: 173
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_group (id, name) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2122 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_group_id_seq', 1, false);
+
+
+--
+-- TOC entry 2077 (class 0 OID 35421)
+-- Dependencies: 171
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2123 (class 0 OID 0)
+-- Dependencies: 170
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_group_permissions_id_seq', 1, false);
+
+
+--
+-- TOC entry 2075 (class 0 OID 35411)
+-- Dependencies: 169
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
+1	Can add permission	1	add_permission
+2	Can change permission	1	change_permission
+3	Can delete permission	1	delete_permission
+4	Can add group	2	add_group
+5	Can change group	2	change_group
+6	Can delete group	2	delete_group
+7	Can add user	3	add_user
+8	Can change user	3	change_user
+9	Can delete user	3	delete_user
+10	Can add content type	4	add_contenttype
+11	Can change content type	4	change_contenttype
+12	Can delete content type	4	delete_contenttype
+13	Can add session	5	add_session
+14	Can change session	5	change_session
+15	Can delete session	5	delete_session
+16	Can add site	6	add_site
+17	Can change site	6	change_site
+18	Can delete site	6	delete_site
+19	Can add migration history	7	add_migrationhistory
+20	Can change migration history	7	change_migrationhistory
+21	Can delete migration history	7	delete_migrationhistory
+22	Can add Post	8	add_post
+23	Can change Post	8	change_post
+24	Can delete Post	8	delete_post
+25	Can add Domaine	9	add_domaine
+26	Can change Domaine	9	change_domaine
+27	Can delete Domaine	9	delete_domaine
+28	Can add log entry	10	add_logentry
+29	Can change log entry	10	change_logentry
+30	Can delete log entry	10	delete_logentry
+\.
+
+
+--
+-- TOC entry 2124 (class 0 OID 0)
+-- Dependencies: 168
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_permission_id_seq', 36, true);
+
+
+--
+-- TOC entry 2085 (class 0 OID 35481)
+-- Dependencies: 179
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
+1	pbkdf2_sha256$12000$ortsEUjA1cm1$BPrntG0NmYnfeuW32y95Io4fhpvInYrfPPYofsVWJbo=	2013-12-10 18:12:34.149164+01	t	test				t	t	2013-12-10 18:11:58.632133+01
+\.
+
+
+--
+-- TOC entry 2081 (class 0 OID 35451)
+-- Dependencies: 175
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_user_groups (id, user_id, group_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2125 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
+
+
+--
+-- TOC entry 2126 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_user_id_seq', 1, true);
+
+
+--
+-- TOC entry 2083 (class 0 OID 35466)
+-- Dependencies: 177
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2127 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
+
+
+--
+-- TOC entry 2094 (class 0 OID 35569)
+-- Dependencies: 188
+-- Data for Name: core_domaine; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY core_domaine (id, intitule_domaine) FROM stdin;
+1	Sciences
+2	Technologie
+3	Histoire
+4	People
+5	Arts
+6	Loisirs
+7	Société
+\.
+
+
+--
+-- TOC entry 2128 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: core_domaine_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('core_domaine_id_seq', 7, true);
+
+
+--
+-- TOC entry 2098 (class 0 OID 36064)
+-- Dependencies: 192
+-- Data for Name: core_pays; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY core_pays (id, code_pays, nom_pays) FROM stdin;
+1	FRAN	France
+2	ET-U	Etats-Unis
+3	ALLE	Allemagne
+0	---	----
+\.
+
+
+--
+-- TOC entry 2129 (class 0 OID 0)
+-- Dependencies: 191
+-- Name: core_pays_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('core_pays_id_seq', 3, true);
+
+
+--
+-- TOC entry 2092 (class 0 OID 35561)
+-- Dependencies: 186
+-- Data for Name: core_post; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY core_post (id, contenu, date, domaine_id, journee_generique, recopie_tel_quel, date_creation) FROM stdin;
+11	Décès d'Alfred Nobel 	1896-12-10	1	f	f	2013-12-11
+14	Première planète en dehors du système solaire découverte	1984-12-10	1	f	f	2013-12-11
+15	Le prix Nobel est décerné à Yitzhak Rabin, Shimon Peres et Yasser Arafat	1994-12-10	3	f	f	2013-12-11
+12	Adoption de la déclaration universelle des droits de l'homme par l'ONU	1948-12-10	3	f	f	2013-12-11
+16	Naissance de Gonzalo Higuaín footballeur franco-argentin	1987-12-10	4	f	f	2013-12-11
+17	Sortie du jeu Doom sur PC, dont la violence scandalise.	1993-12-10	7	f	f	2013-12-11
+18	Jour de l'érable à sucre ... une recette ?	2013-12-11	6	t	f	2013-12-11
+13	 Jean Henri Dunant, Frederic Passy	1901-12-10	1	f	f	2013-12-11
+19	Il reste 20 jours avant la fin de l'année	2013-12-11	7	t	f	2013-12-11
+20	Le 11 décembre 1582 n'existe pas en France ... pour cause d'adoption de calendrier grégorien.	1582-12-11	3	f	f	2013-12-11
+21	Début du procès de Louis XVI devant la Convention.	1792-12-11	3	f	f	2013-12-11
+22	L'UNICEF est créée par les Nations unies.	1946-12-11	3	f	f	2013-12-11
+23	Adoption du protocole de Kyoto par 159 pays, avec l'objectif de réduire l'émission de gaz à effet de serre.	1997-12-11	7	f	t	2013-12-11
+9	élection de Louis-Napoléon Bonaparte à la présidence de la République.	1848-12-10	3	f	f	2013-12-11
+10	La France adopte le mètre comme unité officielle de longueur. 	1799-12-10	1	f	f	2013-12-11
+\.
+
+
+--
+-- TOC entry 2130 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: core_post_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('core_post_id_seq', 23, true);
+
+
+--
+-- TOC entry 2096 (class 0 OID 35589)
+-- Dependencies: 190
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, object_repr, action_flag, change_message) FROM stdin;
+1	2013-12-10 18:55:36.083842+01	1	9	5	Domaine : Arts	2	No fields changed.
+2	2013-12-10 23:24:39.271685+01	1	8	10	Contenu : La France adopte le mètre, domaine : 	1	
+3	2013-12-10 23:27:08.469218+01	1	8	11	Contenu : Décès d'Alfred Nobel , domaine : 	1	
+4	2013-12-10 23:29:23.926966+01	1	8	12	Contenu : Adoption de la déclaratio, domaine : 	1	
+5	2013-12-10 23:32:56.221109+01	1	8	10	Contenu : La France adopte le mètre, domaine : 	2	Changed date.
+6	2013-12-10 23:49:42.544667+01	1	8	13	Contenu :  Jean Henri Dunant, Frede, domaine : 	1	
+7	2013-12-10 23:51:27.516671+01	1	8	14	Contenu : Première planète en dehor, domaine : 	1	
+8	2013-12-10 23:52:40.218829+01	1	8	15	Contenu : Le prix Nobel est décerné, domaine : 	1	
+9	2013-12-11 00:08:11.139075+01	1	8	10	Contenu : La France adopte le mètre, domaine : 	2	Changed contenu.
+10	2013-12-11 12:29:05.290746+01	1	8	10	Contenu : La France adopte le mètre, domaine : 	2	Changed date.
+11	2013-12-11 12:29:12.945183+01	1	8	11	Contenu : Décès d'Alfred Nobel , domaine : 	2	Changed date.
+12	2013-12-11 12:29:20.098593+01	1	8	13	Contenu :  Jean Henri Dunant, Frede, domaine : 	2	Changed date.
+13	2013-12-11 12:29:26.227943+01	1	8	12	Contenu : Adoption de la déclaratio, domaine : 	2	Changed date.
+14	2013-12-11 12:29:32.487301+01	1	8	14	Contenu : Première planète en dehor, domaine : 	2	Changed date.
+15	2013-12-11 12:29:38.535647+01	1	8	15	Contenu : Le prix Nobel est décerné, domaine : 	2	Changed date.
+16	2013-12-11 14:13:19.119444+01	1	8	15	Contenu : Le prix Nobel est décerné, domaine : 	2	No fields changed.
+17	2013-12-11 14:13:42.068757+01	1	8	12	Contenu : Adoption de la déclaratio, domaine : 	2	No fields changed.
+18	2013-12-11 17:37:05.053728+01	1	8	16	Date : 10 Dec 1987    , domaine : People   , contenu tronqué : Gonzalo H	1	
+19	2013-12-11 17:37:40.510756+01	1	8	16	Date : 10 Dec 1987    , domaine : People   , contenu tronqué : Naissance	2	Changed contenu.
+20	2013-12-11 17:39:52.382298+01	1	8	10	Date : 10 Dec 1799    , domaine : Sciences   , contenu tronqué : La France	2	No fields changed.
+21	2013-12-11 19:43:53.426902+01	1	9	6	Loisirs	1	
+22	2013-12-11 19:44:03.480477+01	1	8	17	Date : 10 Dec 1993    , domaine : Sciences   , contenu tronqué : Sortie du	1	
+23	2013-12-11 19:44:12.356984+01	1	8	17	Date : 10 Dec 1993    , domaine : Loisirs   , contenu tronqué : Sortie du	2	Changed domaine.
+24	2013-12-11 19:57:49.688733+01	1	9	7	Société	1	
+25	2013-12-11 19:57:55.559069+01	1	8	18	Date : 11 Dec 2013    , domaine : Loisirs   , contenu tronqué : Jour de l	1	
+26	2013-12-11 19:58:07.140731+01	1	8	17	Date : 10 Dec 1993    , domaine : Société   , contenu tronqué : Sortie du	2	Changed domaine.
+27	2013-12-11 19:58:14.662161+01	1	8	17	Date : 10 Dec 1993    , domaine : Société   , contenu tronqué : Sortie du	2	No fields changed.
+28	2013-12-11 20:00:11.205827+01	1	8	18	Date : 11 Dec 2013    , domaine : Loisirs   , contenu tronqué : Jour de l	2	Changed journee_generique.
+29	2013-12-11 20:01:02.510762+01	1	8	13	Date : 10 Dec 1901    , domaine : Sciences   , contenu tronqué :  Jean Hen	2	No fields changed.
+30	2013-12-11 20:02:21.755294+01	1	8	19	Date : 11 Dec 2013    , domaine : Société   , contenu tronqué : Il reste 	1	
+31	2013-12-11 20:04:00.966969+01	1	8	20	Date : 11 Dec 1582    , domaine : Histoire   , contenu tronqué : Le 11 déc	1	
+32	2013-12-11 20:05:07.168756+01	1	8	21	Date : 11 Dec 1792    , domaine : Histoire   , contenu tronqué : Début du 	1	
+33	2013-12-11 20:06:06.116127+01	1	8	22	Date : 11 Dec 1946    , domaine : Histoire   , contenu tronqué : L'UNICEF 	1	
+34	2013-12-11 20:08:16.219569+01	1	8	23	Date : 11 Dec 1997    , domaine : Société   , contenu tronqué : Adoption 	1	
+\.
+
+
+--
+-- TOC entry 2131 (class 0 OID 0)
+-- Dependencies: 189
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('django_admin_log_id_seq', 34, true);
+
+
+--
+-- TOC entry 2087 (class 0 OID 35501)
+-- Dependencies: 181
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY django_content_type (id, name, app_label, model) FROM stdin;
+1	permission	auth	permission
+2	group	auth	group
+3	user	auth	user
+4	content type	contenttypes	contenttype
+5	session	sessions	session
+6	site	sites	site
+7	migration history	south	migrationhistory
+8	Post	core	post
+9	Domaine	core	domaine
+10	log entry	admin	logentry
+\.
+
+
+--
+-- TOC entry 2132 (class 0 OID 0)
+-- Dependencies: 180
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('django_content_type_id_seq', 12, true);
+
+
+--
+-- TOC entry 2088 (class 0 OID 35514)
+-- Dependencies: 182
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY django_session (session_key, session_data, expire_date) FROM stdin;
+7aysf5x84r7uy1ndgrc12skjouoyixr1	ZTkwOTBiMTA5ODY4M2EzNjMyYTQ0MDk1YmRlMjNiOGNkZTgzMmQ0Mzp7Il9hdXRoX3VzZXJfaWQiOjEsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=	2013-12-24 18:12:34.154164+01
+\.
+
+
+--
+-- TOC entry 2090 (class 0 OID 35524)
+-- Dependencies: 184
+-- Data for Name: django_site; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY django_site (id, domain, name) FROM stdin;
+1	example.com	example.com
+\.
+
+
+--
+-- TOC entry 2133 (class 0 OID 0)
+-- Dependencies: 183
+-- Name: django_site_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('django_site_id_seq', 1, true);
+
+
+--
+-- TOC entry 2100 (class 0 OID 36266)
+-- Dependencies: 194
+-- Data for Name: south_migrationhistory; Type: TABLE DATA; Schema: public; Owner: admin_and_today
+--
+
+COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
+1	core	0001_initial	2013-12-11 23:22:12.677136+01
+\.
+
+
+--
+-- TOC entry 2134 (class 0 OID 0)
+-- Dependencies: 193
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin_and_today
+--
+
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 1, true);
+
+
+--
+-- TOC entry 2021 (class 2606 OID 35443)
+-- Name: auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_name_key UNIQUE (name);
+
+
+--
+-- TOC entry 2016 (class 2606 OID 35428)
+-- Name: auth_group_permissions_group_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_permission_id_key UNIQUE (group_id, permission_id);
+
+
+--
+-- TOC entry 2019 (class 2606 OID 35426)
+-- Name: auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2024 (class 2606 OID 35441)
+-- Name: auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2011 (class 2606 OID 35418)
+-- Name: auth_permission_content_type_id_codename_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_codename_key UNIQUE (content_type_id, codename);
+
+
+--
+-- TOC entry 2013 (class 2606 OID 35416)
+-- Name: auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2027 (class 2606 OID 35456)
+-- Name: auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2030 (class 2606 OID 35458)
+-- Name: auth_user_groups_user_id_group_id_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_user_id_group_id_key UNIQUE (user_id, group_id);
+
+
+--
+-- TOC entry 2038 (class 2606 OID 35486)
+-- Name: auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user
+    ADD CONSTRAINT auth_user_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2033 (class 2606 OID 35471)
+-- Name: auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2036 (class 2606 OID 35473)
+-- Name: auth_user_user_permissions_user_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_user_id_permission_id_key UNIQUE (user_id, permission_id);
+
+
+--
+-- TOC entry 2040 (class 2606 OID 35488)
+-- Name: auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user
+    ADD CONSTRAINT auth_user_username_key UNIQUE (username);
+
+
+--
+-- TOC entry 2056 (class 2606 OID 35574)
+-- Name: core_domaine_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY core_domaine
+    ADD CONSTRAINT core_domaine_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2062 (class 2606 OID 36069)
+-- Name: core_pays_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY core_pays
+    ADD CONSTRAINT core_pays_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2054 (class 2606 OID 35566)
+-- Name: core_post_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY core_post
+    ADD CONSTRAINT core_post_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2059 (class 2606 OID 35598)
+-- Name: django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2043 (class 2606 OID 35508)
+-- Name: django_content_type_app_label_model_key; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_app_label_model_key UNIQUE (app_label, model);
+
+
+--
+-- TOC entry 2045 (class 2606 OID 35506)
+-- Name: django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2048 (class 2606 OID 35521)
+-- Name: django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- TOC entry 2051 (class 2606 OID 35529)
+-- Name: django_site_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY django_site
+    ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2064 (class 2606 OID 36274)
+-- Name: south_migrationhistory_pkey; Type: CONSTRAINT; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+ALTER TABLE ONLY south_migrationhistory
+    ADD CONSTRAINT south_migrationhistory_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2022 (class 1259 OID 35544)
+-- Name: auth_group_name_like; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_group_name_like ON auth_group USING btree (name varchar_pattern_ops);
+
+
+--
+-- TOC entry 2014 (class 1259 OID 35542)
+-- Name: auth_group_permissions_group_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_group_id ON auth_group_permissions USING btree (group_id);
+
+
+--
+-- TOC entry 2017 (class 1259 OID 35543)
+-- Name: auth_group_permissions_permission_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_permission_id ON auth_group_permissions USING btree (permission_id);
+
+
+--
+-- TOC entry 2009 (class 1259 OID 35541)
+-- Name: auth_permission_content_type_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_permission_content_type_id ON auth_permission USING btree (content_type_id);
+
+
+--
+-- TOC entry 2025 (class 1259 OID 35546)
+-- Name: auth_user_groups_group_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_group_id ON auth_user_groups USING btree (group_id);
+
+
+--
+-- TOC entry 2028 (class 1259 OID 35545)
+-- Name: auth_user_groups_user_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_user_id ON auth_user_groups USING btree (user_id);
+
+
+--
+-- TOC entry 2031 (class 1259 OID 35548)
+-- Name: auth_user_user_permissions_permission_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_permission_id ON auth_user_user_permissions USING btree (permission_id);
+
+
+--
+-- TOC entry 2034 (class 1259 OID 35547)
+-- Name: auth_user_user_permissions_user_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_user_id ON auth_user_user_permissions USING btree (user_id);
+
+
+--
+-- TOC entry 2041 (class 1259 OID 35549)
+-- Name: auth_user_username_like; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX auth_user_username_like ON auth_user USING btree (username varchar_pattern_ops);
+
+
+--
+-- TOC entry 2052 (class 1259 OID 35580)
+-- Name: core_post_domaine_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX core_post_domaine_id ON core_post USING btree (domaine_id);
+
+
+--
+-- TOC entry 2057 (class 1259 OID 35610)
+-- Name: django_admin_log_content_type_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_content_type_id ON django_admin_log USING btree (content_type_id);
+
+
+--
+-- TOC entry 2060 (class 1259 OID 35604)
+-- Name: django_admin_log_user_id; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_user_id ON django_admin_log USING btree (user_id);
+
+
+--
+-- TOC entry 2046 (class 1259 OID 35551)
+-- Name: django_session_expire_date; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX django_session_expire_date ON django_session USING btree (expire_date);
+
+
+--
+-- TOC entry 2049 (class 1259 OID 35550)
+-- Name: django_session_session_key_like; Type: INDEX; Schema: public; Owner: admin_and_today; Tablespace: 
+--
+
+CREATE INDEX django_session_session_key_like ON django_session USING btree (session_key varchar_pattern_ops);
+
+
+--
+-- TOC entry 2066 (class 2606 OID 35429)
+-- Name: auth_group_permissions_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2068 (class 2606 OID 35459)
+-- Name: auth_user_groups_group_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_group_id_fkey FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2070 (class 2606 OID 35474)
+-- Name: auth_user_user_permissions_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2073 (class 2606 OID 35605)
+-- Name: content_type_id_refs_id_93d2d1f8; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT content_type_id_refs_id_93d2d1f8 FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2065 (class 2606 OID 35509)
+-- Name: content_type_id_refs_id_d043b34a; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT content_type_id_refs_id_d043b34a FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2067 (class 2606 OID 35444)
+-- Name: group_id_refs_id_f4b32aac; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT group_id_refs_id_f4b32aac FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2069 (class 2606 OID 35489)
+-- Name: user_id_refs_id_40c41112; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT user_id_refs_id_40c41112 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2071 (class 2606 OID 35494)
+-- Name: user_id_refs_id_4dc23c39; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT user_id_refs_id_4dc23c39 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2072 (class 2606 OID 35599)
+-- Name: user_id_refs_id_c0d12874; Type: FK CONSTRAINT; Schema: public; Owner: admin_and_today
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT user_id_refs_id_c0d12874 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 2107 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+GRANT ALL ON SCHEMA public TO administration_appli_and_today;
+
+
+-- Completed on 2013-12-12 02:10:15
+
+--
+-- PostgreSQL database dump complete
+--
+

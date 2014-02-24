@@ -1,0 +1,49 @@
+[Sat Oct 05 14:47:36.358040 2013] [authz_core:error] [pid 6496:tid 1684] [client 127.0.0.1:61191] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:47:41.936359 2013] [authz_core:error] [pid 6496:tid 1684] [client 127.0.0.1:61192] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:47:45.407557 2013] [authz_core:error] [pid 6496:tid 1684] [client 127.0.0.1:61192] AH01630: client denied by server configuration: I:/sites_web/django/index2.html
+[Sat Oct 05 14:47:50.775864 2013] [authz_core:error] [pid 6496:tid 1684] [client 127.0.0.1:61192] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:49:21.388047 2013] [authz_core:error] [pid 17040:tid 1700] [client 127.0.0.1:61199] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:49:31.541628 2013] [authz_core:error] [pid 9264:tid 1652] [client 127.0.0.1:61200] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:49:45.081402 2013] [authz_core:error] [pid 9264:tid 1652] [client 127.0.0.1:61204] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:53:28.481180 2013] [authz_core:error] [pid 14204:tid 1700] [client 127.0.0.1:61350] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:53:31.267339 2013] [authz_core:error] [pid 14204:tid 1700] [client 127.0.0.1:61350] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 14:53:35.130560 2013] [authz_core:error] [pid 14204:tid 1700] [client 127.0.0.1:61350] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:55:17.679426 2013] [authz_core:error] [pid 14204:tid 1700] [client 127.0.0.1:61385] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:55:31.181198 2013] [authz_core:error] [pid 17904:tid 1720] [client 127.0.0.1:61386] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:57:04.484535 2013] [authz_core:error] [pid 11460:tid 1736] [client 127.0.0.1:61395] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:57:29.729979 2013] [authz_core:error] [pid 11460:tid 1720] [client 127.0.0.1:61402] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:57:41.314641 2013] [authz_core:error] [pid 3504:tid 1724] [client 127.0.0.1:61405] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 14:57:45.256867 2013] [authz_core:error] [pid 3504:tid 1712] [client 127.0.0.1:61409] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:00:43.345053 2013] [authz_core:error] [pid 3064:tid 1684] [client 127.0.0.1:61431] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:00:46.903256 2013] [authz_core:error] [pid 3064:tid 1680] [client 127.0.0.1:61432] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 15:00:50.510463 2013] [authz_core:error] [pid 3064:tid 1684] [client 127.0.0.1:61435] AH01630: client denied by server configuration: I:/sites_web/django/xampp, referer: http://127.0.0.1/xampp/splash.php
+[Sat Oct 05 15:00:53.588639 2013] [authz_core:error] [pid 3064:tid 1684] [client 127.0.0.1:61435] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:01:41.502379 2013] [authz_core:error] [pid 5976:tid 1684] [client 127.0.0.1:61449] AH01630: client denied by server configuration: I:/sites_web/django/xampp
+[Sat Oct 05 15:10:22.586184 2013] [authz_core:error] [pid 7752:tid 1656] [client 127.0.0.1:61678] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:10:23.850256 2013] [authz_core:error] [pid 7752:tid 1656] [client 127.0.0.1:61678] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:10:24.508293 2013] [authz_core:error] [pid 7752:tid 1656] [client 127.0.0.1:61678] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:10:28.551525 2013] [authz_core:error] [pid 7752:tid 1640] [client 127.0.0.1:61682] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 15:10:30.977663 2013] [authz_core:error] [pid 7752:tid 1632] [client 127.0.0.1:61683] AH01630: client denied by server configuration: I:/sites_web/django/xampp
+[Sat Oct 05 15:10:34.365857 2013] [authz_core:error] [pid 7752:tid 1632] [client 127.0.0.1:61683] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:10:43.550383 2013] [authz_core:error] [pid 17880:tid 1684] [client 127.0.0.1:61689] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:12:53.110793 2013] [authz_core:error] [pid 8508:tid 1652] [client 127.0.0.1:61709] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:13:10.061763 2013] [authz_core:error] [pid 16976:tid 1684] [client 127.0.0.1:61712] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:13:14.397011 2013] [authz_core:error] [pid 16976:tid 1684] [client 127.0.0.1:61712] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:13:20.493359 2013] [authz_core:error] [pid 16976:tid 1684] [client 127.0.0.1:61713] AH01630: client denied by server configuration: I:/sites_web/django/xampp
+[Sat Oct 05 15:13:27.242745 2013] [authz_core:error] [pid 16976:tid 1684] [client 127.0.0.1:61715] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:13:42.061593 2013] [authz_core:error] [pid 16976:tid 1684] [client 127.0.0.1:61717] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:14:37.599769 2013] [authz_core:error] [pid 7448:tid 1656] [client 127.0.0.1:61732] AH01630: client denied by server configuration: I:/sites_web/django/xampp
+[Sat Oct 05 15:14:40.220919 2013] [authz_core:error] [pid 7448:tid 1656] [client 127.0.0.1:61732] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 15:16:29.269157 2013] [authz_core:error] [pid 12732:tid 1652] [client 127.0.0.1:61760] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 16:17:52.475824 2013] [authz_core:error] [pid 12732:tid 1648] [client 127.0.0.1:62844] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 16:25:59.851700 2013] [authz_core:error] [pid 5396:tid 1608] [client 127.0.0.1:62954] AH01630: client denied by server configuration: I:/sites_web/django/
+[Sat Oct 05 16:26:06.602086 2013] [authz_core:error] [pid 5396:tid 1596] [client 127.0.0.1:62955] AH01630: client denied by server configuration: I:/sites_web/django/index.html
+[Sat Oct 05 17:48:49.047922 2013] [autoindex:error] [pid 16272:tid 1584] [client 127.0.0.1:63755] AH01276: Cannot serve directory I:/sites_web/django/mysite/: No matching DirectoryIndex (index.php,index.pl,index.cgi,index.asp,index.shtml,index.html,index.htm,default.php,default.pl,default.cgi,default.asp,default.shtml,default.html,default.htm,home.php,home.pl,home.cgi,home.asp,home.shtml,home.html,home.htm) found, and server-generated directory index forbidden by Options directive
+[Mon Oct 21 21:50:36.640186 2013] [:error] [pid 936:tid 1720] [client 127.0.0.1:58022] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:12:36.670687 2013] [:error] [pid 936:tid 1712] [client 127.0.0.1:58223] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:14:14.745297 2013] [:error] [pid 10684:tid 1672] [client 127.0.0.1:58255] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:14:24.804872 2013] [:error] [pid 10684:tid 1672] [client 127.0.0.1:58255] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:17:29.454434 2013] [:error] [pid 15288:tid 1668] [client 127.0.0.1:58304] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:17:39.336999 2013] [:error] [pid 13748:tid 1676] [client 127.0.0.1:58307] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:18:35.009183 2013] [:error] [pid 9004:tid 1704] [client 127.0.0.1:58337] script 'I:/sites_web/django/index.php' not found or unable to stat
+[Mon Oct 21 22:18:36.343259 2013] [:error] [pid 9004:tid 1704] [client 127.0.0.1:58337] script 'I:/sites_web/django/index.php' not found or unable to stat

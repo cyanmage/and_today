@@ -1,0 +1,18 @@
+[
+	{"model":"core.eleve","pk":0,"fields":{"nom_eleve":"---","prenom_eleve":"","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"1"}},
+	{"model":"core.eleve","pk":1,"fields":{"nom_eleve":"Abel","prenom_eleve":"Niels","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"1"}},
+	{"model":"core.eleve","pk":2,"fields":{"nom_eleve":"D'Alembert","prenom_eleve":"Jean","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"2"}},
+	{"model":"core.eleve","pk":3,"fields":{"nom_eleve":"Lagrange","prenom_eleve":"Joseph","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"3"}},
+	{"model":"core.eleve","pk":4,"fields":{"nom_eleve":"Lebesgue","prenom_eleve":"Henri","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"4"}},
+	{"model":"core.eleve","pk":5,"fields":{"nom_eleve":"Peano","prenom_eleve":"Giuseppe","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"4"}},
+	{"model":"core.eleve","pk":6,"fields":{"nom_eleve":"Oresme","prenom_eleve":"Nicolas","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"3"}},
+	{"model":"core.eleve","pk":7,"fields":{"nom_eleve":"Schur","prenom_eleve":"Friedrich","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"2"}},
+	{"model":"core.eleve","pk":8,"fields":{"nom_eleve":"Schwartz","prenom_eleve":"Laurent","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"1"}},
+	{"model":"core.eleve","pk":9,"fields":{"nom_eleve":"Sierpinsky","prenom_eleve":"Waclaw","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"4"}},
+	{"model":"core.eleve","pk":10,"fields":{"nom_eleve":"Stirling","prenom_eleve":"James","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"2"}},
+	{"model":"core.eleve","pk":11,"fields":{"nom_eleve":"Stieltjes","prenom_eleve":"Thomas","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"3"}},
+	{"model":"core.eleve","pk":12,"fields":{"nom_eleve":"Noether","prenom_eleve":"Emmy","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"1"}},
+	{"model":"core.eleve","pk":13,"fields":{"nom_eleve":"Sophie","prenom_eleve":"Germain","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"1"}},
+	{"model":"core.eleve","pk":14,"fields":{"nom_eleve":"Kovalevskaïa","prenom_eleve":"Sophia","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"3"}},
+	{"model":"core.eleve","pk":15,"fields":{"nom_eleve":"Fibonacci","prenom_eleve":"Leonardo","regime":"1","latin":"True","grec":"False","allemand":"True","anglais":"True","classe_de_eleve":"2"}}
+]

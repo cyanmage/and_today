@@ -1,0 +1,35 @@
+[
+	{
+		"model":"core.professeur",
+		"pk":0 ,
+		"fields":{
+			"nom_professeur":"---"		}
+		},
+	{
+		"model":"core.professeur",
+		"pk":1 ,
+		"fields":{
+			"nom_professeur":"Gauss"		}
+		},
+	{
+		"model":"core.professeur",
+		"pk":2 ,
+		"fields":{
+			"nom_professeur":"Euler"	
+			}
+		},
+	{
+		"model":"core.professeur",
+		"pk":3 ,
+		"fields":{
+			"nom_professeur":"Fermat"	
+			}
+		},
+	{
+		"model":"core.professeur",
+		"pk":4 ,
+		"fields":{
+			"nom_professeur":"Ramanujan"	
+			}
+		}
+]

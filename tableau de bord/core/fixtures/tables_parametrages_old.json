@@ -1,0 +1,200 @@
+[
+
+	{
+		"model" 	: 	"core.Regime_parametrages",
+		"pk"		:	1,
+		"fields"	:	{
+						"abbreviation"	: "D-P",
+						"intitule"		: "demi_pensionnaire"	 
+		}
+	},
+	{
+		"model" 	: 	"core.Regime_parametrages",
+		"pk"		:	2,
+		"fields"	:	{
+						"abbreviation"	: "EXT",
+						"intitule"		: "Externe"	 
+		}
+	},	
+	{
+		"model" 	: 	"core.Regime_parametrages",
+		"pk"		:	3,
+		"fields"	:	{
+						"abbreviation"	: "INT",
+						"intitule"		: "Interne"	 
+		}
+	},
+
+
+	{
+		"model"		:	"core.TypeModificationEDT_parametrages"	,
+		"pk"		:	1,
+		"fields"	:	{
+						"type_modification"			:	"DEPL", 
+						"intitule_modification"		: 	"Déplacement"
+		}
+	},
+	{
+		"model"		:	"core.TypeModificationEDT_parametrages"	,
+		"pk"		:	2,
+		"fields"	:	{
+						"type_modification"			:	"SUPP", 
+						"intitule_modification"		: 	"Suppression"
+		}
+	},
+	{
+		"model"		:	"core.TypeModificationEDT_parametrages"	,
+		"pk"		:	3,
+		"fields"	:	{
+						"type_modification"			:	"CREA", 
+						"intitule_modification"		: 	"Création"
+		}
+	},
+
+
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	1,
+		"fields"	:	{
+						"nom_journee"				:	"Lundi", 
+						"diminutif_nom_journee"		: 	"LUN",
+						"position_journee"			: 	0						
+		}
+	},
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	2,
+		"fields"	:	{
+						"nom_journee"				:	"Mardi", 
+						"diminutif_nom_journee"		: 	"MAR",
+						"position_journee"			: 	1	
+		}
+	},
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	3,
+		"fields"	:	{
+						"nom_journee"				:	"Mercredi", 
+						"diminutif_nom_journee"		: 	"MER",
+						"position_journee"			: 	2	
+		}
+	},
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	4,
+		"fields"	:	{
+						"nom_journee"				:	"Jeudi", 
+						"diminutif_nom_journee"		: 	"JEU",
+						"position_journee"			: 	3	
+		}
+	},
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	5,
+		"fields"	:	{
+						"nom_journee"				:	"Vendredi", 
+						"diminutif_nom_journee"		: 	"VEN",
+						"position_journee"			: 	4
+		}
+	},
+	{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	6,
+		"fields"	:	{
+						"nom_journee"				:	"Samedi", 
+						"diminutif_nom_journee"		: 	"SAM",
+						"position_journee"			: 	5
+		}
+	},
+			{
+		"model"		:	"core.Journee_parametrages"	,
+		"pk"		:	7,
+		"fields"	:	{
+						"nom_journee"				:	"Dimanche", 
+						"diminutif_nom_journee"		: 	"DIM",
+						"position_journee"			: 	6	
+		}
+	},
+
+
+	{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	1,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"M1", 
+						"heure_debut" 				: 	"08:30",
+						"heure_fin" 				: 	"09:30",
+						"position_heure"			: 	0	
+		}
+	},	
+	{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	2,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"M2", 
+						"heure_debut" 				: 	"09:30",
+						"heure_fin" 				: 	"10:30",
+						"position_heure"			: 	1	
+		}
+	},	
+			{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	3,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"M3", 
+						"heure_debut" 				: 	"10:30",
+						"heure_fin" 				: 	"11:30",
+						"position_heure"			: 	2	
+		}
+	},	
+	{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	4,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"M4", 
+						"heure_debut" 				: 	"11:30",
+						"heure_fin" 				: 	"12:30",
+						"position_heure"			: 	3	
+		}
+	},
+				{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	5,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"S1", 
+						"heure_debut" 				: 	"13:00",
+						"heure_fin" 				: 	"14:00",
+						"position_heure"			: 	4	
+		}
+	},	
+	{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	6,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"S2", 
+						"heure_debut" 				: 	"14:00",
+						"heure_fin" 				: 	"15:00",
+						"position_heure"			: 	5	
+		}
+	},	
+			{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	7,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"S3", 
+						"heure_debut" 				: 	"15:00",
+						"heure_fin" 				: 	"16:00",
+						"position_heure"			: 	6	
+		}
+	},	
+	{
+		"model"		:	"core.Heure_parametrages"	,
+		"pk"		:	8,
+		"fields"	:	{
+						"intitule_heure_journee"	:	"S4", 
+						"heure_debut" 				: 	"16:00",
+						"heure_fin" 				: 	"17:00",
+						"position_heure"			: 	7	
+		}
+	}
+]

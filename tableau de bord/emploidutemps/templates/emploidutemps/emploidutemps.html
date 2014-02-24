@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<div class="emploidutemps" intercepter-evenement-grille-e>
+	{% for journee in journees %}
+	<div class="contenant_journee">
+		<div class='titre_journee'> {{journee.nom_journee}}</div>
+		{%for heure in heures%}
+			<div class="heure"  id= "_heure_{{journee.diminutif_nom_journee}}_{{heure.intitule_heure}}" position_journee="{{journee.position_journee}}" position_heure="{{heure.position_heure}}">
+			<div>{{heure.heure_debut|date:"H:i"}} -- {{heure.heure_fin|date:"H:i"}}	</div>
+					<span class="dropup">
+						<span class="salle_test salle">
+						{*emploiDuTemps[{{journee.position_journee}}][{{heure.position_heure}}][0]*}</span>
+					  		<img class="_heure_hover_img dropdown-toggle "  data-toggle="dropdown" src="{{ STATIC_URL }}core/img/down_arrow.gif">
+							<ul class="dropdown-menu">
+								{%for salle in salles%}
+					  				<li ><a href="#" class=" menu_salle ">{{salle.nom_de_la_salle}}</a></li>
+					  			{%endfor%}
+					  		</ul>
+				  	</span>
+					<span class="dropup">					    	
+						<span class="matiere_test matiere">{*emploiDuTemps[{{journee.position_journee}}][{{heure.position_heure}}][1]*}</span>
+					  		<img class="_heure_hover_img dropdown-toggle"  data-toggle="dropdown" src="{{ STATIC_URL }}core/img/down_arrow.gif" />	
+							<ul class="dropdown-menu">
+								{%for matiere in matieres%}
+					  			    <li ><a href="#" class=" menu_matiere ">{{matiere.diminutif_matiere}}</a></li>
+					  			{%endfor%}
+					  		</ul>	
+					</span>						
+			</div>
+		{%endfor%}
+	</div>
+	{% endfor %}
+</div>
+
+<button type="button" class="btn btn-success bouton-valider" valider-emploi-du-temps>Valider</button>

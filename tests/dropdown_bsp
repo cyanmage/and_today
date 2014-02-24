@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test de dropdown avec bootstrap</title>
+	<!--I:\sites_web\django\tableau de bord\core\static\core\css-->
+	<link rel="stylesheet" type="text/css" href="/static/core/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/core/css/general.css">
+	<script type="text/javascript" src="/static/core/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="/static/core/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+
+		{% block header%}
+		{% endblock%}	
+		{% block conteneur-principal %}
+		{% endblock%}
+
+	</div>
+
+</body>
+
+
+</html>

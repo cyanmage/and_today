@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Tableau de suivi des évènements</title>
+	<!--I:\sites_web\django\tableau de bord\core\static\core\css-->
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/general.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}emploidutemps/css/styles_calendrier.css">	
+
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular_min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular-resource.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}REST/js/lodash.min.js"></script>		
+	<script type="text/javascript" src="{{ STATIC_URL }}REST/js/restangular.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angularjs/configurateur.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angularjs/controleurs.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angularjs/directives.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}core/js/angularjs/services.js"></script>
+
+
+<script type="text/javascript">
+	
+</script>
+
+</head>
+<body ng-app="my_app"  ng-controller="panneauControleur">
+
+	<div class="container">
+
+		{% block header%}
+		{% endblock%}	
+	</div>
+		{% block conteneur-principal %}
+		{% endblock%}
+		{% block suite %}
+		{% endblock%}		
+</body>
+
+
+</html>

@@ -1,0 +1,95 @@
+.calendrier{
+	padding-left: 5%;
+
+}
+
+
+.contenant_journee{
+
+	background-color: #FFFFFF;
+	width: 13%;
+	display: inline-block;
+	text-align: center;	
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-top: 2%;
+	border-radius: 5px;
+}
+
+.heure{
+	border: 2px;
+	/*min-height:50px;*/
+	width:95%;/**/
+	border-style: dotted;
+	margin-left: auto;	
+	margin-right: auto;
+	vertical-align: 50%;
+	/*margin-bottom: 3%;*/
+	border-radius: 4px;
+	font-size: 12px;
+}
+.heure:hover{
+	background-color: #E6E6FC;	
+	cursor: pointer;	
+}
+.heure ._heure_hover_img{
+	margin-left : 5px;
+	margin-right: 8px;
+	visibility: hidden;
+}
+
+.heure:hover ._heure_hover_img{
+	box-shadow: 1px 1px 2px 1px rgba(240,92,24,0.77);
+	visibility: visible;
+}
+
+.titre_journee{
+	width:100px;
+	/*padding-right: 10px;
+	padding-left: 10px;
+	margin:12px;	*/
+	border-bottom-right-radius: 7px;
+	text-align: center;
+	font-size: 12x;
+	font-weight: bold;
+	font-style: italic;
+	background-color: navajowhite;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.separateur{
+	width:100%;
+	height: 5px;
+	background: #123456h;	
+	border-bottom:1px solid #313030;	
+}
+.menuDeroulant{
+	width : 10%;	
+	list-style-type: none; 
+}
+
+.heure_selectionnee{
+	background-color: #E6E6FC;		
+}
+
+
+.test_heure{
+	float:right;
+	width:150px;
+}
+
+
+.dropdown {
+  /*position: relative;
+  */
+}
+
+
+.dropdown-menu {
+	min-width: 60px;
+}
+
+
+#btnChoixClasse{
+	min-width: 	150px;
+}

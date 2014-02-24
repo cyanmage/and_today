@@ -1,0 +1,17 @@
+{% load staticfiles %}
+
+
+
+
+<div class="semainier">
+	{% for journee in journees %}
+	<div class="contenant_journee">
+		<div class='titre_journee'> {{journee.nom_journee}}</div>
+		{%for heure in heures%}
+			<div class="heure" position-journee="{{journee.position_journee}}" position-heure="{{heure.position_heure}}">{{heure.heure_debut|date:"H:i"}} -- {{heure.heure_fin|date:"H:i"}}</div>
+		{%endfor%}
+	</div>
+	{% endfor %}
+</div>
+
+

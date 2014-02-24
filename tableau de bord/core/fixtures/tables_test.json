@@ -1,0 +1,10 @@
+[
+	{
+		"model" 	: 	"core.Regime_parametrages",
+		"pk"		:	4,
+		"fields"	:	{
+						"abbreviation"	: "NE-",
+						"intitule"		: "ne--"	 
+		}
+	}
+]

@@ -1,0 +1,10 @@
+[
+	{"model":"core.Salle","pk":0 ,"fields":{"nom_de_la_salle":"---"}},
+	{"model":"core.Salle","pk":1 ,"fields":{"nom_de_la_salle":"A22"}},
+	{"model":"core.Salle","pk":2 ,"fields":{"nom_de_la_salle":"B02"}},
+	{"model":"core.Salle","pk":3 ,"fields":{"nom_de_la_salle":"A232"}},
+	{"model":"core.Salle","pk":4 ,"fields":{"nom_de_la_salle":"C192"}},
+	{"model":"core.Salle","pk":5 ,"fields":{"nom_de_la_salle":"A21"}},
+	{"model":"core.Salle","pk":6 ,"fields":{"nom_de_la_salle":"D031"}},	
+	{"model":"core.Salle","pk":7 ,"fields":{"nom_de_la_salle":"A14"}}
+]

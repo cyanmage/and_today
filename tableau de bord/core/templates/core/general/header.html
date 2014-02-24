@@ -1,0 +1,64 @@
+		<header class="page-header caches" >
+			<div class="titre_appli" valeur="{*intitule_classe*}">
+				Application de gestion des heures de colle, des punitions et des rendez-vous avec les parents ({* numberEvents*})
+			</div>
+			<nav>
+				<div class="bandeau-des-liens row down_buffer">
+					<div class="row">
+						<div class="dropdown span2">
+							<button type="button" class="btn btn-danger dropdown-toggle" id="btnChoixAction"  data-toggle="dropdown">
+								{*intitule_menu*}
+							</button>					    
+					   		<ul class="dropdown-menu menu_actions">
+					   		    <li ng-click="choixMenu(0)"><a href="#">Colles</a></li>
+					   		    <li ng-click="choixMenu(1)"><a href="#">Punitions</a></li>
+					   		    <div class="separateur"></div>
+					   		    <li ng-click="choixMenu(2)"><a href="#">RDV parents</a></li>
+					   		    <div class="separateur"></div>
+					   		    <li ng-click="choixMenu(3)"><a href="#">Modifications</a></li>					    	   				    	    
+					   		</ul>
+						</div>
+						<div class="dropdown span1 offset1">
+							<button type="button" class = "btn btn-danger dropdown-toggle" id="btnChoixClasse" data-toggle="dropdown"	>
+								Classe : {*intitule_classe*}	
+							</button>
+							<ul class="dropdown-menu menu_classes">
+								{%for classe in classes%}
+								<li ng-click="choixClasse({{classe.id}})"><!---->
+									<a href="#">{{classe.abbreviation_classe}}</a>	
+								<li>
+								{%endfor%}
+							</ul>
+						</div>	
+						<div class="dropdown span3 offset2">
+							<button type="button" class = "btn btn-danger dropdown-toggle" id="btnChoixClasse" data-toggle="dropdown"	>
+								Elève : {*intitule_eleve*}
+							</button>
+							<ul class="dropdown-menu menu_eleves">
+								<li ng-repeat="eleve in eleves" ng-click="choixEleve(eleve)"><!---->
+									<a href="#">{*eleve.nom_eleve*}  {*eleve.prenom_eleve*}</a>	
+								<li>
+							</ul>
+						</div>
+					</div>	
+					<div class="row top_buffer">
+						<div class="dropdown span2 offset3">
+							De la semaine n°					
+						</div>
+						<div class="dropdown span1">
+							<button type="button" class = "btn btn-success dropdown-toggle" id="btnChoixSemaineDeb" data-toggle="dropdown	">---</button>				
+						</div>
+						<div class="dropdown span2 offset1">
+							à la semaine n°
+						</div>
+						<div class="dropdown" >
+							<button type="button" class="btn btn-success dropdown-toggle" id="btnChoixSemaineTerm" data-toggle="dropdown">---</button>
+						</div>
+					</div>
+				</div>				
+							
+
+
+			</nav>	
+		</header>
+

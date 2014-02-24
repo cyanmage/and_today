@@ -1,0 +1,1455 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"do",
+				"donneesRecues"
+			],
+			[
+				"classe",
+				"classeChoisie"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"donne",
+				"donneesRecuperees"
+			],
+			[
+				"em",
+				"emploidutempsRecu"
+			],
+			[
+				"donnes",
+				"donnees_a_envoyer"
+			],
+			[
+				"pro",
+				"professeur"
+			],
+			[
+				"choi",
+				"choix_classe"
+			],
+			[
+				"ch",
+				"choix_classe"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"tousLes",
+				"tousLesChampsSontVides"
+			],
+			[
+				"menu",
+				"menu_matiere"
+			],
+			[
+				"nom",
+				"nom_de_la_salle"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ge",
+				"gestionnaire_donnees"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"blo",
+				"inline-block"
+			],
+			[
+				"Heu",
+				"Heure_parametrages"
+			],
+			[
+				"Journ",
+				"Journee"
+			],
+			[
+				"paddi",
+				"padding-left"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"b",
+				"inline-block"
+			],
+			[
+				"T",
+				"True"
+			],
+			[
+				"lis",
+				"list-style-type"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"d",
+				"dotted"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"border-r",
+				"border-bottom-right-radius"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"Classe",
+				"ClasseAdmin"
+			],
+			[
+				"de",
+				"def	Function"
+			],
+			[
+				"abb",
+				"abbreviation_classe"
+			],
+			[
+				"n",
+				"nom_pere"
+			],
+			[
+				"s",
+				"self"
+			],
+			[
+				"__",
+				"__unicode__"
+			],
+			[
+				"élève",
+				"élève"
+			],
+			[
+				"Cha",
+				"CharField"
+			],
+			[
+				"Em",
+				"EmploiDuTempsEleve"
+			],
+			[
+				"Empl",
+				"EmploiDuTempsProfesseur"
+			],
+			[
+				"Mod",
+				"ModificationsEDTProfesseur"
+			],
+			[
+				"Modi",
+				"ModificationsEmploiDuTemps"
+			],
+			[
+				"re",
+				"register"
+			],
+			[
+				"type",
+				"type_modification"
+			],
+			[
+				"heure",
+				"heure_supprimee"
+			],
+			[
+				"jou",
+				"jour_semaine_heure_ajoutee"
+			],
+			[
+				"numero",
+				"numero_semaine_heure_ajoutee"
+			],
+			[
+				"Mo",
+				"ModificationsEmploisDuTemps"
+			],
+			[
+				"mo",
+				"Models"
+			],
+			[
+				"Journe",
+				"Journee_parametrages"
+			],
+			[
+				"jour_se",
+				"jour_semaine_a_faire"
+			],
+			[
+				"Ren",
+				"RendezVousParents"
+			],
+			[
+				"Emp",
+				"EmploiDuTemps"
+			],
+			[
+				"M",
+				"Model	Model"
+			],
+			[
+				"mt",
+				"mtime	TimeField (mtime)"
+			],
+			[
+				"heure_d",
+				"heure_debut"
+			],
+			[
+				"nume",
+				"numero_journee_dans_semaine"
+			],
+			[
+				"nu",
+				"numero_semaine"
+			],
+			[
+				"P",
+				"Parents"
+			],
+			[
+				"mod",
+				"models"
+			],
+			[
+				"id",
+				"identifiant_eleve"
+			],
+			[
+				"fk",
+				"fk	ForeignKey (fk)"
+			],
+			[
+				"min",
+				"mint	IntegerField (mint)"
+			],
+			[
+				"it",
+				"IntegerField"
+			],
+			[
+				"In",
+				"IntegerRangeField"
+			],
+			[
+				"md",
+				"mdatetime	DateTimeField (mdatetime)"
+			],
+			[
+				"pg_f",
+				"pg_fetch_row"
+			],
+			[
+				"c",
+				"connexion"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"dire",
+				"direByeBye"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "core/templates/core/index.html",
+			"settings":
+			{
+				"buffer_size": 450,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/templates/core/base.html",
+			"settings":
+			{
+				"buffer_size": 1588,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "emploidutemps/templates/emploidutemps/semainier.html",
+			"settings":
+			{
+				"buffer_size": 430,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "emploidutemps/templates/emploidutemps/emploidutemps.html",
+			"settings":
+			{
+				"buffer_size": 1649,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 127365,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "core/templates/core/general/header.html",
+			"settings":
+			{
+				"buffer_size": 2518,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/css/general.css",
+			"settings":
+			{
+				"buffer_size": 1318,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "emploidutemps/static/emploidutemps/css/styles_calendrier.css",
+			"settings":
+			{
+				"buffer_size": 1367,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/models.py",
+			"settings":
+			{
+				"buffer_size": 10041,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_parametrages.json",
+			"settings":
+			{
+				"buffer_size": 4058,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_test.json",
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_eleve.json",
+			"settings":
+			{
+				"buffer_size": 3035,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_professeur.json",
+			"settings":
+			{
+				"buffer_size": 474,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_classe.json",
+			"settings":
+			{
+				"buffer_size": 517,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "fixtures.cmd",
+			"settings":
+			{
+				"buffer_size": 240,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_matieres.json",
+			"settings":
+			{
+				"buffer_size": 1312,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/fixtures/tables_salle.json",
+			"settings":
+			{
+				"buffer_size": 550,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/admin.py",
+			"settings":
+			{
+				"buffer_size": 946,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/js/angularjs/directives.js",
+			"settings":
+			{
+				"buffer_size": 1671,
+				"line_ending": "Windows",
+				"name": "my-app.directive();"
+			}
+		},
+		{
+			"file": "core/static/core/js/angularjs/services.js",
+			"settings":
+			{
+				"buffer_size": 5408,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/js/angularjs/controleurs.js",
+			"settings":
+			{
+				"buffer_size": 2050,
+				"line_ending": "Windows",
+				"name": "var app = angular.module('myApp', []);"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/I/sites_web/django/t_chartit/domotics/fixtures/initial_data.json",
+		"/I/sites_web/tests_apache/index.php",
+		"/I/sites_web/tests/index.php",
+		"/I/sites_web/django/tableau de bord/core/static/core/js/angularjs/configurateur.js",
+		"/I/sites_web/parisalacarte/js/modules/utils/services/toolbox.js",
+		"/I/sites_web/parisalacarte/index.php",
+		"/C/Users/Tchebychev/Downloads/angular.min.js",
+		"/I/sites_web/sauvegardes codes intéressants/js_cookies_xsrf",
+		"/I/sites_web/parisalacarte/js/modules/laposte/services/laPoste.js",
+		"/I/sites_web/parisalacarte/js/modules/carte/directives/directives.js",
+		"/I/sites_web/tests/dropdown_2.html",
+		"/I/sites_web/bootstrap/index.html",
+		"/I/sites_web/tests/js/general.css",
+		"/I/sites_web/django/tableau de bord/emploidutemps/static/emploidutemps/css/styles_calendrier.css",
+		"/I/sites_web/django/tableau de bord/core/static/core/css/general.css",
+		"/I/sites_web/django/tableau de bord/core/static/core/js/bootstrap.js",
+		"/I/sites_web/parisalacarte/js/modules/carte/services/mapUtils.js",
+		"/I/sites_web/parisalacarte/js/modules/carte/controleurs/controleurCarte.js",
+		"/I/sites_web/django/tableau de bord/core/fixtures/tables_parametrages_old.json",
+		"/I/sites_web/bootstrap/css/bootstrap.css",
+		"/I/sites_web/bootstrap/test_bsp/first.html",
+		"/I/sites_web/django/tests/dropdown_bsp.html",
+		"/I/sites_web/django/tableau de bord/core/static/core/css/bootstrap.css",
+		"/I/sites_web/django/tableau de bord/core/css/general.css",
+		"/I/sites_web/bootstrap/css/tuto1.css",
+		"/I/sites_web/django/tableau de bord/emploidutemps/static/styles_calendrier.css",
+		"/I/sites_web/django/tableau de bord/core/templates/core/essai_insertion.html",
+		"/I/sites_web/django/tableau de bord/emploidutemps/templates/semainier.html",
+		"/I/sites_web/django/tableau de bord/assets/css/general.css",
+		"/I/sites_web/django/tableau de bord/index.html",
+		"/I/scripts nodejs/learn/learn1.js",
+		"/I/scripts nodejs/learn/server1.js",
+		"/I/scripts nodejs/learn/learn2.js",
+		"/I/scripts nodejs/learn/server2.js",
+		"/I/scripts nodejs/learn/server3.js",
+		"/I/scripts nodejs/learn/eventEmitter.js",
+		"/I/scripts nodejs/learn/test_module.js",
+		"/I/scripts nodejs/learn/monmodulebis.js",
+		"/I/scripts nodejs/learn/package.json",
+		"/I/scripts nodejs/test express/test1.js",
+		"/I/scripts nodejs/test express/views/chambres.ejs",
+		"/I/scripts nodejs/test express/views/chambres2.ejs",
+		"/I/scripts nodejs/test express/test2.js",
+		"/I/scripts nodejs/test express/test3.js",
+		"/I/sites_web/django/index.html",
+		"/I/sites_web/django/tableau de bord/core/models_v0.py",
+		"/I/sites_web/django/tableau de bord/core/models_v1",
+		"/I/sites_web/bootstrap/js/bootstrap.js",
+		"/C/Users/Tchebychev/Downloads/ST3/Data/Packages/User/Preferences.sublime-settings",
+		"/I/sites_web/django/myorm/helloworld/templates/index.html",
+		"/I/sites_web/django/t_chartit/domotics/urls.py",
+		"/I/sites_web/django/t_chartit/templates/domotics/weather.html",
+		"/I/sites_web/django/chartit/domotics/fixtures/initial_data.json",
+		"/I/sites_web/django/chartit/domotics/weather.html",
+		"/I/sites_web/django/chartit/domotics/urls.py",
+		"/I/sites_web/django/test.html",
+		"/I/sites_web/django/index2.html",
+		"/C/xampp/htdocs/test_thelia/template/menu.html",
+		"/I/sites web/apache/map_paris/moteur.php",
+		"/I/sites web/apache/map_paris/index.php",
+		"/C/xampp/htdocs/test_thelia/fonctions/image.php",
+		"/I/scripts nodejs/learn/node_modules/markdown/bin/md2html.js",
+		"/I/scripts nodejs/learn/node-modules/monmodule.js"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"gestionnaire_donnees.salles_et_matieres",
+			"angular.copy",
+			"gestionnaireDonnees.classes",
+			"gestionnaireDonnees.eleves",
+			"eleves",
+			"classe",
+			"Classe",
+			"classe",
+			"Classe",
+			"classe",
+			"laPos",
+			"gestionnaire_donnees.salles_et_matieres",
+			"		",
+			"Recupere",
+			"choix_menu",
+			"$scope.choix_menu",
+			"choix_item",
+			"colle",
+			"Journee",
+			"down",
+			"top_buffer",
+			"salle",
+			"}",
+			"{",
+			"transition",
+			"val",
+			"dropup",
+			"menu_classe",
+			"0",
+			";	",
+			"intitule_heure_journee",
+			"emploi_du_temps_ratta",
+			"jour_de",
+			"0",
+			"_id",
+			"eleve",
+			"dropdown",
+			"5px",
+			"dropdown",
+			"html",
+			"50",
+			"salle",
+			"Meta",
+			"_",
+			"pass",
+			"Classe",
+			"regime",
+			"parametrages",
+			"paramétrages",
+			"parametrages",
+			"ClassName",
+			"Emplo",
+			"Models",
+			"models",
+			"Models",
+			"models",
+			"Models",
+			"HeureDeColle",
+			"row",
+			"assets",
+			"javascript",
+			"FIELDNAME"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"]",
+			"[",
+			"}",
+			"intitule_heure",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "core/templates/core/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "core/templates/core/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1409,
+								1409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 97.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "emploidutemps/templates/emploidutemps/semainier.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								398,
+								398
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "emploidutemps/templates/emploidutemps/emploidutemps.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								848,
+								848
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "core/static/core/css/bootstrap.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 127365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								124755,
+								124765
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 21086.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "core/templates/core/general/header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "core/static/core/css/general.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								296,
+								296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "emploidutemps/static/emploidutemps/css/styles_calendrier.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "core/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2820.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "core/fixtures/tables_parametrages.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "core/fixtures/tables_test.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "core/fixtures/tables_eleve.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "core/fixtures/tables_professeur.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "core/fixtures/tables_classe.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "fixtures.cmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 240,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "core/fixtures/tables_matieres.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "core/fixtures/tables_salle.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								65
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "core/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 18,
+					"file": "core/static/core/js/angularjs/directives.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								616,
+								616
+							]
+						],
+						"settings":
+						{
+							"auto_name": "my-app.directive();",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "core/static/core/js/angularjs/services.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4607,
+								4607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2221.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "core/static/core/js/angularjs/controleurs.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2050,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1248,
+								1248
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var app = angular.module('myApp', []);",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.4,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.483424562486,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 29.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"project": "projet_tableau_de_bord.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"I:\\sites_web\\blog_convolution.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}
