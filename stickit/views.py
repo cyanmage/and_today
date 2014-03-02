@@ -22,7 +22,8 @@ class GroupeElementView(View):
         tags = ['p', 'em', 'strong', 'div', 'img', 'span']
         styles = ['color', 'font-weight']
         cleaned_text = bleach.clean(contenu, tags, attrs, styles, strip=True)
-        return cleaned_text
+        #return cleaned_text
+        return contenu
 
     @staticmethod
     def saveSticker(self, stickers, date):

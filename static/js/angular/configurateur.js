@@ -42,6 +42,23 @@ $( document ).ready(function() {
 	     return false;
 	 });
 
-
-
 });
+
+appli.directive("activeElement", ['$interval', function($interval){
+
+	return {
+		restrict : 'AE', 
+		link : function (scope, element, attributes) {
+			//element.text("zorro");
+			var i = 0;
+			$interval(function() {
+				//element.text(i++);
+				//console.log(document.activeElement);
+				if(element.parents("[emplacement=centre]").length > 0)
+					//console.log(element.parents("[emplacement=centre]"));
+					console.log(document.activeElement);
+			}, 1500);
+		}
+	}
+
+}]);

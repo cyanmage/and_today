@@ -19,6 +19,12 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	//console.log($scope.options);
 	//$scope.options.controles = servicesControlesStickit.options;
 
+	$scope.servicesStickit = servicesStickit;
+
+	$scope.$watch("servicesStickit.stickerSelectionne", function (newValue, oldValue) {
+		//console.log(newValue, oldValue);
+	}); 
+
 	$scope.controles  =  {'stickit' : servicesControlesStickit};
 
 	/*$scope.$watch('controles', function(newValue, oldValue){
@@ -27,7 +33,7 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
 
-
+	
 	$scope.toggleModeDesign = function(){
 		$scope.options.modeDesign = ! $scope.options.modeDesign;
 	}
@@ -96,21 +102,36 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 
 
 
-module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStickit',
-	function($scope, servicesUpdateStickit){
+module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStickit', 'servicesStickit',
+	function($scope, servicesUpdateStickit, servicesStickit){
 
 		/*DEBUG*/$scope.controller = "controller-sticker";
 
 		$scope.sauveSurServeur = false;	
+		$scope.stickerModified = false; 		
 		$scope.destruction = false;
+
+		$scope.servicesStickit = servicesStickit; 
 
 		$scope.supprimerSticker = function(id){
 			$scope.destruction = true;
 		}
 
-		$scope.stickerModified = false; 
 
+		$scope.boiteAOutils = function () {
+			servicesStickit.stickerSelectionne = $scope.boiteAOutils_deploye ? -1 : parseInt($scope.idSticker, 10);
+			$scope.boiteAOutils_deploye = ! $scope.boiteAOutils_deploye;
+		}
 
+		/*$scope.$watch("servicesStickit.stickerSelectionne", function(newValue, oldValue){
+								console.log("AVANT TEST : ", oldValue, newValue);
+			if (newValue !== -1  && oldValue === parseInt($scope.idSticker, 10)){
+					$scope.boiteAOutils_deploye = ! $scope.boiteAOutils_deploye;
+					//element.focus();				
+			}
+		});*/
+
+	
 }]);
 
 
@@ -364,7 +385,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 
 module_stickit.directive("backgroundCadre", ['$timeout', '$compile', 'servicesStickit', 'servicesUpdateStickit',
- 	function($timeout, $compile, lesServicesStickit, servicesUpdateStickit){
+ 	function($timeout, $compile, servicesStickit, servicesUpdateStickit){
 
 	return {
 		restrict : 'AE', 
@@ -375,7 +396,7 @@ module_stickit.directive("backgroundCadre", ['$timeout', '$compile', 'servicesSt
 				scope.sauveSurServeur = true;
 			}	
 			else{
-				id_backgroundCadre = '_bg_' + lesServicesStickit.obtientNumeroValideCadre();
+				id_backgroundCadre = '_bg_' + servicesStickit.obtientNumeroValideCadre();
 				element.attr('id_backgroundCadre', id_backgroundCadre);	
 			}
 			scope.idBackgroundCadre = id_backgroundCadre;				
@@ -667,8 +688,8 @@ module_stickit.directive('groupeStickersCadres', ['servicesCacheStickit', '$time
 
 
 
-module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout', 'servicesUpdateStickit',
-	function(lesServicesStickit, $compile, $timeout, servicesUpdateStickit){
+module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout', 'servicesUpdateStickit', 'servicesControlesStickit',
+	function(servicesStickit, $compile, $timeout, servicesUpdateStickit, servicesControlesStickit){
 
 	return {
 		restrict : 'A', 
@@ -683,7 +704,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 					scope.sauveSurServeur = true;
 				}	
 				else{
-					id_sticker = '_st_' + lesServicesStickit.obtientNumeroValide();
+					id_sticker = '_st_' + servicesStickit.obtientNumeroValide();
 					element.attr('id_sticker', id_sticker);	
 				}
 				scope.idSticker = id_sticker;				
@@ -692,21 +713,44 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 				element				
 				  .find(".titreSticker").html(id_sticker).end()
 				  //.attr("stickerVisible")
+				  .on("focusout", function(event, ui){
+				  	//console.log("perte de focus", document.activeElement);
+				  	//console.log("evenement :", event )
+				  	//servicesStickit.stickerSelectionne = -1;
+				  	//console.log(servicesStickit.stickerSelectionne);				  	
+				  	//scope.$apply();				  	
+				  })
+				  .on("focusin", function(event, ui){
+				  	//console.log("gain de focus", document.activeElement);
+				  	//servicesStickit.stickerSelectionne  = scope.idSticker;
+				  	//console.log(servicesStickit.stickerSelectionne);
+				  	//scope.$apply();
+				  })				  
 				  .draggable({
 					    cursor : 'move', 
 					    containment : element.parents(".container-stickers"),	
 					    zIndex: 100, 
 					    preventCollision : true,
-   					    obstacle: ".obstacles, .collideEnable",					
+					    /*collisionVisualDebug: true,*/
+   					    obstacle: ".collideEnable",					
 					    stop 	: function(event, ui){	
 											$(this).addClass	("collideEnable"); 
 										},
 					    start 	: function(event, ui){	
 											$(this).removeClass	("collideEnable"); 
 					    },					
-					    drag 	: function(event, ui){
-					    }	
+					    /*drag 	: function(event, ui){
+					    }*/	
 				})
+				 /*.on("precollision", function(event, ui){
+				  	console.log("pre-collision !! ");
+				  })
+				  .on("collision", function(event, ui){
+				  	console.log("collision !! ");
+				  })				  
+				  .on("postcollision", function(event, ui){
+				  	console.log("post-collision !! ");
+				  }) */				  
 				  .resizable({
 					//handles: "e, s, n, w, nw, ne, sw, se",
 					    stop 	: function(event, ui){	
@@ -717,9 +761,15 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 					    start 	: function(event, ui){	
 					    					$(this).removeClass	("collideEnable"); 
 					    					//console.log(element.parent("[espace-stickers]").find(".container-stickers"));						
-					    },						
-					    collision : true,
-					    obstacle : ".obstacles, .collideEnable",					
+					    },	
+					    /*resize : function(event, ui){
+					    	console.log(ui.size);
+					    },*/
+					    /*preventCollision : true,
+					    collisionVisualDebug: true,  
+   					    obstacle: ".collideEnable",	*/
+					   	collision : true,
+					    obstacle : ".collideEnable", /**/				
 					    containment : element.parents(".container-stickers"),
 					    minHeight : 80,
 					    minWidth : 200
@@ -764,6 +814,10 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 			});
 
 
+			/*scope.$watch('servicesStickit.stickerSelectionne', function(newValue, oldValue){
+				newValue == -1 ?
+			}*/
+
 		}
 	}
 
@@ -771,7 +825,104 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 
 
 
+module_stickit.directive('contenuSticker', ['servicesStickit', 'servicesControlesStickit', 'servicesUpdateStickit',
+	function(servicesStickit, servicesControlesStickit, servicesUpdateStickit){
 
+		return {
+			restrict : 'AE', 
+			link : function(scope, element, attributes){
+				element
+				.on('click', function(event){
+					//console.log('click');
+					if (scope.options.modeDesign){
+						servicesStickit.stickerSelectionne = scope.idSticker;
+						scope.$apply(servicesControlesStickit.optionsCurseur());
+					}
+				})
+				/*.on('focusin', function () {
+					//console.log('focusin');					
+					if (scope.options.modeDesign){
+						if(!scope.$$phase) 
+							scope.$apply(servicesControlesStickit.optionsCurseur());
+						//
+					}
+				})*/
+				.on("keyup", function(event){
+					if (scope.options.modeDesign){
+						scope.$apply(servicesControlesStickit.optionsCurseur());
+					}
+				})		
+				.on("mousedown", function (event) {
+				    event.stopPropagation();
+				})
+				.on("mouseenter", function(ui, event){
+					//console.log(servicesControlesStickit.stickerEnCours, ", ", scope.idSticker);
+					if (scope.options.modeDesign && (servicesStickit.stickerEnCours == scope.idSticker)){
+						console.log("verif mouseenter : ", servicesStickit.stickerEnCours);
+						$(this).focus();						
+					}
+			
+				})
+				.on('dragenter', function(event){
+					//.log("evenement deplacable entrant ");
+					if (scope.options.modeDesign){
+						//$(this).focus();						
+					}					
+				})
+				.on('drop', function(event){
+
+					var files = event.originalEvent.dataTransfer.files; 
+					
+					if (files.length){
+						//element.focus;
+						var position = window.getSelection().getRangeAt(0).startOffset;
+						//console.log( "focus : ", window.getSelection().getRangeAt(0), ", caret : ", position);
+						event.preventDefault();
+						event.stopPropagation();
+						var html, node, id_blob, range = window.getSelection().getRangeAt(0); 
+
+						for (var i=0 ; i <files.length ; i++) {
+								id_blob = window.URL.createObjectURL(files[i]); 
+								html = "<img src ='" + id_blob + "' id='" + id_blob + "' />"
+								node = range.createContextualFragment(html);
+							   	range.insertNode(node);
+
+							    servicesUpdateStickit
+							    .uploadFiles(files[i], id_blob)
+							    .then(function(association){
+							   		var image = $("[id='" + id_blob + "' ]");
+   		               				image.attr("src", association[image.attr("src")]).removeAttr("id");	
+   		               				window.URL.revokeObjectURL(id_blob);
+							    });
+
+    					}	
+					}
+				});
+
+
+				scope.$watch("servicesStickit.stickerSelectionne", function(newValue, oldValue){
+					//console.log("AVANT TEST : ", oldValue, newValue);
+					if (parseInt(newValue, 10) !== -1  && oldValue == parseInt(scope.idSticker, 10)){
+							//console.log("DE-SELECTION : ", oldValue, newValue);
+							scope.boiteAOutils_deploye = ! scope.boiteAOutils_deploye;
+							//scope.$apply();
+							//console.log(oldValue, newValue);
+			
+					}
+					else if (newValue == parseInt(scope.idSticker, 10)){
+							//console.log("AVANT TEST : ", oldValue, newValue, parseInt(scope.idSticker, 10));						
+							scope.boiteAOutils_deploye = true;
+							//scope.$apply();
+							element.focus();							
+							//servicesStickit.setEndOfContenteditable(element.get(0));
+					}
+				});/**/
+
+			}
+		}
+
+
+}]);
 
 
 /******************************************************************************/
@@ -791,21 +942,8 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 	var counterStickers = 0;
 	var counterBackgroundCadres = 0;
 
-	/*les_services_stickit.recupereStickers = function(id_groupe){
-		var deferred = $q.defer();
-		var url = "/stickit/groupe-stickers/" + id_groupe + "/";
+	les_services_stickit.stickerSelectionne = -1;
 
-		$http.get(url)
-		.success(function(data, status){
-			deferred.resolve(data);
-		})
-		.error(function(error, status){
-			$("html").html(error);
-			deferred.reject();
-		});
-
-		return deferred.promise;
-	}*/
 
 	les_services_stickit.recupereElements = function(id_groupe){
 		var deferred = $q.defer();
@@ -813,7 +951,6 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 
 		$http.get(url)
 		.success(function(data, status){
-			//console.log(data);
 			deferred.resolve(data);
 		})
 		.error(function(error, status){
@@ -833,6 +970,32 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 	}
 
 
+	les_services_stickit.setEndOfContenteditable = function(contentEditableElement)
+	{
+	    var range,selection;
+	    if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+	    {
+	        range = document.createRange();//Create a range (a range is a like the selection but invisible)
+	        range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+	        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+	        selection = window.getSelection();//get the selection object (allows you to change selection)
+	        selection.removeAllRanges();//remove any selections already made
+	        selection.addRange(range);//make the range you have just created the visible selection
+	    }
+	    else if(document.selection)//IE 8 and lower
+	    { 
+	        range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+	        range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+	        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+	        range.select();//Select the range (make it the visible selection
+	    }
+	}
+
+
+ 
+
+
+/*
 	les_services_stickit.associeActionsAuxBoutons = function(element, scope){
 
 		//var texte_contenu = element.parents(".appli-stickit").find(".contenuSticker");
@@ -880,7 +1043,7 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 		});
 
 	}
-
+*/
 
 	return les_services_stickit;
 }]);
@@ -896,7 +1059,6 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 	les_services_stickit_update.modificationEnregistree = false;
 
 
-	
 	les_services_stickit_update.ajouteAuRegistre = function(idGroupeStickers, idSticker){
 		//console.log(idGroupeStickers, idSticker);
 		if (! (idGroupeStickers in registreStickers)){
@@ -989,7 +1151,7 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 				url = "/stickit/backgroundcadre/" + idElement + "/";
 
 			var donneesEnvoyees = { 'idElement' : idElement};
-			console.log(url);
+			//console.log(url);
 			$http.delete(url, donneesEnvoyees)
 			   .success(function(data, status){
 			   	//console.log(data.msg);

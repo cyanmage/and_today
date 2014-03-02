@@ -11,8 +11,9 @@
 		
 		<section>
 						<date-du-jour class='dateDuJour'  date='id'>
-							{{id_date}}
+							{{id_date}}<br/ >++{*  servicesStickit.stickerSelectionne *}**
 						</date-du-jour>
+
 		</section>
 		
 		<section>
@@ -78,7 +79,8 @@
 			<div container-stickers class="container-stickers"  style='background-color : {*controles.stickit.backgroundcolor*};' ng-class="{hidden : ! options.modeDesign}">{% include "stickit/generation_page.html" %}	
 			</div>
 
-			
+			{% include "stickit/controles_sticker.html" %}	
+		
 
 		</div>
 	</div>

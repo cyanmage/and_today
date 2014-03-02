@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58c6478e-ec17-45e9-9e24-583c01650aa6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphisme/toshops/stickit/oeil_ferme.psd" afterPath="$PROJECT_DIR$/graphisme/toshops/stickit/oeil_ferme.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/generation_stickers.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/generation_stickers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/angular/configurateur.js" afterPath="$PROJECT_DIR$/static/js/angular/configurateur.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/js/controle_sticker.js" afterPath="$PROJECT_DIR$/stickit/static/stickit/js/controle_sticker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/controles_sticker.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/controles_sticker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/controls.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/controls.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/core/index.html" afterPath="$PROJECT_DIR$/core/templates/core/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/models.py" afterPath="$PROJECT_DIR$/core/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery-collision-resizable.js" afterPath="$PROJECT_DIR$/static/js/jquery-collision-resizable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery-ui-draggable-collision.js" afterPath="$PROJECT_DIR$/static/js/jquery-ui-draggable-collision.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/templates/stickit/motif_sticker.html" afterPath="$PROJECT_DIR$/stickit/templates/stickit/motif_sticker.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/core/panneau_principal.html" afterPath="$PROJECT_DIR$/core/templates/core/panneau_principal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/sticker.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/sticker/sticker.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/js/stickit.js" afterPath="$PROJECT_DIR$/stickit/static/stickit/js/stickit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/static/stickit/css/styles.css" afterPath="$PROJECT_DIR$/stickit/static/stickit/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/urls.py" afterPath="$PROJECT_DIR$/stickit/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/views.py" afterPath="$PROJECT_DIR$/core/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stickit/views.py" afterPath="$PROJECT_DIR$/stickit/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -74,8 +75,10 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dnd_upload/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="4" selection-start="214" selection-end="214" vertical-scroll-proportion="4.2" vertical-offset="173" max-vertical-offset="952">
-              <folding />
+            <state line="13" column="17" selection-start="361" selection-end="361" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="1020">
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +86,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stickit/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="30" selection-start="379" selection-end="379" vertical-scroll-proportion="-1.7464789" vertical-offset="1213" max-vertical-offset="2108">
+            <state line="25" column="22" selection-start="753" selection-end="753" vertical-scroll-proportion="0.47007042" vertical-offset="158" max-vertical-offset="2125">
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -655,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dnd_upload/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="214" selection-end="214" vertical-scroll-proportion="4.2" vertical-offset="173" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="-6.32" vertical-offset="63" max-vertical-offset="765">
@@ -685,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stickit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="39" selection-start="82" selection-end="82" vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controleSticker/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="15" selection-start="179" selection-end="179" vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="238">
@@ -699,9 +688,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stickit/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="39" selection-start="82" selection-end="82" vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dnd_upload/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="17" selection-start="361" selection-end="361" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stickit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="379" selection-end="379" vertical-scroll-proportion="-1.7464789" vertical-offset="1213" max-vertical-offset="2108">
+        <state line="25" column="22" selection-start="753" selection-end="753" vertical-scroll-proportion="0.47007042" vertical-offset="158" max-vertical-offset="2125">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

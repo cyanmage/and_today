@@ -123,14 +123,18 @@
 	display: none;	
 	position : absolute ;	bottom: 0px; 	left : 0px;
 }
-.backgroundCadreContenant .boutonSupprimerCadre:hover{ 	cursor : pointer; }
+.backgroundCadreContenant .boutonSupprimerCadre:hover{ 	
+	cursor : pointer; 
+	background-color: #FCF9BA;
+}
 
 .backgroundCadreContenant .recipiendaireFichierSurvol,
 .backgroundCadreContenant .controleTransparenceSurvol,
 .backgroundCadreContenant .boutonSupprimerCadreSurvol
-{  display : block;  opacity: 0.75; }/**/
+{  display : block;  opacity: 0.75; }
 
 .backgroundCadreContenant .recipiendaireFichier:hover,
+.backgroundCadreContenant .controleTransparence:hover,
 .backgroundCadreContenant .boutonSupprimerCadre:hover
 {	cursor : pointer; opacity : 1;}	
 

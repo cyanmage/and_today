@@ -180,21 +180,20 @@ layer3 .ensembleHorizontalControlesSticker{
 
 
 
-onglet1, onglet2, onglet3, onglet4{ position : absolute;	width : 15%;	height : 25%;	left : 0px; 
+onglet1, onglet2, onglet3/*, onglet4*/{ position : absolute;	width : 15%;	height : 33%;	left : 0px; 
 									border-width : 1px 0px 1px	1px;	border-style: solid;	
 									border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
 onglet1{	top : 0%;	background-color: #F5F1D3	;}
-onglet2{	top : 25%;	background-color: #F4FAD1	;}
-onglet3{	top : 50%;	background-color: #E8CFFC	;}
-onglet4{	top : 75%;	background-color: #CFD9FC	;}
+onglet2{	top : 33%;	background-color: #F4FAD1	;}
+onglet3{	top : 66%;	background-color: #E8CFFC	;}
+/*onglet4{	top : 75%;	background-color: #CFD9FC	;}*/
 
 layerbackground, layer1, layer2, layer3, layer4
-{ 	position : absolute;	left : 15%;		width : 85%;	 
+{ 	position : absolute;	left : 15%;		top : 0%;		
+	width : 85%;	height : 99%;	 
 	border-width: 1px 1px 1px 0px;	border-style: solid; 	transition : opacity 1000ms linear;	}
-layerbackground
-{	height : 100%;		top : 0%; background-color: #FFFFFF;}
-layer1, layer2, layer3, layer4
-{	height : 100%;	top : 0%;	}
+layerbackground{	background-color: #FFFFFF;	}
+
 
 layer1{	background-color: #F5F1D3 ; 	font-size: 15; 	font-style : italic;	/*text-align: center;*/}
 layer2{	background-color: #F4FAD1 ; 	font-size: 10; 	font-family: 'Arial';	vertical-align: 75%;}

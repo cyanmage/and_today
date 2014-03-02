@@ -1,4 +1,4 @@
-<controle-sticker id="controle_sticker" ng-class="{controle_sticker : options.modeDesign, stickit_modeDesign_hidden : !options.modeDesign}" ng-show='options.modeDesign' class="controleSticker" ng-cloak  ng-controller="controleur_Controles">
+<controle-sticker id="controle_sticker" ng-class="{controle_sticker : options.modeDesign, stickit_modeDesign_hidden : !options.modeDesign}" ng-show='options.modeDesign && servicesStickit.stickerSelectionne !== -1' class="controleSticker" ng-cloak  ng-controller="controleur_Controles">
 
 	<div class="barre-actions-controles">
 		<img src="{{STATIC_URL}}stickit/images/controles_sticker/cursor_move.png" class="btn-move">	
@@ -6,13 +6,18 @@
 
 	<div class="contenant-principal-controles">
 
-		<layerbackground></layerbackground>
+		<layerbackground test="1" puis-test="non"></layerbackground>
 
 
 
 		<onglet1 ng-click="selectLayer(1)" ></onglet1>	
 
-			<layer1 class="layer" ng-class="{hidden : testLayer(1)}">
+			<layer1 layer-controles class="layer" ng-class="{hidden : testLayer(1)}">
+
+			 	<div class="ensembleHorizontalControlesSticker">
+
+
+				</div>			
 				<!--	
 				<div class="ensembleHorizontalControlesSticker">
 						<img create-sticker src="{{STATIC_URL}}stickit/images/controles_sticker/page_tourne.jpg" class="creation_sticker"	 />
@@ -38,7 +43,7 @@
 
 
 		<onglet2 ng-click="selectLayer(2)" ></onglet2>
-			<layer2 class="layer" ng-class="{hidden : testLayer(2)}">
+			<layer2 layer-controles class="layer" ng-class="{hidden : testLayer(2)}">
 			 	<div class="ensembleHorizontalControlesSticker">
 			 			<img  class= "controlSticker imageControleSticker b_bold" ng-class='{b_bold_appuye : etatControle("bold")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" ng-click = "handlerControles('bold')"/>
 			 			<img  class= "controlSticker imageControleSticker b_italic" ng-class='{b_italic_appuye : etatControle("italic")}'  src="{{STATIC_URL}}stickit/images/controles_sticker/fonteItalic.jpg" ng-click = "handlerControles('italic')" />	
@@ -56,23 +61,19 @@
 
 
 			 	<div class="ensembleHorizontalControlesSticker">
-			 	 	<select class='b_fontname' ng-model="controles.stickit.fontname" ng-options="fontname for fontname in controles.stickit.parametrages.fontnames" ng-change="handlerControles('fontname')">
+			 	 	<select onchange="return false;" class='b_fontname' ng-model="controles.stickit.fontname" ng-options="fontname for fontname in controles.stickit.parametrages.fontnames" ng-change="handlerControles('fontname')">
 			 	 	</select>
 				</div>
 
-			 	<div class="ensembleHorizontalControlesSticker">
 
-
-				</div>
 
  	
 
 
 			<div class="ensembleHorizontalControlesSticker">
 			 		
-			 		<div class="b_deployeur"  chromo-selector-deploy style='color : {*controles.stickit.fontcolor*};' name-control='fontcolor_deploye'>
-						Couleur 	
-					</div>
+			 		<input type="button" class="b_deployeur"  chromo-selector-deploy style='color : {*controles.stickit.fontcolor*};' name-control='fontcolor_deploye' value="Couleur">
+
 					
 					<div class="conteneur"></div>		
 
@@ -91,7 +92,7 @@
 
 
 		<onglet3 ng-click="selectLayer(3)" ></onglet3>	
-		<layer3 class="layer" ng-class="{hidden : testLayer(3)}">
+		<layer3 layer-controles class="layer" ng-class="{hidden : testLayer(3)}">
 			<div class="ensembleHorizontalControlesSticker">
 					<span><i><b><u>Background color Sticker</u></b></i></span>
 			</div>
@@ -104,20 +105,6 @@
 		</layer3>
 		
 		
-
-		
-		
-		<onglet4 ng-click="selectLayer(4)" ></onglet4>	
-		<layer4 class="layer" ng-class="{hidden : testLayer(4)}">
-			Zola, Verlaine, Stendhal, Pompée, Hugo
-			<input type="text" id="testtext" style="width:90%">
-
-
-		</layer4><!---->
-
-
-
-
 	</div>	
 
 

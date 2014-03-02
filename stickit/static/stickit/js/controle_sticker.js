@@ -16,7 +16,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 	$scope.ongletSelectionne = 2;
 	$scope.fontcolor_deploye = true;
 	$scope.backgroundcolor_deploye = true;	
-
+	$scope.boiteAOutils_deploye = false;
 
 
 	$scope.toggle = function(property){
@@ -32,7 +32,6 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 		return numeroOnglet !== $scope.ongletSelectionne; 
 	}
 
-
 	$scope.etatControle = function(optionControle){
 		//console.log(optionControle, ", ", $scope.controles[optionControle]);
 		return servicesControlesStickit[optionControle];
@@ -46,28 +45,36 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 		}*/
 		//console.log("test");
 
+
+
 		if (optionControle == "bold"){
+			servicesControlesStickit.keepSelection(); 
+    		//servicesControlesStickit.optionsCurseur();			
 			document.execCommand('bold', false, null);
 			servicesControlesStickit.bold = ! servicesControlesStickit.bold ;
 		}
 
 		if (optionControle == "italic"){
+			servicesControlesStickit.keepSelection(); 			
 			document.execCommand('italic', false, null);
 			servicesControlesStickit.italic = ! servicesControlesStickit.italic ;
 		}
 
 		if (optionControle == "underline"){
+			servicesControlesStickit.keepSelection(); 			
 			document.execCommand('underline', false, null);
 			servicesControlesStickit.underline = ! servicesControlesStickit.underline ;
 		}
 
 		if (optionControle == "fontname"){
+			servicesControlesStickit.keepSelection(); 			
 			//console.log($scope.controles.fontname);
 			document.execCommand('fontname', false, $scope.controles.stickit.fontname);
 			//console.log(servicesControlesStickit.fontname) ;			
 		}
 
 		if (optionControle == "fontcolor"){
+			servicesControlesStickit.keepSelection(); 			
 			//valeur="rgba(182, 182, 182, 0.1)";
 			//document.execCommand("styleWithCSS", true, null);
     		document.execCommand('forecolor', false, valeur);
@@ -76,6 +83,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 		}
 
 		if (optionControle == "backgroundcolor"){
+			servicesControlesStickit.keepSelection(); 			
 			//valeur="rgba(182, 182, 182, 1)";			
 			servicesControlesStickit.backgroundcolor = valeur;
 		}
@@ -84,6 +92,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 
 
 	$scope.incremente_fontsize = function(){
+			servicesControlesStickit.keepSelection(); 		
 			//console.log(servicesControlesStickit.fontsize + 1, ",", servicesControlesStickit.parametrages.max_fontsize);
 		if (servicesControlesStickit.fontsize + 1 <= servicesControlesStickit.parametrages.max_fontsize){
 
@@ -93,6 +102,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 	}
 
 	$scope.decremente_fontsize = function(){
+			servicesControlesStickit.keepSelection(); 		
 		if (servicesControlesStickit.fontsize - 1 >= servicesControlesStickit.parametrages.min_fontsize){
 			servicesControlesStickit.fontsize--;
 			document.execCommand('fontsize', false, servicesControlesStickit.fontsize);					
@@ -113,77 +123,7 @@ module_stickit.controller('controleur_Controles', ['$scope', 'servicesControlesS
 
 
 
-module_stickit.directive('contenuSticker', ['servicesControlesStickit', 'servicesUpdateStickit',
-	function(servicesControlesStickit, servicesUpdateStickit){
 
-		return {
-			restrict : 'AE', 
-			link : function(scope, element, attributes){
-				element
-				.on('click', function(event){
-					//console.log(element.text());
-					if (scope.options.modeDesign){
-
-						servicesControlesStickit.stickerEnCours = scope.idSticker;
-						scope.$apply(servicesControlesStickit.optionsCurseur());			
-					}
-				})
-				.on("keyup", function(event){
-					if (scope.options.modeDesign){
-						scope.$apply(servicesControlesStickit.optionsCurseur());
-					}
-				})		
-				.on("mousedown", function (event) {
-				    event.stopPropagation();
-				})
-				.on("mouseenter", function(ui, event){
-					//console.log(servicesControlesStickit.stickerEnCours, ", ", scope.idSticker);
-					if (scope.options.modeDesign && (servicesControlesStickit.stickerEnCours == scope.idSticker)){
-						$(this).focus();						
-					}
-			
-				})
-				.on('dragenter', function(event){
-					//.log("evenement deplacable entrant ");
-					if (scope.options.modeDesign){
-						$(this).focus();						
-					}					
-				})
-				.on('drop', function(event){
-
-					var files = event.originalEvent.dataTransfer.files; 
-					
-					if (files.length){
-						//element.focus;
-						var position = window.getSelection().getRangeAt(0).startOffset;
-						//console.log( "focus : ", window.getSelection().getRangeAt(0), ", caret : ", position);
-						event.preventDefault();
-						event.stopPropagation();
-						var html, node, id_blob, range = window.getSelection().getRangeAt(0); 
-
-						for (var i=0 ; i <files.length ; i++) {
-								id_blob = window.URL.createObjectURL(files[i]); 
-								html = "<img src ='" + id_blob + "' id='" + id_blob + "' />"
-								node = range.createContextualFragment(html);
-							   	range.insertNode(node);
-
-							    servicesUpdateStickit
-							    .uploadFiles(files[i], id_blob)
-							    .then(function(association){
-							   		var image = $("[id='" + id_blob + "' ]");
-   		               				image.attr("src", association[image.attr("src")]).removeAttr("id");	
-   		               				window.URL.revokeObjectURL(id_blob);
-							    });
-
-    					}	
-					}
-				})
-
-			}
-		}
-
-
-}]);
 
 
 
@@ -229,8 +169,9 @@ module_stickit.directive("chromoSelectorDeploy", ['$timeout',
 			});
 			//console.log(elemHorizParent);
 			element.on("click", function(event){
-				event.preventDefault();
-				event.stopPropagation();
+				//event.preventDefault();
+				//event.stopPropagation();
+				console.log("toto");
 				//console.log("clic sur ", attributes.nameControl);
 				scope.toggle(attributes.nameControl);
 				scope.$apply();
@@ -313,6 +254,24 @@ module_stickit.directive('chromoSelector', ['servicesControlesStickit',
 
 }]);
 
+module_stickit.directive('layerControles', ['servicesControlesStickit', 
+	function(servicesControlesStickit) {
+	
+	return {
+		restrict : "AE",
+		link : function(scope, element, attributes){
+			//console.log(attributes);
+			element.on("click", function(event, ui){
+				console.log("panneau clique");
+				//servicesControlesStickit.keepSelection();
+				//event.preventDefault();
+			});
+		}
+
+	}
+
+
+}]);/**/
 
 
 /******************************************************************************/
@@ -367,7 +326,7 @@ module_stickit.factory('servicesControlesStickit', function(){
 
 	les_services_stickit_controles.optionsCurseur = function(){
 		var optionsCurseur = {};
-
+		//console.log("test options curseur");
 		optionsCurseur.bold 		= les_services_stickit_controles.bold 		= document.queryCommandState("bold", false, null);
 		optionsCurseur.italic 		= les_services_stickit_controles.italic 	= document.queryCommandState("italic", false, null);
 		optionsCurseur.underline 	= les_services_stickit_controles.underline 	= document.queryCommandState("underline", false, null);
@@ -389,6 +348,54 @@ module_stickit.factory('servicesControlesStickit', function(){
 				//console.log(optionsCurseur.fontsize);
 		return optionsCurseur;
 	}
+
+	/*les_services_stickit_controles.keepCursorPosition = function(){
+		var range = rangy.getSelection().getRangeAt(0);
+		console.log(range);
+	}*/
+
+
+
+   var savedSel = null;
+    var savedSelActiveElement = null;
+
+    /*les_services_stickit_controles.saveSelection = function() {
+        // Remove markers for previously saved selection
+        if (savedSel) {
+            rangy.removeMarkers(savedSel);
+        }
+        savedSel = rangy.saveSelection();
+        savedSelActiveElement = document.activeElement;
+
+    }*/
+
+    les_services_stickit_controles.keepSelection = function() {
+
+        // Remove markers for previously saved selection
+        if (savedSel) {
+            rangy.removeMarkers(savedSel);
+        }
+        savedSel = rangy.saveSelection();//
+       //savedSelActiveElement = document.activeElement; 
+
+        if (savedSel) {
+            rangy.restoreSelection(savedSel, true);// 
+               	//console.log(savedSelActiveElement);
+            savedSel = null;
+
+            /*window.setTimeout(function() {
+                if (savedSelActiveElement && typeof savedSelActiveElement.focus != "undefined") {
+                    savedSelActiveElement.focus();
+                }
+            }, 1);*/
+        }
+    }
+
+
+	/*document.execCommand('bold', false, null);
+	servicesControlesStickit.formateText = function(optionControle){
+
+	};*/
 
 
 	return les_services_stickit_controles;

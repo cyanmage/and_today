@@ -1,0 +1,20 @@
+  // create a box with the same total area, centered at center of gravity
+  function centerGravity( coordsList )
+  {
+    if( coordsList.length <= 0 ) return null;
+    var wsumx = 0;
+    var wsumy = 0;
+    var suma  = 0;
+    for( var i = 0; i < coordsList.length; i++ )
+    {
+      suma += coordsList[i].area();
+      wsumx += coordsList[i].centerx() * coordsList[i].area();
+      wsumy += coordsList[i].centery() * coordsList[i].area();
+    }
+    var d = Math.sqrt( suma ); // dimension of square (both w and h)
+    return new Coords( (wsumx/suma) - d/2, (wsumy/suma) - d/2, (wsumx/suma) + d/2, (wsumy/suma) + d/2 );
+  }
+  function jqList2CenterGravity( jqList, dx, dy, dw, dh )
+  {
+    return centerGravity( jqList.toArray().map( function(e,i,a){ return jq2Coords($(e),dx,dy, dw, dh); } ) );
+  }

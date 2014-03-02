@@ -4,7 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 	<title>Prototype  de fenêtres coulissants  </title>
+	
+<!--Bibliothèques générales -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>-->
+<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>-->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>	
+		
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css"/>	
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/defilement.css">
@@ -74,19 +87,26 @@
 
 
 
-<!--Bibliothèques générales -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>-->
-<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>-->
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>	
-		
-	<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>	
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision-resizable.js"></script>	
+
+
+
+<!---************************************************************-->
+<!--			SCRIPTS POUR RESIZABLE						-->
+<!---************************************************************-->
+<!--		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision-resizable.js"></script>-->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-resizable/debugClone.js"></script>	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-resizable/helperFunctions.js"></script>		
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-resizable-collision.js"></script>		
+<!---************************************************************-->
+
+
+
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-draggable-collision.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/chromoselector.min.js"></script>		
 	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>	
+
+	<script type="text/javascript" src="{{ STATIC_URL }}js/rangy-core.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/rangy-selectionsaverestore.js"></script>	
 
 
 <!--Bootstrap via angular -->
