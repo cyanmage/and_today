@@ -1,0 +1,73 @@
+
+	<div class="appli-stickit"> 
+		
+		<section>
+						<date-du-jour class='dateDuJour'  date='{{id_date}}'>
+							{{id_date}}<!--<br/ >++{*  servicesStickit.stickerSelectionne *}**-->
+						</date-du-jour>
+
+		</section>
+		
+		<section>
+			<div class="bandeau-des-actions">
+				<div class="row">
+					<div class="span3" ng-show=" ! options.modeDesign">
+						<button class="btn btn-success" ng-click="toggleModeDesign()">
+							Mode Affichage
+						</button>  
+					</div>
+	
+					<div class="span3 ng-cloak" ng-show="options.modeDesign">
+						<button class="btn btn-danger" ng-click="toggleModeDesign()">
+							Mode  Design
+						</button> 
+					</div>
+
+					<div class="span3" >
+						<img create-sticker src="{{STATIC_URL}}stickit/images/controles_stickit/page_tourne.png" class="creation_sticker ng-cloak"	ng-show="options.modeDesign">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeDesign && options.modeModifStickers" ng-click="togglemodeModifStickers()">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifStickers" ng-click="togglemodeModifStickers()">																		
+					</div>
+
+					<div class="span3" >
+						<img create-background-image src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image.png" class="creation_background_image ng-cloak"	 ng-show="options.modeDesign">	
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeDesign && options.modeModifCadres" ng-click="toggleModeModifCadres()">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifCadres"  ng-click="toggleModeModifCadres()">							
+					</div>
+					
+					<div class="span6">
+						<panneau-warning-messagesclass="contenant-warning-message" >
+							<div class='warning-message' ng-show='show_message'>
+
+							<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
+							<span><b>panneau : </b>{* panneau *}</span>/////
+							<span><b>actif : </b>{* actif *}</span>		
+							<span><b>message : </b>{* warning_message *}</span>	
+							 ng-controller = "controleurModuleAfficheurWarning" -->				
+							</div>
+						</panneau-warning-messages>	
+					</div>	
+
+					<div class="span1">
+						<div class="btn-group">
+							<button class="btn sauverLesStickers" ng-click="sauvegarder()">
+								Sauver
+							</button>
+						</div>						
+					</div>	
+
+				</div>
+		
+			</div>
+			
+			<div class="spacer"></div>			
+		</section>
+
+
+		<div class="corpsPage">
+
+		</div>
+
+	</div>
+
+

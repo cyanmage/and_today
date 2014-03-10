@@ -1,0 +1,59 @@
+.defileur
+{	
+	position: absolute;		top : 50px;		height: 80%;
+	width: 80%;		left: 10%;
+	overflow: hidden;/**/
+	box-shadow: 0px 0px 20px 2px #E1E2DE inset;
+}
+
+[emplacement='gauche'] {	overflow-x 	: hidden;	
+	opacity : 0;
+	  -webkit-transform: translate(-100%, 0);
+	     -moz-transform: translate(-100%, 0);
+	      -ms-transform: translate(-100%, 0);
+	       -o-transform: translate(-100%, 0);
+	          transform: translate(-100%, 0);/*left : -100% ;*/ 
+}
+
+[emplacement='centre'] {	display 	: block ;	
+	opacity : 1;	
+	  -webkit-transform: translate( 0%, 0);
+	     -moz-transform: translate( 0%, 0);
+	      -ms-transform: translate( 0%, 0);
+	       -o-transform: translate( 0%, 0);
+	          transform: translate( 0%, 0); /*	left: 0% 	;*	/	*/
+	          }
+
+[emplacement='droite'] {	overflow-x 	: hidden;	
+	opacity : 0;		
+	 -webkit-transform: translate(100%, 0);
+	    -moz-transform: translate(100%, 0);
+	     -ms-transform: translate(100%, 0);
+	      -o-transform: translate(100%, 0);
+	         transform: translate(100%, 0);/* left: 100% 	;	opacity : 0;	*/ 	
+	         }
+
+.transitionDefileur{
+	transition 					: 		transform 			1.1s 	  	linear, 	 opacity    1.1s 	linear;
+	/**/
+   -webkit-transition 			: 		-webkit-transform 	1.1s 		linear, 	 opacity    1.1s 	linear;
+    -moz-transition 			: 		-moz-transform 		1.1s 		linear, 	 opacity    1.1s 	linear;
+    -o-transition 				: 		-o-transform 		1.1s 		linear, 	 opacity    1.1s 	linear; 
+    -ms-transition 				: 		-ms-transform 		1.1s 		linear, 	 opacity    1.1s 	linear; 
+/*transition 					: 		left 	1000ms  	linear;
+   -webkit-transition: 				left 	1.1s 	linear;
+    -moz-transition: 				left 	1.1s 	linear;
+    -o-transition: 					left 	1.1s 	linear;    */  
+}
+.noTransition{	transition 		: 	none; }
+
+
+.panneau{	width	: 100%;		height	: 100%;		position : absolute;	overflow : hidden;	}
+.panneau_0{	background-color	: #DEDCFC;}/**/
+.panneau_1{	background-color	: #EFFCF4;}/**/
+.panneau_2{	background-color	: #FFE8DD;}/**/
+
+.leftArrow	{	left 		: 	3%; 	}
+.rightArrow	{	left 		:	93%;	}
+.rightArrow, .leftArrow{ position : absolute;   z-index	: 1000;	   top	:	50%;}
+.rightArrow:hover, .leftArrow:hover{ cursor: pointer; }

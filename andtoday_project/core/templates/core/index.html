@@ -1,0 +1,119 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script type="text/javascript">
+		
+		window.console = window.console || {};
+		window.console.log = window.console.log || function() {};
+	
+	
+	   /* $(document).ready(function() {
+	        angular.bootstrap(document);
+	    });*/
+	</script>
+	
+
+
+		<title>Performances  </title>                         
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/core_styles.css">		
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">	
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/defilement.css">
+<!--		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	-->
+
+	<!--Bibliothèques générales -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>-->
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/configurateur.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/core.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js">	</script>		
+		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/controle_sticker.js"></script>		
+
+<!--			<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>	
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css"/>	
+	
+
+
+	
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+	
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}warningMessages/css/warning_messages.css">		-->
+</head>
+
+ 
+<body ng-app="appli" style="overflow : hidden" ng-controller="controleurDefileur" >
+
+	<header>
+		<div class= "header" >
+			Tu veux laisser une trace de ta propre histoire ? Ecris-là aujourd'hui ! 
+	
+		</div>
+	</header>
+
+	<div class="bouton-parametrages" id="bouton-parametrages" bouton-parametrages>
+		Paramétrages
+	</div>
+
+	<defileur class = "defileur">	
+
+			
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'gauche'">	
+				<panneau-defileur  emplacement="gauche" class = "panneau_0 panneau transitionDefileur leftPanel" id = "panel0"  ng-init="actif = false"  test={{yesterday}}>
+			
+					
+					
+					{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_yesterday 	id_date=yesterday cadres=cadres_yesterday %}	
+
+				</panneau-defileur>
+			</div>	
+
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'centre'">	
+				<panneau-defileur  emplacement="centre" class = "panneau_1 panneau transitionDefileur centerPanel" 	id = "panel1"   ng-init="actif = true" test={{today}}>
+
+					{% include 'core/panneau_principal.html' with numero_panneau="1"  stickers=stickers_today id_date=today cadres=cadres_today %}
+	
+				</panneau-defileur>
+			</div>
+
+			<div ng-controller="controleurPanneau" ng-init="emplacement = 'droite'">			
+				<panneau-defileur  emplacement="droite" class = "panneau_2 panneau transitionDefileur rightPanel" 	id = "panel2"   ng-init="actif = false"  test= {{tomorrow}}>
+				
+
+
+					{% include 'core/panneau_principal.html' with	numero_panneau="2"  stickers=stickers_tomorrow 	id_date=tomorrow cadres=cadres_tomorrow %}	
+					
+				</panneau-defileur>					
+			</div>	
+
+
+
+	</defileur>
+
+	<img  direction-gauche src="{{ STATIC_URL }}defilement_infini/images/left_arrow.png"  class="arrow leftArrow"  id="leftArrow" >	
+	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.png" class="arrow rightArrow" id="rightArrow">
+
+
+
+</body> 		
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,227 @@
+
+.bandeau-des-actions .creation_sticker{
+	width  : 25px;		height : 30px;
+	margin : 5px 0px 0px 0px;
+}
+.bandeau-des-actions .creation_sticker:hover{	cursor : move;	}
+
+
+.bandeau-des-actions .creation_background_image{		width  : 50px;		height : 30px; }
+.bandeau-des-actions .creation_background_image:hover{	cursor : move;		}
+
+.bandeau-des-actions .yeux{
+	width : 25px ;	height : 30px;
+	margin-left: 10px;
+}
+.bandeau-des-actions .yeux:hover{	cursor : pointer;}
+
+.modification_sticker_relache, .modification_sticker_appuye
+{
+	width  : 25px;		height : 30px;
+	/*margin-left: 150px;*/
+}
+
+.modification_sticker_relache:hover, .modification_sticker_appuye:hover
+{
+	padding : 5px 0px 0px 2px;
+	box-shadow: 4px 4px 2px #880000;	
+	cursor: pointer;
+}
+
+.modification_sticker_appuye{
+	padding-left: 2px;
+	padding-top: 5px;
+	box-shadow: 4px 4px 2px #880000;		
+}
+
+/*.modification_sticker:after
+{
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    -moz-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+    -webkit-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+    box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+}*/
+
+
+
+.container-stickers
+	{
+	background-color: rgba(238, 224, 226, 0.22);*/
+	visibility: hidden;
+	display: none;/*/**/
+	border: 1px dotted	rgb(58, 156, 241);
+	margin: 20px 0px 0px 75px;
+	border-style: outset;
+	width: 90%;		height: 550px;	
+	position: relative;		float : left;	/*left : 200px;*/
+}
+
+.bouton-parametrages{
+	position: absolute;		top : 22px; 	right : 50px;
+	width: 8em;	height: 1.5em ;
+	background-color: #F8EC08;
+	/*box-shadow: inset 1px 1px 10px 5px #fe0000;*/
+	text-align: center;
+	padding-top: 5px;
+	border-radius: 5px;
+	color : #FFFFFF;
+	font-weight: 700;
+}
+.bouton-parametrages:hover{
+	cursor : pointer;
+	border : solid 1px black;
+}
+modal-parametrages{
+	width : 80%;
+	height: 80%;
+	border-radius: 15px;
+}
+
+
+.sauverLesStickers{	position: absolute;		margin-left: 100px;}
+
+
+/*.stickit_modeDesign_hidden, .stickerHidden, .stickit_modeModifCadres, .stickit_modeModifBackground, */
+/*.stickit_modeDesign_notdisplayed{	display: none;	}
+[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
+.visible{	visibility: visible !important; ;	}
+
+.hidden{	visibility : hidden !important; }
+
+
+
+
+/***********************************************************/
+/*   styles pour la gestion des background cadres          */
+/***********************************************************/
+#motif-background-cadre
+{	
+	position : absolute; left : -500px; top : 500px;
+	display : none;	
+}
+/*#motif-background-cadre:hover{	cursor : move;	}*/
+.helperBackgroundCadre{
+	width : 300px;
+	height : 200px;
+}
+
+.backgroundCadreContenant{
+	position : absolute;	width : 300px;		height : 200px;
+	min-width: 150px;	min-height: 100px;	
+	background-color: #E6E7E2;
+}
+/*.backgroundCadreContenant:hover{ z-index : 150;	}
+.backgroundCadreContenant .selectionne{	z-index : 150;	}*/
+.backgroundCadreContenant .backgroundCadreImage{  width : 100%;	height : 100%;}
+/*.backgroundCadreContenant .backgroundCadreImage:hover{	cursor : move;}*/
+
+.backgroundCadreContenant .controleTransparence{
+	display: none;
+	position : absolute;	width : 30px;	height : 95px;
+	right : 0px;	top : 0px;
+	background-color: #FCF5EB;	
+	border : 1px solid black;
+}
+.backgroundCadreContenant .controleTransparence .ui-cs-chromoselector{	display: block !important; 	}
+.backgroundCadreContenant .controleTransparence .ui-cs-container{	display: none;/**/	}
+
+.backgroundCadreContenant .recipiendaireFichier{	
+	display : none;
+	position : absolute;	top : 0px; 	left :0px;	
+	/*width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
+	height: 15%	; 	min-height : 25px ; 	max-height : 75px;*/
+	width : 50px;		height : 50px;		/*max-width : 5vw;		max-height : 5vw;*/
+	background-color: #FCF9BA;
+	padding : 10px;	
+	border-bottom : 3px dotted black;		border-right : 3px dotted black;
+}
+
+.backgroundCadreContenant .boutonSupprimerCadre{
+	display: none;	
+	position : absolute ;	bottom: 0px; 	left : 0px;
+}
+.backgroundCadreContenant .boutonSupprimerCadre:hover{ 	
+	cursor : pointer; 
+	background-color: #FCF9BA;
+}
+
+.backgroundCadreContenant .recipiendaireFichierSurvol,
+.backgroundCadreContenant .controleTransparenceSurvol,
+.backgroundCadreContenant .boutonSupprimerCadreSurvol
+{  display : block;  opacity: 0.75; }
+
+.backgroundCadreContenant .recipiendaireFichier:hover,
+.backgroundCadreContenant .controleTransparence:hover,
+.backgroundCadreContenant .boutonSupprimerCadre:hover
+{	cursor : pointer; opacity : 1;}	
+
+/*.backgroundCadreContenant .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	*/
+.backgroundCadreContenant .selectFiles {	display: none 	;}	
+
+/*Correction pour jquery ui ... l'element draggable en disable perd par défaut son opacité de 1*/
+.backgroundCadreContenant.ui-state-disabled{
+	opacity: 1;
+    filter: none;
+    background-image: inherit;
+}
+
+
+
+
+.transitionVersSuppression, .transitionVersSuppressionSticker, .transitionVersSuppressionBackgroundCadre{
+	/*transition : opacity 1s ease-out;*/
+	-webkit-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	   -moz-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	     -o-transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	        transition: opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeInOutQuad */	
+}
+
+.suppression, .suppressionSticker, .suppressionBackgroundCadre{
+	opacity : 0;
+}
+
+
+/*********************************************************************/
+/*         Boites modales de confirmation                            */
+/*********************************************************************/
+.boiteAlerte{
+	position : absolute;	top : -500px;	left : -500px;
+	width : 450px;
+	height: 200px;
+	z-index : 10000;
+	border-radius: 18px;
+	background-color: rgba(255,255,244, 1);
+}
+
+.messageAlerte{
+	position: absolute;	top : 30px;	left : 20px;
+}
+
+.boiteAlerte[suppression-sticker]{
+	position : absolute;	top : 50px;	left : 400px;
+}
+
+.boiteAlerte[suppression-backgroundcadre]{
+	
+}
+
+.confirmer{
+	position: absolute;	bottom: 20px; left : 50px;
+	background-color: #2DBB5B;
+	border-radius: 3px;
+	width : 50px;	height: 20px;
+}
+
+.infirmer{
+	position: absolute;	bottom: 20px; right : 50px;
+	background-color: #EB2407;
+	border-radius: 3px;
+	width : 50px;	height: 20px;
+}
+
+/*********************************************************************/
+/*********************************************************************/
