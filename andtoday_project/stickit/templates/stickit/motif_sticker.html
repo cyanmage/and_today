@@ -1,0 +1,15 @@
+<!--*** motif de sticker qui va être appliqué **-->
+<!--ng-class="{stickerModified : stickerModified}"  {*options.modeDesign*}-->
+	
+	<div class="titreSticker"  ng-class="{stickerModified : stickerModified}">Joli titre !! {*idSticker*}</div>
+
+	<div class="contenantSticker">
+		<contenu-sticker class="contenuSticker" contenteditable style='{{sticker.style}}'  ng-class="{visible : ! options.modeDesign || options.modeModifStickers, hidden : options.modeDesign && ! options.modeModifStickers}" >{{	sticker.contenu | safe}}</contenu-sticker>
+
+
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/supprimer.png" class="boutonSupprimerSticker" ng-click="supprimerSticker(idSticker)" >
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/boite_a_outils.png" class="boutonBoiteAOutils" ng-click="boiteAOutils()" ng-class="{'boiteAOutilsDeploye' : boiteAOutils_deploye}" test="{* boiteAOutils_deploye *}" >
+
+	</div>

@@ -1,6 +1,6 @@
 var module_chargeurPage = angular.module('chargeurPage', []);
 
-module_chargeurPage.factory('chargeurPage', ['', function(){
+/*module_chargeurPage.factory('chargeurPage', ['', function(){
 
 
 		var les_services_chargeur_page = {};
@@ -8,7 +8,7 @@ module_chargeurPage.factory('chargeurPage', ['', function(){
 		//les_services_chargeur_page.
 
 		return les_services_chargeur_page;
-}]);
+}]);*/
 
 
 

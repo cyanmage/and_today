@@ -48,13 +48,13 @@ class Cadre(models.Model):
 		pass
 
 
-class Post(models.Model):
-	"""docstring for Post"""
+class Sticker(models.Model):
+	"""docstring for Sticker"""
 	"""Champs : contenu, domaine et date"""
 
 	class Meta:
-		verbose_name = _('Post')
-		verbose_name_plural = _('Posts')
+		verbose_name = _('Sticker')
+		verbose_name_plural = _('Stickers')
 		abstract = True
 
 	def __str__(self):
@@ -73,7 +73,7 @@ class Post(models.Model):
 	height  			= models.IntegerField(default=150)	
 	recopie_tel_quel 	= models.BooleanField(default=False)
 
-class PostUser(Post):
+class StickerUser(Sticker):
 	heure 				= models.TimeField(null=True, default=datetime.now())
 	#user  				= models.ForeignKey(User, default = User.objects.get(username="no-user").id)
 	#permissions	
@@ -82,12 +82,12 @@ class PostUser(Post):
 		return "Date : " +  self.date.strftime('%d %b %Y') + "   , contenu tronqué : " + self.contenu[:9]
 
 	class Meta : 
-		verbose_name 		= _('Post utilisateur')
-		verbose_name_plural = _('Posts de l\'utilisateur')
+		verbose_name 		= _('Sticker utilisateur')
+		verbose_name_plural = _('Stickers de l\'utilisateur')
 
 
 
-class PostGenerique(Post):
+class StickerGenerique(Sticker):
 	pays  				= models.ForeignKey('Pays', null=True, default=0)
 	domaine 			= models.ForeignKey('Domaine', null=True, default = 0) 
 
@@ -98,8 +98,8 @@ class PostGenerique(Post):
 		+ "   , contenu tronqué : " + self.contenu[:9]
 
 	class Meta: 
-		verbose_name 		= _('Post générique') 
-		verbose_name_plural = _('Posts génériques') 
+		verbose_name 		= _('Sticker générique') 
+		verbose_name_plural = _('Stickers génériques') 
 
 class Domaine(models.Model):
 	"""docstring for Domaine"""

@@ -1,31 +1,28 @@
-{% load staticfiles %}
-{% csrf_token %}
-
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 
-	<script type="text/javascript">
+	 <script type="text/javascript">
 		
-		window.console = window.console || {};
+		  /*window.console = window.console || {};
 		window.console.log = window.console.log || function() {};
 	
 	
-	   /* $(document).ready(function() {
+	 $(document).ready(function() {
 	        angular.bootstrap(document);
 	    });*/
 	</script>
 	
 
 
-		<title>Performances  </title>                         
+		<title> And Today </title>                         
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/core_styles.css">		
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/transitions.css">
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">	
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}defilement_infini/css/defilement.css">
-<!--		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	-->
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/sticker.css">	<!---->
 
 	<!--Bibliothèques générales -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -36,8 +33,11 @@
 		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/core.js"></script>	
 		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js">	</script>		
+		<!--Module stickit, nécessite jquery, jqueryui, jquery-collision, jquery-collision-resizable, jquidcollision-->		
 		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
-		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/controle_sticker.js"></script>		
+		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/controle_sticker.js"></script>	
+
+
 
 <!--			<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>	
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
@@ -63,6 +63,8 @@
 		</div>
 	</header>
 
+
+
 	<div class="bouton-parametrages" id="bouton-parametrages" bouton-parametrages>
 		Paramétrages
 	</div>
@@ -72,7 +74,8 @@
 			
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'gauche'">	
 				<panneau-defileur  emplacement="gauche" class = "panneau_0 panneau transitionDefileur leftPanel" id = "panel0"  ng-init="actif = false"  test={{yesterday}}>
-			
+					<!--<img  src="{{ STATIC_URL }}images/1.jpg"  style="position : absolute; top : 100px ;left : 0px">	
+					<img  src="{{ STATIC_URL }}images/2.jpg"  style="position : absolute; top : 350px;left : 0px">	-->			
 					
 					
 					{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_yesterday 	id_date=yesterday cadres=cadres_yesterday %}	
@@ -83,14 +86,18 @@
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'centre'">	
 				<panneau-defileur  emplacement="centre" class = "panneau_1 panneau transitionDefileur centerPanel" 	id = "panel1"   ng-init="actif = true" test={{today}}>
 
-					{% include 'core/panneau_principal.html' with numero_panneau="1"  stickers=stickers_today id_date=today cadres=cadres_today %}
+					<!--<img  src="{{ STATIC_URL }}images/3.jpg"  style="position : absolute; top : 100px ;left : 0px;">	
+					<img  src="{{ STATIC_URL }}images/4.jpg"  style="position : absolute; top : 350px;left : 0px;">	-->
+					{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_today 	id_date=today cadres=cadres_today %}	
+
 	
 				</panneau-defileur>
 			</div>
 
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'droite'">			
 				<panneau-defileur  emplacement="droite" class = "panneau_2 panneau transitionDefileur rightPanel" 	id = "panel2"   ng-init="actif = false"  test= {{tomorrow}}>
-				
+					<!--<img  src="{{ STATIC_URL }}images/5.jpg"  style="position : absolute; top : 100px ;left : 0px; width : 100px; ">	
+					<img  src="{{ STATIC_URL }}images/6.png"  style="position : absolute; top : 350px;left : 0px; width : 100px; ">		-->			
 
 
 					{% include 'core/panneau_principal.html' with	numero_panneau="2"  stickers=stickers_tomorrow 	id_date=tomorrow cadres=cadres_tomorrow %}	
@@ -106,14 +113,19 @@
 	<img  direction-droite src="{{ STATIC_URL }}defilement_infini/images/right_arrow.png" class="arrow rightArrow" id="rightArrow">
 
 
+	<div id="motif-sticker" class="sticker">
+			{% include 'stickit/motif_sticker.html' %}
+	</div>	
+	
+	<div id="motif-background-cadre" class="backgroundCadreContenant">
+			{% include 'stickit/motif_cadre.html' %}
+	</div>	 
 
+
+	{% include 'stickit/boites_alertes.html' %}
+
+	{#% include 'parametrages/parametrages.html' %#}
+
+	{% csrf_token %}
 </body> 		
-
-
-
-
-
-
-
-
 </html>

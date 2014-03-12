@@ -98,3 +98,5 @@ STATICFILES_DIRS = (
 #MEDIA_ROOT = 'E:/sites_web/django/and_today/media'
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'media')
 #MEDIA_URL = '/media/'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]

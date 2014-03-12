@@ -168,7 +168,7 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			/*   Evènements sur la directive  */
 			/**********************************/
 			element.on("transitionend  webkitTransitionEnd", function(event, data){
-				console.log("fin de transitionend");
+				//console.log("fin de transitionend");
 				if(element.attr("emplacement") == "centre"){
 					//scope.$apply(scope.mode = "defilementTermine");
 					//console.log("signal de fin de transition emis");
@@ -183,7 +183,6 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			});*/	
 
 			scope.$watch("mode", function(newValue, oldValue, scope){
-				//console.log("mode : ", newValue, oldValue);
 				var emplacement = element.attr("emplacement");
 				if (scope.mode == "gauche"){
 					if (emplacement == "gauche"){
@@ -195,12 +194,9 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 					else if(emplacement == "centre"){
 						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' : 'gauche', 'actif' : false});								
 					}
-					//jquery ? 										
-					//panneaux.permuteGaucheJquery(scope) ;		//VERSION JQUERY				
-					panneaux.permuteGaucheTransition(element);	//VERSION TRANSITION*/
-					//panneaux.permuteGauche(element)// 			//VERSION TRANSITION*/	
-					//panneaux.permuteGaucheJqueryOpacity(scope);
+					panneaux.permuteGaucheTransition(element);	
 				}
+
 				else if (scope.mode == "droite"){
 					//console.log("changement de mode ! ", scope.mode);					
 					if (emplacement == "droite"){
@@ -212,10 +208,8 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 					else if(emplacement == "centre"){
 						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' :  'droite', 'actif' : false});								
 					}					
-					//jquery ? 										
-					//panneaux.permuteDroiteJquery(scope) ;		//VERSION JQUERY DEFIL				
-					panneaux.permuteDroiteTransition(element);	//VERSION TRANSITION DEFIL*/
-					//panneaux.permuteDroite(element);// 			//VERSION TRANSITION*/
+		
+					panneaux.permuteDroiteTransition(element);	
 				}
 			});
 
@@ -321,9 +315,9 @@ gestion_des_panneaux_ids.setId = function(id){
 module_defileur.factory('gestionDesPanneaux',['$q', function($q){
 	var gestion_des_panneaux = {};
 
-	/**/
+
 	gestion_des_panneaux.permuteGaucheTransition = function(element){
-		console.log("Permutation gauche transition");			
+	
 		var emplacement = element.attr('emplacement');		
 		if (emplacement == "gauche"){
 			element.addClass("noTransition");
@@ -335,180 +329,35 @@ module_defileur.factory('gestionDesPanneaux',['$q', function($q){
 			element.attr("emplacement", "gauche");
 		else if (emplacement == "droite")
 			element.attr("emplacement", "centre");
-		console.log("PERMUTATION TERMINEE");
 	}		
+
 
 	gestion_des_panneaux.permuteDroiteTransition = function(element){
 		var emplacement = element.attr('emplacement');	
-		console.log("Permutation droite transition");		
+
 		
 		if (emplacement == "droite"){
 			element.addClass("noTransition");
 			element.attr("emplacement", "gauche");
 			element.height();  // hack : indispensable pour forcer le reflow et que la transition "noTransition" soit appliquée ! 
 			element.removeClass("noTransition");
-			console.log("droite vers gauche");							
-		}
-		else if(emplacement == "centre"){
-			element.attr("emplacement", "droite");
-			console.log("centre vers droite");	
-		}
-		else if (emplacement == "gauche"){
-			element.attr("emplacement", "centre");
-			console.log("gauche vers centre");			
-			}
-		}
-
-	var animation_en_cours = false;	
-	/*var t_rightShift  = [1, 2, 0];
-	var t_leftShift   = [2, 0, 1];	*/
-	var rapidite = 1100;
-
-	gestion_des_panneaux.permuteGaucheJquery = function(scope){
-		console.log("Permutation gauche jquery");
-			if (! animation_en_cours){
-					animation_en_cours = true ;
-
-				$(".centerPanel").animate(	{"left" : "-=100%"},	rapidite);
-
-				$(".rightPanel").animate(	{"left" : "-=100%"},	rapidite)
-	 			/*.queue(function(){
-					//serviceDates.metAJourBufferDates("shiftRight");
-					//console.log("vers la droite");
-					//gestion_des_panneaux.champ_gauche = t_leftShift[gestion_des_panneaux.champ_gauche];
-					//gestion_des_panneaux.champ_centre = t_leftShift[gestion_des_panneaux.champ_centre];
-					//scope.$apply();
-					//$(this).dequeue();	 				
-	 			})		*/		
-				.queue(function(){
-	
-					$(".leftPanel").css("left", "100%");
-
-					var centre = $(".centerPanel"), droite = $(".rightPanel"), gauche = $(".leftPanel");	
-		
-					centre.removeClass("centerPanel");
-					droite.removeClass("rightPanel").addClass("centerPanel");
-					gauche.removeClass("leftPanel").addClass("rightPanel");
-					centre.addClass("leftPanel");
-
-					scope.$emit("PANNEAUX.TRANSITION_END", "centre");	
-					animation_en_cours = false ;				
-					$(this).dequeue();
-				});
-			}
-	}		
-
-
-
-
-	gestion_des_panneaux.permuteDroiteJquery= function(scope){
-		console.log(animation_en_cours);
-			if (! animation_en_cours){
-				animation_en_cours = true ;
-
-				$(".centerPanel")
-				.animate({'opacity' : 0},	rapidite)
-				.queue(function(){
-					$(this).css("left", "+100%")
-				});
-
-				$(".leftPanel").css("left", "0%")
-				.animate(	{'opacity' : 1},	rapidite)
-	 			.queue(function(){
-					/*//serviceDates.metAJourBufferDates("shiftLeft");
-					//gestion_des_panneaux.champ_gauche = t_rightShift[gestion_des_panneaux.champ_gauche];
-					//gestion_des_panneaux.champ_centre = t_rightShift[gestion_des_panneaux.champ_centre];
-					//gestion_des_panneaux.champ_droite = t_rightShift[gestion_des_panneaux.champ_droite];	*/				 				
-			console.log("-----------------");
-					//scope.$apply();
-					console.log("panel !!!!");
-					$(".rightPanel").css("left", "-100%");
-					$(this).dequeue();	 				
-	 			})
-	 			.queue(function(){
-/**/
-
-					var centre = $(".centerPanel"), droite = $(".rightPanel"), gauche = $(".leftPanel");	
-			console.log('FIN !');
-					centre.removeClass("centerPanel");
-					droite.removeClass("rightPanel").addClass("leftPanel");
-					gauche.removeClass("leftPanel").addClass("centerPanel");
-					centre.addClass("rightPanel");
-
-					scope.$emit("PANNEAUX.TRANSITION_END", "centre");
-					animation_en_cours = false ;		
-					$(this).dequeue();
-				});
-			}
-	}
-
-
-
-
-	gestion_des_panneaux.permuteGaucheJqueryOpacity = function(scope){
-		console.log("Permutation gauche jquery avec opcite");
-			if (! animation_en_cours){
-					animation_en_cours = true ;
-
-				$(".centerPanel").animate(	{/*"left" : "-=100%",*/ 'opacity' : 0},	rapidite);
-
-				$(".rightPanel").animate(	{/*"left" : "-=100%",*/ 'opacity' : 1},	rapidite)
-	 			/*.queue(function(){
-					//serviceDates.metAJourBufferDates("shiftRight");
-					//console.log("vers la droite");
-					//gestion_des_panneaux.champ_gauche = t_leftShift[gestion_des_panneaux.champ_gauche];
-					//gestion_des_panneaux.champ_centre = t_leftShift[gestion_des_panneaux.champ_centre];
-					//scope.$apply();
-					//$(this).dequeue();	 				
-	 			})		*/		
-				.queue(function(){
-	
-					$(".leftPanel");/*.css("left", "100%");.css('opacity', 1);*/
-
-					var centre = $(".centerPanel"), droite = $(".rightPanel"), gauche = $(".leftPanel");	
-		
-					centre.removeClass("centerPanel");
-					droite.removeClass("rightPanel").addClass("centerPanel");
-					gauche.removeClass("leftPanel").addClass("rightPanel");
-					centre.addClass("leftPanel");
-
-					scope.$emit("PANNEAUX.TRANSITION_END", "centre");	
-					animation_en_cours = false ;				
-					$(this).dequeue();
-				});
-			}
-	}	
-
-
-
-
-
-	/*gestion_des_panneaux.permuteGauche = function(element){
-		console.log("Permutation gauche sans transition");			
-		var emplacement = element.attr('emplacement');		
-		if (emplacement == "gauche")
-			element.attr("emplacement", "droite");
-		else if(emplacement == "centre")
-			element.attr("emplacement", "gauche");
-		else if (emplacement == "droite")
-			element.attr("emplacement", "centre");
-		//console.log("PERMUTATION TERMINEE");
-	}		
-
-	gestion_des_panneaux.permuteDroite = function(element){
-		var emplacement = element.attr('emplacement');	
-		console.log("Permutation droite  sans transition");		
-		
-		if (emplacement == "droite"){
-			element.attr("emplacement", "gauche");
 		}
 		else if(emplacement == "centre"){
 			element.attr("emplacement", "droite");
 		}
 		else if (emplacement == "gauche"){
 			element.attr("emplacement", "centre");
+
 			}
-		}*/
+		}
+
+
+
+
+
+
+
+
 
 
 

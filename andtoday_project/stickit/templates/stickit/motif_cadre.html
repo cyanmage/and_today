@@ -1,0 +1,17 @@
+<!--*** motif de cadre qui va être appliqué **-->
+
+
+	{% if cadre.image_de_fond == "default" or not cadre.image_de_fond %}
+		<img class="backgroundCadreImage"  src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image_helper.png" default="default" style="opacity : {{cadre.opacite}}">
+	{% else %}
+		<img class="backgroundCadreImage"  src="{{MEDIA_URL}}{{cadre.image_de_fond}}" style="opacity : {{cadre.opacite}}"/>
+	{% endif %}
+
+	<input type="text" size="20" class="eraser transparencyField">
+	<div class="controleTransparence"></div>
+	<div recipiendaire-fichier class="recipiendaireFichier">
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/uploadBackground.png" />
+	</div>
+	<input type='file' class="selectFiles"/>
+
+	<img src="{{STATIC_URL}}stickit/images/controles_stickit/supprimer.png" class="boutonSupprimerCadre" ng-click="supprimerCadre(scope.idBackgroundCadre)">

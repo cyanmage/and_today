@@ -13,6 +13,6 @@ def index(request):
 
     return render(request, 'core/index.html', {
                                         'yesterday' : yesterday.isoformat(),
-                                         'today' : today.isoformat(),
-                                        'tomorrow' : tomorrow.isoformat()
+                                         'today'    : today.isoformat(),
+                                        'tomorrow'  : tomorrow.isoformat()
                                         })
