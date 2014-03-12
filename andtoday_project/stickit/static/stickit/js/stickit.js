@@ -150,14 +150,15 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 				drop : function (event, ui) {
 						console.log("un sticker va tomber");
 										}
-			});*/
+			});*/ 
+			var groupeStickers = element.find("groupe-stickers-cadres");
 			element.droppable({
 				//containment : $("[emplacement='centre']").find(".container-stickers"),
 				tolerance : 'fit',
 				drop : function(event, ui){
 
 					if (ui.helper.hasClass("creationSticker")){
-  						var groupeStickers = element.find("groupe-stickers-cadres");
+
   						//console.log(scope.options.modeDesign);
   						//console.log("helper", ui.helper );
 						/*var copie = ui.helper.clone()
