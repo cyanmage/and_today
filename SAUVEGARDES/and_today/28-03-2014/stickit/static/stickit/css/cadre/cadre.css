@@ -1,0 +1,92 @@
+/***********************************************************/
+/*   styles pour la gestion des background cadres          */
+/***********************************************************/
+#motif-cadre
+{	
+	position : absolute; left : -500px; top : 500px;
+	display : none;	
+}
+/*#motif-cadre:hover{	cursor : move;	}*/
+.helperCreationCadre{
+	width : 300px;
+	height : 200px;
+}
+
+.cadre{
+	position : absolute;	width : 300px;		height : 200px;
+	min-width: 150px;	min-height: 100px;	
+	background-color: #E6E7E2;
+}
+
+.creationCadre{
+	width : 150px;		height : 100px;
+}
+/*.cadre:hover{ z-index : 150;	}
+.cadre .selectionne{	z-index : 150;	}*/
+.cadre .cadreImage{  width : 100%;	height : 100%;}
+/*.cdre .cadreImage:hover{	cursor : move;}*/
+
+.cadre .controleTransparence{
+	display: none;
+	position : absolute;	width : 30px;	height : 95px;
+	right : 0px;	top : 0px;
+	background-color: #FCF5EB;	
+	border : 1px solid black;
+}
+.cadre .controleTransparence .ui-cs-chromoselector{	display: block !important; 	}
+.cadre .controleTransparence .ui-cs-container{	display: none;/**/	}
+
+.cadre .recipiendaireFichier{	
+	display : none;
+	position : absolute;	top : 0px; 	left :0px;	
+	/*width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
+	height: 15%	; 	min-height : 25px ; 	max-height : 75px;*/
+	width : 50px;		height : 50px;		/*max-width : 5vw;		max-height : 5vw;*/
+	background-color: #FCF9BA;
+	padding : 10px;	
+	border-bottom : 3px dotted black;		border-right : 3px dotted black;
+}
+
+.cadre .boutonSupprimerCadre{
+	display: none;	
+	position : absolute ;	bottom: 0px; 	left : 0px;
+}
+.cadre .boutonSupprimerCadre:hover{ 	
+	cursor : pointer; 
+	background-color: #FCF9BA;
+}
+
+.cadre .recipiendaireFichierSurvol,
+.cadre .controleTransparenceSurvol,
+.cadre .boutonSupprimerCadreSurvol
+{  display : block;  opacity: 0.75; }
+
+.cadre .recipiendaireFichier:hover,
+.cadre .controleTransparence:hover,
+.cadre .boutonSupprimerCadre:hover
+{	cursor : pointer; opacity : 1;}	
+
+/*.cadre .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	*/
+.cadre .selectFiles {	display: none 	;}	
+
+/*Correction pour jquery ui ... l'element draggable en disable perd par défaut son opacité de 1*/
+.cadre.ui-state-disabled{
+	opacity: 1;
+    filter: none;
+    background-image: inherit;
+}
+
+
+
+
+.transitionVersSuppression, .transitionVersSuppressionSticker, .transitionVersSuppressionCadre{
+	/*transition : opacity 1s ease-out;*/
+	-webkit-transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	   -moz-transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	     -o-transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	        transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeInOutQuad */	
+}
+
+.suppression, .suppressionSticker, .suppressionCadre{
+	opacity : 0;
+}

@@ -1,0 +1,16 @@
+<div class='sticker ' id_sticker='{{sticker.id}}' ng-controller="controleur-sticker" >
+	
+	<div class="titreSticker"  ng-class="{stickerModified : stickerModified}"></div>
+
+	<div class="contenantSticker">
+		<contenu-sticker class="contenuSticker" contenteditable="{*options.modeDesign*}" ></contenu-sticker>
+
+
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/supprimer.png" class="boutonSupprimerSticker" ng-click="supprimerSticker(idSticker)" ><!--data-toggle="modal" data-target="#myModal"-->
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/boite_a_outils.png" class="boutonBoiteAOutils" ng-click="boiteAOutils()" ng-class="{'boiteAOutilsDeploye' : boiteAOutils_deploye}" test="{* boiteAOutils_deploye *}" >
+
+	</div>
+
+</div>	

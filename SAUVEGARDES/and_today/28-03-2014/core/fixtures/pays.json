@@ -1,0 +1,1 @@
+[{"pk": 0, "model": "core.pays", "fields": {"code_pays": "MON", "nom_pays": "Monde entier"}}, {"pk": 1, "model": "core.pays", "fields": {"code_pays": "FRA", "nom_pays": "France"}}, {"pk": 2, "model": "core.pays", "fields": {"code_pays": "ET-U", "nom_pays": "Etats_Unis"}}, {"pk": 3, "model": "core.pays", "fields": {"code_pays": "ALL", "nom_pays": "Allemagne"}}]

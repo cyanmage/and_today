@@ -1,0 +1,44 @@
+{% load staticfiles %}
+{% load static %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}dnd_upload/css/dragndrop.styles.css">
+<head>
+	<title>Tests sur le drag and drop ...</title>
+</head>
+<body>
+	<div id="reponse"
+	<input type="file" id="files" name="files[]" multiple />
+	<output id="list"></output>
+
+
+	<div id="drop_zone" contenteditable="true" >Drop files here {% get_media_prefix %}</div>
+	<output id="list2" ></output>
+
+
+	<div class = 'dropfile' contenteditable="true" id= "dropfile"></div>
+	<div class="socle-images">
+		<img src="{{STATIC_URL}}dnd_upload/files/cartable.png" id="cartable" class='image' />
+		<img src="{{STATIC_URL}}dnd_upload/files/ciseaux.png" id="ciseaux" class="image" />
+		<img src="{{STATIC_URL}}dnd_upload/files/colors.png" id="colors" class="image">
+	</div>
+
+	<div class="div-draggable" draggable='true' id="boite-draggable-1">Je suis une div qui a le doit de bouger</div>
+
+	<div class="div-with-link" id="draggable-link">
+		<span>
+			Adresse : <a href= "http://www.caniuse.com">"http://www.caniuse.com"</a>
+		</span>
+	</div>
+	<div class="wrapper_button">
+		<input type="button" class= "btn_execute" id='btn_execute' value="Vérifie ! ">
+	</div>
+
+</body>
+<!--<script type="text/javascript" src="{{STATIC_URL}}dnd_upload/js/dnd_DOM_pur.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}dnd_upload/js/input_file.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}dnd_upload/js/dnd2.js"></script>
+</html>

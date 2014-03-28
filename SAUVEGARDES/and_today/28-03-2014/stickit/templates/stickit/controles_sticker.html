@@ -1,0 +1,128 @@
+<controle-sticker id="controle_sticker" ng-class="{controle_sticker : options.modeDesign, stickit_modeDesign_hidden : !options.modeDesign}" ng-show='options.modeDesign && servicesStickit.stickerSelectionne !== -1' class="controleSticker" ng-cloak  ng-controller="controleur_Controles">
+
+	<div class="barre-actions-controles">
+		<img src="{{STATIC_URL}}stickit/images/controles_sticker/cursor_move.png" class="btn-move">	
+	</div>
+
+	<div class="contenant-principal-controles">
+
+		<layerbackground test="1" puis-test="non" ></layerbackground>
+
+
+
+		<onglet1 ng-click="selectLayer(1)" >
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">
+		</onglet1>	
+
+		<layer1 layer-controles class="layer" ng-class="{hidden : testLayer(1)}">
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">
+		 	<div class="ensembleHorizontalControlesSticker">
+		 			<img  class= "controlSticker imageControleSticker b_bold" ng-class='{b_bold_appuye : etatControle("bold")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" ng-click = "handlerControles('bold')"/>
+		 			<img  class= "controlSticker imageControleSticker b_italic" ng-class='{b_italic_appuye : etatControle("italic")}'  src="{{STATIC_URL}}stickit/images/controles_sticker/fonteItalic.jpg" ng-click = "handlerControles('italic')" />	
+		 			<img  class= "controlSticker imageControleSticker b_underline" ng-class='{b_underline_appuye : etatControle("underline")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteUnderline.jpg" ng-click = "handlerControles('underline')"/>
+
+		 			<div class="controlSticker controle_fontsize">
+		 				<div class="number_fontsize">{*controles.stickit.fontsize*}</div>
+		 				<div class="bs_fontsize ">
+		 					<img  class= "b_fontsize b_fontsize_plus" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_plus.png" ng-click = "incremente_fontsize()" />
+					<img  class= "b_fontsize b_fontsize_moins" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_moins.png" ng-click = "decremente_fontsize()"/>
+						</div>
+					</div>
+
+			</div>	
+
+
+			<div class="ensembleHorizontalControlesSticker">
+		 		<select onchange="return false;" class='b_fontname' ng-model="controles.stickit.fontname" ng-options="fontname for fontname in controles.stickit.parametrages.fontnames" ng-change="handlerControles('fontname')">
+			 	</select>
+			</div>
+
+
+
+			<div class="ensembleHorizontalControlesSticker">
+			 		
+			 		<input type="button" class="b_deployeur"  chromo-selector-deploy style='color : {*controles.stickit.fontcolor*};' name-control='fontcolor_deploye' value="Couleur">
+					<div class="conteneur fontcolor"></div>		
+					<input type="text" size="20" class="eraser" name-property="fontcolor" chromo-selector  transparency="false">
+			</div>	
+
+		</layer1>
+
+
+
+
+		<onglet2 ng-click="selectLayer(2)" >
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">	
+		</onglet2>
+		<layer2 layer-controles class="layer" ng-class="{hidden : testLayer(2)}">
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">			
+		 	<div class="ensembleHorizontalControlesSticker">
+		 		
+		 		<img  class= "controlSticker imageControleSticker b_justifyleft" b-justify ng-class='{b_justifyleft_appuye : etatControleJustify("justifyLeft")}' src="{{STATIC_URL}}stickit/images/controles_sticker/justify-left.png" ng-click = "handlerControles('justify', 'justifyLeft')"/>
+
+		 		<img  class= "controlSticker imageControleSticker b_justifycenter" b-justify  ng-class='{b_justifycenter_appuye : etatControleJustify("justifyCenter")}' src="{{STATIC_URL}}stickit/images/controles_sticker/justify-center.png" ng-click = "handlerControles('justify', 'justifyCenter')"/>
+
+		 		<img  class= "controlSticker imageControleSticker b_justifyright" b-justify  ng-class='{b_justifyright_appuye : etatControleJustify("justifyRight")}' src="{{STATIC_URL}}stickit/images/controles_sticker/justify-right.png" ng-click = "handlerControles('justify', 'justifyRight')"/>
+
+
+		 		<img  class= "controlSticker imageControleSticker b_justifyfull" b-justify  ng-class='{b_justifyfull_appuye : etatControleJustify("justifyFull")}' src="{{STATIC_URL}}stickit/images/controles_sticker/justify-full.png" ng-click = "handlerControles('justify', 'justifyFull')"/>	
+		 			 		
+			</div>			
+			<!--	
+			<div class="ensembleHorizontalControlesSticker">
+					<img create-sticker src="{{STATIC_URL}}stickit/images/controles_sticker/page_tourne.jpg" class="creation_sticker"	 />
+			</div>
+
+
+			<div class="ensembleHorizontalControlesSticker">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/insert_background_image.png" class="creation_sticker"	create-background-image draggable='true' />			
+			</div>
+
+			<div class="ensembleHorizontalControlesSticker">
+				<div class="b_deployeur" chromo-selector-deploy style='background-color : 	{*controles.stickit.backgroundcolor*};' name-control='backgroundcolor_deploye'>
+				</div>
+		
+				<div class="conteneur"></div>		
+		
+				<input type="text" size="20" class="eraser"  chromo-selector name-property="backgroundcolor" transparency="true">
+			</div>	
+			-->
+
+		</layer2>
+
+
+
+
+
+		<onglet3 ng-click="selectLayer(3)" >
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">		
+		</onglet3>	
+		<layer3 layer-controles class="layer" ng-class="{hidden : testLayer(3)}">
+			<img src="{{STATIC_URL}}stickit/images/controles_sticker/btn_transparent.png" class="transparentInterceptFocus">	
+			<div class="ensembleHorizontalControlesSticker">
+					<span><i><b><u>Background paper Sticker</u></b></i></span>
+			</div>
+
+			<div class="ensembleHorizontalControlesSticker">
+			 		
+			 		<input type="button" class="b_deployeur"  chromo-selector-deploy style='background-color : {*controles.stickit.backgroundcolor*};' name-control='backgroundcolorsticker_deploye' >
+
+					
+					<div class="conteneur backgroundcolor"></div>		
+
+
+
+					<input type="text" size="20" class="eraser" name-property="backgroundcolor" chromo-selector  transparency="true">
+
+
+			</div>	
+
+		</layer3>
+		
+		
+	</div>	
+
+
+
+
+</controle-sticker>	
