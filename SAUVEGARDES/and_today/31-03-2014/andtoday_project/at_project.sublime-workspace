@@ -1,0 +1,2185 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fo",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"lin",
+				"linking"
+			],
+			[
+				"f",
+				"f	Anonymous Function"
+			],
+			[
+				"cont",
+				"container-stickers"
+			],
+			[
+				"templ",
+				"templateURL"
+			],
+			[
+				"eleme",
+				"element"
+			],
+			[
+				"ng",
+				"ng-transclude"
+			],
+			[
+				"drop",
+				"droppable"
+			],
+			[
+				"container",
+				"containerStickers"
+			],
+			[
+				"ani",
+				"animation_en_cours"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"tra",
+				"translate"
+			],
+			[
+				"Model",
+				"Model_full	Model (full)"
+			],
+			[
+				"Mod",
+				"Model	Model"
+			],
+			[
+				"str",
+				"strFontsize"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"e",
+				"element"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"po",
+				"pos-a	position: absolute;"
+			],
+			[
+				"focu",
+				"focusout"
+			],
+			[
+				"btn",
+				"btn_confirmer"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"border-ra",
+				"border-radius"
+			],
+			[
+				"conten",
+				"contenu-sticker"
+			],
+			[
+				"b",
+				"backgroundcolor"
+			],
+			[
+				"serv",
+				"servicesStickit"
+			],
+			[
+				"save",
+				"savedSel"
+			],
+			[
+				"focus",
+				"focusin"
+			],
+			[
+				"id",
+				"idSticker"
+			],
+			[
+				"brd",
+				"bdrs	border-radius"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"op",
+				"op	opacity"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"sticker",
+				"stickerSelectionne"
+			],
+			[
+				"ser",
+				"servicesControlesStickit"
+			],
+			[
+				"coll",
+				"collisions"
+			],
+			[
+				"dw",
+				"dw"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"assoc",
+				"associations"
+			],
+			[
+				"elements",
+				"elementsJSONCadre"
+			],
+			[
+				"background",
+				"backgroundCadre"
+			],
+			[
+				"par",
+				"parent"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"mode",
+				"modeDesign"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"MO",
+				"Model	Model"
+			],
+			[
+				"ass",
+				"associations"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"bac",
+				"backgroundCadre"
+			],
+			[
+				"M",
+				"Model	Model"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"chromoSe",
+				"chromoselector"
+			],
+			[
+				"d",
+				"controleurDeploye"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border-rad",
+				"border-top-right-radius"
+			],
+			[
+				"border-radi",
+				"border-top-left-radius"
+			],
+			[
+				"ff",
+				"FFFFFF"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"en",
+				"enRetrait"
+			],
+			[
+				"on",
+				"ongletSelectionne"
+			],
+			[
+				"bor",
+				"border-style"
+			],
+			[
+				"boder",
+				"border-right-color"
+			],
+			[
+				"controle",
+				"controleSticker"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"event",
+				"event"
+			],
+			[
+				"stic",
+				"stickerEnCours"
+			],
+			[
+				"opti",
+				"optionsCurseur"
+			],
+			[
+				"optio",
+				"optionControle"
+			],
+			[
+				"les",
+				"les_services_stickit_controles"
+			],
+			[
+				"srev",
+				"servicesUpdateStickit"
+			],
+			[
+				"borde",
+				"border-style"
+			],
+			[
+				"upl",
+				"uploadFiles"
+			],
+			[
+				"stop",
+				"stopPropagation"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"File",
+				"fileUpload"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"da",
+				"dataTransfer"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"boi",
+				"boite_draggable"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"co",
+				"contenant"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"fon",
+				"fontsize"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"id_",
+				"id_sticker"
+			],
+			[
+				"nou",
+				"nouvel_emplacement"
+			],
+			[
+				"spa",
+				"span	Tag"
+			],
+			[
+				"mo",
+				"module_busEvent"
+			],
+			[
+				"mess",
+				"messageAffiche"
+			],
+			[
+				"modul",
+				"module_warning"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"module",
+				"module_stickit"
+			],
+			[
+				"no",
+				"nouvel_id"
+			],
+			[
+				"nom",
+				"nomOption"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
+				"donne",
+				"donneesEnvoyees"
+			],
+			[
+				"$",
+				"$http"
+			],
+			[
+				"service",
+				"servicesUpdateStickit"
+			],
+			[
+				"re",
+				"registreStickers"
+			],
+			[
+				"nombre",
+				"nombreStickers"
+			],
+			[
+				"parent",
+				"parentData"
+			],
+			[
+				"isO",
+				"isOffsetRelative"
+			],
+			[
+				"se",
+				"servicesModificationStickit"
+			],
+			[
+				"grou",
+				"groupe-stickers"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"_",
+				"_elementARattacher"
+			],
+			[
+				"elem",
+				"elementARattacher"
+			],
+			[
+				"el",
+				"elementARattacher"
+			],
+			[
+				"contenant",
+				"contenantSticker"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"mi",
+				"mint	IntegerField (mint)"
+			],
+			[
+				"ma",
+				"maxHeight"
+			],
+			[
+				"si",
+				"ui.size.height"
+			],
+			[
+				"y",
+				"ydy"
+			],
+			[
+				"remove",
+				"removeAttr"
+			],
+			[
+				"optionsDt",
+				"optionsDraggableContenus"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"pso",
+				"posX"
+			],
+			[
+				"contenan",
+				"contenant-droppable"
+			],
+			[
+				"obst",
+				"obstacles"
+			],
+			[
+				"ui",
+				"ui-draggable"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"cre",
+				"les_services_cache.creeElementDOM"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "core/templates/core/index.html",
+			"settings":
+			{
+				"buffer_size": 5707,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/generation_page.html",
+			"settings":
+			{
+				"buffer_size": 622,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/js/stickit.js",
+			"settings":
+			{
+				"buffer_size": 32633,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/my-snippets.sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 290,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_cadre.html",
+			"settings":
+			{
+				"buffer_size": 1088,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/templates/core/panneau_principal.html",
+			"settings":
+			{
+				"buffer_size": 2882,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "defilement_infini/static/defilement_infini/js/defileur.js",
+			"settings":
+			{
+				"buffer_size": 9938,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/js/angular/core.js",
+			"settings":
+			{
+				"buffer_size": 1926,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/js/angular/configurateur.js",
+			"settings":
+			{
+				"buffer_size": 2099,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n.bandeau-des-actions .creation_sticker{\n	width  : 25px;		height : 30px;\n	margin : 5px 0px 0px 0px;\n}\n.bandeau-des-actions .creation_sticker:hover{	cursor : move;	}\n\n\n.bandeau-des-actions .creation_cadre_image{		width  : 50px;		height : 30px; }\n.bandeau-des-actions .creation_cadre_image:hover{	cursor : move;		}\n\n.bandeau-des-actions .yeux{\n	width : 25px ;	height : 30px;\n	margin-left: 10px;\n}\n.bandeau-des-actions .yeux:hover{	cursor : pointer;}\n\n.modification_sticker_relache, .modification_sticker_appuye\n{\n	width  : 25px;		height : 30px;\n	/*margin-left: 150px;*/\n}\n\n.modification_sticker_relache:hover, .modification_sticker_appuye:hover\n{\n	padding : 5px 0px 0px 2px;\n	box-shadow: 4px 4px 2px #880000;	\n	cursor: pointer;\n}\n\n.modification_sticker_appuye{\n	padding-left: 2px;\n	padding-top: 5px;\n	box-shadow: 4px 4px 2px #880000;		\n}\n\n/*.modification_sticker:after\n{\n    display:block;\n    content:'';\n    position:absolute;\n    width:100%;\n    height:100%;\n    -moz-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);\n    -webkit-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);\n    box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);\n}*/\n\n\n\n.container-stickers\n	{\n	background-color: rgba(238, 224, 226, 0.22);*/\n	visibility: hidden;\n	display: none;/*/**/\n	border: 1px dotted	rgb(58, 156, 241);\n	margin: 20px 0px 0px 75px;\n	border-style: outset;\n	width: 90%;		height: 80%;	\n	position: relative;		float : left;	/*left : 200px;*/\n}\n\n.bouton-parametrages{\n	position: absolute;		top : 22px; 	right : 50px;\n	width: 8em;	height: 1.5em ;\n	background-color: #F8EC08;\n	/*box-shadow: inset 1px 1px 10px 5px #fe0000;*/\n	text-align: center;\n	padding-top: 5px;\n	border-radius: 5px;\n	color : #FFFFFF;\n	font-weight: 700;\n}\n.bouton-parametrages:hover{\n	cursor : pointer;\n	border : solid 1px black;\n}\nmodal-parametrages{\n	width : 80%;\n	height: 80%;\n	border-radius: 15px;\n}\n\n\n.sauverLesStickers{	position: absolute;		margin-left: 100px;}\n\n\n/*.stickit_modeDesign_hidden, .stickerHidden, .stickit_modeModifCadres, .stickit_modeModifBackground, */\n/*.stickit_modeDesign_notdisplayed{	display: none;	}\n[ng\\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/\n.visible{	visibility: visible !important; ;	}\n\n.hidden{	visibility : hidden !important; }\n\n\n\n\n\n\n\n/*********************************************************************/\n/*         Boites modales de confirmation                            */\n/*********************************************************************/\n.boiteAlerte{\n	position : absolute;	top : -500px;	left : -500px;\n	width : 450px;\n	height: 200px;\n	z-index : 10000;\n	border-radius: 18px;\n	background-color: rgba(255,255,244, 1);\n}\n\n.messageAlerte{\n	position: absolute;	top : 30px;	left : 20px;\n}\n\n.boiteAlerte[suppression-sticker]{\n	position : absolute;	top : 50px;	left : 400px;\n}\n\n.boiteAlerte[suppression-backgroundcadre]{\n	\n}\n\n.confirmer{\n	position: absolute;	bottom: 20px; left : 50px;\n	background-color: #2DBB5B;\n	border-radius: 3px;\n	width : 50px;	height: 20px;\n}\n\n.infirmer{\n	position: absolute;	bottom: 20px; right : 50px;\n	background-color: #EB2407;\n	border-radius: 3px;\n	width : 50px;	height: 20px;\n}\n\n/*********************************************************************/\n/*********************************************************************/",
+			"file": "stickit/static/stickit/css/styles.css",
+			"file_size": 6390,
+			"file_write_time": 130392585501827481,
+			"settings":
+			{
+				"buffer_size": 3262,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/css/cadre/cadre.css",
+			"settings":
+			{
+				"buffer_size": 2780,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/css/sticker/sticker.css",
+			"settings":
+			{
+				"buffer_size": 2168,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/css/core_styles.css",
+			"settings":
+			{
+				"buffer_size": 1021,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "defilement_infini/static/defilement_infini/css/defilement.css",
+			"settings":
+			{
+				"buffer_size": 2092,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
+			"settings":
+			{
+				"buffer_size": 2731,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/controles_sticker.html",
+			"settings":
+			{
+				"buffer_size": 6298,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
+			"settings":
+			{
+				"buffer_size": 43809,
+				"line_ending": "Windows",
+				"name": "var module_stickit = angular.module('stickit', [])"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_sticker.html",
+			"settings":
+			{
+				"buffer_size": 897,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_sticker_vierge.html",
+			"settings":
+			{
+				"buffer_size": 749,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/stickit/templates/stickit/motif_sticker.html",
+			"settings":
+			{
+				"buffer_size": 949,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "ng-class=\"{visible : options.modeDesign && options.modeModifStickers, hidden : ! options.modeDesign || ! options.modeModifStickers}\" \n\n  ng-class=\"{stickerModified : stickerModified}\"\n\n  ng-class=\"{visible : ! options.modeDesign || options.modeModifStickers, hidden : options.modeDesign && ! options.modeModifStickers}\" \n\n\n\n	<!---************************************************************-->\n<!--			SCRIPTS POUR RESIZABLE						-->\n<!---************************************************************-->\n<!--<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-collision-resizable.js\"></script>-->\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable/debugClone.js\"></script>	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable/helperFunctions.js\"></script>		\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable-collision.js\"></script>		\n<!---************************************************************-->\n\n\n\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/chromoselector.min.js\"></script>		\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/bootstrap.min.js\"></script>	\n\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/rangy-core.js\"></script>\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/rangy-selectionsaverestore.js\"></script>	\n\n\n<!--Bootstrap via angular -->\n	\n<!--Module defileur, nécessite jquery-->\n	\n	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}stickit/js/controle_sticker.js\"></script>	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}warningMessages/js/afficheurMessages.js\"></script>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n			{#<!--<div id=\"dropfile\" contenteditable='true'>Drop an image from your computer</div>\n		ng-class=\"{stickit_modeDesign_hidden : ! options.modeDesign}\"\n\n\n\n			{% include \"stickit/controles_sticker.html\" %}	-->#}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+			"settings":
+			{
+				"buffer_size": 1875,
+				"line_ending": "Windows",
+				"name": "ng-class=\"{visible : options.modeDesign && options"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
+			"settings":
+			{
+				"buffer_size": 13170,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/js/controle_sticker.js",
+			"settings":
+			{
+				"buffer_size": 17747,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/css/sticker/controls.css",
+			"settings":
+			{
+				"buffer_size": 9481,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/models.py",
+			"settings":
+			{
+				"buffer_size": 3967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/empty.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/debugClone.js",
+			"settings":
+			{
+				"buffer_size": 1101,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "static/js/jquery-ui-draggable-collision.js",
+			"settings":
+			{
+				"buffer_size": 41605,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/helperFunctions.js",
+			"settings":
+			{
+				"buffer_size": 14822,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
+			"settings":
+			{
+				"buffer_size": 16382,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/resizable.js",
+			"settings":
+			{
+				"buffer_size": 42219,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: New Class"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contr",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/E/sites_web/tres_coulissant/js/interactivite_avec_angular.js",
+		"/E/sites_web/tests/collision/testspersos/js/comportements.js",
+		"/E/sites_web/tests/collision/testspersos/js/jquery-ui-draggable-collision.lebon.js",
+		"/E/sites_web/django/andtoday_project/static/js/jquery-ui-draggable-collision.js",
+		"/E/sites_web/tests/collision/testspersos/css/styles.css",
+		"/E/sites_web/tests/collision/testspersos/index.html",
+		"/E/sites_web/django/andtoday_project/stickit/static/stickit/css/sticker/stickit.css",
+		"/E/sites_web/django/andtoday_project/stickit/static/stickit/js/stickit_old.js",
+		"/E/sites_web/django/and_today_code_1/core/templates/core/index.html",
+		"/E/sites_web/django/and_today_code_1/core/templates/core/panneau_principal.html",
+		"/E/sites_web/django/andtoday_project/core/templates/core/panneau_principal.html",
+		"/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
+		"/E/sites_web/django/and_today_code_1/static/js/jquery-collision-resizable.js",
+		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/control_sticker.js",
+		"/E/sites_web/django/andtoday_project/core/templates/core/index.html",
+		"/E/sites_web/django/and_today_code_1/static/js/jquery-ui-1.10.4.custom.js",
+		"/E/sites_web/django/andtoday_project/static/js/jquery-collision.min.js",
+		"/E/sites_web/django/andtoday_project/static/js/jquery-ui-1.10.4.custom.min.js",
+		"/E/sites_web/django/andtoday_project/defilement_infini/static/defilement_infini/css/styles.css",
+		"/E/sites_web/django/andtoday_project/defilement_infini/static/defilement_infini/css/transitions.css",
+		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/sticker.js",
+		"/E/sites_web/django/andtoday_project/core/templates/core/panneau_principal_sauvegarde.html",
+		"/E/sites_web/django/andtoday_project/core/templates/core/index_sauvegarde.html",
+		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
+		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/directives.js",
+		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/controleurs.js",
+		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/core.js",
+		"/E/sites_web/django/andtoday_project/core/static/core/css/general.css",
+		"/E/sites_web/django/andtoday_project/at_project.sublime-project",
+		"/E/sites_web/django/andtoday_project/at_project.sublime-workspace",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/E/sites_web/django/and_today_code_1/core/models.py",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/console_log.sublime-snippet",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/Python Django.sublime-settings",
+		"/E/sites_web/django/and_today/parametrages/templates/parametrages.html",
+		"/C/Users/Tchebytchev/Downloads/jquey collide + ui/jquidragcollide1.0.2min.tar/jquidragcollide1.0.2min/jquery-ui-draggable-collision.js",
+		"/C/Users/Tchebytchev/Downloads/jquey collide + ui/jquerycollision1.0.2min.tar/jquerycollision1.0.2min/jquery-collision.js",
+		"/E/sites_web/tres_coulissant/index.html",
+		"/E/sites_web/django/and_today_code_1/sources interressants/tinymce.jquery.js",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/js/controleLayers.js",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/css/controleLayers-jquery.css",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/css/controleLayers.css",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/js/configurateur.js",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/css/controleCouleurs.css",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-draggable-collision.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-resizable/debugClone.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-resizable/helperFunctions.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-resizable-collision.js",
+		"/E/sites_web/django/and_today/static/js/jquery-collision-resizable.js",
+		"/E/sites_web/django/and_today/controleSticker/static/controleSticker/js/controleCouleurs.js",
+		"/E/sites_web/django/and_today/controleSticker/templates/controleSticker/controlLayers.html",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/boites_alertes.html",
+		"/E/sites_web/django/and_today/stickit/static/stickit/css/sticker/sticker.css",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/motif_cadre.html",
+		"/E/sites_web/django/and_today/stickit/static/stickit/css/sticker/controls.css",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/controles_sticker.html",
+		"/E/sites_web/django/and_today/stickit/static/stickit/js/controle_sticker.js",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/motif_sticker.html",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/generation_page.html",
+		"/E/sites_web/django/and_today/parametrages/templates/parametrages/parametrages.html",
+		"/E/sites_web/django/and_today/stickit/static/stickit/js/stickit.js",
+		"/E/sites_web/django/and_today/warningMessages/static/warningMessages/css/warning_messages.css",
+		"/E/sites_web/django/and_today/warningMessages/static/warningMessages/js/afficheurMessages.js",
+		"/E/sites_web/django/and_today/defilement_infini/static/defilement_infini/js/defileur.js",
+		"/E/sites_web/django/and_today/defilement_infini/static/defilement_infini/css/defilement.css",
+		"/E/sites_web/django/and_today/core/static/core/css/core_styles.css",
+		"/E/sites_web/django/and_today/core/models.py",
+		"/E/sites_web/django/and_today/defilement_infini/static/defilement_infini/js/chargeur_page.js",
+		"/E/sites_web/django/and_today/static/js/angular/configurateur.js",
+		"/E/sites_web/django/and_today/stickit/static/stickit/css/styles.css",
+		"/E/sites_web/django/and_today/core/templates/core/index.html",
+		"/E/sites_web/django/and_today/core/templates/core/panneau_principal.html",
+		"/E/sites_web/django/and_today/defilement_infini/static/defilement_infini/css/transitions.css",
+		"/C/Users/Tchebytchev/Downloads/ui-bootstrap-tpls-0.10.0.min (1).js",
+		"/E/sites_web/django/and_today/static/sauvegarde js initiaux/jquery-ui-draggable-collision.js",
+		"/E/sites_web/django/and_today/static/sauvegarde js modifies/jquery-ui-resizable-collision.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-draggable-collision_sauvegarde.js",
+		"/E/sites_web/django/and_today/static/js/jquery-collision.min.js",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/E/sites_web/django/and_today/stickit/static/stickit/css/sticker/stickit.css",
+		"/E/sites_web/django/and_today/stickit/static/stickit/css/backgroundCadre/backgroundCadre.css",
+		"/E/sites_web/django/and_today/core/fixtures/domaines.json",
+		"/E/sites_web/django/and_today/core/admin.py",
+		"/C/Users/Tchebytchev/Downloads/JAVASCRIPT/codecanyon-3810545-chromoselector-a-jquery-color-picker-plugin/chromoselector-2.1.3/docs/libs/highlight.pack.js",
+		"/C/Users/Tchebytchev/Downloads/JAVASCRIPT/codecanyon-3810545-chromoselector-a-jquery-color-picker-plugin/chromoselector-2.1.3/chromoselector.min.js",
+		"/C/Users/Tchebytchev/Downloads/JAVASCRIPT/codecanyon-3810545-chromoselector-a-jquery-color-picker-plugin/chromoselector-2.1.3/chromoselector.css",
+		"/E/sites_web/django/and_today/core/static/core/js/angular/core.js",
+		"/C/Users/Tchebytchev/Downloads/JAVASCRIPT/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js",
+		"/C/Users/Tchebytchev/Downloads/JAVASCRIPT/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js",
+		"/C/Users/Tchebytchev/AppData/Local/Temp/Temp1_jquery-ui-1.10.4.custom (2).zip/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js",
+		"/C/Users/Tchebytchev/AppData/Local/Temp/Temp1_jquery-ui-1.10.4.custom (2).zip/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js",
+		"/E/sites_web/django/and_today/dnd_upload/templates/dnd_upload/dragndrop.html",
+		"/E/sites_web/django/and_today/dnd_upload/static/dnd_upload/js/dnd2.js",
+		"/E/sites_web/django/and_today/dnd_upload/static/dnd_upload/css/dragndrop.styles.css",
+		"/E/sites_web/django/and_today_old/static/js/jquery-ui-1.10.4.custom_modified.js",
+		"/E/sites_web/django/SAUVEGARDES/and_today/11-02-2014/and_today/stickit/static/stickit/js/stickit.js",
+		"/E/progs/import sys",
+		"/E/sites_web/django/and_today/dnd_upload/static/css/dragndrop.styles.css",
+		"/E/sites_web/django/and_today/dnd_upload/static/js/dnd2.js",
+		"/E/sites_web/tests/dnd_upload/dragndrop.styles.css",
+		"/E/sites_web/tests/dnd_upload/js/input_file.js",
+		"/E/sites_web/tests/dnd_upload/js/dnd_DOM_pur.js",
+		"/E/sites_web/tests/dnd_upload/js/dnd2.js",
+		"/E/sites_web/tests/dnd_upload/dragndrop.html",
+		"/E/sites_web/coulissant/js/interactivite_avec_angular_et_transitionsCSS3_services.js",
+		"/E/sites_web/coulissant/css/transitions.css",
+		"/E/sites_web/coulissant/css/styles.css",
+		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_directives.js",
+		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_signalsrootscope.js",
+		"/E/sites_web/coulissant/index.html",
+		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_ControleurEtdirectives.js",
+		"/E/sites_web/tests/collision/testspersos/js/jquery-ui-draggable-collision.js",
+		"/E/sites_web/tests/collision/testspersos/js/jquery-ui-1.10.3.custom.js",
+		"/E/sites_web/tests/collision/testspersos/js/jquery-collision-resizable.js",
+		"/E/sites_web/django/and_today/busEvent/static/busEvent/js/busEvent.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-1.10.4.custom.js",
+		"/E/sites_web/django/and_today/busEvent/static/busEvent/busEvent.js",
+		"/E/sites_web/django/and_today/busEvent/static/busEvent/static/busEvent.js",
+		"/E/sites_web/django/and_today/core/static/core/js/angular/controleurs.js",
+		"/E/sites_web/django/and_today/stickit/templates/stickit/sticker_controles.html",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-1.10.4.custom_modified.js",
+		"/E/sites_web/django/and_today/static/js/jquery-ui-1.10.3.custom.min.js",
+		"/E/sites_web/django/and_today/defilement_infini/templates/defilement_infini/index.html",
+		"/C/Users/Tchebytchev/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
+		"/E/sites_web/django/and_today/core/fixtures/pays.json",
+		"/E/sites_web/django/and_today/stickit/static/stickit/js/sticker.js"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"supprimer",
+			"ng-transclude",
+			"transclude",
+			"transcl",
+			"modeModifCadres",
+			"recupereOptionsParDefaut",
+			"options.modeDesign",
+			"cadreVisible",
+			"sticker",
+			"ensemble",
+			"cadre",
+			"transclude",
+			"helper",
+			"cadre",
+			"groupeStickersCadresCadres",
+			"groupeStickers",
+			"id_sticker",
+			"sauveg",
+			"suppression",
+			"destr",
+			"destruction",
+			"sauvegarder",
+			"id_sticker",
+			"contr",
+			"12",
+			"sauve",
+			"12",
+			"helperCreationSticker",
+			"creation",
+			"creationSticker",
+			"newValue",
+			"options.modeDesign",
+			"creationCadre",
+			"cadre",
+			"100",
+			"Contenant",
+			"cadreContenant",
+			"absolute",
+			"cd",
+			"bg",
+			"groupeStickers",
+			"back",
+			"helper",
+			"BackgroundC",
+			"backgroundC",
+			"create",
+			"backgroundC",
+			"BackgroundC",
+			"backgroundC",
+			"WARNING_DISPLAY",
+			"supprimer",
+			"controleur",
+			"dest",
+			"supp",
+			"destruction",
+			"background",
+			"sauvegarder",
+			"jqList2CenterGravity",
+			"jq2",
+			"draggable",
+			"sauver",
+			"controleurModuleStickit",
+			"dragg",
+			"para",
+			"contain",
+			"contenu",
+			"trans",
+			"directive",
+			"sauveSurServeur",
+			"create",
+			"id_date",
+			"PANNEAU.DEMANDE_ID",
+			"APPLICATIONS.ENVOI_ID",
+			"id_date",
+			"jour",
+			"APPLICATIONS.ENVOI_ID",
+			"PANNEAU.DEMANDE_ID",
+			"PANNEAU.ACTIF",
+			"controleurPanneau",
+			"APPLICATIONS.ENVOI_ID",
+			"5",
+			"controleurModuleStickit",
+			"libelleBtnAttachDetach",
+			"Post",
+			"transitionen",
+			"direction",
+			"modeDefilement",
+			"endtransition",
+			"permuteDroite",
+			"permuteGauche",
+			"permuteDroite ",
+			"permuteDroite",
+			"TRANSITION_END",
+			"direction",
+			"modeDefilement",
+			"mode",
+			"permute",
+			"directive",
+			"90",
+			"1500",
+			"aapli",
+			"decaleIds",
+			"metAJourBufferDates",
+			"angular",
+			"jpg",
+			"gener",
+			"stickit",
+			"gene",
+			"supprimer",
+			"destruction",
+			"focuso",
+			"container",
+			"destr",
+			"modal",
+			"destruc",
+			"suppr",
+			"color",
+			"element",
+			"restore",
+			"keep",
+			"optionsC",
+			"supprimer",
+			"demanderConfirmation",
+			"confirm",
+			"supprimer",
+			"optionsCur",
+			"fill",
+			"ill"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"]",
+			"[",
+			"}",
+			"intitule_heure",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "core/templates/core/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5707,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5516,
+								5516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2868.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "stickit/templates/stickit/generation_page.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								129,
+								129
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "stickit/static/stickit/js/stickit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27019,
+								27019
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 19509.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/my-snippets.sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								47
+							]
+						],
+						"settings":
+						{
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "stickit/templates/stickit/motif_cadre.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "core/templates/core/panneau_principal.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2882,
+								2882
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1013.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "defilement_infini/static/defilement_infini/js/defileur.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3957,
+								3957
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2281.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "core/static/core/js/angular/core.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1926,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1725,
+								1725
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "core/static/core/js/angular/configurateur.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2099,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 242.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "stickit/static/stickit/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "stickit/static/stickit/css/cadre/cadre.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "stickit/static/stickit/css/sticker/sticker.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1447,
+								1449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 792.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 12,
+					"file": "core/static/core/css/core_styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "defilement_infini/static/defilement_infini/css/defilement.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2092,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								268,
+								268
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1188.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "stickit/templates/stickit/controles_sticker.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 16,
+					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 43809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14261,
+								14261
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var module_stickit = angular.module('stickit', [])",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6022.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "stickit/templates/stickit/motif_sticker.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								295,
+								295
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "stickit/templates/stickit/motif_sticker_vierge.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/E/sites_web/django/and_today_code_1/stickit/templates/stickit/motif_sticker.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ng-class=\"{visible : options.modeDesign && options",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5419,
+								5421
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3303.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "stickit/static/stickit/js/controle_sticker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17747,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2812,
+								2812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1650.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "stickit/static/stickit/css/sticker/controls.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 24,
+					"file": "core/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								722,
+								722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 528.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "stickit/templates/stickit/empty.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/debugClone.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "static/js/jquery-ui-draggable-collision.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 41605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3092,
+								3092
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6054.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/helperFunctions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5141,
+								5141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4752.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16351,
+								16252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7194.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "static/js/resizable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 42219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9429,
+								9449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.853125,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.888121420503,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 29.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"project": "at_project.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"E:\\sites_web\\django\\and_today\\stickit\\static\\stickit\\css\\styles.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"I:\\sites_web\\and_today.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}

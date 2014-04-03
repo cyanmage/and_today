@@ -1,5 +1,5 @@
 
-<div class='sticker collideEnable' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_sticker='{{sticker.id}}' ng-controller="controleur-sticker">
+<div class='sticker collideEnable' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_sticker='{{sticker.id}}' ng-controller="controleur-sticker" ng-class='{visible : stickerVisible, hidden : ! stickerVisible}' test="{* stickerVisible *}">
 	<div class="titreSticker">{{sticker.id}} </div>
 	<div class="contenantSticker">
 		<contenu-sticker class="contenuSticker" contenteditable="{*options.modeDesign*}" style='{{sticker.style}}'  >{{sticker.contenu| safe}}</contenu-sticker>	

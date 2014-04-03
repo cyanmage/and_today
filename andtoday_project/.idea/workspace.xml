@@ -26,8 +26,10 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stickit/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="1" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="476">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,21 +61,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uploadFiles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="59" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.47765362" vertical-offset="338" max-vertical-offset="1054">
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state line="40" column="59" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="1054">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../and_today_code_1/dnd_upload/views.py">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stickit/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="898" selection-end="1564" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1020">
+            <state line="96" column="0" selection-start="4196" selection-end="4196" vertical-scroll-proportion="0.756" vertical-offset="1307" max-vertical-offset="2023">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,6 @@
         <option value="$PROJECT_DIR$/core/urls.py" />
         <option value="$PROJECT_DIR$/core/templates/core/index.html" />
         <option value="$PROJECT_DIR$/core/views.py" />
-        <option value="$PROJECT_DIR$/stickit/views.py" />
         <option value="$PROJECT_DIR$/stickit/urls.py" />
         <option value="$PROJECT_DIR$/../and_today_code_1/and_today/settings.py" />
         <option value="$PROJECT_DIR$/../and_today_code_1/and_today/urls.py" />
@@ -121,6 +120,7 @@
         <option value="$PROJECT_DIR$/../and_today_code_1/stickit/urls.py" />
         <option value="$PROJECT_DIR$/andtoday_project/urls.py" />
         <option value="$PROJECT_DIR$/uploadFiles/views.py" />
+        <option value="$PROJECT_DIR$/stickit/views.py" />
       </list>
     </option>
   </component>
@@ -156,6 +156,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,24 +185,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="andtoday_project" />
+              <option name="myItemId" value="stickit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../and_today_code_1/dnd_upload/views.py" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -295,7 +295,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="andtoday_project" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -321,27 +341,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="andtoday_project" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -450,11 +450,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23" sideWeight="0.48247978" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.37196764" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5161725" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6280323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -489,26 +489,16 @@
         <state line="19" column="0" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="816" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stickit/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="55" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="2142" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../and_today_code_1/stickit/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="25" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2125" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stickit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/andtoday_project/settings.py">
@@ -547,20 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploadFiles/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../and_today_code_1/dnd_upload/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="898" selection-end="1564" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../and_today_code_1/and_today/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="20" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.0" vertical-offset="1372" max-vertical-offset="1955">
@@ -568,12 +544,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../and_today_code_1/dnd_upload/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="33" selection-start="1330" selection-end="1330" vertical-scroll-proportion="0.45945945" vertical-offset="561" max-vertical-offset="952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploadFiles/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uploadFiles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="59" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.47765362" vertical-offset="338" max-vertical-offset="1054">
+        <state line="40" column="59" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stickit/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stickit/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="0" selection-start="4196" selection-end="4196" vertical-scroll-proportion="0.756" vertical-offset="1307" max-vertical-offset="2023">
+          <folding />
         </state>
       </provider>
     </entry>

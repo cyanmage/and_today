@@ -1,0 +1,20 @@
+<groupe-stickers id='gr-stick-{{id_date}}' nombrestickers="{{stickers|length}}">		
+		{% for sticker in stickers %}
+			<div ng-controller='controleur-sticker'>
+				<div   class='sticker collideEnable' ng-class="{visible : options.modeDesign && options.modeModifStickers, hidden : ! options.modeDesign || ! options.modeModifStickers}" style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_sticker='{{sticker.id}}' >
+				{% include 'stickit/motif_sticker.html' %}
+				</div>
+			</div>				
+		{% endfor %}
+
+</groupe-stickers>
+
+<groupe-background-cadres id='gr-cadre-{{id_date}}'>
+		{% for cadre in cadres %}
+			<div ng-controller='controleur-backgroundCadre'>
+				<div   class='backgroundCadreImage' ng-class="{visible : bgCadreVisible, hidden : ! bgCadreVisible}" style='position : absolute; left : {{cadre.left}}px ; top:{{cadre.top}}px ; width : {{cadre.width}}px ; height:{{cadre.height}}px' background-cadre id_cadre='{{cadre.id}}' >
+				{% include 'stickit/motif_cadre.html' %}
+				</div>
+			</div>				
+		{% endfor %}
+</groupe-background-cadres>

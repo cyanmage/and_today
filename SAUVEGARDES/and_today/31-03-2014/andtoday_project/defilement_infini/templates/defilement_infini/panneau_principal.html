@@ -1,0 +1,53 @@
+
+		<span class = "sous-titre">	
+			<div class="champDate" id="date_{{numero_panneau}}"> 
+				<date-du-jour>
+					//{{stickers|length}}--
+                                   
+				</date-du-jour>
+			</div>
+		</span>
+
+
+	<div ng-controller='controleurStickit' class="appli-stickers"> 	
+		<section>
+			<div class="bandeau-des-actions">
+				<div class="row">
+					<div class="span1">
+					  	<img create-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_2.jpg" class="creation_sticker" />
+					</div>
+					<div class="span1">
+						<!--<img modigy-sticker src="{{STATIC_URL}}stickit/images/barre_actions/page_tourne_9.jpg" class="modification_sticker" ng-click="changeMode()" ng-class="{creation:'modification_sticker_relache', modification:'modification_sticker_appuye'}['creation']"/>-->
+					</div>
+					<div class="offset2 span1">
+						<!--<div class="stickit_controles_sticker" ng-include="'heading-template'"></div>	
+
+
+						<div class="stickit_controles_sticker" ng-include="'{{TEMPLATE_DIRS}}stickit/sticker_controles.html'"></div>	-->
+					</div>
+					<div class="offset2 span1">
+						<div class="btn-group">
+							<button class="btn sauverLesStickers" ng-click="sauverlesStickers()">
+								Sauver
+							</button>
+						</div>						
+					</div>	
+
+				</div>
+				<!---->
+						<!--<div class="btn-group" ng-click="attacheDetacheStickers()">
+							<button class="btn sauverLesStickers">
+								{* libelleBtnAttachDetach *}
+							</button>
+						</div>	-->					
+			</div>
+		</section>
+
+		<div class="spacer"></div>
+		<section>
+			<div container-stickers class="container-stickers">
+				{% include "stickit/generation_stickers.html" %}
+			</div>
+		</section>
+	</div>
+

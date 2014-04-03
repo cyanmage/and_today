@@ -1,0 +1,140 @@
+
+.bandeau-des-actions .creation_sticker{
+	width  : 25px;		height : 30px;
+	margin : 5px 0px 0px 0px;
+}
+.bandeau-des-actions .creation_sticker:hover{	cursor : move;	}
+
+
+.bandeau-des-actions .creation_cadre_image{		width  : 50px;		height : 30px; }
+.bandeau-des-actions .creation_cadre_image:hover{	cursor : move;		}
+
+.bandeau-des-actions .yeux{
+	width : 25px ;	height : 30px;
+	margin-left: 10px;
+}
+.bandeau-des-actions .yeux:hover{	cursor : pointer;}
+
+.modification_sticker_relache, .modification_sticker_appuye
+{
+	width  : 25px;		height : 30px;
+	/*margin-left: 150px;*/
+}
+
+.modification_sticker_relache:hover, .modification_sticker_appuye:hover
+{
+	padding : 5px 0px 0px 2px;
+	box-shadow: 4px 4px 2px #880000;	
+	cursor: pointer;
+}
+
+.modification_sticker_appuye{
+	padding-left: 2px;
+	padding-top: 5px;
+	box-shadow: 4px 4px 2px #880000;		
+}
+
+/*.modification_sticker:after
+{
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    -moz-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+    -webkit-box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+    box-shadow:outset 0px 0px 3px 1px rgba(0,0,0,1);
+}*/
+
+
+
+.container-stickers
+	{
+	background-color: rgba(238, 224, 226, 0.22);*/
+	visibility: hidden;
+	display: none;/*/**/
+	border: 1px dotted	rgb(58, 156, 241);
+	margin: 20px 0px 0px 75px;
+	border-style: outset;
+	width: 90%;		height: 80%;	
+	position: relative;		float : left;	/*left : 200px;*/
+}
+
+.bouton-parametrages{
+	position: absolute;		top : 22px; 	right : 50px;
+	width: 8em;	height: 1.5em ;
+	background-color: #F8EC08;
+	/*box-shadow: inset 1px 1px 10px 5px #fe0000;*/
+	text-align: center;
+	padding-top: 5px;
+	border-radius: 5px;
+	color : #FFFFFF;
+	font-weight: 700;
+}
+.bouton-parametrages:hover{
+	cursor : pointer;
+	border : solid 1px black;
+}
+modal-parametrages{
+	width : 80%;
+	height: 80%;
+	border-radius: 15px;
+}
+
+
+.sauverLesStickers{	position: absolute;		margin-left: 100px;}
+
+
+/*.stickit_modeDesign_hidden, .stickerHidden, .stickit_modeModifCadres, .stickit_modeModifBackground, */
+/*.stickit_modeDesign_notdisplayed{	display: none;	}
+[ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important;}*/
+.visible{	visibility: visible !important; ;	}
+
+.hidden{	visibility : hidden !important; }
+
+
+
+
+
+
+
+/*********************************************************************/
+/*         Boites modales de confirmation                            */
+/*********************************************************************/
+.boiteAlerte{
+	position : absolute;	top : -500px;	left : -500px;
+	width : 450px;
+	height: 200px;
+	z-index : 10000;
+	border-radius: 18px;
+	background-color: rgba(255,255,244, 1);
+}
+
+.messageAlerte{
+	position: absolute;	top : 30px;	left : 20px;
+}
+
+.boiteAlerte[suppression-sticker]{
+	position : absolute;	top : 50px;	left : 400px;
+}
+
+.boiteAlerte[suppression-backgroundcadre]{
+	
+}
+
+.confirmer{
+	position: absolute;	bottom: 20px; left : 50px;
+	background-color: #2DBB5B;
+	border-radius: 3px;
+	width : 50px;	height: 20px;
+}
+
+.infirmer{
+	position: absolute;	bottom: 20px; right : 50px;
+	background-color: #EB2407;
+	border-radius: 3px;
+	width : 50px;	height: 20px;
+}
+
+/*********************************************************************/
+/*********************************************************************/

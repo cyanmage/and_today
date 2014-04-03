@@ -1,0 +1,60 @@
+.defileur
+{	
+	position: absolute;		top : 50px;		height: 80%;
+	width: 90%;		left: 5%;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px 2px #E1E2DE inset;
+}
+
+[emplacement='gauche'] {	overflow-x 	: hidden;	
+	opacity : 0;
+	  -webkit-transform: translate(-100%, 0);
+	     -moz-transform: translate(-100%, 0);
+	      -ms-transform: translate(-100%, 0);
+	       -o-transform: translate(-100%, 0);
+	          transform: translate(-100%, 0);
+}
+
+[emplacement='centre'] {	display 	: block ;	
+	opacity : 1;	
+	  -webkit-transform: translate( 0%, 0);
+	     -moz-transform: translate( 0%, 0);
+	      -ms-transform: translate( 0%, 0);
+	       -o-transform: translate( 0%, 0);
+	          transform: translate( 0%, 0); 
+	          }
+
+[emplacement='droite'] {	overflow-x 	: hidden;	
+	opacity : 0;		
+	 -webkit-transform: translate(100%, 0);
+	    -moz-transform: translate(100%, 0);
+	     -ms-transform: translate(100%, 0);
+	      -o-transform: translate(100%, 0);
+	         transform: translate(100%, 0);
+	         }
+
+.transitionDefileur{
+	transition 					: 		transform 			0.8s 	  	linear, 	 opacity   0.8s 	linear;
+   -webkit-transition 			: 		-webkit-transform 	0.8s 		linear, 	 opacity   0.8s 	linear;
+    -moz-transition 			: 		-moz-transform 		0.8s 		linear, 	 opacity   0.8s 	linear;
+    -o-transition 				: 		-o-transform 		0.8s 		linear, 	 opacity   0.8s 	linear; 
+    -ms-transition 				: 		-ms-transform 		0.8s 		linear, 	 opacity   0.8s 	linear; 
+}
+.noTransition{	transition 		: 	none; }
+
+
+.panneau{	width	: 100%;		height	: 100%;		position : absolute;	overflow : hidden;	}
+.panneau_0{	/*background-color	: #DEDCFC;*/}
+.panneau_1{	/*background-color	: #EFFCF4;*/}
+.panneau_2{	/*background-color	: #FFE8DD;*/}
+
+/*Pour IE, le gros lourd qui sait pas adapter des pourcentages de hauteur.*/
+/*.panneau .container-stickers,*/ .panneau .appli-stickit{ height : 100% ;}
+.panneau .corpsPage{ height : 100% ;}       
+
+
+
+.leftArrow	{	left 		: 	3%; 	}
+.rightArrow	{	left 		:	93%;	}
+.rightArrow, .leftArrow{ position : absolute;   z-index	: 1000;	   top	:	90%;}
+.rightArrow:hover, .leftArrow:hover{ cursor: pointer; }

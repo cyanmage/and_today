@@ -43,10 +43,10 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 
 
 
-module_defileur.controller("controleurPanneau", ['$scope', '$q', 'serviceIds',
-	function($scope, $q, serviceIds){
+module_defileur.controller("controleurPanneau", ['$scope','serviceIds',
+	function($scope, serviceIds){
 
-	$scope.controleur = "controleur panneau ";
+	$scope.controleur = "controleur panneau "; // DEBUG
 	$scope.id = "";
 	$scope.actif = "";
 

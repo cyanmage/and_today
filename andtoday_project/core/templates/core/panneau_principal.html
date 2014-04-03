@@ -14,25 +14,25 @@
 					<div class="span3" ng-show=" ! options.modeDesign">
 						<button class="btn btn-success" ng-click="toggleModeDesign()">
 							Mode Affichage
-						</button>  
+						</button>  {*options.modeDesign*}	
 					</div>
 	
 					<div class="span3 ng-cloak" ng-show="options.modeDesign">
 						<button class="btn btn-danger" ng-click="toggleModeDesign()">
-							Mode  Design
-						</button> 
+							Mode  Design 
+						</button>   {*options.modeDesign*}	
 					</div>
 
 					<div class="span3" >
 						<img create-sticker src="{{STATIC_URL}}stickit/images/controles_stickit/page_tourne.png" class="creation_sticker ng-cloak"	ng-show="options.modeDesign">
-						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeDesign && options.modeModifStickers" ng-click="togglemodeModifStickers()">
-						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifStickers" ng-click="togglemodeModifStickers()">																		
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeDesign && options.modeModifStickers" ng-click="toggleModeModifStickers()">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifStickers" ng-click="toggleModeModifStickers()">			 {*options.modeModifStickers*}															
 					</div>
 
 					<div class="span3" >
 						<img create-cadre-image src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image.png" class="creation_cadre_image ng-cloak"	 ng-show="options.modeDesign">
 						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeDesign && options.modeModifCadres" ng-click="toggleModeModifCadres()">
-						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifCadres"  ng-click="toggleModeModifCadres()">							
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifCadres"  ng-click="toggleModeModifCadres()">			 {*options.modeModifCadres*}					
 					</div>
 					
 					<div class="span5">

@@ -23,7 +23,7 @@
 }
 /*.cadre:hover{ z-index : 150;	}
 .cadre .selectionne{	z-index : 150;	}*/
-.cadre .cadreImage{  width : 100%;	height : 100%;}
+.cadre .cadreImage{  width : 100%;	height : 80%; bottom : 0px;}
 /*.cdre .cadreImage:hover{	cursor : move;}*/
 
 .cadre .controleTransparence{
@@ -49,7 +49,7 @@
 
 .cadre .boutonSupprimerCadre{
 	display: none;	
-	position : absolute ;	bottom: 0px; 	left : 0px;
+	position : absolute ;	bottom: 20%; 	left : 0px;
 }
 .cadre .boutonSupprimerCadre:hover{ 	
 	cursor : pointer; 

@@ -2,11 +2,7 @@
 		{% for sticker in stickers %}
 			{% include 'stickit/motif_sticker.html' %}
 		{% endfor %}
-
-
 		{% for cadre in cadres %}
-				<div   class='cadreContenant' ng-class="{visible : cadreVisible, hidden : ! cadreVisible}" style='position : absolute; left : {{cadre.left}}px ; top:{{cadre.top}}px ; width : {{cadre.width}}px ; height:{{cadre.height}}px' ng-controller='controleur-backgroundCadre' cadre id_cadre='{{cadre.id}}' >
-					{% include 'stickit/motif_cadre.html' %}
-				</div>				
+			{% include 'stickit/motif_cadre.html' %}
 		{% endfor %}
 </groupe-stickers-cadres>

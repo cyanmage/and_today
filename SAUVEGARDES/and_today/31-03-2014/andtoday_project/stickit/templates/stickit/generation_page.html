@@ -1,0 +1,13 @@
+<groupe-stickers-cadres id='gr-stick-cadre-{{id_date}}' nombrestickers="{{stickers|length}}" >		
+
+		{% for sticker in stickers %}
+			{% include 'stickit/motif_sticker.html' %}
+		{% endfor %}
+
+
+		{% for cadre in cadres %}
+			{% include 'stickit/motif_cadre.html' %}
+		{% endfor %}
+		
+</groupe-stickers-cadres>
+

@@ -1,0 +1,73 @@
+
+	<div ng-controller='controleurModuleStickit' class="appli-stickit"> 
+		
+		<section>
+						<date-du-jour class='dateDuJour'  date='id'>
+							{{id_date}}<!--<br/ >++{*  servicesStickit.stickerSelectionne *}**-->
+						</date-du-jour>
+
+		</section>
+		
+		<section>
+			<div class="bandeau-des-actions">
+				<div class="row">
+					<div class="span3" ng-show=" ! options.modeDesign">
+						<button class="btn btn-success" ng-click="toggleModeDesign()">
+							Mode Affichage
+						</button>  {*options.modeDesign*}	
+					</div>
+	
+					<div class="span3 ng-cloak" ng-show="options.modeDesign">
+						<button class="btn btn-danger" ng-click="toggleModeDesign()">
+							Mode  Design 
+						</button>   {*options.modeDesign*}	
+					</div>
+
+					<div class="span3" >
+						<img create-sticker src="{{STATIC_URL}}stickit/images/controles_stickit/page_tourne.png" class="creation_sticker ng-cloak"	ng-show="options.modeDesign">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeDesign && options.modeModifStickers" ng-click="togglemodeModifStickers()">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifStickers" ng-click="togglemodeModifStickers()">			 {*options.modeModifStickers*}															
+					</div>
+
+					<div class="span3" >
+						<img create-cadre-image src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image.png" class="creation_cadre_image ng-cloak"	 ng-show="options.modeDesign">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeDesign && options.modeModifCadres" ng-click="toggleModeModifCadres()">
+						<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifCadres"  ng-click="toggleModeModifCadres()">			 {*options.modeModifCadres*}					
+					</div>
+					
+					<div class="span5">
+						<panneau-warning-messages class="contenant-warning-message" ng-controller = "controleurModuleAfficheurWarning">
+							<div class='warning-message' ng-show='show_message'>
+
+							<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
+							<span><b>panneau : </b>{* panneau *}</span>/////
+							<span><b>actif : </b>{* actif *}</span>		
+							<span><b>message : </b>{* warning_message *}</span>	
+							 -->				
+							</div>
+						</panneau-warning-messages>	
+					</div>		
+
+					<div class="span1">
+						<div class="btn-group">
+							<button class="btn sauverLesStickers" ng-click="sauvegarder()">
+								Sauver 
+						</div>						
+					</div>	
+
+				</div>
+		
+			</div>
+			
+			<div class="spacer"></div>			
+		</section>
+
+
+		<div class="corpsPage">
+			<div container-stickers class="container-stickers"  ng-class="{hidden : ! options.modeDesign}">{% include "stickit/generation_page.html" %}	
+			</div>
+		</div>
+
+	</div>
+
+

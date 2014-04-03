@@ -1,0 +1,26 @@
+
+
+		<div class='cadre' style='left : {{cadre.left}}px ; top:{{cadre.top}}px ; width : {{cadre.width}}px ; height:{{cadre.height}}px' id_cadre='{{cadre.id}}' ng-controller='controleur-cadre' ng-class='{visible : cadreVisible, hidden : ! cadreVisible}' cadre id_scope={*$id*} mode_design={*options.modeDesign*} >
+
+			{% if cadre.image_de_fond == "default" or not cadre.image_de_fond %}
+				<img class="cadreImage"  src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image_helper.png" default="default" style="opacity : {{cadre.opacite}}" />
+			{% else %}
+				<img class="cadreImage"  src="{{MEDIA_URL}}{{cadre.image_de_fond}}" style="opacity : {{cadre.opacite}}" />
+			{% endif %}
+
+			<div class = "contenantOutilsCadres" ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'>
+				<input type="text" size="20" class="eraser transparencyField" transparency-cadre>
+				<div class="controleTransparence" id-scope={*$id*}></div>
+				<div recipiendaire-fichier class="recipiendaireFichier">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/uploadCadre.png" />
+				</div>
+				<input type='file' class="selectFiles"/>
+	
+				<img src="{{STATIC_URL}}stickit/images/controles_stickit/supprimer.png" class="boutonSupprimerCadre" ng-click="	supprimerCadre(scope.idCadre)">
+			</div>
+	
+		</div>
+
+
+
+
