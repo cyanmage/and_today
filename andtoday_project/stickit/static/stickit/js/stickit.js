@@ -68,28 +68,18 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 
 
 	$scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
+		
 		var ancien_id = $scope.id;
 		$scope.id = nouvel_id = data.id;
-		//console.log($scope.id);
 
 		if(ancien_id !== nouvel_id){
-			//console.log("options qui vont etre sauvees pour le ", ancien_id, " ...", $scope.options);
 			servicesCacheStickit.stockeOptions(ancien_id, $scope.options);	
-
 			if (servicesCacheStickit.contient(nouvel_id) ){
 				$scope.options = servicesCacheStickit.recupereOptions(nouvel_id);
-
-			//console.log(	"recuperation des donnees cache pour les options, id : ", nouvel_id);
 			}
 			else{
 				$scope.options = servicesInitialisationStickit.recupereOptionsParDefaut();	
 			}
-
-			//console.log(servicesCacheStickit.retourneCacheEntier());
-			//console.log(servicesCacheStickit.recupereOptions(nouvel_id));
-			/*if  (! $scope.$$phase) 
-				$scope.$apply();*/
-			//console.log("options qui vont etre recuperees pour le ", nouvel_id, " ...", $scope.options);			
 		}
 	});
 
@@ -106,10 +96,10 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 
 		/*DEBUG$scope.controller = "controller-sticker";*/
 
-		$scope.sauveSurServeur = false;	
-		$scope.stickerModified = false; 		
+		//$scope.sauveSurServeur 	= false;	
+		$scope.stickerModified 	= false; 		
 		$scope.suppression 		= false;
-		$scope.stickerVisible =  false; 
+		$scope.stickerVisible 	= true; 
 
 		$scope.servicesStickit = servicesStickit; 
 
@@ -125,12 +115,15 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 		}
 
 		$scope.$watch(function(){
-			return $scope.options && ( ! $scope.options.modeDesign || $scope.options.modeModifStickers);
-			//return options && ( ! options.modeDesign || options.modeModifStickers);
+			var options = $scope.options;
+			return options && options.modeModifStickers;
 		}, function(newValue, oldValue){
-			//console.log(newValue);
-			$scope.stickerVisible = newValue;
+			if (newValue !== oldValue) {
+			//console.log("newValue : ", newValue, "oldValue : ", oldValue);
+				$scope.stickerVisible = newValue;
+			}
 		})
+
 
 
 		/*$scope.$watch(function(){
@@ -155,45 +148,28 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 module_stickit.controller("controleur-cadre", ['$scope', '$log',
 	function($scope, $log){
 
-		$scope.sauveSurServeur = false;	
+		//$scope.opacity = 1;/**/
+		//$scope.sauveSurServeur = false;	
 		$scope.suppression = false;
+		$scope.cadreVisible = true;
 
 		var options = $scope.options;
 
 		$scope.$watch(function(){
-			return $scope.options && ( ! $scope.options.modeDesign || $scope.options.modeModifCadres);
+			var options = $scope.options;
+			return options && ( ! options.modeDesign || options.modeModifCadres);
 		}, function(newValue, oldValue){
-			$scope.cadreVisible = newValue;
-			
-			/*if ($scope.options){
-				console.log(/*"options : ", $scope.options, '$id : ', $scope.$id,	
-					"            mode design : ", ! $scope.options.modeDesign, 
-					"           , mode modif cadres : ", $scope.options.modeModifCadres, 
-					"           , -->resultat (newValue): ", $scope.cadreVisible
-							);	
-				}*/
-			
-			//if (options) console.log("changements", $scope.idCadre, "////  design : ", options.modeDesign, ", modifcadres : ", options.modeModifCadres) ;
+			if (newValue !== oldValue) {
+				$scope.cadreVisible = newValue;
+				//console.log(newValue, oldValue);			
+				//console.log($scope.cadreVisible);
+			}
 		});
 
-
-		$scope.$watch(function(){
-			return $scope.options && ($scope.options.modeDesign && $scope.options.modeModifCadres);
-		}, function(newValue, oldValue){
-			//console.log("on revient (outils)!!!!!");
-			//if (options) console.log("changements", $scope.idCadre, "////  design : ", options.modeDesign, ", modifcadres : ", options.modeModifCadres) ;			
-			$scope.outilsCadreVisible = newValue;
-		})
-
-
-
-
 		$scope.supprimerCadre = function(id){
-			//console.log('suppression dans scope sticker : ', $scope.$id);
 			$scope.suppression = true;
 		}
 
-		$scope.opacity = 1;/**/
 
 }]);
 
@@ -228,9 +204,7 @@ module_stickit.directive('createSticker', [function(){
 									var copie = $("div#motif-sticker").clone()
 												.removeAttr("id")
 												.addClass("helperCreationSticker")
-												.css("z-index", 200)
-												.css("visibility", "visible");
-									return copie;/**/
+									return copie;
 									}
 
 				});	
@@ -239,9 +213,6 @@ module_stickit.directive('createSticker', [function(){
 
 
 }]);
-
-
-
 
 
 module_stickit.directive('createCadreImage', [function(){
@@ -253,14 +224,11 @@ module_stickit.directive('createCadreImage', [function(){
 					cursor : 'move',
 					containment : $(".defileur"),
 					helper : function(){
-						var copie = $("div#motif-cadre .cadre").clone()
-								.removeAttr("id")
-								.addClass("helperCreationCadre")
-								.css("z-index", 200)
-								.removeClass("hidden");
-						return copie;
-					}, 
-					//drag : function() {console.log("creation cadre imafe ... ", scope.$id);}
+									var copie = $("div#motif-cadre .cadre").clone()
+											.removeAttr("id")
+											.addClass("helperCreationCadre")
+									return copie;
+					}, 			
 
 				});
 		}
@@ -272,83 +240,56 @@ module_stickit.directive('createCadreImage', [function(){
 module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 'servicesUpdateStickit',
  	function($timeout, $compile, servicesStickit, servicesUpdateStickit){
 
- 	//var templateURL = '/stickit/partials/motif_cadre.html';	
- 	//var templateURL = "<div test></div>"
-
 	return {
 		restrict : 'AE', 
-		//replace : true,
-		//template : "<div test style='width : 300px; height : 200px ; background-color : #6DAD8A'></div>",
-		//templateUrl : templateURL,
 		link : function(scope, element, attributes){
-		//console.log("a l'arrach");	
-			/*var elementsSurvoles = function(){
-
-			}	*/		
 
 
 			$timeout(function(){
 
 				var cadreImage 				= element.find(".cadreImage");
 				var parent 					= element.parents(".container-stickers");
-				var recipiendaireFichier 	= element.find(".recipiendaireFichier");
-				var controleTransparence 	= element.find(".controleTransparence");				
-				var boutonSupprimerCadre 	= element.find(".boutonSupprimerCadre");
 
 
 				var id_cadre = element.attr('id_cadre');
 
 				if (id_cadre){
-					scope.sauveSurServeur = true;
-					//console.log("dans le cadre , tests draggable, resizable");
+					//scope.sauveSurServeur = true;
+					scope.outilsCadreVisible = false;					
 				}	
 				else{
 					id_cadre = '_cd_' + servicesStickit.obtientNumeroValideCadre();
-					element
-						.attr('id_cadre', id_cadre)
+					element.attr('id_cadre', id_cadre)
 					cadreImage.attr("default", 'default');	
-					recipiendaireFichier.addClass("recipiendaireFichierSurvol");
-					controleTransparence.addClass("controleTransparenceSurvol");
-					boutonSupprimerCadre.addClass("boutonSupprimerCadreSurvol");		
+					scope.outilsCadreVisible = true;
 				}
-
-				scope.idcadre = id_cadre;				
+				element.css("position", "absolute"); ////?????????????????????????????????????????????????????
+				
+				scope.idCadre = id_cadre;				
 				servicesUpdateStickit.ajouteAuRegistre(scope.id,  id_cadre);/**/
-//console.log("avant le draggable");
-				element
-					.draggable({containment : parent, 	cursor : 'move'/*, 		disabled : true	*/})
-					.resizable({containment : parent,   handlers : "e, s, se", create : function(ui, event){
-					//console.log("resizable cree .... !");
-				}	
-				/*disabled : true*/});
 
-				element.on("mouseenter", function(event, ui){
-					if (scope.options.modeDesign){
-						//console.log("entre, ", scope.options.modeDesign);					
-						recipiendaireFichier.addClass("recipiendaireFichierSurvol");
-						controleTransparence.addClass("controleTransparenceSurvol");
-						boutonSupprimerCadre.addClass("boutonSupprimerCadreSurvol");	
-					}
-				})/**/
-				.on("mouseleave", function(event, ui){
-					if (scope.options.modeDesign){
-						//console.log("sorti, ", scope.options.modeDesign);	
-						recipiendaireFichier.removeClass("recipiendaireFichierSurvol");
-						controleTransparence.removeClass("controleTransparenceSurvol");						
-						boutonSupprimerCadre.removeClass("boutonSupprimerCadreSurvol");			
+				element
+					.draggable({
+						containment : parent, 	
+						cursor : 'move', 
+						zIndex: 50
+					})
+					.resizable({
+						containment : parent,   
+						handlers : "e, s, se"
+					});
+
+				element.on("mouseover", function(event, ui){
+					if (scope.options.modeDesign){						
+						scope.$apply(scope.outilsCadreVisible = true);
 					}
 				})
-				.on("mouseover", function(event, ui){
-				
-					if (scope.options.modeDesign){
-						element.css("cursor", "move");
-					}					
-				})/**/
-				/*.on("click", function(event, ui){
-					if (scope.options.modeDesign){
-
+				.on("mouseleave", function(event, ui){
+					if (scope.options.modeDesign){						
+						scope.$apply(scope.outilsCadreVisible = false);
 					}
-				})*/
+				})
+
 
 				scope.$on("STICKIT.ELEMENTS_SAUVES", function(event, data){
 					//scope.cadreModified = false;	
@@ -356,33 +297,11 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 					if (associationsIdsClientServeur && associationsIdsClientServeur[scope.idCadre]){
 						console.log("associations cadres : ", data.associationsCadres);
 						var nouvel_id = associationsIdsClientServeur[scope.idCadre];	
-						scope.idcadre = nouvel_id;
+						scope.idCadre = nouvel_id;
 						element.attr("id_cadre", nouvel_id);				
 				  	}
-				});/**/
+				});
 
-				/*var dereferenceurModeDesign = scope.$watch("options.modeDesign", function(newValue, oldValue){
-//					console.log("dans le watch modedesign pour tester le draggable et le resizable ... //oldValue : ", oldValue, " ; newValue : ", newValue, ", journee : ", scope.id);
-					//if (newValue !== oldValue){
-						if (newValue)
-							{
-								element.draggable("enable") .resizable("enable")  ; 
-								//console.log("je suis active, id_cadre ", scope.idcadre, "$id : ", scope.$id);
-								}
-						else
-							{
-								element.draggable("disable").resizable("disable") ; 
-								//console.log("je suis desactive, id_cadre ", scope.idcadre, "$id : ", scope.$id);
-							};
-						//console.log("DEREFENCEUR : ", newValue);
-					//}
-				});*/
-
-					scope.$watchCollection("options", function(newValue, oldValue){
-					//console.log("dans la directive cadre ... ");
-					//console.log("voici les options mises à jour dans le cadre ", scope.idCadre, " : ", newValue);
-
-				});/*	*/
 
 				/*scope.$watch("opacity", function(newValue, oldValue){
 					if (newValue !== oldValue){
@@ -393,26 +312,26 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 				})*/
 				
 
-
 	
 				scope.$watch('suppression', function(newValue, oldValue){
 
-					//console.log("suppression watch directive", scope.idcadre, newValue, ", scope : ", scope.$id);
+					//console.log("suppression watch directive", scope.idCadre, newValue, ", scope : ", scope.$id);
 					if(newValue){
 						servicesUpdateStickit
-						.supprimer(element, scope.idcadre )
-						.then(	function(){
-									//dereferenceurModeDesign();
-									var message = "SUPPRESSION EFFECTUEE POUR LE " + scope.idcadre;
-									scope.$emit("WARNING_DISPLAY", { 'message' : message, 'id_groupe' : scope.idcadre });
-								}, 
+						.supprimer(element, scope.idCadre )
+						.then(	function(data){
+									var message = "SUPPRESSION EFFECTUEE POUR LE " + scope.idCadre;
+									scope.$emit("WARNING_DISPLAY", { 'message' : message, 'id_groupe' : scope.idCadre });
+							}, 
 								function(error){
-									var message = "ECHEC DE LA SUPPRESSION POUR LE " + scope.idcadre;								
-									scope.$emit("WARNING_DISPLAY",  { 'message' : message, 'id_groupe' : scope.idcadre });				
-								});						
+									var message = "ECHEC DE LA SUPPRESSION POUR LE " + scope.idCadre;								
+									scope.$emit("WARNING_DISPLAY",  { 'message' : message, 'id_groupe' : scope.idCadre });				
+							});						
 					}
 
-				});	/**/
+				});	
+
+
 
 			});	
 		}
@@ -461,14 +380,14 @@ module_stickit.directive('recipiendaireFichier', ['servicesUpdateStickit',
 				})*/
 				.on('dragenter', function(event){
 					//element.addClass("fichierEntre");					
-					//console.log("un fichier entre ");
+					console.log("un fichier entre ");
 					/*if (scope.options.modeDesign){
 						$(this).focus();						
 					}			*/		
 				})				
 				.on('dragleave', function(event){
 					//element.removeClass("fichierEntre");
-					//console.log("un fichier sort ");
+					console.log("un fichier sort ");
 				})
 				.on('drop', function(event){
 
@@ -516,11 +435,10 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 
 			$timeout(function() {
 				//console.log("scope du sticker ------------------------------------>", scope.$id);
+
+				var parent 					= element.parents(".container-stickers");	
+							
 				element
-				.css("position", "absolute")
-				//.attr("ng-class", '{visible : options.modeDesign && options.modeModifStickers, hidden : ! options.modeDesign || ! options.modeModifStickers}')
-				.attr("modedesign", '{*options.modeDesign*}')
-				.attr("modeModifSticker", '{*options.modeModifStickers*}')	
 				.addClass("collideEnable");
 
 				id_sticker = element.attr('id_sticker');
@@ -538,7 +456,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 					.find(".titreSticker").html(id_sticker + ", " + scope.$id).end()
 					.draggable({
 							    cursor : 'move', 
-								containment : element.parents(".container-stickers"),
+								containment : parent ,
 							    zIndex: 100, 
 							    preventCollision : true,
 							    obstacle: ".collideEnable",					
@@ -559,7 +477,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 						    },	
 						   	collision : true,
 						    obstacle : ".collideEnable", 				
-						    containment : element.parents(".container-stickers"),
+						    containment : parent ,
 							minHeight : 80,
 							minWidth : 200
 					});				
@@ -632,24 +550,19 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit', 'servicesStickit', '$q', '$timeout',
 	function($compile, servicesCacheStickit, servicesStickit, $q, $timeout){
 
-	return {
-		restrict : 'AE', 		
-		replace : true,
-		transclude : true,
-		template : "<div ng-transclude></div>",
 
-		link : function(scope, element, attributes){
-			//console.log('$id : ', scope.$id, ', parent : ', scope.$parent.$id);
-			scope.name = "containerStickers"; // DEBUG
-			
-			element.droppable({
+	var linker = function(scope, element, attributes){
+
+		scope.name = "containerStickers"; // DEBUG
+	
+		element.droppable({
 				containment : $("[emplacement='centre']").find(".container-stickers"),
 				tolerance : 'fit',
 				drop : function(event, ui){
 
-					//console.log("groupe-stickers-cadres : ", scope.id);
+
 					var groupeStickersCadres = element.find("groupe-stickers-cadres");
-					console.log(groupeStickersCadres.scope());
+					//console.log(groupeStickersCadres.scope());
 
 					if (ui.helper.hasClass("helperCreationSticker")){
 
@@ -657,17 +570,12 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
   						
 						var sticker = $("div#motif-sticker .sticker").clone().attr("sticker", '');
 						sticker.find(".contenuSticker").attr("contenteditable", "{*options.modeDesign*}");
+
+  						sticker.appendTo(groupeStickersCadres)
+  							.css("position", "absolute")  						
+  							.offset(coordonnees);
+
 						sticker = $compile(sticker)(scope);
-						//console.log(groupeStickersCadres);
-
-  						sticker.appendTo(groupeStickersCadres).offset(coordonnees);
-
-						/*OBLIGE DE PLACER LE CONTROLEUR EN DEHORS SINON BUG IE ET FIREFOX ... mystère
-						//var sticker = ui.helper.contents().clone().attr("sticker", ''); 
-  						var ensemble = $("<div ng-controller='controleur-sticker'></div>").append(sticker);
-  						ensemble = $compile(ensemble)(scope);
-  						ensemble.appendTo(groupeStickersCadres);
-  						ensemble.find("[sticker]").offset(ui.helper.offset());/**/
 						var nombreStickers = groupeStickersCadres.attr("nombrestickers");  							
   						groupeStickersCadres.attr("nombrestickers", ++nombreStickers); 
 
@@ -677,67 +585,32 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 						var coordonnees = ui.helper.offset();	
 
 						var cadre = $("div#motif-cadre .cadre").clone().attr("cadre", '');	
-						//console.log($("div#motif-cadre .cadre"));					
+  						cadre = $compile(cadre)(scope);
+			
   						cadre.appendTo(groupeStickersCadres)
   							.css("position", "absolute")
   							.offset(coordonnees);
-  						cadre = $compile(cadre)(scope);
   						  									
-						/*cadre.css("position", "absolute");	*/
+				
+					}
 
-
-
-						//console.log(ui.helper.offset());
-  						/*var cadre = $("<creationcadre></creationcadre>)");
-  						cadre.appendTo(groupeStickersCadres).offset(ui.helper.offset());
-						cadre = $compile(cadre)(scope);*/
-						//console.log(cadre.offset());
-						//cadre.offset(ui.helper.offset());
-						/*.css('position', 'absolute')*/
-						//console.log(cadre.offset());						
-  						//cadre.css('position', 'absolute').offset(ui.helper.offset());  						
-
-  						//groupeStickersCadres.append(cadre);.offset(coordonnees )
-						//var cadre = $("<cadre ng-controller='controleur-cadre' ></cadre>)");
-						//console.log(cadre);						
-					}/**/	
-
-					/*else if (ui.helper.hasClass("helperCreationCadre")){
-						var coordonnees = ui.helper.offset();
-
-						//console.log("1) ", $("div#motif-cadre .cadre"));
-  						
-
-						//cadre.find(".contenucadre").attr("contenteditable", "{*options.modeDesign*}");
-						//console.log("2) ", $("div#motif-cadre .cadre"));						
-						//console.log("scope cadre  container : ", scope.$id);
-
-						var cadre = $("<cadre></cadre>)");
-						cadre = $compile(cadre)(scope);
-
-
-  						cadre.appendTo(groupeStickersCadres).offset(coordonnees);
-					}*/
-						/*var cadre = $("div#motif-cadre").contents().clone();
-						cadre = $compile(cadre)(scope);*/
 				},		
 				accept : function(element){
 					return true;
 						//return ($(".helperCreationSticker").collision(".collideEnable").length == 0);
 				}
-	
 			});
 
-
-			scope.$watch('id', function(newValue, oldValue, scope){
+		scope.$watch('id', function(newValue, oldValue, scope){
 				//console.log("changement d'ID, newValue : ", newValue, ", oldValue : ", oldValue );
-				var elementARattacher = "";
+				var elementARattacher = "", data;
 				var deferred = $q.defer();
 				if (servicesCacheStickit.contient(newValue)){
 					//on a récupéré les stickers d'une page depuis le cache client juste au départ du défilement
-					//console.log("*****RECUP STICKERS DEPUIS LE CACHE CLIENT");
-					elementARattacher = servicesCacheStickit.recupereDonnees(newValue);
-					deferred.resolve(elementARattacher);
+					//console.log("*****RECUP STICKERS DEPUIS LE CACHE CLIENT pour le ", newValue);
+					data = servicesCacheStickit.recupereDonnees(newValue);
+					//data = $compile(data)(scope);					
+					deferred.resolve(data);
 				}
 				else{
 					if (oldValue !== newValue){
@@ -771,16 +644,14 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 							servicesCacheStickit.stockeDonnees(oldValue, _elementDetache);
 							element.append(_elementARattacher);	
 				});
-			});
-
-
-
-
-
-
-		}
+		});
 	}
 
+
+	return {
+		restrict : 'AE', 
+		link : linker		
+	}
 
 }]);
 
@@ -792,14 +663,17 @@ module_stickit.directive('groupeStickersCadres', ['servicesCacheStickit', '$time
 		restrict : 'E',
 		scope : false,
 		link : function(scope, element, attributes){
-			scope.name = "groupeStickersCadres"; // DEBUG
+			 //scope.name = "groupeStickersCadres"; DEBUG
 
 			$timeout(function(){
 				scope.$watch("options.modeDesign", function(newValue, oldValue){
+
 					var children = element.find("[cadre]");
-					newValue ? 
-						children.draggable("enable") .resizable("enable")/*console.log("true") : */:
+						newValue ? 
+						children.draggable("enable") .resizable("enable"):
 						children.draggable("disable").resizable("disable");
+			
+
 				});	
 			})
 
@@ -1161,7 +1035,7 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 			var id_sticker = elementSticker.attr("id_sticker");
 			//if (listeStickersModifies.indexOf(id_sticker) !== -1){
 			if(true){
-				console.log(id_sticker);
+				//console.log(id_sticker);
 				var contenuSticker = elementSticker.find(".contenuSticker");
 				//console.log(id_sticker, contenuSticker);
 
@@ -1180,7 +1054,7 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 
 
 		var cadresASauver  = $("#gr-stick-cadre-" + idGroupe).find("[cadre]");
-		console.log("cadres : ", cadresASauver, " , idgroupe : ", idGroupe );
+		//console.log("cadres : ", cadresASauver, " , idgroupe : ", idGroupe );
 		var elementsJSONCadre = $.map(cadresASauver, function(elementDOMCadre, cle){
 			var	elementCadre = $(elementDOMCadre);
 			var id_cadre = elementCadre.attr("id_Cadre");
@@ -1202,8 +1076,8 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 			}
 		});
 
-		console.log(elementsJSONCadre);
-		console.log(elementsJSONSticker);/**/
+		/*console.log(elementsJSONCadre);
+		console.log(elementsJSONSticker);*/
 
 		var url = "/stickit/groupe-elements/" + idGroupe + "/";
 		var deferred = $q.defer();
@@ -1212,7 +1086,7 @@ module_stickit.factory('servicesUpdateStickit', ['$q', '$http', '$compile',
 
 		$http.post(url, donneesEnvoyees)
 			.success(function(data, status){
-				console.log(angular.toJson(data));
+				//console.log(angular.toJson(data));
 				//console.log(data);
 				deferred.resolve(data);
 			})

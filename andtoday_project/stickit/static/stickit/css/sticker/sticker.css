@@ -9,9 +9,9 @@
 [sticker]{		position : absolute;	}
 
 .sticker-place{
-	border-width: 5px;
+	/*border-width: 5px;
 	border-style: outset;
-	/*background-color: #F3E47C;*/
+	background-color: #F3E47C;*/
 }
 .titreSticker{
 	position : absolute;	top : -1.6em;	left : -2px;
@@ -38,7 +38,6 @@
 }
 
 #motif-sticker{
-	visibility: hidden;/**/
 	position : absolute;	left : -500px;		top : -500px;	
 }
 /*, .contenuSticker:not([contenteditable="false"]), .contenuSticker[ng-cloak], .contenuSticker.ng-cloak*/

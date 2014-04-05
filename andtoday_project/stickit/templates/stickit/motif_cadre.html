@@ -1,4 +1,4 @@
-	<div class='cadre' 			{% if cadre.image_de_fond %}cadre{% endif %} ng-class="{visible : cadreVisible, hidden : ! cadreVisible}" style='position : absolute; left : {{cadre.left}}px ; top:{{cadre.top}}px ; width : {{cadre.width}}px ; height:{{cadre.height}}px' ng-controller='controleur-cadre' id_cadre='{{cadre.id}}'>
+	<div class='cadre' 			{% if cadre.image_de_fond %} cadre {% endif %} ng-class="{visible : cadreVisible, hidden : ! cadreVisible}" style='position : absolute; left : {{cadre.left}}px ; top:{{cadre.top}}px ; width : {{cadre.width}}px ; height:{{cadre.height}}px' ng-show="cadreVisible"  ng-controller='controleur-cadre' id_cadre='{{cadre.id}}' test="{* cadreVisible*}">
 
 			{% if cadre.image_de_fond == "default" or not cadre.image_de_fond %}
 				<img class="cadreImage"  src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image_helper.png" default="default" style="opacity : {{cadre.opacite}}" />
@@ -8,7 +8,7 @@
 
 			<div class = "contenantOutilsCadres" ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'>
 				<input type="text" size="20" class="eraser transparencyField" transparency-cadre>
-				<div class="controleTransparence" id-scope={*$id*}></div>
+				<div class="controleTransparence"></div>
 				<div recipiendaire-fichier class="recipiendaireFichier">
 					<img src="{{STATIC_URL}}stickit/images/controles_stickit/uploadCadre.png" />
 				</div>

@@ -4,12 +4,14 @@
 #motif-cadre
 {	
 	position : absolute; left : -500px; top : 500px;
-	display : none;	
+	/*display : none;	*/
 }
 /*#motif-cadre:hover{	cursor : move;	}*/
 .helperCreationCadre{
 	width : 300px;
 	height : 200px;
+	z-index" : 50;
+	visibility" :"visible"	;
 }
 
 .cadre{
@@ -17,6 +19,10 @@
 	min-width: 150px;	min-height: 100px;	
 	background-color: #E6E7E2;
 }
+.cadre:hover{
+	cursor : move;
+}
+
 
 .creationCadre{
 	width : 150px;		height : 100px;
@@ -37,9 +43,10 @@
 .cadre .controleTransparence .ui-cs-container{	display: none;/**/	}
 
 .cadre .recipiendaireFichier{	
-	display : none;
 	position : absolute;	top : 0px; 	left :0px;	
-	/*width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
+	/*
+	display : none;
+	width : 15% ; 	min-width  : 25px ; 		max-width : 75px;	
 	height: 15%	; 	min-height : 25px ; 	max-height : 75px;*/
 	width : 50px;		height : 50px;		/*max-width : 5vw;		max-height : 5vw;*/
 	background-color: #FCF9BA;
@@ -48,23 +55,41 @@
 }
 
 .cadre .boutonSupprimerCadre{
-	display: none;	
+	/*display: none;	*/
 	position : absolute ;	bottom: 20%; 	left : 0px;
 }
 .cadre .boutonSupprimerCadre:hover{ 	
-	cursor : pointer; 
+	/*cursor : pointer; */
 	background-color: #FCF9BA;
 }
 
-.cadre .recipiendaireFichierSurvol,
-.cadre .controleTransparenceSurvol,
-.cadre .boutonSupprimerCadreSurvol
-{  display : block;  opacity: 0.75; }
+
+
+.cadre:hover .recipiendaireFichier,
+.cadre:hover .controleTransparence,
+.cadre:hover .boutonSupprimerCadre
+{	opacity: 0.75;}	/**/
+
 
 .cadre .recipiendaireFichier:hover,
 .cadre .controleTransparence:hover,
 .cadre .boutonSupprimerCadre:hover
-{	cursor : pointer; opacity : 1;}	
+{
+	  	cursor : pointer;
+	  	opacity: 1; 
+}
+
+/**/
+/*.cadre:hover .contenantOutilsCadres*/
+/*.cadre .contenantOutilsCadres:hover{
+	  cursor: pointer;	opacity: 1; 
+}*/
+
+/*.cadre .recipiendaireFichierSurvol,
+.cadre .controleTransparenceSurvol,
+.cadre .boutonSupprimerCadreSurvol
+{  display : block;  opacity: 0.75; }*/
+
 
 /*.cadre .recipiendaireFichier.fichierEntre {	background-color : #FEDAD3;	}	*/
 .cadre .selectFiles {	display: none 	;}	

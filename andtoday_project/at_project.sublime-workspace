@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"f",
+				"fun	Function"
+			],
+			[
+				"cadre",
+				"cadreVisible"
+			],
+			[
 				"donne",
 				"donnees"
 			],
@@ -30,10 +38,6 @@
 			[
 				"lin",
 				"linking"
-			],
-			[
-				"f",
-				"f	Anonymous Function"
 			],
 			[
 				"cont",
@@ -510,10 +514,6 @@
 			[
 				"contenan",
 				"contenant-droppable"
-			],
-			[
-				"obst",
-				"obstacles"
 			]
 		]
 	},
@@ -528,10 +528,10 @@
 			}
 		},
 		{
-			"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
+			"file": "stickit/static/stickit/js/stickit.js",
 			"settings":
 			{
-				"buffer_size": 3935,
+				"buffer_size": 37409,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,23 +539,15 @@
 			"file": "stickit/templates/stickit/generation_page.html",
 			"settings":
 			{
-				"buffer_size": 310,
+				"buffer_size": 302,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "warningMessages/static/warningMessages/css/warning_messages.css",
+			"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
 			"settings":
 			{
-				"buffer_size": 1845,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/static/stickit/js/stickit.js",
-			"settings":
-			{
-				"buffer_size": 37286,
+				"buffer_size": 3935,
 				"line_ending": "Windows"
 			}
 		},
@@ -592,11 +584,11 @@
 			}
 		},
 		{
-			"file": "core/models.py",
+			"file": "warningMessages/static/warningMessages/css/warning_messages.css",
 			"settings":
 			{
-				"buffer_size": 3967,
-				"line_ending": "Unix"
+				"buffer_size": 1845,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -611,7 +603,7 @@
 			"file": "defilement_infini/static/defilement_infini/js/defileur.js",
 			"settings":
 			{
-				"buffer_size": 9146,
+				"buffer_size": 9144,
 				"line_ending": "Windows"
 			}
 		},
@@ -620,6 +612,14 @@
 			"settings":
 			{
 				"buffer_size": 938,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "defilement_infini/static/defilement_infini/css/defilement.css",
+			"settings":
+			{
+				"buffer_size": 2092,
 				"line_ending": "Windows"
 			}
 		},
@@ -640,53 +640,10 @@
 			}
 		},
 		{
-			"contents": "<div class=\"cadre ng-scope visible ui-draggable ui-resizable ui-draggable-disabled ui-state-disabled ui-resizable-disabled\" style=\"left: 612px; top: 0px; width: 300px; height: 200px; position: absolute; cursor: move;\" id_cadre=\"67\" ng-controller=\"controleur-cadre\" ng-class=\"{visible : cadreVisible, hidden : ! cadreVisible}\" cadre=\"\" id_scope=\"00K\" mode_design=\"false\" aria-disabled=\"true\">\n\n			\n				<img class=\"cadreImage\" src=\"/media/ba45c8f60456a672e003a875e469d0eb.jpg\" style=\"opacity : 1.00\">\n			\n\n			<div class=\"contenantOutilsCadres hidden\" ng-class=\"{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}\">\n				<input type=\"text\" size=\"20\" class=\"eraser transparencyField\" transparency-cadre=\"\">\n				<div class=\"controleTransparence\" id-scope=\"00K\"></div>\n				<div recipiendaire-fichier=\"\" class=\"recipiendaireFichier\">\n					<img src=\"/static/stickit/images/controles_stickit/uploadCadre.png\">\n				</div>\n				<input type=\"file\" class=\"selectFiles\">\n	\n				<img src=\"/static/stickit/images/controles_stickit/supprimer.png\" class=\"boutonSupprimerCadre\" ng-click=\"	supprimerCadre(scope.idCadre)\">\n			</div>\n	\n		<div class=\"ui-resizable-handle ui-resizable-e\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-s\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\" style=\"z-index: 90;\"></div></div>",
+			"file": "/E/sites_web/django/and_today_code_1/stickit/templates/stickit/generation_page.html",
 			"settings":
 			{
-				"buffer_size": 1393,
-				"line_ending": "Windows",
-				"name": "<div class=\"cadre ng-scope visible ui-draggable ui"
-			}
-		},
-		{
-			"contents": "<div class=\"cadre ng-scope visible ui-draggable ui-resizable\" style=\"left: 612px; top: 0px; width: 300px; height: 200px; position: absolute; cursor: move;\" id_cadre=\"67\" ng-controller=\"controleur-cadre\" ng-class=\"{visible : cadreVisible, hidden : ! cadreVisible}\" cadre=\"\" id_scope=\"00K\" mode_design=\"false\" aria-disabled=\"true\">\n\n			\n				<img class=\"cadreImage\" src=\"/media/ba45c8f60456a672e003a875e469d0eb.jpg\" style=\"opacity : 1.00\">\n			\n\n			<div class=\"contenantOutilsCadres hidden\" ng-class=\"{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}\">\n				<input type=\"text\" size=\"20\" class=\"eraser transparencyField\" transparency-cadre=\"\">\n				<div class=\"controleTransparence\" id-scope=\"00K\"></div>\n				<div recipiendaire-fichier=\"\" class=\"recipiendaireFichier\">\n					<img src=\"/static/stickit/images/controles_stickit/uploadCadre.png\">\n				</div>\n				<input type=\"file\" class=\"selectFiles\">\n	\n				<img src=\"/static/stickit/images/controles_stickit/supprimer.png\" class=\"boutonSupprimerCadre\" ng-click=\"	supprimerCadre(scope.idCadre)\">\n			</div>\n	\n		<div class=\"ui-resizable-handle ui-resizable-e\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-s\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\" style=\"z-index: 90;\"></div></div>\n",
-			"settings":
-			{
-				"buffer_size": 1332,
-				"line_ending": "Windows",
-				"name": "<div class=\"cadre ng-scope visible ui-draggable ui"
-			}
-		},
-		{
-			"contents": "<div class=\"cadre ng-scope visible ui-draggable ui-resizable\" style=\"left: 612px; top: 0px; width: 300px; height: 200px; position: absolute; cursor: move;\" id_cadre=\"67\" ng-controller=\"controleur-cadre\" ng-class=\"{visible : cadreVisible, hidden : ! cadreVisible}\" cadre=\"\" id_scope=\"00K\" mode_design=\"true\" aria-disabled=\"false\">\n\n			\n				<img class=\"cadreImage\" src=\"/media/ba45c8f60456a672e003a875e469d0eb.jpg\" style=\"opacity : 1.00\">\n			\n\n			<div class=\"contenantOutilsCadres visible\" ng-class=\"{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}\">\n				<input type=\"text\" size=\"20\" class=\"eraser transparencyField\" transparency-cadre=\"\">\n				<div class=\"controleTransparence\" id-scope=\"00K\"></div>\n				<div recipiendaire-fichier=\"\" class=\"recipiendaireFichier\">\n					<img src=\"/static/stickit/images/controles_stickit/uploadCadre.png\">\n				</div>\n				<input type=\"file\" class=\"selectFiles\">\n	\n				<img src=\"/static/stickit/images/controles_stickit/supprimer.png\" class=\"boutonSupprimerCadre\" ng-click=\"	supprimerCadre(scope.idCadre)\">\n			</div>\n	\n		<div class=\"ui-resizable-handle ui-resizable-e\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-s\" style=\"z-index: 90;\"></div><div class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\" style=\"z-index: 90;\"></div></div>",
-			"settings":
-			{
-				"buffer_size": 1332,
-				"line_ending": "Windows",
-				"name": "<div class=\"cadre ng-scope visible ui-draggable ui"
-			}
-		},
-		{
-			"file": "stickit/templates/stickit/motif_sticker.html",
-			"settings":
-			{
-				"buffer_size": 948,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/templates/stickit/motif_sticker_vierge.html",
-			"settings":
-			{
-				"buffer_size": 749,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/templates/stickit/motif_cadre.html",
-			"settings":
-			{
-				"buffer_size": 1330,
+				"buffer_size": 1075,
 				"line_ending": "Windows"
 			}
 		},
@@ -700,19 +657,34 @@
 			}
 		},
 		{
-			"contents": "ng-class=\"{visible : options.modeDesign && options.modeModifStickers, hidden : ! options.modeDesign || ! options.modeModifStickers}\" \n\n  ng-class=\"{stickerModified : stickerModified}\"\n\n  ng-class=\"{visible : ! options.modeDesign || options.modeModifStickers, hidden : options.modeDesign && ! options.modeModifStickers}\" \n\n\n\n	<!---************************************************************-->\n<!--			SCRIPTS POUR RESIZABLE						-->\n<!---************************************************************-->\n<!--<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-collision-resizable.js\"></script>-->\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable/debugClone.js\"></script>	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable/helperFunctions.js\"></script>		\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/jquery-ui-resizable-collision.js\"></script>		\n<!---************************************************************-->\n\n\n\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/chromoselector.min.js\"></script>		\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/bootstrap.min.js\"></script>	\n\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/rangy-core.js\"></script>\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}js/rangy-selectionsaverestore.js\"></script>	\n\n\n<!--Bootstrap via angular -->\n	\n<!--Module defileur, nécessite jquery-->\n	\n	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}stickit/js/controle_sticker.js\"></script>	\n	<script type=\"text/javascript\" src=\"{{ STATIC_URL }}warningMessages/js/afficheurMessages.js\"></script>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n			{#<!--<div id=\"dropfile\" contenteditable='true'>Drop an image from your computer</div>\n		ng-class=\"{stickit_modeDesign_hidden : ! options.modeDesign}\"\n\n\n\n			{% include \"stickit/controles_sticker.html\" %}	-->#}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+			"file": "stickit/templates/stickit/motif_cadre.html",
 			"settings":
 			{
-				"buffer_size": 1875,
-				"line_ending": "Windows",
-				"name": "ng-class=\"{visible : options.modeDesign && options"
+				"buffer_size": 1482,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
+			"contents": " ng-controller='controleur-cadre' \n\n  ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'",
 			"settings":
 			{
-				"buffer_size": 13170,
+				"buffer_size": 110,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_sticker.html",
+			"settings":
+			{
+				"buffer_size": 976,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_sticker_vierge.html",
+			"settings":
+			{
+				"buffer_size": 813,
 				"line_ending": "Windows"
 			}
 		},
@@ -729,14 +701,6 @@
 			"settings":
 			{
 				"buffer_size": 9481,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "ng-class='{visible : stickerVisible, hidden : ! stickerVisible}'",
-			"settings":
-			{
-				"buffer_size": 64,
 				"line_ending": "Windows"
 			}
 		},
@@ -864,14 +828,16 @@
 	},
 	"file_history":
 	[
+		"/E/sites_web/django/and_today_code_1/core/templates/core/panneau_principal.html",
+		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
+		"/E/sites_web/django/and_today_code_1/stickit/templates/stickit/motif_cadre.html",
+		"/E/sites_web/django/andtoday_project/core/models.py",
 		"/E/sites_web/django/.git/config",
 		"/E/sites_web/django/andtoday_project/uploadFiles/templates/uploadFiles/dragndrop.html",
 		"/E/sites_web/django/andtoday_project/uploadFiles/templates/dnd_upload/dragndrop.html",
 		"/E/sites_web/django/andtoday_project/defilement_infini/static/defilement_infini/css/defilement.css",
 		"/E/sites_web/django/andtoday_project/stickit/static/stickit/js/stickit.js",
 		"/E/sites_web/django/and_today_code_1/warningMessages/static/warningMessages/js/afficheurMessages.js",
-		"/E/sites_web/django/and_today_code_1/core/templates/core/panneau_principal.html",
-		"/E/sites_web/django/andtoday_project/core/models.py",
 		"/E/sites_web/django/and_today_code_1/stickit/templates/stickit/motif_sticker.html",
 		"/E/sites_web/django/andtoday_project/stickit/templates/stickit/empty.html",
 		"/C/Users/tchebytchev/AppData/Roaming/Sublime Text 3/Packages/User/my-snippets.sublime-snippet",
@@ -989,9 +955,7 @@
 		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_ControleurEtdirectives.js",
 		"/E/sites_web/tests/collision/testspersos/js/jquery-ui-draggable-collision.js",
 		"/E/sites_web/tests/collision/testspersos/js/jquery-ui-1.10.3.custom.js",
-		"/E/sites_web/tests/collision/testspersos/js/jquery-collision-resizable.js",
-		"/E/sites_web/django/and_today/busEvent/static/busEvent/js/busEvent.js",
-		"/E/sites_web/django/and_today/static/js/jquery-ui-1.10.4.custom.js"
+		"/E/sites_web/tests/collision/testspersos/js/jquery-collision-resizable.js"
 	],
 	"find":
 	{
@@ -1009,6 +973,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"outilsCadreVisible ",
+			"outilsCadreVisible",
+			"$scope.options",
+			"group",
+			"disab",
+			"disable",
+			"enable",
+			"recupereElements",
+			"modedes",
+			"modeModifStickers",
+			"modeModifCadres",
+			"modeModifStickers",
+			"resiza",
+			"cadreVisible",
+			"visible",
+			"templateUrl",
+			"creationcadre",
+			"PANNEAU.DEMANDE_ID",
 			"scope.options",
 			"resizable",
 			"scope.id",
@@ -1118,25 +1100,7 @@
 			"groupeStickers",
 			"back",
 			"helper",
-			"BackgroundC",
-			"backgroundC",
-			"create",
-			"backgroundC",
-			"BackgroundC",
-			"backgroundC",
-			"WARNING_DISPLAY",
-			"supprimer",
-			"controleur",
-			"dest",
-			"supp",
-			"destruction",
-			"background",
-			"sauvegarder",
-			"jqList2CenterGravity",
-			"jq2",
-			"draggable",
-			"sauver",
-			"controleurModuleStickit"
+			"BackgroundC"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1159,7 +1123,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1175,17 +1139,18 @@
 						"selection":
 						[
 							[
-								5607,
-								5607
+								5610,
+								5610
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 220.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
@@ -1193,6 +1158,66 @@
 				},
 				{
 					"buffer": 1,
+					"file": "stickit/static/stickit/js/stickit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10892,
+								10892
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5886.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "stickit/templates/stickit/generation_page.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
 					"semi_transient": false,
 					"settings":
@@ -1210,36 +1235,8 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "stickit/templates/stickit/generation_page.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 310,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								224,
-								224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1250,65 +1247,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "warningMessages/static/warningMessages/css/warning_messages.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1845,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1701,
-								1701
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
 					"buffer": 4,
-					"file": "stickit/static/stickit/js/stickit.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37286,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3392,
-								3392
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1587.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "core/templates/core/panneau_principal.html",
 					"semi_transient": false,
 					"settings":
@@ -1320,24 +1259,25 @@
 						"selection":
 						[
 							[
-								1348,
-								1319
+								2724,
+								2726
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 528.0,
+						"translation.y": 836.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "core/static/core/js/angular/core.js",
 					"semi_transient": false,
 					"settings":
@@ -1362,11 +1302,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "stickit/static/stickit/css/styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1378,24 +1318,25 @@
 						"selection":
 						[
 							[
-								2716,
-								2722
+								447,
+								447
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1830.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "stickit/static/stickit/css/sticker/sticker.css",
 					"semi_transient": false,
 					"settings":
@@ -1413,6 +1354,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1422,44 +1364,45 @@
 					},
 					"stack_index": 18,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 8,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 9,
-					"file": "core/models.py",
+					"buffer": 8,
+					"file": "warningMessages/static/warningMessages/css/warning_messages.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3967,
+						"buffer_size": 1845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								812,
-								812
+								1701,
+								1701
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 462.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 19,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "core/static/core/js/angular/configurateur.js",
 					"semi_transient": false,
 					"settings":
@@ -1484,24 +1427,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "defilement_infini/static/defilement_infini/js/defileur.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9146,
+						"buffer_size": 9144,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								56,
-								56
+								3588,
+								3606
 							]
 						],
 						"settings":
@@ -1510,14 +1453,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 6398.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "core/static/core/css/core_styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1535,6 +1478,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1543,6 +1487,36 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "defilement_infini/static/defilement_infini/css/defilement.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2092,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -1564,14 +1538,15 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1125.0,
+						"translation.y": 1121.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
@@ -1587,107 +1562,21 @@
 						"selection":
 						[
 							[
-								688,
-								688
+								1550,
+								1550
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
+						"translation.y": 990.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1393,
-								1393
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<div class=\"cadre ng-scope visible ui-draggable ui",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1332,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1332,
-								1332
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<div class=\"cadre ng-scope visible ui-draggable ui",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1332,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								903,
-								903
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<div class=\"cadre ng-scope visible ui-draggable ui",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 15070.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 13,
 					"type": "text"
 				}
 			]
@@ -1697,96 +1586,37 @@
 			"sheets":
 			[
 				{
-					"buffer": 18,
-					"file": "stickit/templates/stickit/motif_sticker.html",
+					"buffer": 15,
+					"file": "/E/sites_web/django/and_today_code_1/stickit/templates/stickit/generation_page.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 948,
+						"buffer_size": 1075,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								274,
-								274
-							],
-							[
-								301,
-								301
+								580,
+								580
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "stickit/templates/stickit/motif_sticker_vierge.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 749,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15,
-								15
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "stickit/templates/stickit/motif_cadre.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								306,
-								306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 16,
 					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
 					"semi_transient": false,
 					"settings":
@@ -1798,83 +1628,142 @@
 						"selection":
 						[
 							[
-								39640,
-								39650
+								22388,
+								21847
 							]
 						],
 						"settings":
 						{
 							"auto_name": "var module_stickit = angular.module('stickit', [])",
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4587.0,
+						"translation.y": 9600.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 17,
+					"file": "stickit/templates/stickit/motif_cadre.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1875,
+						"buffer_size": 1482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								184,
-								184
+								780,
+								762
 							]
 						],
 						"settings":
 						{
-							"auto_name": "ng-class=\"{visible : options.modeDesign && options",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2508.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
+					"buffer": 19,
+					"file": "stickit/templates/stickit/motif_sticker.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13170,
+						"buffer_size": 976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5419,
-								5421
+								337,
+								337
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3303.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 20,
+					"file": "stickit/templates/stickit/motif_sticker_vierge.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								222,
+								222
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
 					"file": "stickit/static/stickit/js/controle_sticker.js",
 					"semi_transient": false,
 					"settings":
@@ -1899,11 +1788,11 @@
 						"translation.y": 1650.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 22,
 					"file": "stickit/static/stickit/css/sticker/controls.css",
 					"semi_transient": false,
 					"settings":
@@ -1921,6 +1810,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1928,44 +1818,17 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 64,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
-					"buffer": 27,
+					"buffer": 23,
 					"file": "stickit/templates/stickit/controles_sticker.html",
 					"semi_transient": false,
 					"settings":
@@ -1983,6 +1846,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1990,11 +1854,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 24,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/debugClone.js",
 					"semi_transient": false,
 					"settings":
@@ -2020,11 +1884,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 25,
 					"file": "static/js/jquery-ui-draggable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -2050,11 +1914,11 @@
 						"translation.y": 6054.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 26,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/helperFunctions.js",
 					"semi_transient": false,
 					"settings":
@@ -2080,11 +1944,11 @@
 						"translation.y": 4752.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 27,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -2110,11 +1974,11 @@
 						"translation.y": 7194.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 28,
 					"file": "static/js/resizable.js",
 					"semi_transient": false,
 					"settings":
@@ -2126,12 +1990,13 @@
 						"selection":
 						[
 							[
-								9429,
-								9449
+								8669,
+								8669
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -2140,7 +2005,7 @@
 						"translation.y": 4469.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
@@ -2186,13 +2051,13 @@
 		"cols":
 		[
 			0.0,
-			0.955,
+			0.13375,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.803258145363,
+			0.771052631579,
 			1.0
 		]
 	},
