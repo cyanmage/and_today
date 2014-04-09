@@ -1,6 +1,6 @@
-<div class='sticker  collideEnable' id_sticker='{{sticker.id}}' ng-controller="controleur-sticker" ng-show="stickerVisible" >
+<div class='sticker' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' id_sticker='{{sticker.id}}' ng-controller="controleur-sticker" {% if sticker %} sticker {% endif %} test="{* stickerVisible *}"   ng-show="stickerVisible" >
 	
-	<div class="titreSticker"  ng-class="{stickerModified : stickerModified}"></div>
+	<div class="titreSticker"  ng-class="{stickerModified : stickerModified}">{{sticker.id}}</div>
 
 	<div class="contenantSticker">
 		<contenu-sticker class="contenuSticker" contenteditable="{*options.modeDesign*}" style='{{sticker.style}}' >{{sticker.contenu| safe}}</contenu-sticker>

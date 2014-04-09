@@ -1,4 +1,5 @@
-<groupe-stickers-cadres id='gr-stick-cadre-{{id_date}}' nombrestickers="{{stickers|length}}" >		
+<groupe-stickers-cadres id='gr-stick-cadre-{{id_date}}' nombrestickers="{{stickers|length}}" >	
+		<!--<div class="debug" style="position : absolute ; top : -50px ; left : 0px  ; width:400px ; height : 20px; background-color : #ACFDFB">Sticker selectionne : {*stickerSelectionne*}//</div>-->
 		{% for sticker in stickers %}
 			{% include 'stickit/motif_sticker.html' %}
 		{% endfor %}

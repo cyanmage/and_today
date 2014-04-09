@@ -531,23 +531,7 @@
 			"file": "stickit/static/stickit/js/stickit.js",
 			"settings":
 			{
-				"buffer_size": 37409,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/templates/stickit/generation_page.html",
-			"settings":
-			{
-				"buffer_size": 302,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
-			"settings":
-			{
-				"buffer_size": 3935,
+				"buffer_size": 33645,
 				"line_ending": "Windows"
 			}
 		},
@@ -556,6 +540,38 @@
 			"settings":
 			{
 				"buffer_size": 2991,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/generation_page.html",
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_sticker.html",
+			"settings":
+			{
+				"buffer_size": 925,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/motif_cadre.html",
+			"settings":
+			{
+				"buffer_size": 1516,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
+			"settings":
+			{
+				"buffer_size": 3935,
 				"line_ending": "Windows"
 			}
 		},
@@ -572,14 +588,6 @@
 			"settings":
 			{
 				"buffer_size": 3262,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/static/stickit/css/sticker/sticker.css",
-			"settings":
-			{
-				"buffer_size": 2168,
 				"line_ending": "Windows"
 			}
 		},
@@ -635,7 +643,15 @@
 			"file": "stickit/static/stickit/css/cadre/cadre.css",
 			"settings":
 			{
-				"buffer_size": 2793,
+				"buffer_size": 3152,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/css/sticker/sticker.css",
+			"settings":
+			{
+				"buffer_size": 2215,
 				"line_ending": "Windows"
 			}
 		},
@@ -657,26 +673,10 @@
 			}
 		},
 		{
-			"file": "stickit/templates/stickit/motif_cadre.html",
+			"contents": "module_stickit.directive(\"cadre\", ['$timeout', '$compile', 'servicesStickit', 'servicesUpdateStickit',\n 	function($timeout, $compile, servicesStickit, servicesUpdateStickit){\n\n	return {\n		restrict : 'AE', \n		link : function(scope, element, attributes){\n\n\n			$timeout(function(){\n\n				var cadreImage 				= element.find(\".cadreImage\");\n				var parent 					= element.parents(\".container-stickers\");\n\n				var id_cadre = element.attr('id_cadre');\n\n				if (id_cadre){\n					//scope.sauveSurServeur = true;\n					scope.outilsCadreVisible = false;					\n				}	\n				else{\n					id_cadre = '_cd_' + servicesStickit.obtientNumeroValideCadre();\n					element.attr('id_cadre', id_cadre)\n					cadreImage.attr(\"default\", 'default');	\n					scope.outilsCadreVisible = true;\n				}\n				\n				scope.idcadre = id_cadre;				\n				servicesUpdateStickit.ajouteAuRegistre(scope.id,  id_cadre);/**/\n\n				element\n					.draggable({\n						containment : parent, 	\n						cursor : 'move', \n						/*drag : function(event, ui){ \n							//console.log(\"je bouge\");\n							zIndex: 100, \n							event.stopPropagation();\n						},\n						stop : function(event, ui){\n							element.css(\"z-index\", 0);							\n						}*/\n					})\n					.resizable({\n						containment : parent,   \n						handlers : \"e, s, se\"\n					});\n\n				element.on(\"mouseover\", function(event, ui){\n					if (scope.options.modeDesign){						\n						scope.$apply(scope.outilsCadreVisible = true);\n					}\n				})\n				.on(\"mouseleave\", function(event, ui){\n					if (scope.options.modeDesign){						\n						scope.$apply(scope.outilsCadreVisible = false);\n					}\n				})\n\n\n				scope.$on(\"STICKIT.ELEMENTS_SAUVES\", function(event, data){\n					//scope.cadreModified = false;	\n					var associationsIdsClientServeur = data.associationsCadres;				\n					if (associationsIdsClientServeur && associationsIdsClientServeur[scope.idCadre]){\n						console.log(\"associations cadres : \", data.associationsCadres);\n						var nouvel_id = associationsIdsClientServeur[scope.idCadre];	\n						scope.idCadre = nouvel_id;\n						element.attr(\"id_cadre\", nouvel_id);				\n				  	}\n				});\n\n\n				/*scope.$watch(\"opacity\", function(newValue, oldValue){\n					if (newValue !== oldValue){\n						//console.log(\"opacite : \", newValue, \"oldVlue : \", oldValue, \", scope : \", scope.$id);\n						cmage.css(\"opacity\", newValue);					\n					}\n	\n				})*/\n				\n\n	\n				scope.$watch('suppression', function(newValue, oldValue){\n\n					//console.log(\"suppression watch directive\", scope.idcadre, newValue, \", scope : \", scope.$id);\n					if(newValue){\n						servicesUpdateStickit\n						.supprimer(element, scope.idcadre )\n						.then(	function(data){\n									var message = \"SUPPRESSION EFFECTUEE POUR LE \" + scope.idcadre;\n									scope.$emit(\"WARNING_DISPLAY\", { 'message' : message, 'id_groupe' : scope.idcadre });\n							}, \n								function(error){\n									var message = \"ECHEC DE LA SUPPRESSION POUR LE \" + scope.idcadre;								\n									scope.$emit(\"WARNING_DISPLAY\",  { 'message' : message, 'id_groupe' : scope.idcadre });				\n							});						\n					}\n\n				});	\n\n\n\n			});	\n		}\n	}\n}]);",
 			"settings":
 			{
-				"buffer_size": 1482,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": " ng-controller='controleur-cadre' \n\n  ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'",
-			"settings":
-			{
-				"buffer_size": 110,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/templates/stickit/motif_sticker.html",
-			"settings":
-			{
-				"buffer_size": 976,
+				"buffer_size": 3052,
 				"line_ending": "Windows"
 			}
 		},
@@ -684,7 +684,15 @@
 			"file": "stickit/templates/stickit/motif_sticker_vierge.html",
 			"settings":
 			{
-				"buffer_size": 813,
+				"buffer_size": 1044,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": " ng-controller='controleur-cadre' \n\n  ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'\n\nng-class='{visible : stickerVisible, hidden : ! stickerVisible}' \n\n   ng-class='{visible : stickerVisible, hidden : ! stickerVisible}' \n\n\n\n    ng-class=\"{visible : cadreVisible, hidden : ! cadreVisible}\"\n\n    ng-show=\"stickerVisible\" \n\n    ng-show=\"stickerVisible\" ",
+			"settings":
+			{
+				"buffer_size": 377,
 				"line_ending": "Windows"
 			}
 		},
@@ -970,9 +978,21 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"helper",
+			"collide",
+			"idCadre",
+			"idcadre",
+			"modeModifSticker",
+			"attr(\"modeModifSticker\"",
+			"contenantOutils",
+			"controleTransparence",
+			"recipiendaireFichier",
+			"pointer",
+			"cadreVisible",
+			"%",
 			"outilsCadreVisible ",
 			"outilsCadreVisible",
 			"$scope.options",
@@ -1088,19 +1108,7 @@
 			"creation",
 			"creationSticker",
 			"newValue",
-			"options.modeDesign",
-			"creationCadre",
-			"cadre",
-			"100",
-			"Contenant",
-			"cadreContenant",
-			"absolute",
-			"cd",
-			"bg",
-			"groupeStickers",
-			"back",
-			"helper",
-			"BackgroundC"
+			"options.modeDesign"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1123,7 +1131,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1139,8 +1147,8 @@
 						"selection":
 						[
 							[
-								5610,
-								5610
+								5593,
+								5560
 							]
 						],
 						"settings":
@@ -1150,10 +1158,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1188.0,
+						"translation.y": 2687.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1162,15 +1170,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 37409,
+						"buffer_size": 33645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10892,
-								10892
+								9612,
+								9612
 							]
 						],
 						"settings":
@@ -1180,27 +1188,57 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5886.0,
+						"translation.y": 7952.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "stickit/templates/stickit/generation_page.html",
+					"file": "core/templates/core/panneau_principal.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 302,
+						"buffer_size": 2991,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								302,
-								302
+								2724,
+								2726
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 352.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "stickit/templates/stickit/generation_page.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
 							]
 						],
 						"settings":
@@ -1213,11 +1251,70 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
+					"file": "stickit/templates/stickit/motif_sticker.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								169
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "stickit/templates/stickit/motif_cadre.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								735,
+								735
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
 					"semi_transient": false,
 					"settings":
@@ -1243,41 +1340,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "core/templates/core/panneau_principal.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2991,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2724,
-								2726
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 836.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "core/static/core/js/angular/core.js",
 					"semi_transient": false,
 					"settings":
@@ -1302,11 +1369,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "stickit/static/stickit/css/styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1332,41 +1399,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "stickit/static/stickit/css/sticker/sticker.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2168,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1464,
-								1464
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "warningMessages/static/warningMessages/css/warning_messages.css",
 					"semi_transient": false,
 					"settings":
@@ -1392,17 +1429,17 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 21,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 5,
+			"selected": 6,
 			"sheets":
 			[
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "core/static/core/js/angular/configurateur.js",
 					"semi_transient": false,
 					"settings":
@@ -1420,6 +1457,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1427,11 +1465,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "defilement_infini/static/defilement_infini/js/defileur.js",
 					"semi_transient": false,
 					"settings":
@@ -1456,11 +1494,11 @@
 						"translation.y": 6398.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "core/static/core/css/core_styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1486,11 +1524,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "defilement_infini/static/defilement_infini/css/defilement.css",
 					"semi_transient": false,
 					"settings":
@@ -1502,8 +1540,8 @@
 						"selection":
 						[
 							[
-								86,
-								86
+								1209,
+								1209
 							]
 						],
 						"settings":
@@ -1513,14 +1551,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 528.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
 					"semi_transient": false,
 					"settings":
@@ -1546,24 +1584,24 @@
 						"translation.y": 1121.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "stickit/static/stickit/css/cadre/cadre.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2793,
+						"buffer_size": 3152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1550,
-								1550
+								386,
+								386
 							]
 						],
 						"settings":
@@ -1573,20 +1611,50 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "stickit/static/stickit/css/sticker/sticker.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
-					"buffer": 15,
+					"buffer": 17,
 					"file": "/E/sites_web/django/and_today_code_1/stickit/templates/stickit/generation_page.html",
 					"semi_transient": false,
 					"settings":
@@ -1612,11 +1680,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 18,
 					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
 					"semi_transient": false,
 					"settings":
@@ -1628,8 +1696,8 @@
 						"selection":
 						[
 							[
-								22388,
-								21847
+								22003,
+								22003
 							]
 						],
 						"settings":
@@ -1640,97 +1708,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9600.0,
+						"translation.y": 14682.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "stickit/templates/stickit/motif_cadre.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								780,
-								762
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2508.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
 					"buffer": 19,
-					"file": "stickit/templates/stickit/motif_sticker.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 976,
+						"buffer_size": 3052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								337,
-								337
+								1987,
+								1987
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1892.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1739,15 +1749,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 813,
+						"buffer_size": 1044,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								222,
-								222
+								315,
+								315
 							]
 						],
 						"settings":
@@ -1764,6 +1774,34 @@
 				},
 				{
 					"buffer": 21,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
 					"file": "stickit/static/stickit/js/controle_sticker.js",
 					"semi_transient": false,
 					"settings":
@@ -1788,11 +1826,11 @@
 						"translation.y": 1650.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 23,
 					"file": "stickit/static/stickit/css/sticker/controls.css",
 					"semi_transient": false,
 					"settings":
@@ -1818,7 +1856,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 17,
 					"type": "text"
 				}
 			]
@@ -1828,7 +1866,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 23,
+					"buffer": 24,
 					"file": "stickit/templates/stickit/controles_sticker.html",
 					"semi_transient": false,
 					"settings":
@@ -1854,11 +1892,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 25,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/debugClone.js",
 					"semi_transient": false,
 					"settings":
@@ -1884,11 +1922,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 26,
 					"file": "static/js/jquery-ui-draggable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -1914,11 +1952,11 @@
 						"translation.y": 6054.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 27,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/helperFunctions.js",
 					"semi_transient": false,
 					"settings":
@@ -1944,11 +1982,11 @@
 						"translation.y": 4752.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 28,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -1974,11 +2012,11 @@
 						"translation.y": 7194.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 29,
 					"file": "static/js/resizable.js",
 					"semi_transient": false,
 					"settings":
@@ -2005,7 +2043,7 @@
 						"translation.y": 4469.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
@@ -2051,13 +2089,13 @@
 		"cols":
 		[
 			0.0,
-			0.13375,
+			0.8675,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.771052631579,
+			0.518421052632,
 			1.0
 		]
 	},

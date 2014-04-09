@@ -16,15 +16,16 @@
 .titreSticker{
 	position : absolute;	top : -1.6em;	left : -2px;
 	margin : 1px;
-	width : 100%;	height : 1.5em;
+	width : 100%;	height : 6em;
 	border-width: 1px 1px 0px 1px;	border-style: solid;
 	border-top-right-radius : 5px;		border-top-left-radius: 1px;/**/
 	background-color: rgba(243, 243, 171, 1);
 	cursor : move;
+	word-wrap: break-word;
 }
 
 .contenuSticker{
-	margin: 10px 2px 25px 2px;
+	margin: 50px 2px 25px 2px;
 	padding : 5px 3px 5px 3px;
 	position : absolute;	top : 5px;	left : 5px;	right: 5px;	bottom: 5%;
 	background-color: #FFFFFF;	
@@ -41,6 +42,13 @@
 	position : absolute;	left : -500px;		top : -500px;	
 }
 /*, .contenuSticker:not([contenteditable="false"]), .contenuSticker[ng-cloak], .contenuSticker.ng-cloak*/
+
+.helperCreationSticker{
+	z-index" : 200;
+	visibility" :"visible"	;
+}
+
+
 .contenuSticker[contenteditable="true"], .contenuSticker[contenteditable=""]
 {
  /*padding: 10px; */

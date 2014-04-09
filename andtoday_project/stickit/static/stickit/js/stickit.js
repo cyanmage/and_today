@@ -24,7 +24,8 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	$scope.controles  =  {'stickit' : servicesControlesStickit};
 	$scope.libelleBtnAttachDetach = "Attacher/Détacher";
 
-	
+	//$scope.idStickerSelected
+	//les_services_stickit.idStickerSelectionne
 	$scope.toggleModeDesign = function(){
 
 		$scope.options.modeDesign = ! $scope.options.modeDesign;
@@ -54,7 +55,7 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 	$scope.sauvegarder = function(){
 
 		servicesUpdateStickit
-		.sauvegarder($scope.id)
+			.sauvegarder($scope.id)
 		.then(function(data){
 			//console.log("conteoeur, sauvegarde");
 				var message = "SAUVEGARDE EFFECTUEE POUR LE " + $scope.id;
@@ -97,9 +98,12 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 		/*DEBUG$scope.controller = "controller-sticker";*/
 
 		//$scope.sauveSurServeur 	= false;	
-		$scope.stickerModified 	= false; 		
-		$scope.suppression 		= false;
-		$scope.stickerVisible 	= true; 
+		//$scope.stickerModified 	= false; 		
+		$scope.suppression 				= false;
+		$scope.stickerVisible 			= true; 
+		$scope.outilsStickerVisible		= true;
+		$scope.isStickerSelected		= false;
+
 
 		$scope.servicesStickit = servicesStickit; 
 
@@ -110,30 +114,49 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 
 
 		$scope.boiteAOutils = function () {
-			servicesStickit.stickerSelectionne = $scope.boiteAOutils_deploye ? -1 : parseInt($scope.idSticker, 10);
+			servicesStickit.idStickerSelectionne = $scope.boiteAOutils_deploye ? "" : $scope.idSticker;
 			$scope.boiteAOutils_deploye = ! $scope.boiteAOutils_deploye;
-		}
+		}/**/
 
 		$scope.$watch(function(){
 			var options = $scope.options;
 			return options && options.modeModifStickers;
 		}, function(newValue, oldValue){
 			if (newValue !== oldValue) {
-			//console.log("newValue : ", newValue, "oldValue : ", oldValue);
 				$scope.stickerVisible = newValue;
 			}
 		})
 
+		$scope.$watch(function(){
+			var options = $scope.options;
+			return options && options.modeDesign && $scope.isStickerSelected;
+		}, function(newValue, oldValue){
+			if (newValue !== oldValue) {
+				$scope.outilsStickerVisible  = newValue;
+			}
+		})
 
 
 		/*$scope.$watch(function(){
 			var options = $scope.options;
-			return options && options.modeDesign && options.modeModifStickers;
+			return (options && options.modeDesign && options.modeModifStickers && $scope.isStickerSelected);
 		}, function(newValue, oldValue){
-			$scope.outilsStickerVisible = newValue;
-		})*/
+			var options = $scope.options;
+			console.log($scope.idSticker);
+			console.log(options && options.modeDesign && options.modeModifStickers && $scope.isStickerSelected);	
+			//console.log("j'ai ete change");		
+			//console.log("**", options && options.modeDesign && options.modeModifStickers, "//", $scope.$id);
+			if (options){
+				console.log("options : ", options/*, "mode design : ", options.modeDesign, "mode modif stickers : ", options.modeModifStickers,), "          newValue : ", newValue);*/
+				//$scope.outilsStickerVisible = newValue;
+			     //if(!$scope.$$phase) 				
+				//	$scope.$apply();
+			//}
+			//$scope.outilsStickerVisible = true;
+			//newValue;true;
+		//})
 
-		/*$scope.$watch("servicesStickit.stickerSelectionne", function(newValue, oldValue){
+		/*$scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
 								console.log("AVANT TEST : ", oldValue, newValue);
 			if (newValue !== -1  && oldValue === parseInt($scope.idSticker, 10)){
 					$scope.boiteAOutils_deploye = ! $scope.boiteAOutils_deploye;
@@ -157,12 +180,11 @@ module_stickit.controller("controleur-cadre", ['$scope', '$log',
 
 		$scope.$watch(function(){
 			var options = $scope.options;
-			return options && ( ! options.modeDesign || options.modeModifCadres);
+			//return options && ( ! options.modeDesign || options.modeModifCadres);
+			return options && options.modeModifCadres;			
 		}, function(newValue, oldValue){
 			if (newValue !== oldValue) {
 				$scope.cadreVisible = newValue;
-				//console.log(newValue, oldValue);			
-				//console.log($scope.cadreVisible);
 			}
 		});
 
@@ -197,16 +219,13 @@ module_stickit.directive('createSticker', [function(){
 		link : function(scope, element, attributes){
 				element.draggable({
 					cursor 		: 'move',
-
 					containment : $(".defileur"),
-
+					zIndex		: 200,
 					helper 		: function(){
-									var copie = $("div#motif-sticker").clone()
-												.removeAttr("id")
+									var copie = $("div#motif-sticker .sticker").clone()
 												.addClass("helperCreationSticker")
 									return copie;
 									}
-
 				});	
 		}
 	}
@@ -225,11 +244,9 @@ module_stickit.directive('createCadreImage', [function(){
 					containment : $(".defileur"),
 					helper : function(){
 									var copie = $("div#motif-cadre .cadre").clone()
-											.removeAttr("id")
-											.addClass("helperCreationCadre")
+												.addClass("helperCreationCadre")
 									return copie;
 					}, 			
-
 				});
 		}
 	}
@@ -244,6 +261,7 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 		restrict : 'AE', 
 		link : function(scope, element, attributes){
 
+			var id_sticker;
 
 			$timeout(function(){
 
@@ -251,7 +269,7 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 				var parent 					= element.parents(".container-stickers");
 
 
-				var id_cadre = element.attr('id_cadre');
+				id_cadre = element.attr('id_cadre');
 
 				if (id_cadre){
 					//scope.sauveSurServeur = true;
@@ -295,7 +313,7 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 					//scope.cadreModified = false;	
 					var associationsIdsClientServeur = data.associationsCadres;				
 					if (associationsIdsClientServeur && associationsIdsClientServeur[scope.idCadre]){
-						console.log("associations cadres : ", data.associationsCadres);
+						//console.log("associations cadres : ", data.associationsCadres);
 						var nouvel_id = associationsIdsClientServeur[scope.idCadre];	
 						scope.idCadre = nouvel_id;
 						element.attr("id_cadre", nouvel_id);				
@@ -318,14 +336,14 @@ module_stickit.directive("cadre", ['$timeout', '$compile', 'servicesStickit', 's
 					//console.log("suppression watch directive", scope.idCadre, newValue, ", scope : ", scope.$id);
 					if(newValue){
 						servicesUpdateStickit
-						.supprimer(element, scope.idCadre )
+							.supprimer(element, id_cadre )
 						.then(	function(data){
 									var message = "SUPPRESSION EFFECTUEE POUR LE " + scope.idCadre;
-									scope.$emit("WARNING_DISPLAY", { 'message' : message, 'id_groupe' : scope.idCadre });
+									scope.$emit("WARNING_DISPLAY", { 'message' : message, 'id_groupe' :id_cadre });
 							}, 
 								function(error){
 									var message = "ECHEC DE LA SUPPRESSION POUR LE " + scope.idCadre;								
-									scope.$emit("WARNING_DISPLAY",  { 'message' : message, 'id_groupe' : scope.idCadre });				
+									scope.$emit("WARNING_DISPLAY",  { 'message' : message, 'id_groupe' : id_cadre });				
 							});						
 					}
 
@@ -358,7 +376,7 @@ module_stickit.directive('recipiendaireFichier', ['servicesUpdateStickit',
 				
 					var id_blob = window.URL.createObjectURL(file); 
 					servicesUpdateStickit
-					.uploadFiles(file, id_blob)
+						.uploadFiles(file, id_blob)
 					.then(function(associations){
 						cadreImage
 							.attr('src', associations[id_blob])
@@ -392,7 +410,7 @@ module_stickit.directive('recipiendaireFichier', ['servicesUpdateStickit',
 				.on('drop', function(event){
 
 					var files = event.originalEvent.dataTransfer.files;
-					console.log("DnD FICHIER"); 
+					//console.log("DnD FICHIER"); 
 					//console.log("un fichier est tombe , ", files.length);
 					if (files.length){
 						event.preventDefault();
@@ -402,7 +420,7 @@ module_stickit.directive('recipiendaireFichier', ['servicesUpdateStickit',
 							var id_blob = window.URL.createObjectURL(files[i]); 
 
 							servicesUpdateStickit
-							.uploadFiles(files[i], id_blob)
+								.uploadFiles(files[i], id_blob)
 							.then(function(association){
 								image
 									.attr('src', association[id_blob])
@@ -429,30 +447,59 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 	
 	return {
 		restrict : 'AE', 
-	
-		link : function(scope, element, attributes) {
+		//require	 : '^containerStickers',
+		link : function(scope, element, attributes, containerCtrl) {
 
+			var id_sticker;
 
 			$timeout(function() {
 				//console.log("scope du sticker ------------------------------------>", scope.$id);
 
-				var parent 					= element.parents(".container-stickers");	
-							
-				element
-				.addClass("collideEnable");
+				//console.log("++", containerCtrl.selectionneSticker(), "**");
+
+				var parent 	= element.parents(".container-stickers");	
+				var outilsStickers = element.find(".outilsSticker");
+		
 
 				id_sticker = element.attr('id_sticker');
 				if (id_sticker){
+					scope.outilsStickerVisible = false;					
 					scope.sauveSurServeur = true;
+					scope.$apply();					
 				}	
 				else{
 					id_sticker = '_st_' + servicesStickit.obtientNumeroValide();
 					element.attr('id_sticker', id_sticker);	
+					scope.outilsStickerVisible = true;
+					scope.$apply();
 				}
 				scope.idSticker = id_sticker;				
 				servicesUpdateStickit.ajouteAuRegistre(scope.id,  id_sticker);
 
+ /*attrs.$observe('xxx', function(value) {    // xxx est le nom de l'attribut
+        // ...
+    });*/
+
+				/*scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
+				//attributes.$observe("red", function(value){
+					//var id_sticker_c = id_sticker.toString();
+					//console.log(typeof id_sticker);
+					if (newValue == id_sticker) {
+						element.addClass('red');
+						//console.log(newValue);
+					}
+					else if (oldValue == id_sticker) {
+						element.removeClass('red');
+
+						//console.log(oldValue);
+					}
+					//console.log(newValue, id_sticker_n, oldValue);
+						//	console.log(typeof oldValue);
+					console.log(typeof id_sticker_n);			
+				})*/
+
 				element
+					.addClass("collideEnable")
 					.find(".titreSticker").html(id_sticker + ", " + scope.$id).end()
 					.draggable({
 							    cursor : 'move', 
@@ -490,11 +537,33 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 				}
 			});*/
 
-			element.on("click", function (event, ui) {
-				// body...
-				//console.log("Je reagis");
-			})
 
+
+			/*element.on("click", function (event, ui) {
+				// body...
+				//console.log(servicesStickit.idStickerSelectionne);
+				//console.log("Je reagis ", id_sticker);
+				servicesStickit.idStickerSelectionne = id_sticker;
+				console.log(servicesStickit.idStickerSelectionne );
+				//scope.$apply();
+
+				//containerCtrl.selectionneSticker(id_sticker);
+			})*/
+
+
+			element.on("mouseenter", function (event, ui) {
+				if (scope.options.modeDesign){	
+					scope.$apply(scope.outilsStickerVisible = true);					
+					//console.log("outilsStickerVisible (enter) : ", scope.outilsStickerVisible);
+			
+				}
+			})
+			element.on("mouseleave", function (event, ui) {
+				if (scope.options.modeDesign && id_sticker != servicesStickit.idStickerSelectionne){	
+					scope.$apply(scope.outilsStickerVisible = false);				
+					//console.log("outilsStickerVisible (leave) : ", scope.outilsStickerVisible);
+				}
+			})
 
 			scope.$on("STICKIT.ELEMENTS_SAUVES", function(event, data){
 					//console.log("associations stickers : ", data.associationsStickers);				
@@ -514,9 +583,9 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 				//console.log("demande de suppression", newValue, "id_scope : ", scope.$id);
 				if(newValue){
 					servicesUpdateStickit
-					.demanderConfirmation("suppression", {})
+						.demanderConfirmation("suppression", {})
 					.then(	function(result){ 
-						servicesUpdateStickit.supprimer(element, scope.idSticker)
+						servicesUpdateStickit.supprimer(element, id_sticker)
 						})
 					.then(	function(){
 							var message = "SUPPRESSION EFFECTUEE POUR LE " + scope.idSticker;
@@ -534,7 +603,7 @@ module_stickit.directive('sticker', ['servicesStickit', '$compile',  '$timeout',
 			});/**/
 
 
-			/*scope.$watch('servicesStickit.stickerSelectionne', function(newValue, oldValue){
+			/*scope.$watch('servicesStickit.idStickerSelectionne', function(newValue, oldValue){
 				newValue == -1 ?
 			}*/
 		}
@@ -551,12 +620,14 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 	function($compile, servicesCacheStickit, servicesStickit, $q, $timeout){
 
 
-	var linker = function(scope, element, attributes){
+	var linker = function(scope, element, attributes, controller){
 
+		var parent = element.parents("[emplacement]");
+		//console.log(parent);
 		scope.name = "containerStickers"; // DEBUG
-	
+
 		element.droppable({
-				containment : $("[emplacement='centre']").find(".container-stickers"),
+				containment : parent.find(".container-stickers"),//$("[emplacement='centre']").find(".container-stickers"),
 				tolerance : 'fit',
 				drop : function(event, ui){
 
@@ -571,11 +642,15 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 						var sticker = $("div#motif-sticker .sticker").clone().attr("sticker", '');
 						sticker.find(".contenuSticker").attr("contenteditable", "{*options.modeDesign*}");
 
+
   						sticker.appendTo(groupeStickersCadres)
   							.css("position", "absolute")  						
   							.offset(coordonnees);
 
 						sticker = $compile(sticker)(scope);
+						sticker.scope().outilsStickerVisible = true;
+						scope.$apply();
+						console.log(sticker.scope().outilsStickerVisible);
 						var nombreStickers = groupeStickersCadres.attr("nombrestickers");  							
   						groupeStickersCadres.attr("nombrestickers", ++nombreStickers); 
 
@@ -596,8 +671,9 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 				},		
 				accept : function(element){
-					return true;
-						//return ($(".helperCreationSticker").collision(".collideEnable").length == 0);
+					//return true;
+						//console.log($(".helperCreationSticker").collision(".collideEnable"));
+						return ($(".helperCreationSticker").collision(".collideEnable").length == 0);
 				}
 			});
 
@@ -632,7 +708,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 
 					}
 					else {
-						deferred.reject();  //la page est chargée pour la première fois, le serveur a déjà chargé les stickers
+						deferred.reject();  //la page est chargée lors de l'initialisation de l'appli, le serveur a déjà généré les stickers
 						//console.log("~~~~~~ON CHARGE DEPUIS LA PREMIERE FOIS", newValue);						
 					}
 				}
@@ -645,12 +721,44 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 							element.append(_elementARattacher);	
 				});
 		});
+
+		/* METHODE ALTERNATIVE PREFEREE A CELLE-CI : le scope.watch directement dans la directive du sticker*/
+		/*scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
+			//console.log("newValue : ", newValue,  "   oldValue : ", oldValue);
+			//var sticker = element.parents("[emplacement='centre']").find("[id_sticker = " + newValue + "]");
+			var sticker = element.find("[id_sticker = " + newValue + "]");
+			var old_sticker =  element.find("[id_sticker = " + oldValue + "]");
+			if (sticker.length){
+				sticker.attr("red", "true");
+				old_sticker.attr("red", "false");
+				//scope.$apply();
+				//console.log(sticker.length, ", newValue : ", newValue, ",    oldValue : ", oldValue);
+			}
+			//console.log(sticker.attr("red"));
+		})*/
+
+
 	}
 
 
+
+	/*function controleur(scope) {
+				this.selectionneSticker = function(idStickerSelectionne){
+					console.log("donne le bonjour a la dame numéro ", idStickerSelectionne);
+					scope.isStickerSelected = idStickerSelectionne;
+				}
+			}*/
+
 	return {
 		restrict : 'AE', 
-		link : linker		
+		link : linker/*, controller: function(scope) {
+		controller : ['$scope', function controleur(scope) {
+						this.selectionneSticker = function(idStickerSelectionne){
+							console.log("donne le bonjour a la dame numéro ", idStickerSelectionne);
+							console.log(scope.$id);
+							//scope.isStickerSelected = idStickerSelectionne;
+						}
+					}]*/
 	}
 
 }]);
@@ -661,21 +769,145 @@ module_stickit.directive('groupeStickersCadres', ['servicesCacheStickit', '$time
 
 	return{
 		restrict : 'E',
-		scope : false,
+		//scope : false,
+		/*controller : function(){
+			scope.isStickerSelected = "" ; 
+		}*/
 		link : function(scope, element, attributes){
 			 //scope.name = "groupeStickersCadres"; DEBUG
 
+
+				scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
+					if (element.parents("[emplacement='centre']").length){
+
+						var scope_new_sticker = element.find("[id_sticker=" + newValue + "] .outilsSticker").scope();
+						if(scope_new_sticker){
+							//console.log("sticker selectionne : ", scope_new_sticker.idSticker);
+							//console.log("new sticker scope:", scope_new_sticker);
+							scope_new_sticker.outilsStickerVisible = true;
+							scope_new_sticker.isStickerSelected = true;
+							//if(!scope_new_sticker.$$phase)  scope_new_sticker.$apply();							
+						}
+
+						var scope_old_sticker = element.find("[id_sticker=" + oldValue + "] .outilsSticker").scope();
+						if (scope_old_sticker){
+							//console.log("sticker de-selectionne : ", scope_old_sticker.idSticker);	
+							//console.log("old sticker scope:", scope_old_sticker);
+							scope_old_sticker.outilsStickerVisible = false;	
+							scope_old_sticker.isStickerSelected = false;
+							//if(!scope_old_sticker.$$phase)  scope_old_sticker.$apply();
+						}/**/							
+					}
+				});					
+
+				/*scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
+					if (element.parents("[emplacement='centre']").length){
+						console.log("newValue: ", newValue, "oldValue: ", oldValue, "scope.$id:", scope.$id);
+
+						var scope_old_sticker = element.find("[id_sticker=" + oldValue + "] .outilsSticker").scope();
+						if (scope_old_sticker){
+							scope_old_sticker.outilsStickerVisible = false;
+							//scope_old_sticker.$apply();
+						}
+
+						var scope_new_sticker = element.find("[id_sticker=" + newValue + "] .outilsSticker").scope();
+						if(scope_new_sticker){
+							scope_new_sticker.outilsStickerVisible = true;
+							//scope_new_sticker.$apply();							
+						}
+
+						//scope1.$apply();
+						console.log(element.find("[id_sticker=" + oldValue + "] .outilsSticker").scope());	
+						console.log(element.find("[id_sticker=" + newValue + "] .outilsSticker").scope());	
+					}					
+					//var scope1 = (element.find("[id_sticker=" + newValue + "] .outilsSticker")//.scope();;
+					//console.log(scope1);
+					//if (newValue !== oldValue){
+						//if (element.parents("[emplacement='centre']").length){
+						//}	
+					//}
+				});*/
+
 			$timeout(function(){
+
 				scope.$watch("options.modeDesign", function(newValue, oldValue){
 
 					var children = element.find("[cadre]");
-						newValue ? 
-						children.draggable("enable") .resizable("enable"):
+					
+					if (newValue){
+						children.draggable("enable") .resizable("enable");
+					}
+					else{
 						children.draggable("disable").resizable("disable");
-			
+					}
+						
 
 				});	
 			})
+
+
+
+
+					/*var old_id_sticker = scope.idSticker;
+
+					//if (scope.options.modeDesign &&){
+						var old_id_sticker = servicesStickit.idStickerSelectionne
+						$("[id_sticker=" + old_id_sticker + "]").find("")
+
+						scope.$apply();
+						console.log("click dans contenu sticker");
+					scope.$apply(scope.outilsStickerVisible = false);				
+					console.log("outilsStickerVisible (leave) : ", scope.outilsStickerVisible);						
+						//scope.isStickerSelected = true; 
+						element.text() ? 
+							scope.$apply(servicesControlesStickit.optionsCurseur())			:							
+							scope.$apply(servicesControlesStickit.optionsCurseurParDefaut ());	*/
+
+
+
+					//console.log(element.parents("[emplacement='centre']").length);
+					//console.log("id du scope : ", scope.$id);
+					//console.log("dans le groupe stickers cadres : newValue (", newValue, ") ; oldValue (", oldValue, ")");
+
+						/*var texte_new = element.find("[id_sticker=" + newValue + "]").html();
+						console.log("N");
+						console.log(texte_new);	*/
+						
+						/*element.find("[id_sticker=" + newValue + "]").addClass("red")
+						element.find("[id_sticker=" + oldValue + "]").removeClass("red")						
+						element.find("[id_sticker=" + newValue + "] .outilsSticker").addClass("visible").removeClass('hidden');
+						element.find("[id_sticker=" + oldValue + "] .outilsSticker").removeClass("visible").addClass('hidden');*/
+
+						/*scope1.outilsStickerVisible = true;
+						var scope2 = element.find("[id_sticker=" + oldValue + "] .outilsSticker").scope();
+						scope2.outilsStickerVisible = false;
+
+						scope1.$apply();
+						scope2.$apply();*/
+
+						/*var texte_old = element.find("[id_sticker=" + oldValue + "]").html();
+						console.log("O");						
+						console.log(texte_old);*/						
+						//console.log("centre touche");
+					//}
+
+					//var children = element.find("[cadre]");
+					/*if (newValue == id_sticker) {
+						element.addClass('red');
+						//console.log(newValue);
+					}
+					else if (oldValue == id_sticker) {
+						element.removeClass('red');
+							//console.log(oldValue);
+					}*/
+					//console.log(newValue, id_sticker_n, oldValue);
+					/*	console.log(typeof oldValue);
+					console.log(typeof id_sticker_n);*/			
+				/**/
+
+
+
+
 
 		}
 
@@ -687,22 +919,36 @@ module_stickit.directive('groupeStickersCadres', ['servicesCacheStickit', '$time
 
 
 
-module_stickit.directive('contenuSticker', ['servicesStickit', 'servicesControlesStickit', 'servicesUpdateStickit', '$compile',
-	function(servicesStickit, servicesControlesStickit, servicesUpdateStickit, $compile){
+module_stickit.directive('contenuSticker', ['servicesStickit', 'servicesControlesStickit', 'servicesUpdateStickit', '$compile','$timeout', 
+	function(servicesStickit, servicesControlesStickit, servicesUpdateStickit, $compile, $timeout){
 
 		return {
 			restrict : 'AE', 
 			link : function(scope, element, attributes){
-	
+
+			/*$timeout(function(){
+				console.log("?????????????789456");
+				element.click();
+			})*/	
 				element
 				.on('click', function(event){
-					if (scope.options.modeDesign){
-						servicesStickit.stickerSelectionne = scope.idSticker;
-						//console.log("text", element.text());
+					//console.log("click");
+					if (scope.options &&  scope.options.modeDesign){
+						servicesStickit.idStickerSelectionne = scope.idSticker;
+						//scope.isStickerSelected = true;
+						scope.$apply();
+					}
+					/*if (scope.options.modeDesign){
+
+
+						console.log("click dans contenu sticker");
+
+						//scope.isStickerSelected = true; 
 						element.text() ? 
 							scope.$apply(servicesControlesStickit.optionsCurseur())			:							
 							scope.$apply(servicesControlesStickit.optionsCurseurParDefaut ());	
-					}
+					}*/
+
 				})
 				/*.on("keyup", function(event){
 					//console.log(servicesControlesStickit.optionsCurseur());
@@ -763,7 +1009,7 @@ module_stickit.directive('contenuSticker', ['servicesStickit', 'servicesControle
 				});*/
 
 
-				/*scope.$watch("servicesStickit.stickerSelectionne", function(newValue, oldValue){
+				/*scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
 					//console.log("AVANT TEST : ", oldValue, newValue);
 					if (parseInt(newValue, 10) !== -1  && oldValue == parseInt(scope.idSticker, 10)){
 							//console.log("DE-SELECTION : ", oldValue, newValue);
@@ -816,7 +1062,7 @@ module_stickit.factory('servicesStickit', ['$q', '$http',
 	var counterStickers = 0;
 	var counterCadres = 0;
 
-	les_services_stickit.stickerSelectionne = -1;
+	les_services_stickit.idStickerSelectionne = "";
 
 
 	les_services_stickit.recupereElements = function(id_groupe){
