@@ -31,17 +31,7 @@
 
 
 
-.container-stickers
-	{
-	background-color: rgba(238, 224, 226, 0.22);*/
-	visibility: hidden;
-	display: none;/*/**/
-	border: 1px dotted	rgb(58, 156, 241);
-	margin: 20px 0px 0px 100px;
-	border-style: outset;
-	width: 90%;		height: 80%;	
-	position: relative;		float : left;	/*left : 200px;*/
-}
+
 
 .bouton-parametrages{
 	position: absolute;		top : 22px; 	right : 50px;

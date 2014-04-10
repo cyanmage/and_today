@@ -179,7 +179,7 @@ module_stickit.controller("controleur-cadre", ['$scope', '$log',
 		var options = $scope.options;
 
 		$scope.$watch(function(){
-			var options = $scope.options;
+			//var options = $scope.options;
 			//return options && ( ! options.modeDesign || options.modeModifCadres);
 			return options && options.modeModifCadres;			
 		}, function(newValue, oldValue){
@@ -1036,6 +1036,21 @@ module_stickit.directive('contenuSticker', ['servicesStickit', 'servicesControle
 
 
 
+module_stickit.directive('bandeauVertical', [function(){
+
+	return {			
+		restrict : 'AEC',
+		link : function(scope, element, attributes){
+
+			scope.$watch("options.modeDesign", function(newValue, oldValue){
+				element.toggle('slide');
+			});
+
+		}
+	}
+
+
+}]);
 
 
 

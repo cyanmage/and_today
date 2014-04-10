@@ -1,6 +1,6 @@
 .defileur
 {	
-	position: absolute;		top : 50px;		height: 80%;
+	position: absolute;		top : 50px;		height: 90%;
 	width: 90%;		left: 5%;
 	overflow: hidden;
 	box-shadow: 0px 0px 20px 2px #E1E2DE inset;
@@ -54,9 +54,9 @@
 
 
 
-.leftArrow	{	left 		: 	3%; 	}
-.rightArrow	{	left 		:	93%;	}
-.rightArrow, .leftArrow{ position : absolute;   z-index	: 1000;	   top	:	90%;}
+.leftArrow	{	left 		: 	1%; 	}
+.rightArrow	{	left 		:	97%;	}
+.rightArrow, .leftArrow{ position : absolute;   z-index	: 1000;	   top	:	50%;	width : 40px;}
 .rightArrow:hover, .leftArrow:hover{ cursor: pointer; }
 
 .red

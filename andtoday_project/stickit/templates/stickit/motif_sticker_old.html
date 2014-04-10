@@ -1,0 +1,11 @@
+
+<div class='sticker' style='position : absolute; left : {{sticker.left}}px ; top:{{sticker.top}}px ; width : {{sticker.width}}px ; height:{{sticker.height}}px' sticker id_sticker='{{sticker.id}}' ng-controller="controleur-sticker"  test="{* stickerVisible *}"  ng-show="stickerVisible" >
+	<div class="titreSticker">{{sticker.id}} </div>
+	<div class="contenantSticker">
+		<contenu-sticker class="contenuSticker" contenteditable="{*options.modeDesign*}" style='{{sticker.style}}'  >{{sticker.contenu| safe}}</contenu-sticker>	
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/supprimer.png" class="boutonSupprimerSticker" ng-click="supprimerSticker(idSticker)" />
+
+		<img src="{{STATIC_URL}}stickit/images/controles_stickit/boite_a_outils.png" class="boutonBoiteAOutils" ng-click="boiteAOutils()" ng-class="{'boiteAOutilsDeploye' : boiteAOutils_deploye}" test="{* boiteAOutils_deploye *}" />							
+	</div>
+</div>	

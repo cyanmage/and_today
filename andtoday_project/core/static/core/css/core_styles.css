@@ -23,42 +23,86 @@
 	margin-top: 20px;
 	background-color: #F5F1D3;/*#ADD2E7*/
 	padding : 10px 0px 10px 0px;
+	min-width: 20%;	
+}
+
+/**********************************/
+/* controles du panneau horizontal*/
+/**********************************/
+.btn_sauverLesStickers{
+	position : absolute;
+	right : 25px;
 }
 
 
-.bandeau-horizontal .creation_sticker{
-	width  : 25px;		height : 30px;
-	margin : 50px 0px 0px 0px;
-}
-.bandeau-horizontal .creation_sticker:hover{	cursor : move;	}
-
-
-.bandeau-horizontal .creation_cadre_image{		width  : 50px;		height : 30px; }
-.bandeau-horizontal .creation_cadre_image:hover{	cursor : move;		}
-
-.bandeau-horizontal .yeux{
-	width : 25px ;	height : 30px;
-	margin-left: 10px;
-}
-.bandeau-horizontal .yeux:hover{	cursor : pointer;}
 
 .spacer{	height : 10px;	background-color: #456;}
-.spacer, .bandeau-horizontal{	width : 85%;	padding-left: 40px;		margin-left : 20px;}
+.spacer, .bandeau-horizontal{	width : 85%;	position: relative;		 padding-left: 40px;		left : 20px; /*margin-left : 20px;*/}
 
+
+
+/********************************/
+/*    bandeau vertical gauche   */ 
+/*******************************/
+.bandeau-vertical{
+	background-color : #F5F1D3;
+	width : 80px;		height: 80%;
+	/*position: absolute;*/
+	bottom : 10px;		top : 10px ; 	left : 20px;
+	position : relative;		float	:	left;		/*overflow:hidden	;*/
+	border-radius : 0px 10px 10px 0px;
+}
+.bandeau-vertical .yeux:hover{	cursor : pointer;}
+.bandeau-vertical .yeux{		position: relative;		width : 25px ;	height : 30px;	left : 5px;}
+
+.bandeau-vertical .creation_sticker_box{
+	position : relative;	top : 25px;/*; border-color: #000; border-style: dotted; border-width: 1px*/
+}
+.bandeau-vertical .creation_sticker_btn{
+	width  : 25px;		height : 30px;
+	position: absolute;	right : 5px;
+	/*margin : 50px 0px 0px 0px;*/
+}
+.bandeau-vertical .creation_sticker_btn:hover{	cursor : move;		width  : 37px;		height : 45px;}
+.bandeau-vertical .creation_sticker_box .yeux{					}
+
+
+.bandeau-vertical .creation_cadre_box{
+	position : relative;	top : 100px;/*border-color: #000; border-style: dotted; border-width: 1px*/
+}
+.bandeau-vertical .creation_cadre_btn{
+	width  : 25px;		height : 30px; 
+	position: absolute;		right : 5px;
+}
+.bandeau-vertical .creation_cadre_btn:hover{	cursor : move;		width  : 37px;		height : 45px;}
+.bandeau-vertical .creation_cadre_box .yeux{					}
+
+
+
+
+/*****************************************/
+/* le conteneur de stickers au centre    */
+/*****************************************/
+.container-stickers
+	{
+	background-color: rgba(238, 224, 226, 0.22);
+	/*visibility: hidden;*/
+	display: none;/*/**/
+	border: 1px dotted	rgb(58, 156, 241);
+	/*margin: 20px 0px 0px 100px;*/
+	left : 9%;	top : 10px;
+	border-style: outset;
+	width: 80%;		height: 80%;	
+	position: relative;		/*float : left;	left : 200px;*/
+}
+
+
+
+
+/* générique ?????????????????????*/
 [ng\:cloak], [ng-cloak],  [ng-cloak=""], .ng-cloak {
   display: none !important;
 }
-
-
-.bandeau-vertical{
-	background-color : #F5F1D3;
-	width : 80px;
-	overflow:hidden	;
-	/*position: absolute;*/
-	bottom : 10px;	left : 10px;
-	height: 80%;
-}
-
 .date{	margin-left: 	3%;		background-color: white;	width: 25%	;	height: 8%;}
 
 

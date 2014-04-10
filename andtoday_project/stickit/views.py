@@ -32,6 +32,7 @@ class GroupeElementView(View):
         for sticker in stickers:
             print(sticker.get('contenu'))
             contenu, id_sticker = self.javeliseHTML(self, sticker.get('contenu')), sticker.get('id_sticker')
+            #contenu, id_sticker = sticker.get('contenu'), sticker.get('id_sticker')
             style = sticker.get('style')
             left, top, width, height = sticker.get('left'), sticker.get('top'), sticker.get('width'), sticker.get('height')
             print(contenu)
