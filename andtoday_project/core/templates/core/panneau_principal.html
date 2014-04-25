@@ -9,32 +9,38 @@
 		</section>
 		
 		<section>
-			<div class="bandeau-horizontal">
+			<div class="bandeau-horizontal"   ng-controller="controleur_Controles">
 				<div class="row">
-					<div class="span3" ng-show=" ! options.modeDesign">
+					<div class="span2" ng-show=" ! options.modeDesign">
 						<button class="btn btn-success" ng-click="toggleModeDesign()">
 							Mode Affichage
 						</button> <!-- {*options.modeDesign*}	-->
 					</div>
 	
-					<div class="span3 ng-cloak" ng-show="options.modeDesign">
+					<div class="span2 ng-cloak" ng-show="options.modeDesign">
 						<button class="btn btn-danger" ng-click="toggleModeDesign()">
 							Mode  Design 
 						</button>   <!--{*options.modeDesign*}-->	
 					</div>
+					
+					<div panneau-actions>
+						<div panneau-controle-un class="panneau_controle_un">
+								{% include "stickit/panneaux_controles/panneau_controles_stickers_un.html" %}		{##}
+								{# {% include "stickit/panneaux_controles/panneau_controle_stickers_deux.html" %}	#}	
+								 {#{% include "stickit/panneaux_controles/panneau_controle_stickers_trois.html" %}	#}	
+						</div>
+					</div>
 
-					<div class="span5">
-						<panneau-warning-messages class="contenant-warning-message" ng-controller = "controleurModuleAfficheurWarning">
-							<div class='warning-message' ng-show='show_message'>
+					<div panneau-warning-messages class="panneau_warning_messages" ng-controller = "controleurModuleAfficheurWarning">
+						<div class='warning-message' ng-show='show_message'>
+						<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
+						<span><b>panneau : </b>{* panneau *}</span>/////
+						<span><b>actif : </b>{* actif *}</span>		
+						<span><b>message : </b>{* warning_message *}</span>	
+						 -->				
+						</div>
+					</div>	
 
-							<!--<span><b>emplacement : </b>{* emplacement *}</span>/////
-							<span><b>panneau : </b>{* panneau *}</span>/////
-							<span><b>actif : </b>{* actif *}</span>		
-							<span><b>message : </b>{* warning_message *}</span>	
-							 -->				
-							</div>
-						</panneau-warning-messages>	
-					</div>		
 
 					<button class="btn btn_sauverLesStickers" ng-click="sauvegarder()" ng-show='options.modeDesign'>
 						Sauver 
@@ -56,19 +62,29 @@
 			<div class="bandeau-vertical">
 				<div class="creation_sticker_box" >
 
-					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeDesign && options.modeModifStickers" ng-click="toggleModeModifStickers()">
-					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifStickers" ng-click="toggleModeModifStickers()">			 														
-					<img create-sticker src="{{STATIC_URL}}stickit/images/controles_stickit/page_tourne.png" class="creation_sticker_btn ng-cloak"	ng-show="options.modeDesign && options.modeModifStickers">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux ng-cloak" ng-show="options.modeModifStickers" ng-click="toggleModeModifStickers()">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="! options.modeModifStickers" ng-click="toggleModeModifStickers()">			 														
+					<img create-sticker src="{{STATIC_URL}}stickit/images/controles_stickit/page_tourne.png" class="creation_sticker_btn ng-cloak"	ng-show="options.modeModifStickers">
 				</div>
 	
 
 				<div class="creation_cadre_box" >
 
-					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeDesign && options.modeModifCadres" ng-click="toggleModeModifCadres()">
-					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="options.modeDesign && ! options.modeModifCadres"  ng-click="toggleModeModifCadres()">	 
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeModifCadres" ng-click="toggleModeModifCadres()">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="! options.modeModifCadres"  ng-click="toggleModeModifCadres()">	 
 
-					<img create-cadre-image src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image.png" class="	creation_cadre_btn ng-cloak"	 ng-show="options.modeDesign && options.modeModifCadres">
+					<img create-cadre src="{{STATIC_URL}}stickit/images/controles_stickit/insert_cadre_image.png" class="	creation_cadre_btn ng-cloak"	 ng-show="options.modeModifCadres">
 				</div>	
+
+
+				<div class="creation_canvas_box" >
+
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ouvert.png" class="yeux  ng-cloak" ng-show="options.modeModifCanvas" ng-click="toggleModeModifCanvas()">
+					<img src="{{STATIC_URL}}stickit/images/controles_stickit/oeil_ferme.png" class="yeux ng-cloak" ng-show="! options.modeModifCanvas"  ng-click="toggleModeModifCanvas()">	 
+
+					<img create-canvas src="{{STATIC_URL}}stickit/images/controles_stickit/colorie.png" class="creation_canvas_btn ng-cloak"	 ng-show="options.modeModifCanvas">
+				</div>	
+
 			</div>
 
 			<div container-stickers class="container-stickers" ng-class="{hidden : ! options.modeDesign}"> <!---->
@@ -76,6 +92,8 @@
 			</div>
 		</div>
 
+
+		{# include "stickit/controles_sticker.html" #}	
 	</div>
 
 

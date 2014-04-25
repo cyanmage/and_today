@@ -7,9 +7,7 @@ from django.utils.html import escape
 import iso8601, re
 from urllib.parse import urljoin
 from django.conf import settings
-
-
-
+from django.views.decorators.csrf import csrf_exempt
 
 
 class GroupeElementView(View):

@@ -24,10 +24,9 @@ module_defileur.controller("controleurDefileur", ['$scope', '$q', 'serviceIds',
 
 	$scope.$watch("direction", function(newValue, oldValue, scope){
 		if (newValue !== oldValue){
-			//console.log("changement de direction");
 			serviceIds.decaleIds(scope.direction);
-			$scope.modeDefilement = $scope.direction;
-
+			//console.log("changement de direction, newValue : ", newValue, ", oldValue : ", oldValue);
+			$scope.modeDefilement = $scope.direction;			
 		}
 	});
 
@@ -88,8 +87,9 @@ module_defileur.controller("controleurPanneau", ['$scope','serviceIds',
 
 
 
-module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 'serviceIds', '$rootScope',
-	function(panneaux, $timeout, serviceIds, $rootScope){
+module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 'serviceIds', 'serviceParametrages',
+	function(panneaux, $timeout, serviceIds, serviceParametrages){
+
 
 	return {
 		restrict : 'AE',
@@ -104,24 +104,51 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 			/*****************/
 			/*Initialisations*/
 			/*****************/
+
+			var vitesse, type;
+			scope.transitions = serviceParametrages.transitions;
+			
 			var emplacement = element.attr("emplacement");
 			var offset = (emplacement == "droite" ? 1 : (emplacement == 'gauche' ? -1 : 0)); 
 			scope.$emit('PANNEAU.DEMANDE_ID', {'nouvel_emplacement' : emplacement, 'offset' : offset});
 
+
+			
+			//element.css({transitionDuration : (11 - ui.value * 200) + 'ms'})	;
+
 			/**********************************/
 			/*   Evènements sur la directive  */
 			/**********************************/
+
+
+			scope.$watchCollection('transitions', function(newValue, oldValue){
+				vitesse = newValue.vitesse ;
+				type = newValue.type ;
+				acceleration = newValue.acceleration;
+
+				element.css({transitionTimingFunction : acceleration});
+
+				if (type == "0"){
+					element.css({transitionDuration : '1ms'});
+				}
+				else{
+					//console.log(newValue);
+					//console.log(((11 - vitesse) * 200) + 'ms');
+					element.css({transitionDuration : ((11 - vitesse) * 200) + 'ms'})	;
+				}
+			});
+			/*scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
+				console.log("en tant que panneau principal " + scope.$id + ", j'ai recu un ID : " + data.id);
+			});*/	
+
 			element.on("transitionend  webkitTransitionEnd", function(event, data){
 				if(element.attr("emplacement") == "centre"){
+					//console.log("envoi du signal fin de transition");
 					scope.$emit("PANNEAUX.TRANSITION_END", "centre");
 				}
 				event.stopPropagation();
 			});
 
-
-			/*scope.$on("APPLICATIONS.ENVOI_ID", function(event, data){
-				console.log("en tant que panneau principal " + scope.$id + ", j'ai recu un ID : " + data.id);
-			});*/	
 
 			scope.$watch("mode", function(newValue, oldValue, scope){
 				var emplacement = element.attr("emplacement");
@@ -135,6 +162,7 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 					else if(emplacement == "centre"){
 						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' : 'gauche', 'actif' : false});								
 					}
+					//console.log(scope.$id, serviceParametrages.vitesseDefilement);
 					panneaux.permuteGaucheTransition(element);	
 				}
 
@@ -149,7 +177,7 @@ module_defileur.directive('panneauDefileur', ['gestionDesPanneaux', '$timeout', 
 					else if(emplacement == "centre"){
 						scope.$emit('PANNEAU.ACTIF', {'nouvel_emplacement' :  'droite', 'actif' : false});								
 					}					
-		
+					//console.log(scope.$id);	
 					panneaux.permuteDroiteTransition(element);	
 				}
 			});
@@ -253,13 +281,17 @@ gestion_des_panneaux_ids.setId = function(id){
 }]);
 
 
-module_defileur.factory('gestionDesPanneaux',['$q', function($q){
+module_defileur.factory('gestionDesPanneaux',['$q', 'serviceParametrages',
+	function($q, serviceParametrages){
+	
 	var gestion_des_panneaux = {};
 
 
 	gestion_des_panneaux.permuteGaucheTransition = function(element){
-	
 		var emplacement = element.attr('emplacement');		
+		var vitesseDefilement = serviceParametrages.transitions.vitesse;	
+		//console.log(vitesseDefilement);
+
 		if (emplacement == "gauche"){
 			element.addClass("noTransition");
 			element.attr("emplacement", "droite");
@@ -273,9 +305,11 @@ module_defileur.factory('gestionDesPanneaux',['$q', function($q){
 	}		
 
 
-	gestion_des_panneaux.permuteDroiteTransition = function(element){
+	gestion_des_panneaux.permuteDroiteTransition = function(element, vitesseDefilement){
 		var emplacement = element.attr('emplacement');	
+		var vitesseDefilement = serviceParametrages.transitions.vitesse;
 
+		//console.log(vitesseDefilement);
 		
 		if (emplacement == "droite"){
 			element.addClass("noTransition");

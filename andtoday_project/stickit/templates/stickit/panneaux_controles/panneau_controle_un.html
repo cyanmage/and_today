@@ -1,0 +1,28 @@
+<div class="ensembleHorizontalControlesSticker">
+		<img  class= "controlSticker imageControleSticker b_bold" ng-class='{b_bold_appuye : etatControle("bold")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteBold.jpg" ng-click = "handlerControles('bold')"/>
+		<img  class= "controlSticker imageControleSticker b_italic" ng-class='{b_italic_appuye : etatControle("italic")}'  src="{{STATIC_URL}}stickit/images/controles_sticker/fonteItalic.jpg" ng-click = "handlerControles('italic')" />	
+		<img  class= "controlSticker imageControleSticker b_underline" ng-class='{b_underline_appuye : etatControle("underline")}' src="{{STATIC_URL}}stickit/images/controles_sticker/fonteUnderline.jpg" ng-click = "handlerControles('underline')"/>
+
+		<div class="controlSticker controle_fontsize">
+			<div class="number_fontsize">{*controles.stickit.fontsize*}</div>
+			<div class="bs_fontsize ">
+				<img  class= "b_fontsize b_fontsize_plus" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_plus.png" ng-click = "incremente_fontsize()" />
+		<img  class= "b_fontsize b_fontsize_moins" src="{{STATIC_URL}}stickit/images/controles_sticker/font_size_moins.png" ng-click = "decremente_fontsize()"/>
+			</div>
+		</div>
+</div>		
+<!--
+<div class="ensembleHorizontalControlesSticker">
+	<select onchange="return false;" class='b_fontname' ng-model="controles.stickit.fontname" ng-options="fontname for fontname in controles.stickit.parametrages.fontnames" ng-change="handlerControles('fontname')">
+ 	</select>
+</div>
+
+
+
+<div class="ensembleHorizontalControlesSticker">
+ 		
+ 		<input type="button" class="b_deployeur"  chromo-selector-deploy style='color : {*controles.stickit.fontcolor*};' name-control='fontcolor_deploye' value="Couleur">
+		<div class="conteneur fontcolor"></div>		
+		<input type="text" size="20" class="eraser" name-property="fontcolor" chromo-selector  transparency="false">
+</div>	
+-->							

@@ -1,4 +1,4 @@
-var appli = angular.module('appli', ['core', 'defileur', 'chargeurPage', 'stickit','warningMessages',  'ngAnimate'/**/]);
+var appli = angular.module('appli', ['core', 'defileur', 'chargeurPage', 'stickit','warningMessages',  'ngAnimate', 'parametrages'/**/]);
 
 appli.config(['$httpProvider', '$interpolateProvider', function($httpProvider, $interpolateProvider) {
 

@@ -33,7 +33,8 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 			$scope.options.modeModifStickers 	= true;	
 			$scope.options.modeModifCadres 		= true;
 		}
-		console.log($scope.options.modeDesign);*/		
+		console.log($scope.options.modeDesign);*/	
+		//console.log(servicesCacheStickit.lectureCache());	
 	}
 
 	$scope.toggleModeModifStickers = function(){
@@ -46,6 +47,10 @@ module_stickit.controller("controleurModuleStickit", ['$q', '$scope', 'serviceId
 		//console.log("je change .. ", $scope.options.modeModifCadres, "scope : ", $scope.$id);
 	}
 
+	$scope.toggleModeModifCanvas = function(){
+		$scope.options.modeModifCanvas = ! $scope.options.modeModifCanvas;
+		//console.log("je change .. ", $scope.options.modeModifCadres, "scope : ", $scope.$id);
+	}
 	
 	/*$scope.toggleModeModifBackground = function(){
 		$scope.options.modeModifBackground = ! $scope.options.modeModifBackground;
@@ -137,32 +142,13 @@ module_stickit.controller("controleur-sticker", ['$scope',  'servicesUpdateStick
 		})
 
 
-		/*$scope.$watch(function(){
-			var options = $scope.options;
-			return (options && options.modeDesign && options.modeModifStickers && $scope.isStickerSelected);
-		}, function(newValue, oldValue){
-			var options = $scope.options;
-			console.log($scope.idSticker);
-			console.log(options && options.modeDesign && options.modeModifStickers && $scope.isStickerSelected);	
-			//console.log("j'ai ete change");		
-			//console.log("**", options && options.modeDesign && options.modeModifStickers, "//", $scope.$id);
-			if (options){
-				console.log("options : ", options/*, "mode design : ", options.modeDesign, "mode modif stickers : ", options.modeModifStickers,), "          newValue : ", newValue);*/
-				//$scope.outilsStickerVisible = newValue;
-			     //if(!$scope.$$phase) 				
-				//	$scope.$apply();
-			//}
-			//$scope.outilsStickerVisible = true;
-			//newValue;true;
-		//})
-
-		/*$scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
-								console.log("AVANT TEST : ", oldValue, newValue);
-			if (newValue !== -1  && oldValue === parseInt($scope.idSticker, 10)){
+		$scope.$watch("servicesStickit.idStickerSelectionne", function(newValue, oldValue){
+								//console.log("AVANT TEST : ", oldValue, newValue);
+			if (newValue !== -1  && oldValue === $scope.idSticker){
 					$scope.boiteAOutils_deploye = ! $scope.boiteAOutils_deploye;
 					//element.focus();				
 			}
-		});*/
+		});
 
 	
 }]);
@@ -220,7 +206,7 @@ module_stickit.directive('createSticker', [function(){
 				element.draggable({
 					cursor 		: 'move',
 					containment : $(".defileur"),
-					zIndex		: 200,
+					//zIndex		: 200,
 					helper 		: function(){
 									var copie = $("div#motif-sticker .sticker").clone()
 												.addClass("helperCreationSticker")
@@ -234,7 +220,7 @@ module_stickit.directive('createSticker', [function(){
 }]);
 
 
-module_stickit.directive('createCadreImage', [function(){
+module_stickit.directive('createCadre', [function(){
 
 	return {			
 		restrict : 'A',
@@ -620,7 +606,37 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 	function($compile, servicesCacheStickit, servicesStickit, $q, $timeout){
 
 
+	/*function batLeBeurre(value, element){
+		servicesStickit
+			.recupereElements(value)
+		.then(function(contenuHTML){
+			//element.append("<div id='contenuHTML'>" + contenuHTML + "</div>");				
+			//element.find("#gr-stick-cadre-" + value).detach();			
+			servicesCacheStickit.stockeDonnees(value, contenuHTML);
+			element.find("#contenuHTML").empty();
+		});
+	}
+
+		var elementsTestes =  [	'2014-04-18',  '2014-04-17',  '2014-04-16', '2014-04-15',
+								'2014-04-14',  '2014-04-13',  '2014-04-12', '2014-04-11',
+								'2014-04-10',  '2014-04-09',  '2014-04-08', '2014-04-07',
+								'2014-04-06',  '2014-04-05',  '2014-04-04', '2014-04-03',
+								'2014-04-02',  '2014-04-01',  '2014-03-31', '2014-03-30',
+								'2014-03-29',  '2014-03-28',  '2014-03-27', '2014-03-26'
+								];
+			//element.append(_elementARattacher);				
+			//var groupe = element.find("#gr-stick-cadre-" + value).detach();
+		for(key in elementsTestes){
+			batLeBeurre(elementsTestes[key], element);
+		}
+		//console.log(servicesCacheStickit.lectureCache());	
+		*/	
+
 	var linker = function(scope, element, attributes, controller){
+		
+
+
+
 
 		var parent = element.parents("[emplacement]");
 		//console.log(parent);
@@ -650,7 +666,7 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 						sticker = $compile(sticker)(scope);
 						sticker.scope().outilsStickerVisible = true;
 						scope.$apply();
-						console.log(sticker.scope().outilsStickerVisible);
+						//console.log(sticker.scope().outilsStickerVisible);
 						var nombreStickers = groupeStickersCadres.attr("nombrestickers");  							
   						groupeStickersCadres.attr("nombrestickers", ++nombreStickers); 
 
@@ -678,6 +694,10 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 			});
 
 		scope.$watch('id', function(newValue, oldValue, scope){
+
+				var _elementDetache = element.find("#gr-stick-cadre-" + oldValue).detach();
+				servicesCacheStickit.stockeDonnees(oldValue, _elementDetache);
+
 				//console.log("changement d'ID, newValue : ", newValue, ", oldValue : ", oldValue );
 				var elementARattacher = "", data;
 				var deferred = $q.defer();
@@ -694,9 +714,13 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 						servicesStickit.recupereElements(newValue)
 							.then(function(data){
 								//on a récupéré les stickers d'une page depuis le serveur juste au départ du défilement
-								data = $compile(data)(scope);									
-								deferred.resolve(data);
-								//console.log("-----RECUP STICKERS DEPUIS LE SERVEUR");	
+								$timeout(function(){
+									data = $compile(data)(scope);									
+									deferred.resolve(data);
+								}, 1200)
+								.then(function(){
+									console.log("-----RECUP STICKERS DEPUIS LE SERVEUR");	
+								}); 
 							}, function(error){
 								// Par défaut, on créé un groupe stickers, on passe donc en resolve la promise, pas en reject
 								data = "<groupe-stickers-cadres style='visibility  : hidden' id='gr-stick-cadre-" + newValue + "'>" + newValue + "</groupe-stickers-cadres>";
@@ -716,9 +740,8 @@ module_stickit.directive('containerStickers', ['$compile', 'servicesCacheStickit
 				deferred.promise
 				.then(function(_elementARattacher){
 							//console.log("XXXXXXXXXXXXXX DETACH  : ", oldValue, " ATTACH : ", newValue, " XXXXXXXXXXXXXX");
-							var _elementDetache = element.find("#gr-stick-cadre-" + oldValue).detach();
-							servicesCacheStickit.stockeDonnees(oldValue, _elementDetache);
 							element.append(_elementARattacher);	
+							//console.log("FIN DU DETACHEMENT/RATTACHEMENT")
 				});
 		});
 
@@ -1042,8 +1065,9 @@ module_stickit.directive('bandeauVertical', [function(){
 		restrict : 'AEC',
 		link : function(scope, element, attributes){
 
+			element.hide();
 			scope.$watch("options.modeDesign", function(newValue, oldValue){
-				element.toggle('slide');
+				newValue ? element.show('slide', 300) : element.hide('slide', 300);
 			});
 
 		}
@@ -1054,6 +1078,22 @@ module_stickit.directive('bandeauVertical', [function(){
 
 
 
+module_stickit.directive('panneauActions', [function(){
+
+	return {			
+		restrict : 'AEC',
+		link : function(scope, element, attributes){
+
+			element.hide();
+			scope.$watch("options.modeDesign", function(newValue, oldValue){
+				newValue ? element.show('slide', 300) : element.hide('slide', 300);
+			});/**/
+
+		}
+	}
+
+
+}]);
 
 
 
@@ -1172,6 +1212,7 @@ module_stickit.factory('servicesInitialisationStickit', function(){
 			'modeDesign' 			: false,
 			'modeModifStickers' 	: true,
 			'modeModifCadres' 		: true,
+			'modeModifCanvas'		: true,
 			'modeModifBackground' 	: false
 		}
 		return options_par_defaut;

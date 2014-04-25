@@ -1,0 +1,20 @@
+.panneau-parametrages{
+	width: 20%;		height: 40%;
+	position: absolute;		top : 60px;		left: 75%;
+	background-color: rgba(192, 192, 192, 1);
+	z-index: 5000;
+	border-radius: 10px;		border-style: dotted;		border-width: 3px;
+	/*cursor: pointer;*/
+}
+
+.controleVitesseDefilement{
+	position: absolute;		left : 10%;		top : 50%;
+	width: 80%;
+}
+
+.libelleVitesseDefilement{
+	position: absolute; 	left: 	10%; 			top: 40%;
+}
+/*panneauParametragesDeploye{
+
+}*/

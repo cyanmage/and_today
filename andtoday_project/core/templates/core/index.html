@@ -18,7 +18,8 @@
 
 		<title> And Today </title>                         
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/core_styles.css">		
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/core_styles.css">	
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}core/css/parametrages.css">	
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/styles.css">	
 
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stickit/css/sticker/controls.css">
@@ -28,7 +29,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.10.3.custom.min.css">		
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}warningMessages/css/warning_messages.css">	
 
-
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<!--<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	-->
 
@@ -36,9 +37,10 @@
 	<!--Bibliothèques générales -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<!--	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>-->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/angular.1.2.10.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/angular/angular.1.2.10.min.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/configurateur.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}core/js/parametrages.js"></script>			
 		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/defileur.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}core/js/angular/core.js"></script>	
 		<script type="text/javascript" src="{{ STATIC_URL }}defilement_infini/js/chargeur_page.js">	</script>	
@@ -48,10 +50,15 @@
 		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/stickit.js"></script>	
 		<script type="text/javascript" src="{{ STATIC_URL }}stickit/js/controle_sticker.js"></script>
 
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-collision.min.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-draggable-collision.js"></script>		
-		<script type="text/javascript" src="{{ STATIC_URL }}js/resizable.js"></script>	
-		<script type="text/javascript" src="{{ STATIC_URL }}js/angular-animate.1.2.10.min.js"></script>		
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery/jquery-collision.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery/jquery-ui-draggable-collision.js"></script>		
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery/resizable.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}js/angular/angular-animate.1.2.10.min.js"></script>		
+
+		<!--bibliothèques tierces : rangy et chromoselector -->
+		<script type="text/javascript" src="{{ STATIC_URL }}js/chromoselector/chromoselector.min.js"></script>	
+		<script type="text/javascript" src="{{ STATIC_URL }}js/rangy/rangy-core.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/rangy/rangy-selectionsaverestore.js"></script>	
 
 </head>
 
@@ -67,18 +74,13 @@
 
 
 
-	<div class="bouton-parametrages" id="bouton-parametrages" bouton-parametrages>
-		Paramétrages
-	</div>
+	{% include 'core/panneau_parametrages.html' %}{##}
 
 	<defileur class = "defileur">	
 
 			
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'gauche'">	
 				<panneau-defileur  emplacement="gauche" class = "panneau_0 panneau transitionDefileur leftPanel" id = "panel0"  ng-init="actif = false"  test={{yesterday}}>
-					<!--<img  src="{{ STATIC_URL }}images/1.jpg"  style="position : absolute; top : 100px ;left : 0px">	
-					<img  src="{{ STATIC_URL }}images/2.jpg"  style="position : absolute; top : 350px;left : 0px">	-->			
-					
 					
 					{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_yesterday 	id_date=yesterday cadres=cadres_yesterday %}	
 
@@ -88,9 +90,7 @@
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'centre'">	
 				<panneau-defileur  emplacement="centre" class = "panneau_1 panneau transitionDefileur centerPanel" 	id = "panel1"   ng-init="actif = true" test={{today}}>
 
-					<!--<img  src="{{ STATIC_URL }}images/3.jpg"  style="position : absolute; top : 100px ;left : 0px;">	
-					<img  src="{{ STATIC_URL }}images/4.jpg"  style="position : absolute; top : 350px;left : 0px;">	-->
-					{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_today 	id_date=today cadres=cadres_today %}	
+				{% include 'core/panneau_principal.html' with	numero_panneau="0" stickers=stickers_today 	id_date=today cadres=cadres_today %}	
 
 	
 				</panneau-defileur>
@@ -98,9 +98,6 @@
 
 			<div ng-controller="controleurPanneau" ng-init="emplacement = 'droite'">			
 				<panneau-defileur  emplacement="droite" class = "panneau_2 panneau transitionDefileur rightPanel" 	id = "panel2"   ng-init="actif = false" >
-					<!--<img  src="{{ STATIC_URL }}images/5.jpg"  style="position : absolute; top : 100px ;left : 0px; width : 100px; ">	
-					<img  src="{{ STATIC_URL }}images/6.png"  style="position : absolute; top : 350px;left : 0px; width : 100px; ">		-->			
-
 
 					{% include 'core/panneau_principal.html' with	numero_panneau="2"  stickers=stickers_tomorrow 	id_date=tomorrow cadres=cadres_tomorrow %}	
 					
@@ -126,7 +123,7 @@
 
 	{% include 'stickit/boites_alertes.html' %}
 
-	{#% include 'parametrages/parametrages.html' %#}
+
 
 	{% csrf_token %}
 </body> 		

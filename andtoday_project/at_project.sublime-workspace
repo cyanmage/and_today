@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"tr",
+				"transitions"
+			],
+			[
+				"ser",
+				"serviceParametrages"
+			],
+			[
+				"se",
+				"serviceParametrages"
+			],
+			[
+				"type",
+				"typeTransition"
+			],
+			[
+				"typ",
+				"typeTransition"
+			],
+			[
+				"ty",
+				"typeTransition"
+			],
+			[
+				"border",
+				"border-width"
+			],
+			[
+				"f",
+				"f	Anonymous Function"
+			],
+			[
+				"contenu",
+				"contenuHTML"
+			],
+			[
+				"con",
+				"contenuHTML"
+			],
+			[
+				"ele",
+				"elementsTestes"
+			],
+			[
+				"elem",
+				"elementsTestes"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
 				"ba",
 				"background-color"
 			],
@@ -46,10 +98,6 @@
 			[
 				"ou",
 				"outilsSticker"
-			],
-			[
-				"f",
-				"fun	Function"
 			],
 			[
 				"cadre",
@@ -160,10 +208,6 @@
 				"attributes"
 			],
 			[
-				"border",
-				"border-radius"
-			],
-			[
 				"border-ra",
 				"border-radius"
 			],
@@ -204,10 +248,6 @@
 				"stickerSelectionne"
 			],
 			[
-				"ser",
-				"servicesControlesStickit"
-			],
-			[
 				"coll",
 				"collisions"
 			],
@@ -234,10 +274,6 @@
 			[
 				"par",
 				"parent"
-			],
-			[
-				"con",
-				"console"
 			],
 			[
 				"mode",
@@ -360,10 +396,6 @@
 				"stopPropagation"
 			],
 			[
-				"ele",
-				"element"
-			],
-			[
 				"File",
 				"fileUpload"
 			],
@@ -482,38 +514,6 @@
 			[
 				"isO",
 				"isOffsetRelative"
-			],
-			[
-				"se",
-				"servicesModificationStickit"
-			],
-			[
-				"grou",
-				"groupe-stickers"
-			],
-			[
-				"new",
-				"newValue"
-			],
-			[
-				"_",
-				"_elementARattacher"
-			],
-			[
-				"elem",
-				"elementARattacher"
-			],
-			[
-				"el",
-				"elementARattacher"
-			],
-			[
-				"contenant",
-				"contenantSticker"
-			],
-			[
-				"def",
-				"default"
 			]
 		]
 	},
@@ -523,15 +523,31 @@
 			"file": "core/templates/core/index.html",
 			"settings":
 			{
-				"buffer_size": 5815,
+				"buffer_size": 5711,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "stickit/static/stickit/js/stickit.js",
+			"file": "core/static/core/css/parametrages.css",
 			"settings":
 			{
-				"buffer_size": 43075,
+				"buffer_size": 445,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/static/core/js/parametrages.js",
+			"settings":
+			{
+				"buffer_size": 4242,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "core/templates/core/panneau_parametrages.html",
+			"settings":
+			{
+				"buffer_size": 1033,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,7 +555,39 @@
 			"file": "core/templates/core/panneau_principal.html",
 			"settings":
 			{
-				"buffer_size": 3199,
+				"buffer_size": 3970,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/static/stickit/js/stickit.js",
+			"settings":
+			{
+				"buffer_size": 44296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/panneaux_controles/panneau_controles_stickers_un.html",
+			"settings":
+			{
+				"buffer_size": 2007,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/panneaux_controles/panneau_controle_stickers_deux.html",
+			"settings":
+			{
+				"buffer_size": 1220,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stickit/templates/stickit/panneaux_controles/panneau_controle_stickers_trois.html",
+			"settings":
+			{
+				"buffer_size": 748,
 				"line_ending": "Windows"
 			}
 		},
@@ -563,7 +611,7 @@
 			"file": "stickit/templates/stickit/motif_cadre.html",
 			"settings":
 			{
-				"buffer_size": 1516,
+				"buffer_size": 1523,
 				"line_ending": "Windows"
 			}
 		},
@@ -584,14 +632,6 @@
 			}
 		},
 		{
-			"file": "stickit/static/stickit/css/styles.css",
-			"settings":
-			{
-				"buffer_size": 2920,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "warningMessages/static/warningMessages/css/warning_messages.css",
 			"settings":
 			{
@@ -600,18 +640,18 @@
 			}
 		},
 		{
-			"file": "core/static/core/js/angular/configurateur.js",
+			"file": "stickit/static/stickit/css/sticker/controls.css",
 			"settings":
 			{
-				"buffer_size": 2889,
+				"buffer_size": 10404,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "defilement_infini/static/defilement_infini/js/defileur.js",
+			"file": "stickit/static/stickit/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 9144,
+				"buffer_size": 2632,
 				"line_ending": "Windows"
 			}
 		},
@@ -619,7 +659,7 @@
 			"file": "core/static/core/css/core_styles.css",
 			"settings":
 			{
-				"buffer_size": 1562,
+				"buffer_size": 3517,
 				"line_ending": "Windows"
 			}
 		},
@@ -627,15 +667,7 @@
 			"file": "defilement_infini/static/defilement_infini/css/defilement.css",
 			"settings":
 			{
-				"buffer_size": 2138,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
-			"settings":
-			{
-				"buffer_size": 2731,
+				"buffer_size": 2170,
 				"line_ending": "Windows"
 			}
 		},
@@ -656,27 +688,34 @@
 			}
 		},
 		{
-			"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
+			"file": "defilement_infini/static/defilement_infini/js/defileur.js",
 			"settings":
 			{
-				"buffer_size": 43809,
-				"line_ending": "Windows",
-				"name": "var module_stickit = angular.module('stickit', [])"
-			}
-		},
-		{
-			"contents": "module_stickit.directive(\"cadre\", ['$timeout', '$compile', 'servicesStickit', 'servicesUpdateStickit',\n 	function($timeout, $compile, servicesStickit, servicesUpdateStickit){\n\n	return {\n		restrict : 'AE', \n		link : function(scope, element, attributes){\n\n\n			$timeout(function(){\n\n				var cadreImage 				= element.find(\".cadreImage\");\n				var parent 					= element.parents(\".container-stickers\");\n\n				var id_cadre = element.attr('id_cadre');\n\n				if (id_cadre){\n					//scope.sauveSurServeur = true;\n					scope.outilsCadreVisible = false;					\n				}	\n				else{\n					id_cadre = '_cd_' + servicesStickit.obtientNumeroValideCadre();\n					element.attr('id_cadre', id_cadre)\n					cadreImage.attr(\"default\", 'default');	\n					scope.outilsCadreVisible = true;\n				}\n				\n				scope.idcadre = id_cadre;				\n				servicesUpdateStickit.ajouteAuRegistre(scope.id,  id_cadre);/**/\n\n				element\n					.draggable({\n						containment : parent, 	\n						cursor : 'move', \n						/*drag : function(event, ui){ \n							//console.log(\"je bouge\");\n							zIndex: 100, \n							event.stopPropagation();\n						},\n						stop : function(event, ui){\n							element.css(\"z-index\", 0);							\n						}*/\n					})\n					.resizable({\n						containment : parent,   \n						handlers : \"e, s, se\"\n					});\n\n				element.on(\"mouseover\", function(event, ui){\n					if (scope.options.modeDesign){						\n						scope.$apply(scope.outilsCadreVisible = true);\n					}\n				})\n				.on(\"mouseleave\", function(event, ui){\n					if (scope.options.modeDesign){						\n						scope.$apply(scope.outilsCadreVisible = false);\n					}\n				})\n\n\n				scope.$on(\"STICKIT.ELEMENTS_SAUVES\", function(event, data){\n					//scope.cadreModified = false;	\n					var associationsIdsClientServeur = data.associationsCadres;				\n					if (associationsIdsClientServeur && associationsIdsClientServeur[scope.idCadre]){\n						console.log(\"associations cadres : \", data.associationsCadres);\n						var nouvel_id = associationsIdsClientServeur[scope.idCadre];	\n						scope.idCadre = nouvel_id;\n						element.attr(\"id_cadre\", nouvel_id);				\n				  	}\n				});\n\n\n				/*scope.$watch(\"opacity\", function(newValue, oldValue){\n					if (newValue !== oldValue){\n						//console.log(\"opacite : \", newValue, \"oldVlue : \", oldValue, \", scope : \", scope.$id);\n						cmage.css(\"opacity\", newValue);					\n					}\n	\n				})*/\n				\n\n	\n				scope.$watch('suppression', function(newValue, oldValue){\n\n					//console.log(\"suppression watch directive\", scope.idcadre, newValue, \", scope : \", scope.$id);\n					if(newValue){\n						servicesUpdateStickit\n						.supprimer(element, scope.idcadre )\n						.then(	function(data){\n									var message = \"SUPPRESSION EFFECTUEE POUR LE \" + scope.idcadre;\n									scope.$emit(\"WARNING_DISPLAY\", { 'message' : message, 'id_groupe' : scope.idcadre });\n							}, \n								function(error){\n									var message = \"ECHEC DE LA SUPPRESSION POUR LE \" + scope.idcadre;								\n									scope.$emit(\"WARNING_DISPLAY\",  { 'message' : message, 'id_groupe' : scope.idcadre });				\n							});						\n					}\n\n				});	\n\n\n\n			});	\n		}\n	}\n}]);",
-			"settings":
-			{
-				"buffer_size": 3052,
+				"buffer_size": 10290,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": " ng-controller='controleur-cadre' \n\n  ng-class='{visible : outilsCadreVisible, hidden : ! outilsCadreVisible}'\n\nng-class='{visible : stickerVisible, hidden : ! stickerVisible}' \n\n   ng-class='{visible : stickerVisible, hidden : ! stickerVisible}' \n\n\n\n    ng-class=\"{visible : cadreVisible, hidden : ! cadreVisible}\"\n\n    ng-show=\"stickerVisible\" \n\n    ng-show=\"stickerVisible\" ",
+			"file": "core/static/core/js/angular/configurateur.js",
 			"settings":
 			{
-				"buffer_size": 377,
+				"buffer_size": 2905,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
+			"settings":
+			{
+				"buffer_size": 2731,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/sites_web/tests/signauxpromises/index.html",
+			"settings":
+			{
+				"buffer_size": 134,
 				"line_ending": "Windows"
 			}
 		},
@@ -684,15 +723,7 @@
 			"file": "stickit/static/stickit/js/controle_sticker.js",
 			"settings":
 			{
-				"buffer_size": 17747,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stickit/static/stickit/css/sticker/controls.css",
-			"settings":
-			{
-				"buffer_size": 9481,
+				"buffer_size": 17749,
 				"line_ending": "Windows"
 			}
 		},
@@ -713,7 +744,10 @@
 			}
 		},
 		{
+			"contents": "/*\nCopyright (c) 2011-13 Sean Cusack\n\nMIT-LICENSE:\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n*/\n\n(function($){\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Default settings\n  //\n\n  var DEBUG = false;\n  var VISUAL_DEBUG = DEBUG;\n\n  $.ui.draggable.prototype.options.obstacle          = \".ui-draggable-collision-obstacle\";\n  $.ui.draggable.prototype.options.restraint         = \".ui-draggable-collision-restraint\";\n  $.ui.draggable.prototype.options.collider          = \".ui-draggable-dragging\";\n  $.ui.draggable.prototype.options.colliderData      = null;\n  $.ui.draggable.prototype.options.obstacleData      = null;\n  $.ui.draggable.prototype.options.directionData     = null;\n  $.ui.draggable.prototype.options.relative          = \"body\";\n  $.ui.draggable.prototype.options.preventCollision  = false;\n  $.ui.draggable.prototype.options.preventProtrusion = false;\n  $.ui.draggable.prototype.options.collisionVisualDebug = false;\n  $.ui.draggable.prototype.options.multipleCollisionInteractions = [];\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Plugin setup\n  //\n\n  $.ui.plugin.add( \"draggable\", \"obstacle\", {\n    create: function(event,ui){       handleInit   .call( this, event, ui ); },\n    start: function(event,ui){        handleStart  .call( this, event, ui ); } ,\n    drag:  function(event,ui){ return handleCollide.call( this, event, ui ); } ,\n    stop:  function(event,ui){        handleCollide.call( this, event, ui );\n                                      handleStop   .call( this, event, ui ); }\n  });\n\n  // NOTE: the \"handleCollide\" function must do all collision and protrusion detection at once, in order for the\n  //       simultaneous prevention cases to work properly, so basically, if you ask for both, the obstacle events\n  //       will occur first (and do both), and then these will trigger, see that they have an obstacle, and not\n  //       do anything a second time\n  $.ui.plugin.add( \"draggable\", \"restraint\", {\n    create: function(event,ui){         handleInit   .call( this, event, ui ); },\n    start: function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle ) // if there are obstacles, we already handled both\n                               {        \n                                        handleStart  .call( this, event, ui );\n                               }\n                             } ,\n    drag:  function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle ) // if there are obstacles, we already handled both\n                               { \n                                 return handleCollide.call( this, event, ui ); \n                               }\n                             } ,\n    stop:  function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle ) // if there are obstacles, we already handled both\n                               {\n                                        handleCollide.call( this, event, ui );\n                                        handleStop   .call( this, event, ui );\n                               }\n                             }\n  });\n\n  // Likewise, if we already have an obstacle or restraint, we've done it all, so don't repeat\n  $.ui.plugin.add( \"draggable\", \"multipleCollisionInteractions\", {\n    create: function(event,ui){         handleInit   .call( this, event, ui ); },\n    start: function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle &&\n                                   ! $(this).data(\"ui-draggable\").options.restraint   )\n                               {       \n                                        handleStart  .call( this, event, ui );\n                               }\n                             } ,\n    drag:  function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle &&\n                                   ! $(this).data(\"ui-draggable\").options.restraint   )\n                               { \n                                 return handleCollide.call( this, event, ui ); \n                               }\n                             } ,\n    stop:  function(event,ui){ if( ! $(this).data(\"ui-draggable\").options.obstacle &&\n                                   ! $(this).data(\"ui-draggable\").options.restraint   )\n                               {\n                                        handleCollide.call( this, event, ui );\n                                        handleStop   .call( this, event, ui );\n                               }\n                             }\n  });\n\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Private Classes\n  //\n\n  ////////////\n  // EVENTS //\n  ////////////\n\n  function CollisionEvent( eventType, collider, obstacle, collisionType, collision )\n  {\n    jQuery.Event.call( this, eventType );\n    this.collider  = collider;\n    this.obstacle  = obstacle; \n    this.collisionType = collisionType;\n    this.collision = collision;\n  }\n\n  CollisionEvent.prototype = new $.Event( \"\" );\n\n  function CollisionCheckEvent( eventType, collider, obstacle, collisionType )\n  {\n    jQuery.Event.call( this, eventType );\n    this.collider  = collider;\n    this.obstacle  = obstacle; \n    this.collisionType = collisionType;\n  }\n\n  CollisionCheckEvent.prototype = new $.Event( \"\" );\n\n  //////////////////////\n  // COORDINATE CLASS //\n  //////////////////////\n\n  function Coords( x1, y1, x2, y2 )\n  {\n    this.x1 = x1;\n    this.y1 = y1;\n    this.x2 = x2; \n    this.y2 = y2;\n  }\n\n  Coords.prototype.width   = function() { return (this.x2-this.x1);   }\n  Coords.prototype.height  = function() { return (this.y2-this.y1);   }\n  Coords.prototype.centerx = function() { return (this.x1+this.x2)/2; }\n  Coords.prototype.centery = function() { return (this.y1+this.y2)/2; }\n  Coords.prototype.area    = function() { return this.width()*this.height(); }\n  Coords.prototype.hash    = function() { return \"[\"+[this.x1,this.y1,this.x2,this.y2].join(\",\")+\"]\" }\n  Coords.prototype.distance = function(c)  \n  { \n    return this.distanceTo( c.centerx(), c.centery() );\n  }\n  Coords.prototype.distanceTo = function(x,y)  \n  { \n    var dx = this.centerx()-x;\n    var dy = this.centery()-y;\n    return Math.sqrt( dx*dx + dy*dy );\n  }\n\n  /////////////////////////////////\n  // COORDINATE HELPER FUNCTIONS //\n  /////////////////////////////////\n\n  // create a box with the same total area, centered at center of gravity\n  function centerGravity( coordsList )\n  {\n    if( coordsList.length <= 0 ) return null;\n    var wsumx = 0;\n    var wsumy = 0;\n    var suma  = 0;\n    for( var i = 0; i < coordsList.length; i++ )\n    {\n      suma += coordsList[i].area();\n      wsumx += coordsList[i].centerx() * coordsList[i].area();\n      wsumy += coordsList[i].centery() * coordsList[i].area();\n    }\n    var d = Math.sqrt( suma ); // dimension of square (both w and h)\n    return new Coords( (wsumx/suma) - d/2, (wsumy/suma) - d/2, (wsumx/suma) + d/2, (wsumy/suma) + d/2 );\n  }\n\n  // convert a jq object into a Coords object, handling all the nice-n-messy offsets and margins and crud\n  function jq2Coords( jq, dx, dy )\n  {\n    if( !dx ) dx=0;\n    if( !dy ) dy=0;\n    if( jq.parent().length > 0 )\n    {\n      var x1 = dx + jq.offset().left - (parseInt(jq.css(\"margin-left\"))||0);\n      var y1 = dy + jq.offset().top  - (parseInt(jq.css(\"margin-top\" ))||0);\n      var x2 = x1 + jq.outerWidth( true);\n      var y2 = y1 + jq.outerHeight(true);\n    }\n    else\n    {\n      var x1 = dx + parseInt(jq.css(\"left\"  )) || 0;\n      var y1 = dy + parseInt(jq.css(\"top\"   )) || 0;\n      var x2 = x1 + parseInt(jq.css(\"width\" )) || 0;\n      var y2 = y1 + parseInt(jq.css(\"height\")) || 0;\n      x2 += (parseInt(jq.css(\"margin-left\"))||0) + (parseInt(jq.css(\"border-left\"))||0) + (parseInt(jq.css(\"padding-left\"))||0) + \n            (parseInt(jq.css(\"padding-right\"))||0) + (parseInt(jq.css(\"border-right\"))||0) + (parseInt(jq.css(\"margin-right\"))||0);\n      y2 += (parseInt(jq.css(\"margin-top\"))||0) + (parseInt(jq.css(\"border-top\"))||0) + (parseInt(jq.css(\"padding-top\"))||0) + \n            (parseInt(jq.css(\"padding-bottom\"))||0) + (parseInt(jq.css(\"border-bottom\"))||0) + (parseInt(jq.css(\"margin-bottom\"))||0);\n\n    }\n    return new Coords( x1, y1, x2, y2 );\n  }\n\n  function jqList2CenterGravity( jqList, dx, dy )\n  {\n    return centerGravity( jqList.toArray().map( function(e,i,a){ return jq2Coords($(e),dx,dy); } ) );\n  }\n\n  /////////////////////\n  // COLLISION CLASS //\n  /////////////////////\n\n  function Collision( jq, cdata, odata, type, dx, dy, ddata, recentCenterOfGravity, mousex, mousey )\n  {\n    if(!recentCenterOfGravity) recentCenterOfGravity=jqList2CenterGravity($(this.collider), dx, dy);\n    if(!dx) dx = 0;\n    if(!dy) dy = 0;\n    this.collision = $(jq            );\n    this.collider  = $(jq.data(cdata));\n    this.obstacle  = $(jq.data(odata));\n    this.direction =   jq.data(ddata);\n    this.type      = type;\n    this.dx        = dx;\n    this.dy        = dy;\n    this.centerOfMass    = recentCenterOfGravity;\n    this.collisionCoords = jq2Coords( this.collision );\n    this.colliderCoords  = jq2Coords( this.collider,  dx, dy );\n    this.obstacleCoords  = jq2Coords( this.obstacle  );\n    if(!mousex) mousex = this.colliderCoords.centerx();\n    if(!mousey) mousex = this.colliderCoords.centery();\n    this.mousex = mousex;\n    this.mousey = mousey;\n  }\n\n  // amount \"embedded\" into obstacle in x-direction\n  // might be negative or zero if it doesn't make sense\n  // this is used with the delta calculation - if its <= 0, it'll get skipped\n  // dirx is -1 or +1, depending on which way we are orienting things (which way we want to move it)\n  // NOTE: originally, we were taking the collision area into account, but it's easier to recalc embed value\n  Collision.prototype.embedx = function( dirx )\n  {\n    if( this.type == \"collision\" )\n    {\n      if( dirx < 0 ) /* want to move left  */ return this.colliderCoords.x2 - this.obstacleCoords.x1;\n      if( dirx > 0 ) /* want to move right */ return this.obstacleCoords.x2 - this.colliderCoords.x1;\n    }\n    else if( this.type == \"protrusion\" )\n    {\n      // if we're embedded in a top/bottom edge, don't move left or right, silly:\n      if( ( this.direction == \"N\" ) || ( this.direction == \"S\" ) ) return 0; \n\n      if( dirx < 0 ) /* want to move left  */ return this.colliderCoords.x2 - this.obstacleCoords.x2;\n      if( dirx > 0 ) /* want to move right */ return this.obstacleCoords.x1 - this.colliderCoords.x1;\n    }\n    return 0;\n  }\n\n  // and ditto for y-direction\n  Collision.prototype.embedy = function( diry )\n  {\n    if( this.type == \"collision\" )\n    {\n      if( diry < 0 ) /* want to move up   */ return this.colliderCoords.y2 - this.obstacleCoords.y1;\n      if( diry > 0 ) /* want to move down */ return this.obstacleCoords.y2 - this.colliderCoords.y1;\n    }\n    else if( this.type == \"protrusion\" )\n    {\n      // if we're embedded in a left/right edge, don't move up or down, silly:\n      if( ( this.direction == \"E\" ) || ( this.direction == \"W\" ) ) return 0;\n\n      if( diry < 0 ) /* want to move up   */ return this.colliderCoords.y2 - this.obstacleCoords.y2;\n      if( diry > 0 ) /* want to move down */ return this.obstacleCoords.y1 - this.colliderCoords.y1;\n    }\n    return 0;\n  }\n\n  // distance from collision to recent center of mass, i.e. it used to be in one place, and we're dragging it\n  // to another, so the \"overlap\" of some collider happens a certain \"distance\" from the center of where stuff\n  // used to be...\n  Collision.prototype.distance = function()\n  {\n    var cx1 = this.centerOfMass.centerx();\n    var cy1 = this.centerOfMass.centery();\n    var cx2 = this.collisionCoords.centerx();\n    var cy2 = this.collisionCoords.centery();\n    return Math.sqrt( (cx2-cx1)*(cx2-cx1) + (cy2-cy1)*(cy2-cy1) );\n  };\n\n  Collision.prototype.hash = function(){ return this.type+\"[\"+this.colliderCoords.hash()+\",\"+this.obstacleCoords.hash()+\"]\"; }\n\n  ////////////////////////////////\n  // COLLISION HELPER FUNCTIONS //\n  ////////////////////////////////\n\n  // sort so that collisions closest to recent center of mass come first -- we need to resolve them in order\n  function collisionComparison(c1,c2)\n  {\n    var cd1 = c1.distance();\n    var cd2 = c2.distance();\n    return ( ( cd1 < cd2 ) ? -1 : ( cd1 > cd2 ) ? +1 : 0 );\n  };\n\n  ///////////////////////\n  // INTERACTION CLASS //\n  ///////////////////////\n\n  function Interaction( draggable, options )\n  {\n    this.draggable         = $(draggable);\n    this.obstacleSelector  =   options.obstacle        || \".ui-draggable-collision-obstacle\"   ;\n    this.restraintSelector =   options.restraint       || \".ui-draggable-collision-restraint\"  ;\n    this.obstacle          = $(options.obstacle        || \".ui-draggable-collision-obstacle\"  );\n    this.restraint         = $(options.restraint       || \".ui-draggable-collision-restraint\" );\n    var  collider          =   options.collider        || \".ui-draggable-dragging\"             ;\n    this.collider          = draggable.find( collider ).andSelf().filter( collider );\n    this.colliderData      = options.colliderData      || null;\n    this.obstacleData      = options.obstacleData      || null;\n    this.directionData     = options.directionData     || null;\n    this.relative          = options.relative          || \"body\";\n    this.preventCollision  = options.preventCollision  || false;\n    this.preventProtrusion = options.preventProtrusion || false;\n    this.collisions        = $();\n    this.protrusions       = $();\n  }\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Main handler functions\n  //\n\n  function uiTrigger( _this, widget, eventName, event, ui )\n  {\n    $.ui.plugin.call( widget, eventName, event, ui );\n    _this.trigger( event, ui );\n  }\n\n  function handleInit( event, ui, type )\n  {\n    var w = $(this).data(\"ui-draggable\");\n    var o = w.options;\n  }\n\n  function debugCloneAt( element, x, y, w, h, color )\n  {\n    var $clone = $(element).clone();\n    $clone.children().remove();\n    $clone.css(\"background\",\"transparent\")\n          .css(\"pointer-events\",\"none\")\n          .css(\"border\",\"1px solid \"+color)\n          .css(\"margin\",\"0px\").css(\"padding\",\"0px\")\n          .addClass(\"testdebug\")\n          .css(\"position\",\"absolute\")\n          .css(\"background-color\",\"transparent\")\n          .appendTo(\"body\");\n    $clone.width(  w-2 );\n    $clone.height( h-2 );\n    $clone.offset( { left: x, top: y }  );\n    return $clone;\n  }\n\n  function debugClone( element, color )\n  {\n    return debugCloneAt( element, $(element).css(\"left\"), $(element).css(\"top\"), $(element).outerWidth(), $(element).outerHeight(), color );\n  }\n\n  function debugCloneContainment( element, draggable, containment, color )\n  {\n    return debugCloneAt( element, containment[0], containment[1], \n                         containment[2]-containment[0]+$(draggable).width(), \n                         containment[3]-containment[1]+$(draggable).height(),\n                       color );\n  }\n  \n  function handleStart(event,ui)\n  {\n    VISUAL_DEBUG = $(this).data(\"ui-draggable\").options.collisionVisualDebug;\n    $(this).data( \"jquery-ui-draggable-collision-recent-position\", ui.originalPosition ); \n  }\n\n  function handleStop (event,ui)\n  { \n    $(this).removeData(\"jquery-ui-draggable-collision-recent-position\");\n    if( VISUAL_DEBUG ) $(\".testdebug\").remove();\n    VISUAL_DEBUG = DEBUG;\n  }\n\n  // This is the monolithic workhorse of the plugin:\n  //   * At the beginning and end, it sends out all the pre/post-collision/protrusion events\n  //   * In the middle, it both calculates collisions, and prevents them if requested\n  //   * When it's either tried its best, or found a fit, or wasn't required to avoid obstacles, it sends out actual collision events\n  //\n  // Inside the first big loop is the actual \"prevention\" logic\n  //   * It calculates the \"intended position\" of everything, checks all the collision logic, and if it needs to,\n  //     then calculates a delta movement to see if that fits, and the loop continues until it either works,\n  //     or an arbitrary iteration limit is reached, just in case it gets in a loop\n  //   * The delta function is described in more detail below\n  //\n  // During all the \"trying a new position\" and \"determining collisions\" calculations, it's not using purely the\n  //   current position of the colliders -- it can't because the draggable is now in a new \"intended position\",\n  //   and with it, all its children, including any collider children\n  //   * So, it keeps track of a dx and dy from known position, and populates a \"jquery-collision-coordinates\" data value\n  //     that the jquery-collision plugin takes into account during the calculations\n  //   * Also, the Coords() values get populated with these offsets at various times, so that they reflect \"intended position\"\n  //\n  // Note also that the collider, obstacle, and direction data fields are temporarily overriden (because we need them here,\n  //   and the user may not have asked for them), and then erased and placed where the user wants them, right before\n  //   sending out the collision events\n  //\n  // Note also that the collisions and protrusions requested are \"relative\" to \"body\". If the use asked for\n  // something relative, it has to get translated right before sending out the events...\n  function handleCollide( event, ui )\n  {\n    // Note that $(this) is the draggable that's moving - it has a ui.position that moves according to where\n    // the draggable is \"about to move\". However, our \"collidable\" objects might not be the same as $(this) -\n    // they might be child elements. So we need to keep track of recent and present position so we can apply the\n    // \"intended\" dx and dy to all the moving elements:\n    var rp = $(this).data(\"jquery-ui-draggable-collision-recent-position\");\n\n    if( DEBUG ) { console.log( \"handleCollision ******************************************************************\" ); }\n\n    if( VISUAL_DEBUG ) $(\".testdebug\").remove();\n\n    var ctyp  =     \"collision\";\n    var prec  =  \"precollision\";\n    var postc = \"postcollision\";\n    var ptyp  =     \"protrusion\";\n    var prep  =  \"preprotrusion\";\n    var postp = \"postprotrusion\";\n\n    // NOTE: widget is used for uiTrigger, otherwise event-binders don't get a \"ui\" variable\n    var widget = $(this).data(\"ui-draggable\");\n    var o      = widget.options;\n\n    // List of Interactions -- first one is the main set of args from the .draggable() setup call, rest are multipleCollisionInteractions:[...]\n    var ilist  = [];\n    \n    if( o.obstacle || o.restraint ) ilist.push( new Interaction( $(this), o ) );\n    if( o.multipleCollisionInteractions && o.multipleCollisionInteractions[\"length\"] )\n    {\n      var mci = o.multipleCollisionInteractions;\n      for( var i=0; i<mci.length; i++ )\n        ilist.push( new Interaction( $(this), mci[i] ) );\n    }\n\n    if( ilist.length <= 0 )\n    {\n      // Just forget the whole stupid business - why are we in here, anyways - no interactions to check\n      // Cache the current position anyways, and jump out:\n      $(this).data( \"jquery-ui-draggable-collision-recent-position\", ui.position );\n      return;\n    }\n\n    var d1 = \"ui-draggable-collision-collider-temp\";\n    var d2 = \"ui-draggable-collision-obstacle-temp\";\n    var d3 = \"ui-draggable-collision-direction-temp\";\n    var di = \"ui-draggable-collision-interaction-temp\";\n    var d  = event.data;\n    var as = \"<div />\";\n    if( d && d.as ) as = d.as;\n\n    var e;\n\n    // Try moving things twice the number of colliders times obstacles+restraints, plus 1 original attempt\n    // We need to calculate maxiter here because there may be several levels of interactions\n    // (Honestly, anything will do, just need a reasonable cutoff)\n    var maxiter = 1;\n\n    // Global just-about-to-check-collisions event:\n    for( var i=0; i<ilist.length; i++ )\n    {\n      maxiter += 2 * ilist[i].collider.length * ( ilist[i].obstacle.length + ilist[i].restraint.length );\n\n      if( VISUAL_DEBUG )\n      {\n        ilist[i].obstacle .each(function(){ debugCloneAt( $(this), $(this).offset().left, $(this).offset().top, $(this).innerWidth(), $(this).innerHeight(), \"black\"   ); });\n        ilist[i].restraint.each(function(){ debugCloneAt( $(this), $(this).offset().left, $(this).offset().top, $(this).innerWidth(), $(this).innerHeight(), \"magenta\" ); });\n      }\n\n      if( ilist[i].obstacleSelector )\n      {\n        e = new CollisionCheckEvent( prec, $(this), ilist[i].obstacle, ctyp )\n        uiTrigger( ilist[i].collider, widget, prec, e, ui );\n      }\n\n      if( ilist[i].restraintSelector )\n      {\n        e = new CollisionCheckEvent( prep, $(this), ilist[i].restraint, ptyp )\n        uiTrigger( ilist[i].collider, widget, prep, e, ui );\n      }\n    }\n\n    var origleft = rp.left;\n    var origtop  = rp.top;\n    var origdx = ui.position.left - rp.left;\n    var origdy = ui.position.top  - rp.top;\n    var dx;\n    var dy;\n    var ocl  = []; // list of Collision()'s total\n    var cocl = []; // list of Collision()'s just from collisions\n    var pocl = []; // list of Collision()'s just from protrusions\n    var ccl  = []; // list of Collision()'s just from containment (also a protrusion)\n\n    // Check if there's containment for the draggable:\n    var $cont = $();\n    if( widget.containment )\n    {\n      maxiter += 2; // the main draggable container times twice the number of containers (1)\n\n      var cn = widget.containment.concat(); // clone it, otherwise we edit it and mess things up\n      if( widget.relative_container )\n      { \n        cn[0] += $(widget.relative_container).offset().left;\n        cn[1] += $(widget.relative_container).offset().top;\n        cn[2] += $(widget.relative_container).offset().left;\n        cn[3] += $(widget.relative_container).offset().top;\n      }\n      $cont = $(\"<div />\").offset( { left: cn[0], top: cn[1] } )\n                          .width(  cn[2]-cn[0]+$(this).width( ) )  // because it had the draggable's size chopped out :-P\n                          .height( cn[3]-cn[1]+$(this).height() ); // because it had the draggable's size chopped out :-P\n\n      if( VISUAL_DEBUG )\n      {\n        debugCloneContainment( $cont, this, cn, \"blue\" );\n      }\n    }\n\n    var deltaCache = {};\n    var iter = 0;\n    while( iter < maxiter )\n    {\n      iter++;\n\n      // Calc offset from recent move, so we can move the objects that are \"coming along for the ride\" before calculating their\n      // collisions. Otherwise the ui variable only keeps track of the main draggable, not its contents, which may contain\n      // the actual things that collide\n      dx = ui.position.left - rp.left;\n      dy = ui.position.top  - rp.top;\n  \n      // Empty the collision containers outside the interaction loop:\n      ocl = [];\n      cocl = [];\n      pocl = [];\n\n      for( var i=0; i<ilist.length; i++ )\n      {\n        ilist[i].collisions  = $();\n        ilist[i].protrusions = $();\n\n        var $c = ilist[i].collider;\n        var $o = ilist[i].obstacle;\n        var $r = ilist[i].restraint;\n        if( DEBUG ) console.log( \"trying inter,c,o,r=\",ilist[i],$c,$o,$r)\n\n        // Add offset to coordinates before figuring out collisions, because we're basing it on \"where its about to go\", not \"where it is\":\n        // (Don't do this for anything but colliders! Applying to obstacles or restrictions or containment screws things up!!)\n        $c.each( function(){ $(this).data( \"jquery-collision-coordinates\", jq2Coords($(this),dx,dy) ); } );\n    \n        var cog = jqList2CenterGravity($c);\n        for( var ci=0; ci<$c.length; ci++ )\n        {\n          // Calculate collisions separately from protrusions, as we might only prevent one or the other:\n          var oc = $($c[ci]).collision( $o, { mode: \"collision\",  as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n          if( DEBUG ) { console.log( \"collisions\", oc ); }\n\n          // Add the interaction settings to their data, so we can pick it apart later:\n          oc.data( di, ilist[i] );\n\n          // And add the collisions to the interaction:\n          ilist[i].collisions = ilist[i].collisions.add(oc);\n\n          // And if there are any, make the appropriate Collision() objects and add them to the list\n          if( oc.length > 0 )\n          {\n            cocl = oc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"collision\" , dx, dy, d3, cog, event.pageX, event.pageY ); } );\n            ocl = ocl.concat( cocl );\n            if(VISUAL_DEBUG) $(\"<span>c\"+iter+\"</span>\").appendTo( debugClone( $(oc), \"black\" ) );\n          }\n\n          // Calculate protrusions likewise:\n          oc     = $($c[ci]).collision( $r, { mode: \"protrusion\", as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n          if( DEBUG ) { console.log( \"protrusions\", oc ); }\n\n          // Add the interaction settings to their data, so we can pick it apart later:\n          oc.data( di, ilist[i] );\n\n          // And add the protrusions to the interaction:\n          ilist[i].protrusions = ilist[i].protrusions.add( oc );\n\n          // And if there are any, make the appropriate Collision() objects and add them to the list\n          if( oc.length > 0 )\n          {\n            pocl = oc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"protrusion\", dx, dy, d3, cog, event.pageX, event.pageY ); } );\n            ocl = ocl.concat( pocl );\n            if(VISUAL_DEBUG) $(\"<span>p\"+iter+\"</span>\").appendTo( debugClone( $(oc), \"magenta\" ) );\n          }\n        }\n    \n        // Now remove coordinate offsets before sending events, otherwise event results might futz with em:\n        $c.each( function(){ $(this).removeData( \"jquery-collision-coordinates\" ); } );\n      }\n\n      if( widget.containment )\n      {\n        // Add offset to coordinates before figuring out collisions, because we're basing it on \"where its about to go\", not \"where it is\":\n        // (Don't do this for anything but colliders! Applying to obstacles or restrictions or containment screws things up!!)\n        $(this).each( function(){ $(this).data( \"jquery-collision-coordinates\", jq2Coords($(this),dx,dy) ); } );\n\n        // Check protrusion from container as well\n        // NOTE: since draggable plugin has already applied containment, if we accidentally move it outside, it won't fix it for us\n        var $cc = $(this).collision( $cont, { mode: \"protrusion\", as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n            ccl = $cc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"protrusion\", dx, dy, d3, jqList2CenterGravity($c), event.pageX, event.pageY ); } );\n        if(VISUAL_DEBUG) $(\"<span>x\"+iter+\"</span>\").appendTo( $cc, \"blue\" );\n\n        // Now remove coordinate offsets before sending events, otherwise event results might futz with em:\n        $(this).each( function(){ $(this).removeData( \"jquery-collision-coordinates\" ); } );\n      }\n\n      if( DEBUG ) console.log(\"checking if we have any collisions at all...\");\n      // If there's no collisions, INCLUDING the container, stop now, don't keep doing stuff\n      if( ( cocl.length <= 0 ) && ( pocl.length <= 0 ) && ( ccl.length <= 0 ) ) break;\n\n      var doneAdjusting = true;\n\n      // Go through each interaction -- if any of them break the prevention rule, we aren't done adjusting yet\n      for( var i=0; i<ilist.length; i++ )\n      {\n        if( DEBUG ) console.log(\"checking adjustments for\",ilist[i],\"ccl=\",ccl,\n                                \"pc,cl,pp,pl=\",ilist[i].preventCollision, ilist[i].collisions.length, ilist[i].preventProtrusion, ilist[i].protrusions.length);\n\n        if( DEBUG ) console.log(\"checking if we overstepped our containment...\");\n        // If we aren't trying to prevent anything yet we SOMEHOW jumped our containment, stop - this shouldn't ever happen, DANGER, WILL ROBINSON!\n        if( ( ! ilist[i].preventCollision ) && ( ! ilist[i].preventProtrusion ) && ( ccl.length > 0 ) )\n        {\n          if( DEBUG ) { console.log( \"not trying to prevent anything, but jumped our containment\", ilist[i] ); }\n          doneAdjusting = false;\n        }\n\n        if( DEBUG ) console.log(\"checking if we want to block something we have collided with...\");\n        // More specifically, if aren't any collisions that we actually want to prevent, stop -- though we have to think of this in the opposite sense:\n        // if we DO either \n        //   want to prevent collisions yet have a collision or containment failure, OR\n        //   want to prevent protrusions yet have a protrusion or a containment failure,\n        // then DON'T STOP\n        if( ( ilist[i].preventCollision  && ( ( ilist[i].collisions .length > 0 ) || ( ccl.length > 0 ) ) ) ||\n            ( ilist[i].preventProtrusion && ( ( ilist[i].protrusions.length > 0 ) || ( ccl.length > 0 ) ) )    )\n        {\n          if( DEBUG ) { console.log( \"trying to prevent something that we're still hitting\", ilist[i] ); }\n          doneAdjusting = false;\n        }\n      }\n\n      if( doneAdjusting )\n      {\n        if( DEBUG ) { console.log( \"done adjusting\" ); }\n        break;\n      }\n\n      if( DEBUG ) console.log(\"calculating delta with ocl,ccl=\",ocl,ccl);\n      // Calculate a delta to move, based on collisions+protrusions and containment\n      var d = delta( ocl.concat(), ccl, deltaCache );\n\n      if( DEBUG ) console.log(\"dx=\",d.dx,\"dy=\",d.dy);\n      // If there's nothing to do, stop -- it shouldn't happen if we had collisions, but...\n      if( d.dx == 0 && d.dy == 0 ) break;\n\n      // Apply the movement, and let the loop run again, to see if our proposed delta movement was any good\n      ui.position.left += d.dx;\n      ui.position.top  += d.dy;\n    }\n\n    dx = ui.position.left - rp.left;\n    dy = ui.position.top  - rp.top;\n    /* deactivated for now - doesn't seem to be needed - may revisit later:\n      // if our new center of gravity is further from the mouse position than the last one, revert\n      var origd = jqList2CenterGravity($c,origdx,origdy).distanceTo( event.pageX, event.pageY );\n      var  newd = jqList2CenterGravity($c,    dx,    dy).distanceTo( event.pageX, event.pageY );\n      if( newd > origd ) { console.log(\"center of gravity issue: \",origd,newd); } // add this to revert\n    */\n\n    // If we failed to find a fit, revert to the previous position\n    if( ( iter > maxiter ) ||                             // if we ran out of iterations, tough, revert\n        ( ccl.length > 0 ) ||                             // if we ran outside out containment, also revert\n        ( o.preventProtrusion && ( pocl.length > 0 ) ) || // if we have a protrusion and are trying to prevent protrusions, revert\n        ( o.preventCollision  && ( cocl.length > 0 ) ) )  // if we have a collision and are trying to prevent collisions, revert\n    {\n      if( DEBUG ) console.log(\"reverting, i=\",iter,\"maxiter=\",maxiter,\"cocl=\",cocl,\"cocl.len=\",cocl.length,\"pocl=\",\n                               pocl,\"pocl.len=\",pocl.length,\"ccl=\",ccl,\"ccl.len=\",ccl.length,\n                               //\"newd=\",newd,\"origd=\",origd,\n                               \"origdx=\",origdx,\"origdy=\",origdy,\"dx=\",dx,\"dy=\",dy);\n      ui.position.left = origleft;\n      ui.position.top  = origtop;\n    }\n\n    // NOW we can go through and actually send out the events -- we couldn't before, because we might have hit\n    //   collisions multiple times during the course of trying to prevent them\n    for( var ci=0; ci<ocl.length; ci++ )\n    {\n      var oc = ocl[ci]; // each ocl[n] is a Collision()\n      for( var oci=0; oci<oc.collision.length; oci++ )\n      {  \n        var $occ    = $( oc.collision[oci] );\n\n        // Remove our custom data elements that guaranteed us getting the data we needed\n        var $coll   = $( $occ.data(d1) );\n        var $obs    = $( $occ.data(d2) );\n        var dir     =    $occ.data(d3);\n        var inter   =    $occ.data(di);\n        $occ.removeData(d1).removeData(d2).removeData(d3).removeData(di);\n\n        // And add them back in if the user really wanted them after all\n        if(        inter.colliderData  ) $occ.data( inter.colliderData,  $coll ); // not that useful, since event gets it, but meh\n        if(        inter.obstacleData  ) $occ.data( inter.obstacleData,  $obs  ); // not that useful, since event gets it, but meh\n        if( dir && inter.directionData ) $occ.data( inter.directionData, dir   );\n\n        if( inter.relative && inter.relative != \"body\" )\n        {\n          var off = $occ.offset();\n          var rel = inter.relative == \"collider\" ? $coll :\n                    inter.relative == \"obstacle\" ? $obs  :\n                                                   $(inter.relative);\n          var ro  = rel.offset();\n          $occ.offset( { left: off.left-ro.left, top: off.top-ro.top } );\n        }\n\n        // Send actual collision event - one per collision, i.e. per collider per collided:\n        if( inter.obstacleSelector  && ( oc.type == \"collision\"  ) )\n        {\n          e = new CollisionEvent( ctyp, $coll, $obs, ctyp, $occ );\n          uiTrigger( $coll, widget, ctyp, e, ui );\n        }\n        if( inter.restraintSelector && ( oc.type == \"protrusion\" ) )\n        {\n          e = new CollisionEvent( ptyp, $coll, $obs, ptyp, $occ );\n          uiTrigger( $coll, widget, ptyp, e, ui );\n        }\n      }\n    }\n\n    // Global just-checked-collisions event:\n    for( var i=0; i<ilist.length; i++ )\n    {\n      if( ilist[i].obstacleSelector )\n      {\n        e = new CollisionCheckEvent( postc, $(this), ilist[i].obstacle, ctyp )\n        uiTrigger( ilist[i].collider, widget, postc, e, ui );\n      }\n      if( ilist[i].restraintSelector )\n      {\n        e = new CollisionCheckEvent( postp, $(this), ilist[i].restraint, ptyp )\n        uiTrigger( ilist[i].collider, widget, postp, e, ui );\n      }\n    }\n\n    // And put the resulting ui position in our cache, so that if we keep dragging, we'll know how far stuff moved since this time\n    $(this).data( \"jquery-ui-draggable-collision-recent-position\", ui.position );\n  }\n\n  // This is the inner-loop collision-prevention function, called maxiter times inside handleCollide()\n  // Its purpose is to determine a single [dx,dy] to move the whole list of colliders and draggable,\n  //   in an attempt to fit them properly. Only one of dx or dy will be non-zero at a time.\n  // The cache argument is a simple object passed in from handleCollide, and is used to store previously-\n  //   -tried movements, so that it doesn't repeat itself. \n  //   * The most common repeat case is if a collider is stuck inbetween two obstacles, and the space isn't big \n  //     enough -- one iteration will have it clear obstacle A, but embed into obstacle B, and the next iteration\n  //     will reverse it, and it will get nowhere quickly. \n  //   * The key for the hash is collider+obstacle coordinates, so the same collider won't avoid the same obstacle\n  //     in the same way twice. (Actually three times, see below.)\n  //   * Note that the value of the hash is either nothing, \"tried normal\", or \"tried reverse\"\n  //     * Nothing means it hasn't been tried yet\n  //     * Tried normal means it was tried once\n  //     * Tried reverse means it was tried a second time\n  // How does it determine how to move things around?\n  //   * It calculates an \"embed\" value, i.e. how far the collider is \"embedded\" into the obstacle\n  //   * And a direction, either towards center of gravity or away, depending on if it's a collision or protrusion\n  //   * And it returns that\n  // How does it choose what obstacle to avoid?\n  //   * It first sorts all the \"collisions\" (remember, these are the actual overlapping regions) based on how\n  //     far their centers of gravity are from the last known center of gravity of the draggable itself,\n  //     which was passed in during the creation of the Collision objects\n  //   * It looks at the last one first, so the furthest from the object -- that way, it's going to always reign\n  //     it in towards the last known good value, otherwise \"closer\" obstacles might keep shoving it away forever\n  //   * Next, it calculates the embed values in the x and y direction, and picks the smallest one -- so if it's\n  //     embedded heavily in the x-direction and only a little in the y, it'll pick the y first (small changes are\n  //     more likely to succeed)\n  //   * If it's a negative value, it tries again, because the embed function does the sanity-checking if we\n  //     tried to move it in a strange or useless way\n  //   * Finally, this is why it tries each \"position\" twice -- because for each starting position, it tries the\n  //     smaller movement first, but then it tries the larger one. That's why the cache keeps track of the\n  //     \"tried reverse\" value\n  // In the end, it returns a { dx:_, dy:_ } object, the handleCollision tries moving everything around, recalculates\n  //   all the collisions, and calls this again to see what to do next\n  // NOTE: you can't easily re-calc \"real position\" from the jquery objects, because they're tagged with data that has\n  //       offsets that are used internally by the jquery-collision plugin, so only use the thisc.*Coords values\n  function delta( collisions, containments, cache )\n  {\n    var c = collisions.concat(containments).sort( collisionComparison );\n    if( VISUAL_DEBUG ) { if(!cache.deltanum){ cache.deltanum = 1; } };\n    if( DEBUG ) { console.log( \"collisions, in order: \", c.map(function(e,i,a){return e.collisionCoords.hash();}).join(\",\") ); }\n    while( c.length > 0 )\n    {\n      // note _pop_ not _shift_. we want to grab furthest collision from center of mass first...\n      // this one is likely the one causing the most problems, because something is embedded deeply into\n      // some obstacle:\n      var thisc = c.pop();\n      var co = thisc.obstacleCoords;\n      var cc = thisc.colliderCoords;\n      var cv = thisc.collisionCoords;\n      var ct = thisc.type;\n      var cd = thisc.direction;\n      var key = thisc.hash();\n      var dirx = ( thisc.type==\"protrusion\" ? ( cc.centerx() > co.centerx() ? -1 : +1 )\n                                            : ( cc.centerx() > co.centerx() ? +1 : -1 ) );\n      var diry = ( thisc.type==\"protrusion\" ? ( cc.centery() > co.centery() ? -1 : +1 )\n                                            : ( cc.centery() > co.centery() ? +1 : -1 ) );\n      var dx = thisc.embedx( dirx );\n      var dy = thisc.embedy( diry );\n      if( DEBUG ) console.log(\"cv,cc,co,ct,dx,dy,thisc.dx,thisc.dy,dirx,diry,co.centerx,co.centery,cc.centerx,cc.centery,key=\",\n                  cv.hash(),cc.hash(),co.hash(),ct,dx,dy,thisc.dx,thisc.dy,dirx,diry,co.centerx(),co.centery(),cc.centerx(),cc.centery(),key);\n      var tryToAdjustDX = ( dx < dy );\n      if(      key in cache && cache[key] == \"tried reverse\" ) { if( DEBUG ) console.log(\"but already tried reverse too...\");\n                                                                 continue; }\n      else if( key in cache && cache[key] == \"tried normal\"  ) { if( DEBUG ) console.log(\"but already tried this...\");\n                                                                 tryToAdjustDX=!tryToAdjustDX; cache[key]=\"tried reverse\";\n                                                               }\n      else                                                     { cache[key]=\"tried normal\"; }\n      if( tryToAdjustDX )\n      {\n        if( VISUAL_DEBUG ) { $(\"<span>\"+thisc.direction+\"d\"+cache.deltanum+\".dx=\"+dx+\"*\"+dirx+\"</span>\").css(\"color\",\"black\").addClass(\"testdebug\")\n                             .css(\"position\",\"absolute\")\n                             .css(\"white-space\",\"nowrap\").offset( { left: thisc.mousex, top: thisc.mousey + 20*(cache.deltanum-1) } ).appendTo(\"body\"); cache.deltanum++; };\n        if( dx <= 0 ) { c.push(thisc); continue; }\n        return { \"dx\":dx*dirx, \"dy\":0 };\n      }\n      else\n      {\n        if( VISUAL_DEBUG ) { $(\"<span>\"+thisc.direction+\"d\"+cache.deltanum+\".dy=\"+dy+\"*\"+diry+\"</span>\").css(\"color\",\"black\").addClass(\"testdebug\")\n                             .css(\"position\",\"absolute\")\n                             .css(\"white-space\",\"nowrap\").offset( { left: thisc.mousex, top: thisc.mousey + 20*(cache.deltanum-1) } ).appendTo(\"body\"); cache.deltanum++; };\n        if( dy <= 0 ) { c.push(thisc); continue; }\n        return { \"dx\":0, \"dy\":dy*diry };\n      }\n    }\n    return { \"dx\":0, \"dy\":0 };\n  };\n\n})(jQuery);\n",
 			"file": "static/js/jquery-ui-draggable-collision.js",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 41605,
@@ -737,7 +771,10 @@
 			}
 		},
 		{
+			"contents": "/*\nCopyright (c) 2011-13 Sean Cusack\n\nMIT-LICENSE:\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n*/\n\n(function($){\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Default settings\n  //\n\n  var DEBUG = false;\n  var VISUAL_DEBUG = DEBUG;\n\n  $.ui.resizable.prototype.options.obstacle          = \".ui-resizable-collision-obstacle\";\n  $.ui.resizable.prototype.options.restraint         = \".ui-resizable-collision-restraint\";\n  $.ui.resizable.prototype.options.collider          = \".ui-resizable-dragging\";\n  $.ui.resizable.prototype.options.colliderData      = null;\n  $.ui.resizable.prototype.options.obstacleData      = null;\n  $.ui.resizable.prototype.options.directionData     = null;\n  $.ui.resizable.prototype.options.relative          = \"body\";\n  $.ui.resizable.prototype.options.preventCollision  = false;\n  $.ui.resizable.prototype.options.preventProtrusion = false;\n  $.ui.resizable.prototype.options.collisionVisualDebug = false;\n  $.ui.resizable.prototype.options.multipleCollisionInteractions = [];\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Plugin setup\n  //\n\n  $.ui.plugin.add( \"resizable\", \"obstacle\", {\n    create: function(event,ui){       handleInit   .call( this, event, ui ); },\n    start: function(event,ui){        handleStart  .call( this, event, ui ); } ,\n    drag:  function(event,ui){ return handleCollide.call( this, event, ui ); } ,\n    stop:  function(event,ui){        handleCollide.call( this, event, ui );\n                                      handleStop   .call( this, event, ui ); }\n  });\n\n  // NOTE: the \"handleCollide\" function must do all collision and protrusion detection at once, in order for the\n  //       simultaneous prevention cases to work properly, so basically, if you ask for both, the obstacle events\n  //       will occur first (and do both), and then these will trigger, see that they have an obstacle, and not\n  //       do anything a second time\n  $.ui.plugin.add( \"resizable\", \"restraint\", {\n    create: function(event,ui){         handleInit   .call( this, event, ui ); },\n    start: function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle ) // if there are obstacles, we already handled both\n                               {        \n                                        handleStart  .call( this, event, ui );\n                               }\n                             } ,\n    drag:  function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle ) // if there are obstacles, we already handled both\n                               { \n                                 return handleCollide.call( this, event, ui ); \n                               }\n                             } ,\n    stop:  function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle ) // if there are obstacles, we already handled both\n                               {\n                                        handleCollide.call( this, event, ui );\n                                        handleStop   .call( this, event, ui );\n                               }\n                             }\n  });\n\n  // Likewise, if we already have an obstacle or restraint, we've done it all, so don't repeat\n  $.ui.plugin.add( \"resizable\", \"multipleCollisionInteractions\", {\n    create: function(event,ui){         handleInit   .call( this, event, ui ); },\n    start: function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle &&\n                                   ! $(this).data(\"ui-resizable\").options.restraint   )\n                               {       \n                                        handleStart  .call( this, event, ui );\n                               }\n                             } ,\n    drag:  function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle &&\n                                   ! $(this).data(\"ui-resizable\").options.restraint   )\n                               { \n                                 return handleCollide.call( this, event, ui ); \n                               }\n                             } ,\n    stop:  function(event,ui){ if( ! $(this).data(\"ui-resizable\").options.obstacle &&\n                                   ! $(this).data(\"ui-resizable\").options.restraint   )\n                               {\n                                        handleCollide.call( this, event, ui );\n                                        handleStop   .call( this, event, ui );\n                               }\n                             }\n  });\n\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Private Classes\n  //\n\n  ////////////\n  // EVENTS //\n  ////////////\n\n  function CollisionEvent( eventType, collider, obstacle, collisionType, collision )\n  {\n    jQuery.Event.call( this, eventType );\n    this.collider  = collider;\n    this.obstacle  = obstacle; \n    this.collisionType = collisionType;\n    this.collision = collision;\n  }\n\n  CollisionEvent.prototype = new $.Event( \"\" );\n\n  function CollisionCheckEvent( eventType, collider, obstacle, collisionType )\n  {\n    jQuery.Event.call( this, eventType );\n    this.collider  = collider;\n    this.obstacle  = obstacle; \n    this.collisionType = collisionType;\n  }\n\n  CollisionCheckEvent.prototype = new $.Event( \"\" );\n\n  //////////////////////\n  // COORDINATE CLASS //\n  //////////////////////\n\n  function Coords( x1, y1, x2, y2 )\n  {\n    this.x1 = x1;\n    this.y1 = y1;\n    this.x2 = x2; \n    this.y2 = y2;\n  }\n\n  Coords.prototype.width   = function() { return (this.x2-this.x1);   }\n  Coords.prototype.height  = function() { return (this.y2-this.y1);   }\n  Coords.prototype.centerx = function() { return (this.x1+this.x2)/2; }\n  Coords.prototype.centery = function() { return (this.y1+this.y2)/2; }\n  Coords.prototype.area    = function() { return this.width()*this.height(); }\n  Coords.prototype.hash    = function() { return \"[\"+[this.x1,this.y1,this.x2,this.y2].join(\",\")+\"]\" }\n  Coords.prototype.distance = function(c)  \n  { \n    return this.distanceTo( c.centerx(), c.centery() );\n  }\n  Coords.prototype.distanceTo = function(x,y)  \n  { \n    var dx = this.centerx()-x;\n    var dy = this.centery()-y;\n    return Math.sqrt( dx*dx + dy*dy );\n  }\n\n  /////////////////////////////////\n  // COORDINATE HELPER FUNCTIONS //\n  /////////////////////////////////\n\n  // create a box with the same total area, centered at center of gravity\n  function centerGravity( coordsList )\n  {\n    if( coordsList.length <= 0 ) return null;\n    var wsumx = 0;\n    var wsumy = 0;\n    var suma  = 0;\n    for( var i = 0; i < coordsList.length; i++ )\n    {\n      suma += coordsList[i].area();\n      wsumx += coordsList[i].centerx() * coordsList[i].area();\n      wsumy += coordsList[i].centery() * coordsList[i].area();\n    }\n    var d = Math.sqrt( suma ); // dimension of square (both w and h)\n    return new Coords( (wsumx/suma) - d/2, (wsumy/suma) - d/2, (wsumx/suma) + d/2, (wsumy/suma) + d/2 );\n  }\n\n  // convert a jq object into a Coords object, handling all the nice-n-messy offsets and margins and crud\n  function jq2Coords( jq, dx, dy , dw, dh )\n  {\n    if( !dx ) dx=0;\n    if( !dy ) dy=0;\n    if( !dw ) dw=0;\n    if( !dh ) dh=0;\n\n    if( jq.parent().length > 0 )\n    {\n      var x1 = dx + jq.offset().left - (parseInt(jq.css(\"margin-left\"))||0);\n      var y1 = dy + jq.offset().top  - (parseInt(jq.css(\"margin-top\" ))||0);\n      var x2 = x1 + dw + jq.outerWidth( true);\n      var y2 = y1 + dh + jq.outerHeight(true);\n    }\n    else\n    {\n      var x1 = dx + parseInt(jq.css(\"left\"  )) || 0;\n      var y1 = dy + parseInt(jq.css(\"top\"   )) || 0;\n      var x2 = x1 + dw + parseInt(jq.css(\"width\" )) || 0;\n      var y2 = y1 + dh + parseInt(jq.css(\"height\")) || 0;\n      x2 += (parseInt(jq.css(\"margin-left\"))||0) + (parseInt(jq.css(\"border-left\"))||0) + (parseInt(jq.css(\"padding-left\"))||0) + \n            (parseInt(jq.css(\"padding-right\"))||0) + (parseInt(jq.css(\"border-right\"))||0) + (parseInt(jq.css(\"margin-right\"))||0);\n      y2 += (parseInt(jq.css(\"margin-top\"))||0) + (parseInt(jq.css(\"border-top\"))||0) + (parseInt(jq.css(\"padding-top\"))||0) + \n            (parseInt(jq.css(\"padding-bottom\"))||0) + (parseInt(jq.css(\"border-bottom\"))||0) + (parseInt(jq.css(\"margin-bottom\"))||0);\n\n    }\n    return new Coords( x1, y1, x2, y2 );\n  }\n\n  function jqList2CenterGravity( jqList, dx, dy , dw, dh )\n  {\n    return centerGravity( jqList.toArray().map( function(e,i,a){ return jq2Coords($(e),dx,dy , dw, dh); } ) );\n  }\n\n  /////////////////////\n  // COLLISION CLASS //\n  /////////////////////\n\n  function Collision( jq, cdata, odata, type, dx, dy , dw, dh, ddata, recentCenterOfGravity, mousex, mousey )\n  {\n    if(!recentCenterOfGravity) recentCenterOfGravity=jqList2CenterGravity($(this.collider), dx, dy , dw, dh);\n    if(!dx) dx = 0;\n    if(!dy) dy = 0;\n    if(!dw) dw = 0;\n    if(!dh) dh = 0;     \n    this.collision = $(jq            );\n    this.collider  = $(jq.data(cdata));\n    this.obstacle  = $(jq.data(odata));\n    this.direction =   jq.data(ddata);\n    this.type      = type;\n    this.dx        = dx;\n    this.dy        = dy;\n    this.dw        = dw;\n    this.dh        = dh;     \n    this.centerOfMass    = recentCenterOfGravity;\n    this.collisionCoords = jq2Coords( this.collision );\n    this.colliderCoords  = jq2Coords( this.collider,  dx, dy );\n    this.obstacleCoords  = jq2Coords( this.obstacle  );\n    if(!mousex) mousex = this.colliderCoords.centerx();\n    if(!mousey) mousex = this.colliderCoords.centery();\n    this.mousex = mousex;\n    this.mousey = mousey;\n  }\n\n  // amount \"embedded\" into obstacle in x-direction\n  // might be negative or zero if it doesn't make sense\n  // this is used with the delta calculation - if its <= 0, it'll get skipped\n  // dirx is -1 or +1, depending on which way we are orienting things (which way we want to move it)\n  // NOTE: originally, we were taking the collision area into account, but it's easier to recalc embed value\n  Collision.prototype.embedx = function( dirx )\n  {\n    if( this.type == \"collision\" )\n    {\n      if( dirx < 0 ) /* want to move left  */ return this.colliderCoords.x2 - this.obstacleCoords.x1;\n      if( dirx > 0 ) /* want to move right */ return this.obstacleCoords.x2 - this.colliderCoords.x1;\n    }\n    else if( this.type == \"protrusion\" )\n    {\n      // if we're embedded in a top/bottom edge, don't move left or right, silly:\n      if( ( this.direction == \"N\" ) || ( this.direction == \"S\" ) ) return 0; \n\n      if( dirx < 0 ) /* want to move left  */ return this.colliderCoords.x2 - this.obstacleCoords.x2;\n      if( dirx > 0 ) /* want to move right */ return this.obstacleCoords.x1 - this.colliderCoords.x1;\n    }\n    return 0;\n  }\n\n  // and ditto for y-direction\n  Collision.prototype.embedy = function( diry )\n  {\n    if( this.type == \"collision\" )\n    {\n      if( diry < 0 ) /* want to move up   */ return this.colliderCoords.y2 - this.obstacleCoords.y1;\n      if( diry > 0 ) /* want to move down */ return this.obstacleCoords.y2 - this.colliderCoords.y1;\n    }\n    else if( this.type == \"protrusion\" )\n    {\n      // if we're embedded in a left/right edge, don't move up or down, silly:\n      if( ( this.direction == \"E\" ) || ( this.direction == \"W\" ) ) return 0;\n\n      if( diry < 0 ) /* want to move up   */ return this.colliderCoords.y2 - this.obstacleCoords.y2;\n      if( diry > 0 ) /* want to move down */ return this.obstacleCoords.y1 - this.colliderCoords.y1;\n    }\n    return 0;\n  }\n\n  // distance from collision to recent center of mass, i.e. it used to be in one place, and we're dragging it\n  // to another, so the \"overlap\" of some collider happens a certain \"distance\" from the center of where stuff\n  // used to be...\n  Collision.prototype.distance = function()\n  {\n    var cx1 = this.centerOfMass.centerx();\n    var cy1 = this.centerOfMass.centery();\n    var cx2 = this.collisionCoords.centerx();\n    var cy2 = this.collisionCoords.centery();\n    return Math.sqrt( (cx2-cx1)*(cx2-cx1) + (cy2-cy1)*(cy2-cy1) );\n  };\n\n  Collision.prototype.hash = function(){ return this.type+\"[\"+this.colliderCoords.hash()+\",\"+this.obstacleCoords.hash()+\"]\"; }\n\n  ////////////////////////////////\n  // COLLISION HELPER FUNCTIONS //\n  ////////////////////////////////\n\n  // sort so that collisions closest to recent center of mass come first -- we need to resolve them in order\n  function collisionComparison(c1,c2)\n  {\n    var cd1 = c1.distance();\n    var cd2 = c2.distance();\n    return ( ( cd1 < cd2 ) ? -1 : ( cd1 > cd2 ) ? +1 : 0 );\n  };\n\n  ///////////////////////\n  // INTERACTION CLASS //\n  ///////////////////////\n\n  function Interaction( resizable, options )\n  {\n    this.resizable         = $(resizable);\n    this.obstacleSelector  =   options.obstacle        || \".ui-resizable-collision-obstacle\"   ;\n    this.restraintSelector =   options.restraint       || \".ui-resizable-collision-restraint\"  ;\n    this.obstacle          = $(options.obstacle        || \".ui-resizable-collision-obstacle\"  );\n    this.restraint         = $(options.restraint       || \".ui-resizable-collision-restraint\" );\n    var  collider          =   options.collider        || \".ui-resizable-dragging\"             ;\n    this.collider          = resizable.find( collider ).andSelf().filter( collider );\n    this.colliderData      = options.colliderData      || null;\n    this.obstacleData      = options.obstacleData      || null;\n    this.directionData     = options.directionData     || null;\n    this.relative          = options.relative          || \"body\";\n    this.preventCollision  = options.preventCollision  || false;\n    this.preventProtrusion = options.preventProtrusion || false;\n    this.collisions        = $();\n    this.protrusions       = $();\n  }\n\n  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n  //\n  // Main handler functions\n  //\n\n  function uiTrigger( _this, widget, eventName, event, ui )\n  {\n    $.ui.plugin.call( widget, eventName, event, ui );\n    _this.trigger( event, ui );\n  }\n\n  function handleInit( event, ui, type )\n  {\n    var w = $(this).data(\"ui-resizable\");\n    var o = w.options;\n  }\n\n  function debugCloneAt( element, x, y, w, h, color )\n  {\n    var $clone = $(element).clone();\n    $clone.children().remove();\n    $clone.css(\"background\",\"transparent\")\n          .css(\"pointer-events\",\"none\")\n          .css(\"border\",\"1px solid \"+color)\n          .css(\"margin\",\"0px\").css(\"padding\",\"0px\")\n          .addClass(\"testdebug\")\n          .css(\"position\",\"absolute\")\n          .css(\"background-color\",\"transparent\")\n          .appendTo(\"body\");\n    $clone.width(  w-2 );\n    $clone.height( h-2 );\n    $clone.offset( { left: x, top: y }  );\n    return $clone;\n  }\n\n  function debugClone( element, color )\n  {\n    return debugCloneAt( element, $(element).css(\"left\"), $(element).css(\"top\"), $(element).outerWidth(), $(element).outerHeight(), color );\n  }\n\n  function debugCloneContainment( element, resizable, containment, color )\n  {\n    return debugCloneAt( element, containment[0], containment[1], \n                         containment[2]-containment[0]+$(resizable).width(), \n                         containment[3]-containment[1]+$(resizable).height(),\n                       color );\n  }\n  \n  function handleStart(event,ui)\n  {\n    VISUAL_DEBUG = $(this).data(\"ui-resizable\").options.collisionVisualDebug;\n    $(this).data( \"jquery-ui-resizable-collision-recent-position\", ui.originalPosition ); \n  }\n\n  function handleStop (event,ui)\n  { \n    $(this).removeData(\"jquery-ui-resizable-collision-recent-position\");\n    if( VISUAL_DEBUG ) $(\".testdebug\").remove();\n    VISUAL_DEBUG = DEBUG;\n  }\n\n  // This is the monolithic workhorse of the plugin:\n  //   * At the beginning and end, it sends out all the pre/post-collision/protrusion events\n  //   * In the middle, it both calculates collisions, and prevents them if requested\n  //   * When it's either tried its best, or found a fit, or wasn't required to avoid obstacles, it sends out actual collision events\n  //\n  // Inside the first big loop is the actual \"prevention\" logic\n  //   * It calculates the \"intended position\" of everything, checks all the collision logic, and if it needs to,\n  //     then calculates a delta movement to see if that fits, and the loop continues until it either works,\n  //     or an arbitrary iteration limit is reached, just in case it gets in a loop\n  //   * The delta function is described in more detail below\n  //\n  // During all the \"trying a new position\" and \"determining collisions\" calculations, it's not using purely the\n  //   current position of the colliders -- it can't because the resizable is now in a new \"intended position\",\n  //   and with it, all its children, including any collider children\n  //   * So, it keeps track of a dx and dy from known position, and populates a \"jquery-collision-coordinates\" data value\n  //     that the jquery-collision plugin takes into account during the calculations\n  //   * Also, the Coords() values get populated with these offsets at various times, so that they reflect \"intended position\"\n  //\n  // Note also that the collider, obstacle, and direction data fields are temporarily overriden (because we need them here,\n  //   and the user may not have asked for them), and then erased and placed where the user wants them, right before\n  //   sending out the collision events\n  //\n  // Note also that the collisions and protrusions requested are \"relative\" to \"body\". If the use asked for\n  // something relative, it has to get translated right before sending out the events...\n  function handleCollide( event, ui )\n  {\n    // Note that $(this) is the resizable that's moving - it has a ui.position that moves according to where\n    // the resizable is \"about to move\". However, our \"collidable\" objects might not be the same as $(this) -\n    // they might be child elements. So we need to keep track of recent and present position so we can apply the\n    // \"intended\" dx and dy to all the moving elements:\n    var rp = $(this).data(\"jquery-ui-resizable-collision-recent-position\");\n\n    if( DEBUG ) { console.log( \"handleCollision ******************************************************************\" ); }\n\n    if( VISUAL_DEBUG ) $(\".testdebug\").remove();\n\n    var ctyp  =     \"collision\";\n    var prec  =  \"precollision\";\n    var postc = \"postcollision\";\n    var ptyp  =     \"protrusion\";\n    var prep  =  \"preprotrusion\";\n    var postp = \"postprotrusion\";\n\n    // NOTE: widget is used for uiTrigger, otherwise event-binders don't get a \"ui\" variable\n    var widget = $(this).data(\"ui-resizable\");\n    var o      = widget.options;\n\n    // List of Interactions -- first one is the main set of args from the .resizable() setup call, rest are multipleCollisionInteractions:[...]\n    var ilist  = [];\n    \n    if( o.obstacle || o.restraint ) ilist.push( new Interaction( $(this), o ) );\n    if( o.multipleCollisionInteractions && o.multipleCollisionInteractions[\"length\"] )\n    {\n      var mci = o.multipleCollisionInteractions;\n      for( var i=0; i<mci.length; i++ )\n        ilist.push( new Interaction( $(this), mci[i] ) );\n    }\n\n    if( ilist.length <= 0 )\n    {\n      // Just forget the whole stupid business - why are we in here, anyways - no interactions to check\n      // Cache the current position anyways, and jump out:\n      $(this).data( \"jquery-ui-resizable-collision-recent-position\", ui.position );\n      return;\n    }\n\n    var d1 = \"ui-resizable-collision-collider-temp\";\n    var d2 = \"ui-resizable-collision-obstacle-temp\";\n    var d3 = \"ui-resizable-collision-direction-temp\";\n    var di = \"ui-resizable-collision-interaction-temp\";\n    var d  = event.data;\n    var as = \"<div />\";\n    if( d && d.as ) as = d.as;\n\n    var e;\n\n    // Try moving things twice the number of colliders times obstacles+restraints, plus 1 original attempt\n    // We need to calculate maxiter here because there may be several levels of interactions\n    // (Honestly, anything will do, just need a reasonable cutoff)\n    var maxiter = 1;\n\n    // Global just-about-to-check-collisions event:\n    for( var i=0; i<ilist.length; i++ )\n    {\n      maxiter += 2 * ilist[i].collider.length * ( ilist[i].obstacle.length + ilist[i].restraint.length );\n\n      if( VISUAL_DEBUG )\n      {\n        ilist[i].obstacle .each(function(){ debugCloneAt( $(this), $(this).offset().left, $(this).offset().top, $(this).innerWidth(), $(this).innerHeight(), \"black\"   ); });\n        ilist[i].restraint.each(function(){ debugCloneAt( $(this), $(this).offset().left, $(this).offset().top, $(this).innerWidth(), $(this).innerHeight(), \"magenta\" ); });\n      }\n\n      if( ilist[i].obstacleSelector )\n      {\n        e = new CollisionCheckEvent( prec, $(this), ilist[i].obstacle, ctyp )\n        uiTrigger( ilist[i].collider, widget, prec, e, ui );\n      }\n\n      if( ilist[i].restraintSelector )\n      {\n        e = new CollisionCheckEvent( prep, $(this), ilist[i].restraint, ptyp )\n        uiTrigger( ilist[i].collider, widget, prep, e, ui );\n      }\n    }\n\n    var origleft = rp.left;\n    var origtop  = rp.top;\n    var origdx = ui.position.left - rp.left;\n    var origdy = ui.position.top  - rp.top;\n    var origwidth = rp.width;\n    var origheight  = rp.height;\n    var origdw = ui.position.width - rp.width;\n    var origdh = ui.position.height  - rp.height;       \n    var dx;\n    var dy;\n    var dw;\n    var dh;     \n    var ocl  = []; // list of Collision()'s total\n    var cocl = []; // list of Collision()'s just from collisions\n    var pocl = []; // list of Collision()'s just from protrusions\n    var ccl  = []; // list of Collision()'s just from containment (also a protrusion)\n\n    // Check if there's containment for the resizable:\n    var $cont = $();\n    if( widget.containment )\n    {\n      maxiter += 2; // the main resizable container times twice the number of containers (1)\n\n      var cn = widget.containment.concat(); // clone it, otherwise we edit it and mess things up\n      if( widget.relative_container )\n      { \n        cn[0] += $(widget.relative_container).offset().left;\n        cn[1] += $(widget.relative_container).offset().top;\n        cn[2] += $(widget.relative_container).offset().left;\n        cn[3] += $(widget.relative_container).offset().top;\n      }\n      $cont = $(\"<div />\").offset( { left: cn[0], top: cn[1] } )\n                          .width(  cn[2]-cn[0]+$(this).width( ) )  // because it had the resizable's size chopped out :-P\n                          .height( cn[3]-cn[1]+$(this).height() ); // because it had the resizable's size chopped out :-P\n\n      if( VISUAL_DEBUG )\n      {\n        debugCloneContainment( $cont, this, cn, \"blue\" );\n      }\n    }\n\n    var deltaCache = {};\n    var iter = 0;\n    while( iter < maxiter )\n    {\n      iter++;\n\n      // Calc offset from recent move, so we can move the objects that are \"coming along for the ride\" before calculating their\n      // collisions. Otherwise the ui variable only keeps track of the main resizable, not its contents, which may contain\n      // the actual things that collide\n      dx = ui.position.left - rp.left;\n      dy = ui.position.top  - rp.top;\n      dw = ui.size.width - rp.width;\n      dh = ui.size.height - rp.height;  \n  \n      // Empty the collision containers outside the interaction loop:\n      ocl = [];\n      cocl = [];\n      pocl = [];\n\n      for( var i=0; i<ilist.length; i++ )\n      {\n        ilist[i].collisions  = $();\n        ilist[i].protrusions = $();\n\n        var $c = ilist[i].collider;\n        var $o = ilist[i].obstacle;\n        var $r = ilist[i].restraint;\n        if( DEBUG ) console.log( \"trying inter,c,o,r=\",ilist[i],$c,$o,$r)\n\n        // Add offset to coordinates before figuring out collisions, because we're basing it on \"where its about to go\", not \"where it is\":\n        // (Don't do this for anything but colliders! Applying to obstacles or restrictions or containment screws things up!!)\n        $c.each( function(){ $(this).data( \"jquery-collision-coordinates\", jq2Coords($(this),dx,dy, dw, dh) ); } );\n    \n        var cog = jqList2CenterGravity($c);\n        for( var ci=0; ci<$c.length; ci++ )\n        {\n          // Calculate collisions separately from protrusions, as we might only prevent one or the other:\n          var oc = $($c[ci]).collision( $o, { mode: \"collision\",  as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n          if( DEBUG ) { console.log( \"collisions\", oc ); }\n\n          // Add the interaction settings to their data, so we can pick it apart later:\n          oc.data( di, ilist[i] );\n\n          // And add the collisions to the interaction:\n          ilist[i].collisions = ilist[i].collisions.add(oc);\n\n          // And if there are any, make the appropriate Collision() objects and add them to the list\n          if( oc.length > 0 )\n          {\n            cocl = oc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"collision\" , dx, dy, dw, dh, d3, cog, event.pageX, event.pageY ); } );\n            ocl = ocl.concat( cocl );\n            if(VISUAL_DEBUG) $(\"<span>c\"+iter+\"</span>\").appendTo( debugClone( $(oc), \"black\" ) );\n          }\n\n          // Calculate protrusions likewise:\n          oc     = $($c[ci]).collision( $r, { mode: \"protrusion\", as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n          if( DEBUG ) { console.log( \"protrusions\", oc ); }\n\n          // Add the interaction settings to their data, so we can pick it apart later:\n          oc.data( di, ilist[i] );\n\n          // And add the protrusions to the interaction:\n          ilist[i].protrusions = ilist[i].protrusions.add( oc );\n\n          // And if there are any, make the appropriate Collision() objects and add them to the list\n          if( oc.length > 0 )\n          {\n            pocl = oc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"protrusion\", dx, dy, d3, cog, event.pageX, event.pageY ); } );\n            ocl = ocl.concat( pocl );\n            if(VISUAL_DEBUG) $(\"<span>p\"+iter+\"</span>\").appendTo( debugClone( $(oc), \"magenta\" ) );\n          }\n        }\n    \n        // Now remove coordinate offsets before sending events, otherwise event results might futz with em:\n        $c.each( function(){ $(this).removeData( \"jquery-collision-coordinates\" ); } );\n      }\n\n      if( widget.containment )\n      {\n        // Add offset to coordinates before figuring out collisions, because we're basing it on \"where its about to go\", not \"where it is\":\n        // (Don't do this for anything but colliders! Applying to obstacles or restrictions or containment screws things up!!)\n        $(this).each( function(){ $(this).data( \"jquery-collision-coordinates\", jq2Coords($(this),dx,dy , dw, dh) ); } );\n\n        // Check protrusion from container as well\n        // NOTE: since resizable plugin has already applied containment, if we accidentally move it outside, it won't fix it for us\n        var $cc = $(this).collision( $cont, { mode: \"protrusion\", as: \"<div />\", colliderData: d1, obstacleData: d2, directionData: d3, relative: \"body\" } );\n            ccl = $cc.toArray().map( function(e,i,a){ return new Collision($(e), d1, d2, \"protrusion\", dx, dy, d3, jqList2CenterGravity($c), event.pageX, event.pageY , dw, dh ); } );\n        if(VISUAL_DEBUG) $(\"<span>x\"+iter+\"</span>\").appendTo( $cc, \"blue\" );\n\n        // Now remove coordinate offsets before sending events, otherwise event results might futz with em:\n        $(this).each( function(){ $(this).removeData( \"jquery-collision-coordinates\" ); } );\n      }\n\n      if( DEBUG ) console.log(\"checking if we have any collisions at all...\");\n      // If there's no collisions, INCLUDING the container, stop now, don't keep doing stuff\n      if( ( cocl.length <= 0 ) && ( pocl.length <= 0 ) && ( ccl.length <= 0 ) ) break;\n\n      var doneAdjusting = true;\n\n      // Go through each interaction -- if any of them break the prevention rule, we aren't done adjusting yet\n      for( var i=0; i<ilist.length; i++ )\n      {\n        if( DEBUG ) console.log(\"checking adjustments for\",ilist[i],\"ccl=\",ccl,\n                                \"pc,cl,pp,pl=\",ilist[i].preventCollision, ilist[i].collisions.length, ilist[i].preventProtrusion, ilist[i].protrusions.length);\n\n        if( DEBUG ) console.log(\"checking if we overstepped our containment...\");\n        // If we aren't trying to prevent anything yet we SOMEHOW jumped our containment, stop - this shouldn't ever happen, DANGER, WILL ROBINSON!\n        if( ( ! ilist[i].preventCollision ) && ( ! ilist[i].preventProtrusion ) && ( ccl.length > 0 ) )\n        {\n          if( DEBUG ) { console.log( \"not trying to prevent anything, but jumped our containment\", ilist[i] ); }\n          doneAdjusting = false;\n        }\n\n        if( DEBUG ) console.log(\"checking if we want to block something we have collided with...\");\n        // More specifically, if aren't any collisions that we actually want to prevent, stop -- though we have to think of this in the opposite sense:\n        // if we DO either \n        //   want to prevent collisions yet have a collision or containment failure, OR\n        //   want to prevent protrusions yet have a protrusion or a containment failure,\n        // then DON'T STOP\n        if( ( ilist[i].preventCollision  && ( ( ilist[i].collisions .length > 0 ) || ( ccl.length > 0 ) ) ) ||\n            ( ilist[i].preventProtrusion && ( ( ilist[i].protrusions.length > 0 ) || ( ccl.length > 0 ) ) )    )\n        {\n          if( DEBUG ) { console.log( \"trying to prevent something that we're still hitting\", ilist[i] ); }\n          doneAdjusting = false;\n        }\n      }\n\n     /* if( doneAdjusting )\n      {\n        if( DEBUG ) { console.log( \"done adjusting\" ); }\n        break;\n      }\n\n      if( DEBUG ) console.log(\"calculating delta with ocl,ccl=\",ocl,ccl);\n      // Calculate a delta to move, based on collisions+protrusions and containment\n      var d = delta( ocl.concat(), ccl, deltaCache );\n\n      if( DEBUG ) console.log(\"dx=\",d.dx,\"dy=\",d.dy);\n      // If there's nothing to do, stop -- it shouldn't happen if we had collisions, but...\n      if( d.dx == 0 && d.dy == 0 ) break;\n\n      // Apply the movement, and let the loop run again, to see if our proposed delta movement was any good\n      ui.position.left += d.dx;\n      ui.position.top  += d.dy;*/\n    }\n\n    dx = ui.position.left - rp.left;\n    dy = ui.position.top  - rp.top;\n    /* deactivated for now - doesn't seem to be needed - may revisit later:\n      // if our new center of gravity is further from the mouse position than the last one, revert\n      var origd = jqList2CenterGravity($c,origdx,origdy).distanceTo( event.pageX, event.pageY );\n      var  newd = jqList2CenterGravity($c,    dx,    dy).distanceTo( event.pageX, event.pageY );\n      if( newd > origd ) { console.log(\"center of gravity issue: \",origd,newd); } // add this to revert\n    */\n\n    // If we failed to find a fit, revert to the previous position\n    if( ( iter > maxiter ) ||                             // if we ran out of iterations, tough, revert\n        ( ccl.length > 0 ) ||                             // if we ran outside out containment, also revert\n        ( o.preventProtrusion && ( pocl.length > 0 ) ) || // if we have a protrusion and are trying to prevent protrusions, revert\n        ( o.preventCollision  && ( cocl.length > 0 ) ) )  // if we have a collision and are trying to prevent collisions, revert\n    {\n      if( DEBUG ) console.log(\"reverting, i=\",iter,\"maxiter=\",maxiter,\"cocl=\",cocl,\"cocl.len=\",cocl.length,\"pocl=\",\n                               pocl,\"pocl.len=\",pocl.length,\"ccl=\",ccl,\"ccl.len=\",ccl.length,\n                               //\"newd=\",newd,\"origd=\",origd,\n                               \"origdx=\",origdx,\"origdy=\",origdy,\"dx=\",dx,\"dy=\",dy);\n      ui.position.left = origleft;\n      ui.position.top  = origtop;\n      ui.size.width = origwidth;\n      ui.size.height  = origheight;         \n    }\n\n    // NOW we can go through and actually send out the events -- we couldn't before, because we might have hit\n    //   collisions multiple times during the course of trying to prevent them\n    for( var ci=0; ci<ocl.length; ci++ )\n    {\n      var oc = ocl[ci]; // each ocl[n] is a Collision()\n      for( var oci=0; oci<oc.collision.length; oci++ )\n      {  \n        var $occ    = $( oc.collision[oci] );\n\n        // Remove our custom data elements that guaranteed us getting the data we needed\n        var $coll   = $( $occ.data(d1) );\n        var $obs    = $( $occ.data(d2) );\n        var dir     =    $occ.data(d3);\n        var inter   =    $occ.data(di);\n        $occ.removeData(d1).removeData(d2).removeData(d3).removeData(di);\n\n        // And add them back in if the user really wanted them after all\n        if(        inter.colliderData  ) $occ.data( inter.colliderData,  $coll ); // not that useful, since event gets it, but meh\n        if(        inter.obstacleData  ) $occ.data( inter.obstacleData,  $obs  ); // not that useful, since event gets it, but meh\n        if( dir && inter.directionData ) $occ.data( inter.directionData, dir   );\n\n        if( inter.relative && inter.relative != \"body\" )\n        {\n          var off = $occ.offset();\n          var rel = inter.relative == \"collider\" ? $coll :\n                    inter.relative == \"obstacle\" ? $obs  :\n                                                   $(inter.relative);\n          var ro  = rel.offset();\n          $occ.offset( { left: off.left-ro.left, top: off.top-ro.top } );\n        }\n\n        // Send actual collision event - one per collision, i.e. per collider per collided:\n        if( inter.obstacleSelector  && ( oc.type == \"collision\"  ) )\n        {\n          e = new CollisionEvent( ctyp, $coll, $obs, ctyp, $occ );\n          uiTrigger( $coll, widget, ctyp, e, ui );\n        }\n        if( inter.restraintSelector && ( oc.type == \"protrusion\" ) )\n        {\n          e = new CollisionEvent( ptyp, $coll, $obs, ptyp, $occ );\n          uiTrigger( $coll, widget, ptyp, e, ui );\n        }\n      }\n    }\n\n    // Global just-checked-collisions event:\n    for( var i=0; i<ilist.length; i++ )\n    {\n      if( ilist[i].obstacleSelector )\n      {\n        e = new CollisionCheckEvent( postc, $(this), ilist[i].obstacle, ctyp )\n        uiTrigger( ilist[i].collider, widget, postc, e, ui );\n      }\n      if( ilist[i].restraintSelector )\n      {\n        e = new CollisionCheckEvent( postp, $(this), ilist[i].restraint, ptyp )\n        uiTrigger( ilist[i].collider, widget, postp, e, ui );\n      }\n    }\n\n    // And put the resulting ui position in our cache, so that if we keep dragging, we'll know how far stuff moved since this time\n    $(this).data( \"jquery-ui-resizable-collision-recent-position\", $.extend(ui.position, ui.size));\n  }\n\n  // This is the inner-loop collision-prevention function, called maxiter times inside handleCollide()\n  // Its purpose is to determine a single [dx,dy] to move the whole list of colliders and resizable,\n  //   in an attempt to fit them properly. Only one of dx or dy will be non-zero at a time.\n  // The cache argument is a simple object passed in from handleCollide, and is used to store previously-\n  //   -tried movements, so that it doesn't repeat itself. \n  //   * The most common repeat case is if a collider is stuck inbetween two obstacles, and the space isn't big \n  //     enough -- one iteration will have it clear obstacle A, but embed into obstacle B, and the next iteration\n  //     will reverse it, and it will get nowhere quickly. \n  //   * The key for the hash is collider+obstacle coordinates, so the same collider won't avoid the same obstacle\n  //     in the same way twice. (Actually three times, see below.)\n  //   * Note that the value of the hash is either nothing, \"tried normal\", or \"tried reverse\"\n  //     * Nothing means it hasn't been tried yet\n  //     * Tried normal means it was tried once\n  //     * Tried reverse means it was tried a second time\n  // How does it determine how to move things around?\n  //   * It calculates an \"embed\" value, i.e. how far the collider is \"embedded\" into the obstacle\n  //   * And a direction, either towards center of gravity or away, depending on if it's a collision or protrusion\n  //   * And it returns that\n  // How does it choose what obstacle to avoid?\n  //   * It first sorts all the \"collisions\" (remember, these are the actual overlapping regions) based on how\n  //     far their centers of gravity are from the last known center of gravity of the resizable itself,\n  //     which was passed in during the creation of the Collision objects\n  //   * It looks at the last one first, so the furthest from the object -- that way, it's going to always reign\n  //     it in towards the last known good value, otherwise \"closer\" obstacles might keep shoving it away forever\n  //   * Next, it calculates the embed values in the x and y direction, and picks the smallest one -- so if it's\n  //     embedded heavily in the x-direction and only a little in the y, it'll pick the y first (small changes are\n  //     more likely to succeed)\n  //   * If it's a negative value, it tries again, because the embed function does the sanity-checking if we\n  //     tried to move it in a strange or useless way\n  //   * Finally, this is why it tries each \"position\" twice -- because for each starting position, it tries the\n  //     smaller movement first, but then it tries the larger one. That's why the cache keeps track of the\n  //     \"tried reverse\" value\n  // In the end, it returns a { dx:_, dy:_ } object, the handleCollision tries moving everything around, recalculates\n  //   all the collisions, and calls this again to see what to do next\n  // NOTE: you can't easily re-calc \"real position\" from the jquery objects, because they're tagged with data that has\n  //       offsets that are used internally by the jquery-collision plugin, so only use the thisc.*Coords values\n  function delta( collisions, containments, cache )\n  {\n    var c = collisions.concat(containments).sort( collisionComparison );\n    if( VISUAL_DEBUG ) { if(!cache.deltanum){ cache.deltanum = 1; } };\n    if( DEBUG ) { console.log( \"collisions, in order: \", c.map(function(e,i,a){return e.collisionCoords.hash();}).join(\",\") ); }\n    while( c.length > 0 )\n    {\n      // note _pop_ not _shift_. we want to grab furthest collision from center of mass first...\n      // this one is likely the one causing the most problems, because something is embedded deeply into\n      // some obstacle:\n      var thisc = c.pop();\n      var co = thisc.obstacleCoords;\n      var cc = thisc.colliderCoords;\n      var cv = thisc.collisionCoords;\n      var ct = thisc.type;\n      var cd = thisc.direction;\n      var key = thisc.hash();\n      var dirx = ( thisc.type==\"protrusion\" ? ( cc.centerx() > co.centerx() ? -1 : +1 )\n                                            : ( cc.centerx() > co.centerx() ? +1 : -1 ) );\n      var diry = ( thisc.type==\"protrusion\" ? ( cc.centery() > co.centery() ? -1 : +1 )\n                                            : ( cc.centery() > co.centery() ? +1 : -1 ) );\n      var dx = thisc.embedx( dirx );\n      var dy = thisc.embedy( diry );\n      if( DEBUG ) console.log(\"cv,cc,co,ct,dx,dy,thisc.dx,thisc.dy,dirx,diry,co.centerx,co.centery,cc.centerx,cc.centery,key=\",\n                  cv.hash(),cc.hash(),co.hash(),ct,dx,dy,thisc.dx,thisc.dy,dirx,diry,co.centerx(),co.centery(),cc.centerx(),cc.centery(),key);\n      var tryToAdjustDX = ( dx < dy );\n      if(      key in cache && cache[key] == \"tried reverse\" ) { if( DEBUG ) console.log(\"but already tried reverse too...\");\n                                                                 continue; }\n      else if( key in cache && cache[key] == \"tried normal\"  ) { if( DEBUG ) console.log(\"but already tried this...\");\n                                                                 tryToAdjustDX=!tryToAdjustDX; cache[key]=\"tried reverse\";\n                                                               }\n      else                                                     { cache[key]=\"tried normal\"; }\n      if( tryToAdjustDX )\n      {\n        if( VISUAL_DEBUG ) { $(\"<span>\"+thisc.direction+\"d\"+cache.deltanum+\".dx=\"+dx+\"*\"+dirx+\"</span>\").css(\"color\",\"black\").addClass(\"testdebug\")\n                             .css(\"position\",\"absolute\")\n                             .css(\"white-space\",\"nowrap\").offset( { left: thisc.mousex, top: thisc.mousey + 20*(cache.deltanum-1) } ).appendTo(\"body\"); cache.deltanum++; };\n        if( dx <= 0 ) { c.push(thisc); continue; }\n        return { \"dx\":dx*dirx, \"dy\":0 };\n      }\n      else\n      {\n        if( VISUAL_DEBUG ) { $(\"<span>\"+thisc.direction+\"d\"+cache.deltanum+\".dy=\"+dy+\"*\"+diry+\"</span>\").css(\"color\",\"black\").addClass(\"testdebug\")\n                             .css(\"position\",\"absolute\")\n                             .css(\"white-space\",\"nowrap\").offset( { left: thisc.mousex, top: thisc.mousey + 20*(cache.deltanum-1) } ).appendTo(\"body\"); cache.deltanum++; };\n        if( dy <= 0 ) { c.push(thisc); continue; }\n        return { \"dx\":0, \"dy\":dy*diry };\n      }\n    }\n    return { \"dx\":0, \"dy\":0 };\n  };\n\n})(jQuery);\n",
 			"file": "static/js/resizable.js",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 42219,
@@ -820,10 +857,17 @@
 	},
 	"file_history":
 	[
+		"/E/sites_web/tests/index.php",
+		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
+		"/E/sites_web/django/and_today_code_1/core/templates/core/panneau_principal.html",
+		"/E/sites_web/django/and_today_code_1/core/templates/core/index.html",
+		"/E/sites_web/django/andtoday_project/stickit/templates/stickit/motif_cadre.html",
+		"/E/sites_web/django/and_today_code_1/stickit/templates/stickit/controles_sticker.html",
+		"/D/telecharges finis/openssl/openssl-1.0.2-beta1/openssl-1.0.2-beta1/apps/passwd.c",
+		"/D/telecharges finis/openssl/openssl-1.0.2-beta1/openssl-1.0.2-beta1/crypto/md5/md5.c",
 		"/E/sites_web/django/and_today_code_1/stickit/templates/stickit/generation_page.html",
 		"/E/sites_web/django/andtoday_project/stickit/templates/stickit/motif_sticker_vierge.html",
 		"/E/sites_web/django/andtoday_project/stickit/templates/stickit/motif_sticker_old.html",
-		"/E/sites_web/django/and_today_code_1/core/templates/core/panneau_principal.html",
 		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/controle_sticker.js",
 		"/E/sites_web/django/and_today_code_1/stickit/templates/stickit/motif_cadre.html",
 		"/E/sites_web/django/andtoday_project/core/models.py",
@@ -846,7 +890,6 @@
 		"/E/sites_web/tests/collision/testspersos/index.html",
 		"/E/sites_web/django/andtoday_project/stickit/static/stickit/css/sticker/stickit.css",
 		"/E/sites_web/django/andtoday_project/stickit/static/stickit/js/stickit_old.js",
-		"/E/sites_web/django/and_today_code_1/core/templates/core/index.html",
 		"/E/sites_web/django/andtoday_project/core/templates/core/panneau_principal.html",
 		"/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
 		"/E/sites_web/django/and_today_code_1/static/js/jquery-collision-resizable.js",
@@ -860,7 +903,6 @@
 		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/sticker.js",
 		"/E/sites_web/django/andtoday_project/core/templates/core/panneau_principal_sauvegarde.html",
 		"/E/sites_web/django/andtoday_project/core/templates/core/index_sauvegarde.html",
-		"/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
 		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/directives.js",
 		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/controleurs.js",
 		"/E/sites_web/django/and_today_code_1/core/static/core/js/angular/core.js",
@@ -942,12 +984,7 @@
 		"/E/sites_web/tests/dnd_upload/js/dnd2.js",
 		"/E/sites_web/tests/dnd_upload/dragndrop.html",
 		"/E/sites_web/coulissant/js/interactivite_avec_angular_et_transitionsCSS3_services.js",
-		"/E/sites_web/coulissant/css/transitions.css",
-		"/E/sites_web/coulissant/css/styles.css",
-		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_directives.js",
-		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_signalsrootscope.js",
-		"/E/sites_web/coulissant/index.html",
-		"/E/sites_web/coulissant/js/interactivite_avec_angu_et_transitionsCSS3_ControleurEtdirectives.js"
+		"/E/sites_web/coulissant/css/transitions.css"
 	],
 	"find":
 	{
@@ -965,6 +1002,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			", serviceParametrages.vitesseDefilement",
+			"scope",
+			"transitionDefileur ",
+			"transitionDefileur",
+			"typeTransition",
+			"scope.typeTransition",
+			"255",
+			"fenetre",
+			"PANNEAUX.TRANSITION_END",
+			"modeDefilement",
+			"decaleIds",
+			"TRANSITION_END",
+			"serviceIds",
+			"$timeout",
+			"$rootScope",
+			"PANNEAUX.TRANSITION_END",
+			"id_date",
+			"recupereElements",
+			"bandeau",
+			"modeDesign",
+			"_1",
+			"1",
+			"controleur_Controles",
+			"controller",
+			"position : relative; 	",
+			"inline-block",
+			"span3",
+			"modeModifCadres",
+			"cadre",
+			"ensem",
+			"control",
+			"watch",
+			"outil",
+			"toggle",
+			"outil",
+			"outils",
+			"accept",
+			"boiteAOutils_deploye",
+			"options.modeDesign && ",
+			"watch",
 			"horizontal",
 			"bandeau-horizontal",
 			"bandeau-des-actions",
@@ -1052,47 +1129,7 @@
 			"resiza",
 			"cadreVisible",
 			"visible",
-			"templateUrl",
-			"creationcadre",
-			"PANNEAU.DEMANDE_ID",
-			"scope.options",
-			"resizable",
-			"scope.id",
-			"sauvegarder",
-			"dereferenceur",
-			"options",
-			"cadre",
-			"id",
-			"cadre",
-			"phase",
-			"cadreImage",
-			"div",
-			"motif-cadre",
-			"resizable",
-			"recupere",
-			"background",
-			"scope.options",
-			"recupereOptionsParDefaut",
-			"servicesInitialisationStickit",
-			"idStic",
-			"STICKIT",
-			"cadres",
-			"STICKIT",
-			"STICKIT.",
-			"sauvegarder ",
-			"groupe-elements",
-			"donnees",
-			"absolute",
-			"dereferenceurModeDesign",
-			"background",
-			"controleur",
-			"uploadFiles",
-			"{%",
-			"uploadFiles",
-			"transitionVersSuppression",
-			"suppre",
-			"supprimer",
-			"cadre"
+			"templateUrl"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1124,92 +1161,268 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5815,
+						"buffer_size": 5711,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5581,
-								5581
+								4020,
+								4020
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 418.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "stickit/static/stickit/js/stickit.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43075,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4232,
-								4232
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1499.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "core/templates/core/panneau_principal.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1635,
-								1635
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "core/static/core/css/parametrages.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "core/static/core/js/parametrages.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4083,
+								4083
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2097.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "core/templates/core/panneau_parametrages.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "core/templates/core/panneau_principal.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3967,
+								3967
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
+					"file": "stickit/static/stickit/js/stickit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19346,
+								19348
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1386.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "stickit/templates/stickit/panneaux_controles/panneau_controles_stickers_un.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1147,
+								1147
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "stickit/templates/stickit/panneaux_controles/panneau_controle_stickers_deux.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								879,
+								879
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "stickit/templates/stickit/panneaux_controles/panneau_controle_stickers_trois.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "stickit/templates/stickit/generation_page.html",
 					"semi_transient": false,
 					"settings":
@@ -1227,7 +1440,7 @@
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1235,11 +1448,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 10,
 					"file": "stickit/templates/stickit/motif_sticker.html",
 					"semi_transient": false,
 					"settings":
@@ -1251,54 +1464,54 @@
 						"selection":
 						[
 							[
-								509,
-								520
+								1070,
+								1066
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 11,
 					"file": "stickit/templates/stickit/motif_cadre.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1516,
+						"buffer_size": 1523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								735,
-								735
+								1504,
+								1504
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 12,
 					"file": "warningMessages/static/warningMessages/js/afficheurMessages.js",
 					"semi_transient": false,
 					"settings":
@@ -1321,14 +1534,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1782.0,
+						"translation.y": 1552.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 13,
 					"file": "core/static/core/js/angular/core.js",
 					"semi_transient": false,
 					"settings":
@@ -1346,6 +1559,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1353,41 +1567,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "stickit/static/stickit/css/styles.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2920,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								945,
-								947
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2756.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
+					"buffer": 14,
 					"file": "warningMessages/static/warningMessages/css/warning_messages.css",
 					"semi_transient": false,
 					"settings":
@@ -1413,35 +1597,245 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 31,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 7,
 			"sheets":
 			[
 				{
-					"buffer": 10,
-					"file": "core/static/core/js/angular/configurateur.js",
+					"buffer": 15,
+					"file": "stickit/static/stickit/css/sticker/controls.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2889,
+						"buffer_size": 10404,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1419,
-								1419
+								2933,
+								2933
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2376.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "stickit/static/stickit/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "core/static/core/css/core_styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1147,
+								1147
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 792.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "defilement_infini/static/defilement_infini/css/defilement.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 528.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "stickit/static/stickit/css/cadre/cadre.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								753,
+								753
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 792.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "stickit/static/stickit/css/sticker/sticker.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								613,
+								615
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "defilement_infini/static/defilement_infini/js/defileur.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1687,
+								1687
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 807.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "core/static/core/js/angular/configurateur.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								453,
+								453
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1449,101 +1843,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "defilement_infini/static/defilement_infini/js/defileur.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9144,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1419,
-								1396
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 452.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "core/static/core/css/core_styles.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1562,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1210,
-								1210
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 858.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "defilement_infini/static/defilement_infini/css/defilement.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2138,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2136,
-								2101
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1094.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
+					"buffer": 23,
 					"file": "defilement_infini/static/defilement_infini/js/chargeur_page.js",
 					"semi_transient": false,
 					"settings":
@@ -1561,226 +1865,12 @@
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1121.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "stickit/static/stickit/css/cadre/cadre.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								425,
-								425
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "stickit/static/stickit/css/sticker/sticker.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								162,
-								162
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 3,
-			"sheets":
-			[
-				{
-					"buffer": 17,
-					"file": "/E/sites_web/django/and_today_code_1/stickit/static/stickit/js/stickit.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43809,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27420,
-								27361
-							]
-						],
-						"settings":
-						{
-							"auto_name": "var module_stickit = angular.module('stickit', [])",
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 18206.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3052,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1987,
-								1987
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1716.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 377,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								36
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "stickit/static/stickit/js/controle_sticker.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17747,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7801,
-								7774
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4723.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "stickit/static/stickit/css/sticker/controls.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9481,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								188,
-								188
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 986.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 15,
@@ -1789,11 +1879,75 @@
 			]
 		},
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 22,
+					"buffer": 24,
+					"file": "/E/sites_web/tests/signauxpromises/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								81,
+								134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 25,
+					"file": "stickit/static/stickit/js/controle_sticker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								801,
+								801
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 396.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
 					"file": "stickit/templates/stickit/controles_sticker.html",
 					"semi_transient": false,
 					"settings":
@@ -1805,13 +1959,13 @@
 						"selection":
 						[
 							[
-								420,
-								420
+								475,
+								475
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1819,11 +1973,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 27,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/debugClone.js",
 					"semi_transient": false,
 					"settings":
@@ -1841,6 +1995,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1849,11 +2004,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 28,
 					"file": "static/js/jquery-ui-draggable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -1871,6 +2026,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1879,11 +2035,11 @@
 						"translation.y": 6054.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 29,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable/helperFunctions.js",
 					"semi_transient": false,
 					"settings":
@@ -1901,6 +2057,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1909,11 +2066,11 @@
 						"translation.y": 4752.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 30,
 					"file": "/E/sites_web/django/and_today_code_1/static/js/jquery-ui-resizable-collision.js",
 					"semi_transient": false,
 					"settings":
@@ -1925,12 +2082,13 @@
 						"selection":
 						[
 							[
-								16351,
-								16252
+								15500,
+								15500
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1939,11 +2097,11 @@
 						"translation.y": 7194.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 31,
 					"file": "static/js/resizable.js",
 					"semi_transient": false,
 					"settings":
@@ -1961,7 +2119,7 @@
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Highlighter/Monokai.tmTheme",
+							"color_scheme": "Packages/User/Color Highlighter/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1970,7 +2128,7 @@
 						"translation.y": 4469.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 17,
 					"type": "text"
 				}
 			]
@@ -2016,13 +2174,13 @@
 		"cols":
 		[
 			0.0,
-			0.20375,
+			0.841875,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.713157894737,
+			0.446115288221,
 			1.0
 		]
 	},

@@ -1,0 +1,25 @@
+
+<div class="bouton-parametrages" id="bouton-parametrages" parametrages>
+		Paramétrages	
+</div>
+
+
+<panneau-parametrages  id="panneau-parametrages" class="panneau-parametrages">
+	<div class="panneau-interieur">
+		<div class="titreParametrages">
+			<fieldset><legend>Type de transition : </legend>
+				<input type="radio" name="transitionPanneaux"  ng-model="transitionPanneaux" ng-change="changeTypeTransition(transitionPanneaux)" value="2">Défilement
+				<input type="radio" name="transitionPanneaux"  ng-model="transitionPanneaux" ng-change="changeTypeTransition(transitionPanneaux)" value="1">Fondu
+				<input type="radio" name="transitionPanneaux"  ng-model="transitionPanneaux" ng-change="changeTypeTransition(transitionPanneaux)" value="0" checked="true">Aucune transition
+			</fieldset>
+
+			<div class="controleVitesseDefilement">
+				<div id="vitesseDefilement"></div>
+			</div>
+
+			<div class="libelleVitesseDefilement">
+				Vitesse de défilement  : {*  vitesseDefilement *}
+			</div>
+		</div>
+	</div>
+</panneau-parametrages>

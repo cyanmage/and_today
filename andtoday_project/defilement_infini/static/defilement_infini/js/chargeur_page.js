@@ -40,7 +40,7 @@ module_chargeurPage.factory('serviceDates', ['$q', function($q){
 	les_services_dates.retourneIdDate = function(offset){
 		if(typeof(offset)==='undefined') offset = 0;
 		var date = tableau_des_dates[1 + offset][0];
-		return date.toISOString().slice(0,10);
+		return date.toISOString().slice(0, 10);
  	}
 
 	les_services_dates.initialiseBufferDates = function(){

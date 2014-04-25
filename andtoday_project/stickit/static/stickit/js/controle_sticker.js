@@ -197,7 +197,7 @@ module_stickit.directive("chromoSelectorDeploy", ['$timeout',
 				//event.preventDefault();
 				//event.stopPropagation();
 				//console.log("toto");
-				//console.log("clic sur ", attributes.nameControl);
+				console.log("clic sur ", attributes.nameControl);/**/
 				scope.toggle(attributes.nameControl);
 				scope.$apply();
 			})
